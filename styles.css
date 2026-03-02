@@ -50,7 +50,7 @@
 
   /* ── HERO ── */
   #hero {
-    min-height:100vh; padding-top:80px;
+    min-height:100vh; padding-top:0;
     position:relative; overflow:hidden;
     display:grid; grid-template-columns:1fr 1fr;
   }
