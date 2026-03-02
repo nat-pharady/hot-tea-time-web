@@ -9,6 +9,10 @@ import Hero from "./components/Hero";
 import FeaturedProjects from "./components/FeaturedProjects";
 import Showreel from "./components/Showreel";
 import FeaturedArticles from "./components/FeaturedArticles";
+import Marketplace from "./components/Marketplace";
+import BrewYourOwn from "./components/BrewYourOwn";
+import Membership from "./components/Membership";
+import Newsletter from "./components/Newsletter";
 import Footer from "./components/Footer";
 
 export default function App() {
@@ -20,6 +24,10 @@ export default function App() {
       <FeaturedProjects />
       <Showreel />
       <FeaturedArticles />
+      <Marketplace />
+      <BrewYourOwn />
+      <Membership />
+      <Newsletter />
       <Footer />
     </main>
   );

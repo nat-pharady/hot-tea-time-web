@@ -1,59 +1,60 @@
-import { motion } from "motion/react";
-
 export default function Footer() {
   return (
-    <footer className="bg-story text-sand py-24 md:py-48 px-8 md:px-14 overflow-hidden relative">
-      <div className="grid grid-cols-1 md:grid-cols-12 gap-12 relative z-10">
-        <div className="md:col-span-6">
-          <h2 className="text-[16vw] md:text-[10vw] font-light leading-none tracking-tighter mb-12">
-            Our <br /> Story
-          </h2>
-          <p className="max-w-md text-lg md:text-xl font-light leading-relaxed opacity-80">
-            The story behind Exo Ape is one of exploration, creativity and curiosity.
+    <footer className="bg-[#bc3215] text-white py-16 md:py-24 px-8 md:px-14">
+      <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-16">
+        {/* Brand */}
+        <div className="md:col-span-4">
+          <h3 className="text-2xl font-light tracking-tight mb-4">Hot Tea Time Club</h3>
+          <p className="text-sm font-light leading-relaxed opacity-50 max-w-xs">
+            Premium fiction for sophisticated palates. Read boldly. Sip slowly. Spill everything.
           </p>
         </div>
 
-        <div className="md:col-span-12 h-[1px] bg-sand/20 my-12" />
-
-        <div className="md:col-span-3 space-y-8">
-          <h3 className="text-sm font-medium uppercase tracking-wider opacity-40">Address</h3>
-          <address className="not-italic text-lg font-light space-y-2 opacity-80">
-            <p>Willem II Singel 8</p>
-            <p>6041 HS, Roermond</p>
-            <p>Netherlands</p>
-          </address>
-        </div>
-
-        <div className="md:col-span-2 space-y-8">
-          <h3 className="text-sm font-medium uppercase tracking-wider opacity-40">Sitemap</h3>
-          <ul className="text-lg font-light space-y-2 opacity-80">
-            <li><a href="/work" className="hover:opacity-100">Work</a></li>
-            <li><a href="/studio" className="hover:opacity-100">Studio</a></li>
-            <li><a href="/news" className="hover:opacity-100">News</a></li>
-            <li><a href="/contact" className="hover:opacity-100">Contact</a></li>
+        {/* Explore */}
+        <div className="md:col-span-2 md:col-start-6">
+          <h4 className="text-xs font-medium uppercase tracking-widest opacity-40 mb-6">Explore</h4>
+          <ul className="text-sm font-light space-y-3 opacity-60">
+            <li><a href="#stories" className="hover:opacity-100 transition-opacity">Browse Stories</a></li>
+            <li><a href="#stories" className="hover:opacity-100 transition-opacity">New Releases</a></li>
+            <li><a href="#marketplace" className="hover:opacity-100 transition-opacity">The Marketplace</a></li>
+            <li><a href="#features" className="hover:opacity-100 transition-opacity">Join an Adventure</a></li>
           </ul>
         </div>
 
-        <div className="md:col-span-3 space-y-8">
-          <h3 className="text-sm font-medium uppercase tracking-wider opacity-40">Socials</h3>
-          <ul className="text-lg font-light space-y-2 opacity-80">
-            <li><a href="#" className="hover:opacity-100">Instagram</a></li>
-            <li><a href="#" className="hover:opacity-100">Behance</a></li>
-            <li><a href="#" className="hover:opacity-100">Dribbble</a></li>
-            <li><a href="#" className="hover:opacity-100">Twitter</a></li>
+        {/* Create */}
+        <div className="md:col-span-2">
+          <h4 className="text-xs font-medium uppercase tracking-widest opacity-40 mb-6">Create</h4>
+          <ul className="text-sm font-light space-y-3 opacity-60">
+            <li><a href="#marketplace" className="hover:opacity-100 transition-opacity">Write a Story</a></li>
+            <li><a href="#marketplace" className="hover:opacity-100 transition-opacity">Share with Community</a></li>
+            <li><a href="#marketplace" className="hover:opacity-100 transition-opacity">List in Marketplace</a></li>
+            <li><a href="#" className="hover:opacity-100 transition-opacity">Brew Your Own</a></li>
+          </ul>
+        </div>
+
+        {/* Company */}
+        <div className="md:col-span-2">
+          <h4 className="text-xs font-medium uppercase tracking-widest opacity-40 mb-6">Company</h4>
+          <ul className="text-sm font-light space-y-3 opacity-60">
+            <li><a href="#" className="hover:opacity-100 transition-opacity">About Us</a></li>
+            <li><a href="#membership" className="hover:opacity-100 transition-opacity">Membership</a></li>
+            <li><a href="#" className="hover:opacity-100 transition-opacity">Press</a></li>
+            <li><a href="#" className="hover:opacity-100 transition-opacity">Privacy Policy</a></li>
+            <li><a href="#" className="hover:opacity-100 transition-opacity">Terms of Service</a></li>
           </ul>
         </div>
       </div>
 
-      <div className="absolute top-0 right-0 w-[80vw] md:w-[50vw] h-full pointer-events-none opacity-20">
-        <video
-          src="https://a.storyblok.com/f/133769/x/9c433c7aac/home-news-diesel-be-a-follower.mp4"
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="w-full h-full object-cover grayscale"
-        />
+      {/* Bottom bar */}
+      <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+        <p className="text-xs font-light opacity-30">
+          &copy; 2025 Hot Tea Time Club. All rights reserved.
+        </p>
+        <div className="flex items-center gap-6 text-xs font-light opacity-30">
+          <a href="#" className="hover:opacity-60 transition-opacity">Privacy</a>
+          <a href="#" className="hover:opacity-60 transition-opacity">Terms</a>
+          <a href="#" className="hover:opacity-60 transition-opacity">Cookies</a>
+        </div>
       </div>
     </footer>
   );

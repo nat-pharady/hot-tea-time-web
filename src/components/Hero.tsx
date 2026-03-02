@@ -1,21 +1,25 @@
 import { motion } from "motion/react";
+import heroImage from "../assets/hero-bg.jpg";
 
 export default function Hero() {
   return (
-    <header className="relative h-[175vh] md:h-[136vw] bg-dark-grey text-white overflow-hidden">
-      <div className="relative z-10 px-8 pt-32 md:px-14 md:pt-48">
-        <div className="max-w-2xl">
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-lg md:text-2xl font-light leading-relaxed mb-12"
-          >
-            Global digital design studio partnering with brands and businesses that create exceptional experiences where people live, work, and unwind.
-          </motion.p>
-        </div>
+    <header className="relative h-screen bg-dark-grey text-white overflow-hidden">
+      <motion.div
+        initial={{ scale: 1.1 }}
+        whileInView={{ scale: 1 }}
+        transition={{ duration: 1.5, ease: "easeOut" }}
+        className="absolute inset-0 z-0"
+      >
+        <img
+          src={heroImage}
+          alt="Hot Tea Time Club"
+          className="w-full h-full object-cover object-[70%_top] opacity-90"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
+      </motion.div>
 
-        <h1 className="text-[16vw] md:text-[17vw] font-light leading-[0.9] tracking-tighter -ml-2 mb-20">
+      <div className="relative z-10 h-full flex flex-col justify-center px-8 md:px-14">
+        <h1 className="text-[13vw] md:text-[8vw] font-light leading-[0.9] tracking-tighter mb-10">
           <div className="overflow-hidden">
             <motion.span
               initial={{ y: "100%" }}
@@ -23,7 +27,7 @@ export default function Hero() {
               transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
               className="block"
             >
-              Digital
+              The Tea Has
             </motion.span>
           </div>
           <div className="overflow-hidden">
@@ -33,7 +37,7 @@ export default function Hero() {
               transition={{ duration: 1, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
               className="block"
             >
-              Design
+              <em className="italic">Never Been</em>
             </motion.span>
           </div>
           <div className="overflow-hidden">
@@ -43,57 +47,24 @@ export default function Hero() {
               transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
               className="block"
             >
-              Experience
+              This Hot.
             </motion.span>
           </div>
         </h1>
 
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-12">
-          <div className="max-w-md">
-            <motion.p
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ duration: 1, delay: 0.5 }}
-              className="text-lg md:text-xl font-light leading-relaxed mb-8"
-            >
-              We help experience-driven companies thrive by making their audience feel the refined intricacies of their brand and product in the digital space. Unforgettable journeys start with a click.
-            </motion.p>
-            <a href="/studio" className="inline-block border-b border-white/40 pb-1 text-lg hover:border-white transition-colors">
-              The Studio
-            </a>
-          </div>
-
-          <div className="hidden md:flex gap-12 text-sm font-light opacity-60">
-            <ul className="space-y-2">
-              <li><a href="/work">Work</a></li>
-              <li><a href="/studio">Studio</a></li>
-              <li><a href="/news">News</a></li>
-              <li><a href="/contact">Contact</a></li>
-            </ul>
-            <ul className="space-y-2">
-              <li><a href="mailto:hello@exoape.com">hello@exoape.com</a></li>
-              <li><a href="tel:+31772086200">+31 772 086 200</a></li>
-            </ul>
-          </div>
+        <div className="flex flex-col md:flex-row md:items-end gap-6 md:gap-8">
+          <a href="#join" className="px-8 py-4 bg-white text-black text-sm font-medium hover:bg-white/90 transition-all w-fit">
+            Start Sipping Free
+          </a>
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 0.5 }}
+            className="text-sm md:text-base font-light leading-relaxed opacity-70 max-w-xs"
+          >
+            Premium fiction for those who like their stories steeped to perfection. Romance, tension, and all the delicious details.
+          </motion.p>
         </div>
-      </div>
-
-      <motion.div
-        initial={{ scale: 1.1 }}
-        whileInView={{ scale: 1 }}
-        transition={{ duration: 1.5, ease: "easeOut" }}
-        className="absolute inset-0 z-0"
-      >
-        <img
-          src="https://a.storyblok.com/f/133769/1920x2716/5c24d6b467/exo-ape-hero-1.jpg/m/2400x3395/filters:quality(90)"
-          alt="Venice Grand Canal"
-          className="w-full h-full object-cover opacity-60"
-          referrerPolicy="no-referrer"
-        />
-      </motion.div>
-      
-      <div className="absolute bottom-10 right-10 text-sm font-light opacity-40 hidden md:block">
-        Scroll to explore
       </div>
     </header>
   );
