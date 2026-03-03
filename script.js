@@ -1,3 +1,20 @@
+  // Initialize Lucide icons
+  function initLucideIcons() {
+    if(window.lucide && window.lucide.createIcons) {
+      window.lucide.createIcons();
+      console.log('Lucide icons initialized');
+    } else {
+      console.warn('Lucide library not found, retrying...');
+      setTimeout(initLucideIcons, 500);
+    }
+  }
+
+  if(document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initLucideIcons);
+  } else {
+    initLucideIcons();
+  }
+
   const revealEls = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
