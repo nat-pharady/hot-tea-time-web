@@ -89,7 +89,7 @@
   .hero-eyebrow::before, .hero-eyebrow::after { content:'✦'; font-size:0.55rem; color:var(--orange-l); }
 
   .hero-headline { font-family:'Barlow Condensed',sans-serif; font-size:clamp(3rem,5vw,5.8rem); font-weight:800; line-height:1.06; color:var(--green); margin-bottom:28px; white-space:nowrap; text-shadow:0 4px 12px rgba(0,0,0,0.5); text-transform:uppercase; }
-  .hero-headline em { font-style:italic; color:var(--orange); }
+  .hero-headline em { font-style:normal; color:var(--orange); }
 
   .hero-sub { font-family:'Josefin Sans',sans-serif; font-size:1.10rem; line-height:1.95; color:#f7f4ea; max-width:420px; margin-bottom:44px; text-shadow:0 2px 8px rgba(0,0,0,0.4); }
 
