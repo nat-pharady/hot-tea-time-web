@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brew Your Own — Hot Tea Time</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@800&family=Josefin+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="damask">
+
+<!-- NAV -->
+<nav class="hero-nav" style="position:sticky;top:0;z-index:100;background:#681e2a;">
+  <span class="hero-nav-title">HOT TEA TIME</span>
+  <ul class="nav-links">
+    <li><a href="how-it-works.html">How It Works</a></li>
+    <li><a href="features.html">Features</a></li>
+    <li><a href="stories.html">Stories</a></li>
+    <li><a href="marketplace.html">Marketplace</a></li>
+    <li><a href="pricing.html">Pricing</a></li>
+  </ul>
+  <a href="pricing.html" class="nav-cta">Join the Club</a>
+</nav>
+
+<!-- BREW YOUR OWN -->
+<section id="brew" style="background-color:#320d1e;position:relative;overflow:hidden;background-image:url('images/teacup-girl.png');background-size:contain;background-position:200% center;background-repeat:no-repeat;">
+  <div class="brew-inner">
+    <div class="brew-left reveal">
+      <div class="coming-soon-badge"><div class="coming-soon-dot"></div><span class="coming-soon-text">Coming Soon</span></div>
+      <div class="section-label">Phase Two</div>
+      <h2 class="section-title">Brew Your Own <em>Scandal</em></h2>
+      <p class="section-body">Send a personalised story to anyone in the world. Every Scandal Story gets its own custom link — a little gift that arrives wrapped in delicious mischief.</p>
+      <ul class="brew-feature-list">
+        <li>Write a story tailored specifically for someone you know — or someone you'd like to.</li>
+        <li>Each story gets a unique personal subdomain, delivered as a link.</li>
+        <li>Recipients open it to find a beautifully presented story written just for them.</li>
+        <li>Anonymous sending available. Plausible deniability included at no extra charge.</li>
+      </ul>
+    </div>
+    <div class="brew-visual reveal">
+      <div class="brew-url-demo"><span>mandy</span>.spillthetea.news</div>
+      <div class="brew-preview-title">"A Story Just for You, Mandy."</div>
+      <div class="brew-preview-sub">Someone thought of you.<br>They wrote something down.<br>You probably should open it.</div>
+      <hr class="brew-divider">
+      <p style="font-family:'Josefin Sans',sans-serif;font-size:0.6rem;color:#f7f4ea;margin-bottom:20px;font-style:italic;">Be the first to know when Brew Your Own launches.</p>
+      <a href="#" class="brew-notify-btn">Notify Me</a>
+    </div>
+  </div>
+</section>
+
+<script src="https://unpkg.com/lucide@latest"></script>
+<script>
+  if(window.lucide && window.lucide.createIcons) {
+    window.lucide.createIcons();
+  }
+</script>
+<script src="script.js"></script>
+</body>
+</html>

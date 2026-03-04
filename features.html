@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Features — Hot Tea Time</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@800&family=Josefin+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="damask">
+
+<!-- NAV -->
+<nav class="hero-nav" style="position:sticky;top:0;z-index:100;background:#681e2a;">
+  <span class="hero-nav-title">HOT TEA TIME</span>
+  <ul class="nav-links">
+    <li><a href="how-it-works.html">How It Works</a></li>
+    <li><a href="features.html">Features</a></li>
+    <li><a href="stories.html">Stories</a></li>
+    <li><a href="marketplace.html">Marketplace</a></li>
+    <li><a href="pricing.html">Pricing</a></li>
+  </ul>
+  <a href="pricing.html" class="nav-cta">Join the Club</a>
+</nav>
+
+<!-- FEATURES -->
+<section id="features">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-label">What's in the Cup</div>
+      <h2 class="section-title">Features Worth <em>Spilling</em></h2>
+      <p class="section-body">This is not a chatbot. It is a fully immersive story platform — and it comes with a few rather clever tricks up its sleeve.</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card reveal reveal-delay-1">
+        <div class="feature-icon-wrap"><i data-lucide="eye-off"></i></div>
+        <div>
+          <h3>The <em>Stealth</em> Toggle</h3>
+          <p>One tap transforms your lush, beautiful reading experience into a convincingly boring Microsoft Excel spreadsheet. Nosy colleagues will see nothing but pivot tables. Your secret is perfectly safe.</p>
+          <span class="feature-tag">Incognito Mode</span>
+        </div>
+      </div>
+      <div class="feature-card reveal reveal-delay-2">
+        <div class="feature-icon-wrap"><i data-lucide="dice1"></i></div>
+        <div>
+          <h3>Join an <em>Adventure</em></h3>
+          <p>Spot an open public story that catches your eye? Spend a few Hearts and jump into the next chapter alongside other readers. Collaborative storytelling has never been quite this compelling.</p>
+          <span class="feature-tag">Multiplayer</span>
+        </div>
+      </div>
+      <div class="feature-card reveal reveal-delay-3">
+        <div class="feature-icon-wrap"><i data-lucide="image"></i></div>
+        <div>
+          <h3>The <em>Ink</em> — Visualise Your Scene</h3>
+          <p>At any moment in a story, spend a single Heart to conjure an AI-generated image of exactly what's unfolding. Scenes rendered in seconds. Imagination, illustrated.</p>
+          <span class="feature-tag">1 ❤️ per image</span>
+        </div>
+      </div>
+      <div class="feature-card reveal reveal-delay-4">
+        <div class="feature-icon-wrap"><i data-lucide="coffee"></i></div>
+        <div>
+          <h3>The <em>Taste Test</em></h3>
+          <p>Our onboarding quiz asks exactly the right questions to learn what you like. From cosy fluff to something considerably more adventurous — we calibrate your feed so everything feels personal from the very first sip.</p>
+          <span class="feature-tag">Personalised Discovery</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="https://unpkg.com/lucide@latest"></script>
+<script>
+  if(window.lucide && window.lucide.createIcons) {
+    window.lucide.createIcons();
+  }
+</script>
+<script src="script.js"></script>
+</body>
+</html>
