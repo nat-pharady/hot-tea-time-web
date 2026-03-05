@@ -49,6 +49,7 @@
   if (localStorage.getItem('onboardingComplete') === 'true') {
     updateNavToProfile();
     showLoggedInNav();
+    updateLogoLink();
   }
 
   // Open modal when "Start Sipping Free" button is clicked
@@ -151,17 +152,12 @@
     loggedInNavItems.forEach(item => item.style.display = 'block');
   }
 
-  // Logo click handler - logout/reset to public view
-  const logoButton = document.querySelector('.hero-nav-title');
-  if (logoButton) {
-    logoButton.addEventListener('click', (e) => {
-      // Clear onboarding state
-      localStorage.removeItem('onboardingComplete');
-      localStorage.removeItem('userPreferences');
-      // Hide logged-in nav items
-      hideLoggedInNav();
-      // Let the link navigate to index.html naturally
-    });
+  // Update logo link based on login state
+  function updateLogoLink() {
+    const logoButton = document.querySelector('.hero-nav-title');
+    if (logoButton && localStorage.getItem('onboardingComplete') === 'true') {
+      logoButton.setAttribute('href', 'home.html');
+    }
   }
 
   function hideLoggedInNav() {
