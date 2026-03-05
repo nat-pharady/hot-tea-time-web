@@ -59,15 +59,128 @@
 </nav>
 
 <!-- THE ASSET MARKETPLACE -->
-<section id="asset-marketplace" style="background:var(--parchment);">
+<section id="asset-marketplace" style="background:linear-gradient(135deg, #2D0F1E 0%, #1a0b11 100%); min-height: 100vh; padding: 80px 40px;">
   <div class="section-inner">
-    <div class="reveal">
-      <div class="section-label">Buy & Sell</div>
-      <h2 class="section-title">The Asset <em>Marketplace</em></h2>
-      <p class="section-body">Trade custom characters, story prompts, and unique creative assets with other creators. Buy pre-made elements to jumpstart your next story, or sell your own creations to the community.</p>
+
+    <!-- Premium Badge -->
+    <div style="display: flex; align-items: center; justify-content: center; margin-bottom: 24px;">
+      <span style="background: rgba(248, 220, 118, 0.15); color: var(--orange); font-family: 'Coco Gothic', sans-serif; font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; padding: 10px 20px; border-radius: 100px; border: 1px solid rgba(248, 220, 118, 0.3); display: flex; align-items: center; gap: 8px;">🔒 Premium Feature</span>
     </div>
+
+    <!-- Header -->
+    <div style="text-align: center; margin-bottom: 60px;">
+      <h1 class="section-title" style="color: var(--green); margin-bottom: 16px;">The Asset <em>Marketplace</em></h1>
+      <p style="font-family: 'Coco Gothic', sans-serif; font-size: 1.1rem; color: rgba(247, 244, 234, 0.8); max-width: 600px; margin: 0 auto; line-height: 1.6;">Trade custom characters, story prompts, and unique creative assets with other creators. Buy pre-made elements to jumpstart your next story, or sell your own creations to the community.</p>
+    </div>
+
+    <!-- Asset Cards Grid (2x2) -->
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-bottom: 80px; max-width: 900px; margin-left: auto; margin-right: auto;">
+
+      <!-- Card 1: Characters -->
+      <div style="background: rgba(45, 15, 30, 0.5); border: 1px solid rgba(248, 220, 118, 0.15); border-radius: 12px; padding: 32px; position: relative; overflow: hidden; cursor: pointer; transition: all 0.3s ease;">
+        <div style="position: absolute; inset: 0; backdrop-filter: blur(8px); background: rgba(45, 15, 30, 0.4); opacity: 1;"></div>
+        <div style="position: relative; z-index: 1;">
+          <div style="font-size: 48px; margin-bottom: 16px;">👥</div>
+          <h3 style="font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 700; color: var(--green); margin-bottom: 8px;">Custom Characters</h3>
+          <p style="font-family: 'Coco Gothic', sans-serif; font-size: 0.95rem; color: rgba(247, 244, 234, 0.6); margin-bottom: 12px; line-height: 1.5;">Pre-built character profiles with personality, backstory, and unique traits.</p>
+          <div style="font-family: 'Coco Gothic', sans-serif; font-size: 0.85rem; color: var(--orange); font-weight: 600;">❤️ 250-500 Hearts</div>
+        </div>
+      </div>
+
+      <!-- Card 2: Story Prompts -->
+      <div style="background: rgba(45, 15, 30, 0.5); border: 1px solid rgba(248, 220, 118, 0.15); border-radius: 12px; padding: 32px; position: relative; overflow: hidden; cursor: pointer; transition: all 0.3s ease;">
+        <div style="position: absolute; inset: 0; backdrop-filter: blur(8px); background: rgba(45, 15, 30, 0.4); opacity: 1;"></div>
+        <div style="position: relative; z-index: 1;">
+          <div style="font-size: 48px; margin-bottom: 16px;">📝</div>
+          <h3 style="font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 700; color: var(--green); margin-bottom: 8px;">Story Prompts</h3>
+          <p style="font-family: 'Coco Gothic', sans-serif; font-size: 0.95rem; color: rgba(247, 244, 234, 0.6); margin-bottom: 12px; line-height: 1.5;">Captivating plot starters and premise ideas to spark your creativity.</p>
+          <div style="font-family: 'Coco Gothic', sans-serif; font-size: 0.85rem; color: var(--orange); font-weight: 600;">❤️ 150-350 Hearts</div>
+        </div>
+      </div>
+
+      <!-- Card 3: Dialogue Packs -->
+      <div style="background: rgba(45, 15, 30, 0.5); border: 1px solid rgba(248, 220, 118, 0.15); border-radius: 12px; padding: 32px; position: relative; overflow: hidden; cursor: pointer; transition: all 0.3s ease;">
+        <div style="position: absolute; inset: 0; backdrop-filter: blur(8px); background: rgba(45, 15, 30, 0.4); opacity: 1;"></div>
+        <div style="position: relative; z-index: 1;">
+          <div style="font-size: 48px; margin-bottom: 16px;">💬</div>
+          <h3 style="font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 700; color: var(--green); margin-bottom: 8px;">Dialogue Packs</h3>
+          <p style="font-family: 'Coco Gothic', sans-serif; font-size: 0.95rem; color: rgba(247, 244, 234, 0.6); margin-bottom: 12px; line-height: 1.5;">Realistic conversation starters and witty banter for any scenario.</p>
+          <div style="font-family: 'Coco Gothic', sans-serif; font-size: 0.85rem; color: var(--orange); font-weight: 600;">❤️ 100-250 Hearts</div>
+        </div>
+      </div>
+
+      <!-- Card 4: World Building -->
+      <div style="background: rgba(45, 15, 30, 0.5); border: 1px solid rgba(248, 220, 118, 0.15); border-radius: 12px; padding: 32px; position: relative; overflow: hidden; cursor: pointer; transition: all 0.3s ease;">
+        <div style="position: absolute; inset: 0; backdrop-filter: blur(8px); background: rgba(45, 15, 30, 0.4); opacity: 1;"></div>
+        <div style="position: relative; z-index: 1;">
+          <div style="font-size: 48px; margin-bottom: 16px;">🌍</div>
+          <h3 style="font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 700; color: var(--green); margin-bottom: 8px;">World Building Kits</h3>
+          <p style="font-family: 'Coco Gothic', sans-serif; font-size: 0.95rem; color: rgba(247, 244, 234, 0.6); margin-bottom: 12px; line-height: 1.5;">Complete settings, cultural details, and atmospheric descriptions for your world.</p>
+          <div style="font-family: 'Coco Gothic', sans-serif; font-size: 0.85rem; color: var(--orange); font-weight: 600;">❤️ 300-600 Hearts</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Features Section -->
+    <div style="max-width: 800px; margin: 0 auto; margin-bottom: 60px;">
+      <h3 style="font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700; color: var(--green); margin-bottom: 32px; text-align: center;">Why Creators Love The Asset Marketplace</h3>
+      <ul style="list-style: none; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
+        <li style="display: flex; gap: 16px;">
+          <span style="font-size: 24px; flex-shrink: 0;">✨</span>
+          <div>
+            <div style="font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; color: var(--green); margin-bottom: 4px;">Save Time & Energy</div>
+            <div style="font-family: 'Coco Gothic', sans-serif; font-size: 0.95rem; color: rgba(247, 244, 234, 0.6); line-height: 1.5;">Skip the brainstorming phase and start writing immediately with battle-tested assets.</div>
+          </div>
+        </li>
+        <li style="display: flex; gap: 16px;">
+          <span style="font-size: 24px; flex-shrink: 0;">💎</span>
+          <div>
+            <div style="font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; color: var(--green); margin-bottom: 4px;">Earn from Your Work</div>
+            <div style="font-family: 'Coco Gothic', sans-serif; font-size: 0.95rem; color: rgba(247, 244, 234, 0.6); line-height: 1.5;">Turn your creative assets into passive income through Hearts commissions.</div>
+          </div>
+        </li>
+        <li style="display: flex; gap: 16px;">
+          <span style="font-size: 24px; flex-shrink: 0;">🎯</span>
+          <div>
+            <div style="font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; color: var(--green); margin-bottom: 4px;">Community Driven</div>
+            <div style="font-family: 'Coco Gothic', sans-serif; font-size: 0.95rem; color: rgba(247, 244, 234, 0.6); line-height: 1.5;">Browse curated collections from the most talented creators in our community.</div>
+          </div>
+        </li>
+        <li style="display: flex; gap: 16px;">
+          <span style="font-size: 24px; flex-shrink: 0;">🔐</span>
+          <div>
+            <div style="font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; color: var(--green); margin-bottom: 4px;">Full Rights</div>
+            <div style="font-family: 'Coco Gothic', sans-serif; font-size: 0.95rem; color: rgba(247, 244, 234, 0.6); line-height: 1.5;">Own and use your purchased assets however you want in your stories.</div>
+          </div>
+        </li>
+        <li style="display: flex; gap: 16px; grid-column: 1 / -1;">
+          <span style="font-size: 24px; flex-shrink: 0;">⚡</span>
+          <div>
+            <div style="font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; color: var(--green); margin-bottom: 4px;">Instant Delivery</div>
+            <div style="font-family: 'Coco Gothic', sans-serif; font-size: 0.95rem; color: rgba(247, 244, 234, 0.6); line-height: 1.5;">Download your assets immediately after purchase—no waiting, no delays.</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Unlock Button -->
+    <div style="display: flex; justify-content: center;">
+      <button onclick="handleAssetMarketplaceUnlock()" style="background: linear-gradient(135deg, var(--orange), #f5c854); color: #2D0F1E; border: none; border-radius: 8px; padding: 16px 48px; font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; letter-spacing: 0.05em; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 0 30px rgba(248, 220, 118, 0.4); position: relative; overflow: hidden;">
+        <span style="position: relative; z-index: 2;">Unlock the Inner Circle — $4.99/mo</span>
+        <span style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(255,255,255,0.2), transparent); animation: shimmer 2s infinite;"></span>
+      </button>
+    </div>
+
   </div>
 </section>
+
+<style>
+  @keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+  }
+</style>
 
 <script src="https://unpkg.com/lucide@latest"></script>
 <script>

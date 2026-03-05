@@ -763,3 +763,27 @@ function handleUnlockFeature(featureName) {
   // TODO: Integrate with payment/subscription system
   alert(`Unlock ${featureName} - Payment integration coming soon!`);
 }
+
+// Handle Asset Marketplace unlock button
+function handleAssetMarketplaceUnlock() {
+  alert('🔓 Unlock The Asset Marketplace - $4.99/mo\n\nAccess premium creative assets, custom characters, story prompts, and world-building kits from talented creators!');
+  // TODO: Integrate with payment/subscription system
+}
+
+// Handle The Bindery "Create Your Book" button
+function handleCreateBook() {
+  alert('📖 Create Your Book\n\nStarting your book creation journey...\n\nPayment and book customization flow coming soon!');
+  // TODO: Integrate with book creation/payment system
+}
+
+// Handle The Bindery "Purchase Book" button
+function handlePurchaseBook(bookTitle) {
+  alert(`📕 Purchase: ${bookTitle}\n\nAdding to cart...\n\nPayment integration coming soon!`);
+  // TODO: Integrate with shopping cart and payment system
+}
+
+// Handle The Boutique "Add to Cart" button
+function handleAddToCart(productName) {
+  alert(`🛒 ${productName}\n\nAdded to cart!\n\nCheckout coming soon!`);
+  // TODO: Integrate with shopping cart system
+}
