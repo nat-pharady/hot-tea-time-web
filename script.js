@@ -38,7 +38,6 @@
 
   // ── TASTE TEST MODAL FUNCTIONALITY ──
   const modal = document.getElementById('tasteTestModal');
-  const joinButton = document.querySelector('.btn-primary');
   const navCtaButton = document.querySelector('.nav-cta');
   let userPreferences = {
     email: '',
@@ -51,9 +50,9 @@
     updateNavToProfile();
   }
 
-  // Open modal when "Join the Club" button is clicked
-  if (joinButton) {
-    joinButton.addEventListener('click', (e) => {
+  // Open modal when "Start Sipping Free" button is clicked
+  if (navCtaButton && localStorage.getItem('onboardingComplete') !== 'true') {
+    navCtaButton.addEventListener('click', (e) => {
       e.preventDefault();
       openModal();
     });
