@@ -135,6 +135,17 @@
     }
   }
 
+  // Logo click handler - logout/reset to public view
+  const logoButton = document.querySelector('.hero-nav-title');
+  if (logoButton) {
+    logoButton.addEventListener('click', (e) => {
+      // Clear onboarding state
+      localStorage.removeItem('onboardingComplete');
+      localStorage.removeItem('userPreferences');
+      // Let the link navigate to index.html naturally
+    });
+  }
+
   // Make functions globally accessible
   window.nextStep = nextStep;
   window.selectTrope = selectTrope;
