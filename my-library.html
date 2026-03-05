@@ -12,50 +12,53 @@
 <body class="damask">
 
 <!-- NAV -->
-<nav class="hero-nav" style="position:sticky;top:0;z-index:100;">
-  <a href="index.html" class="hero-nav-title" style="text-decoration:none;color:var(--green);">HOT TEA TIME</a>
+<nav class="hero-nav">
+  <a href="home.html" class="hero-nav-title" style="text-decoration:none;color:var(--green);">HOT TEA TIME</a>
   <ul class="nav-links">
-    <li class="public-nav"><a href="how-it-works.html">How It Works</a></li>
-    <li class="public-nav"><a href="features.html">Features</a></li>
-    <li id="stories-nav"><a href="stories.html">Stories</a></li>
-    <li id="marketplace-nav"><a href="marketplace.html">Marketplace</a></li>
-    <li id="brew-nav"><a href="brew.html">Brew Your Own</a></li>
-    <li class="public-nav"><a href="pricing.html">Pricing</a></li>
-
-    <!-- Logged-in Navigation -->
-    <li class="nav-dropdown logged-in-nav">
+    <!-- Discover Dropdown -->
+    <li class="nav-dropdown">
       <a href="#"><span>Discover</span> <span class="dropdown-arrow">▾</span></a>
       <ul class="dropdown-menu">
-        <li><a href="trending-stories.html">Trending Stories</a></li>
-        <li><a href="character-library.html">The Character Library</a></li>
+        <li><a href="#trending">Trending Stories</a></li>
+        <li><a href="#character-library">The Character Library</a></li>
       </ul>
     </li>
-    <li class="logged-in-nav ai-generator-nav nav-locked">
-      <a href="#"><span>AI Generator</span> <span>🔒</span></a>
-    </li>
-    <li class="nav-dropdown logged-in-nav">
+
+    <!-- AI Generator (Direct Button) -->
+    <li><a href="#" id="ai-generator-link" style="display: flex; align-items: center; gap: 4px;">AI Generator <span>🔒</span></a></li>
+
+    <!-- Social Dropdown -->
+    <li class="nav-dropdown">
       <a href="#"><span>Social</span> <span class="dropdown-arrow">▾</span></a>
       <ul class="dropdown-menu">
-        <li><a href="smut-in-the-city.html">Smut in the City</a></li>
-        <li><a href="the-tea-room.html">The Tea Room</a></li>
-        <li><a href="private-parlor.html">Private Parlor</a></li>
+        <li><a href="#smut-in-city">Smut in the City</a></li>
+        <li><a href="#tea-room">The Tea Room</a></li>
+        <li><a href="#private-parlor">Private Parlor</a></li>
       </ul>
     </li>
-    <li class="nav-dropdown logged-in-nav">
+
+    <!-- Shop Dropdown -->
+    <li class="nav-dropdown">
       <a href="#"><span>Shop</span> <span class="dropdown-arrow">▾</span></a>
       <ul class="dropdown-menu">
-        <li><a href="asset-marketplace.html">The Asset Marketplace</a></li>
-        <li><a href="the-boutique.html">The Boutique</a></li>
-        <li><a href="the-bindery.html">The Bindery</a></li>
+        <li><a href="#asset-marketplace">The Asset Marketplace</a></li>
+        <li><a href="#boutique">The Boutique</a></li>
+        <li><a href="#bindery">The Bindery</a></li>
       </ul>
     </li>
-    <li class="logged-in-nav"><a href="my-library.html">My Library</a></li>
+
+    <!-- My Library -->
+    <li><a href="my-library.html">My Library</a></li>
   </ul>
-  <button class="stealth-btn logged-in-nav">
-    <span>👁️</span>
-    <span>Stealth Mode</span>
-  </button>
-  <a href="pricing.html" class="nav-cta">Start Sipping Free</a>
+
+  <!-- Right Side: Stealth Mode + Logout -->
+  <div style="display: flex; align-items: center; gap: 16px;">
+    <button class="stealth-btn">
+      <span>👁️</span>
+      <span>Stealth Mode</span>
+    </button>
+    <a href="index.html" class="nav-cta" style="margin: 0;">Logout</a>
+  </div>
 </nav>
 
 <!-- MY LIBRARY -->
@@ -64,10 +67,58 @@
     <div class="reveal">
       <div class="section-label">Your Personal Collection</div>
       <h2 class="section-title">My <em>Library</em></h2>
-      <p class="section-body">Your curated collection of saved stories, bookmarked characters, and works-in-progress. Everything you love in one beautifully organized space.</p>
+    </div>
+
+    <!-- Sort/Filter Controls -->
+    <div class="library-controls">
+      <select id="sort-by">
+        <option value="date-desc">Recently Added</option>
+        <option value="date-asc">Oldest First</option>
+        <option value="title-asc">Title A-Z</option>
+        <option value="title-desc">Title Z-A</option>
+      </select>
+    </div>
+
+    <!-- Empty State -->
+    <div id="empty-state" style="display: none;">
+      <p>Your library is empty. Start saving stories from the home page!</p>
+      <a href="home.html">Discover Stories</a>
+    </div>
+
+    <!-- Stories Grid -->
+    <div id="saved-stories-grid" class="story-grid">
+      <!-- Dynamically populated by JavaScript -->
     </div>
   </div>
 </section>
+
+<!-- READING PANE MODAL -->
+<div id="reading-pane" style="display: none;">
+  <div class="reading-pane-overlay"></div>
+  <div class="reading-pane-content">
+    <div class="reading-pane-header">
+      <div>
+        <h1 id="story-title" class="reading-pane-title">Story Title</h1>
+        <div class="reading-pane-meta">
+          <span id="story-author" class="reading-pane-author">By Author Name</span>
+          <span class="reading-pane-divider">•</span>
+          <span id="story-reads" class="reading-pane-reads">0 reads</span>
+          <span class="reading-pane-divider">•</span>
+          <span id="story-chapters" class="reading-pane-chapters">0 chapters</span>
+        </div>
+      </div>
+      <button class="reading-pane-close" onclick="closeReadingPane()">&times;</button>
+    </div>
+
+    <div class="reading-pane-body" id="story-content">
+      <p>Story content will load here...</p>
+    </div>
+
+    <div class="reading-pane-footer">
+      <button class="reading-pane-btn" onclick="closeReadingPane()">Close</button>
+    </div>
+  </div>
+</div>
 
 <script src="https://unpkg.com/lucide@latest"></script>
 <script>

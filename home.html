@@ -25,7 +25,7 @@
     </li>
 
     <!-- AI Generator (Direct Button) -->
-    <li><a href="#" style="display: flex; align-items: center; gap: 4px;">AI Generator <span>🔒</span></a></li>
+    <li><a href="#" id="ai-generator-link" style="display: flex; align-items: center; gap: 4px;">AI Generator <span>🔒</span></a></li>
 
     <!-- Social Dropdown -->
     <li class="nav-dropdown">
@@ -48,12 +48,12 @@
     </li>
 
     <!-- My Library -->
-    <li><a href="#my-library">My Library</a></li>
+    <li><a href="my-library.html">My Library</a></li>
   </ul>
 
   <!-- Right Side: Stealth Mode + Logout -->
   <div style="display: flex; align-items: center; gap: 16px;">
-    <button class="stealth-btn" style="display: flex; align-items: center; gap: 6px; background: none; border: none; color: var(--text-primary); cursor: pointer; font-family: inherit; font-size: 14px;">
+    <button class="stealth-btn">
       <span>👁️</span>
       <span>Stealth Mode</span>
     </button>
@@ -422,7 +422,7 @@
 
     <div class="reading-pane-footer">
       <button class="reading-pane-btn" onclick="closeReadingPane()">Close</button>
-      <button class="reading-pane-btn reading-pane-btn-primary">Add to Library</button>
+      <button class="reading-pane-btn reading-pane-btn-primary" onclick="addToLibrary()">Add to Library</button>
     </div>
   </div>
 </div>
@@ -453,6 +453,26 @@
         <span class="premium-unlock-label">Unlock the Inner Circle</span>
         <span class="premium-unlock-price">Take control of the story</span>
         <span class="premium-unlock-cost">$4.99/mo</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- AI GENERATOR TEASER MODAL -->
+<div id="ai-generator-modal" class="ai-generator-modal" style="display: none;">
+  <div class="ai-gen-overlay"></div>
+  <div class="ai-gen-content-minimal">
+    <button class="ai-gen-close" onclick="closeAIGeneratorModal()">&times;</button>
+
+    <div class="ai-gen-teaser">
+      <div class="ai-gen-icon">🔒</div>
+      <h1 class="ai-gen-title">Craft Your Fantasy</h1>
+      <p class="ai-gen-description">
+        Shape characters, weave tension, ignite passion.<br>
+        Your story. Your rules. Your fantasy.
+      </p>
+      <button class="ai-gen-unlock-btn" onclick="handleAIGeneratorUnlock()">
+        Unlock the Inner Circle — $4.99/mo
       </button>
     </div>
   </div>
