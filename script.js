@@ -48,6 +48,7 @@
   // Check if user has already completed onboarding
   if (localStorage.getItem('onboardingComplete') === 'true') {
     updateNavToProfile();
+    showLoggedInNav();
   }
 
   // Open modal when "Start Sipping Free" button is clicked
@@ -133,6 +134,18 @@
       navCtaButton.style.padding = '0';
       navCtaButton.style.borderRadius = '50%';
     }
+    // Show logged-in nav items
+    showLoggedInNav();
+  }
+
+  function showLoggedInNav() {
+    const storiesNav = document.getElementById('stories-nav');
+    const marketplaceNav = document.getElementById('marketplace-nav');
+    const brewNav = document.getElementById('brew-nav');
+
+    if (storiesNav) storiesNav.style.display = 'block';
+    if (marketplaceNav) marketplaceNav.style.display = 'block';
+    if (brewNav) brewNav.style.display = 'block';
   }
 
   // Logo click handler - logout/reset to public view
@@ -142,8 +155,20 @@
       // Clear onboarding state
       localStorage.removeItem('onboardingComplete');
       localStorage.removeItem('userPreferences');
+      // Hide logged-in nav items
+      hideLoggedInNav();
       // Let the link navigate to index.html naturally
     });
+  }
+
+  function hideLoggedInNav() {
+    const storiesNav = document.getElementById('stories-nav');
+    const marketplaceNav = document.getElementById('marketplace-nav');
+    const brewNav = document.getElementById('brew-nav');
+
+    if (storiesNav) storiesNav.style.display = 'none';
+    if (marketplaceNav) marketplaceNav.style.display = 'none';
+    if (brewNav) brewNav.style.display = 'none';
   }
 
   // Make functions globally accessible
