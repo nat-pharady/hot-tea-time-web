@@ -53,13 +53,13 @@
   .nav-cta:hover { background:var(--orange-d); transform:scale(1.03); }
 
   /* ── DROPDOWN NAV ── */
-  .nav-dropdown { position:relative; }
+  .nav-dropdown { position:relative; padding-bottom:8px; }
   .nav-dropdown > a { display:flex; align-items:center; gap:4px; cursor:pointer; }
   .dropdown-arrow { font-size:0.5rem; transition:transform 0.22s; }
   .nav-dropdown:hover .dropdown-arrow { transform:rotate(180deg); }
 
   .dropdown-menu {
-    position:absolute; top:100%; left:0;
+    position:absolute; top:calc(100% - 8px); left:0;
     background:rgba(50, 13, 30, 0.98);
     border:1px solid rgba(248, 220, 118, 0.2);
     border-radius:4px;
@@ -71,8 +71,9 @@
     transition:opacity 0.22s,transform 0.22s,visibility 0.22s;
     box-shadow:0 8px 24px rgba(0,0,0,0.4);
     z-index:1000;
+    pointer-events:none;
   }
-  .nav-dropdown:hover .dropdown-menu { opacity:1; visibility:visible; transform:translateY(0); }
+  .nav-dropdown:hover .dropdown-menu { opacity:1; visibility:visible; transform:translateY(0); pointer-events:auto; }
 
   .dropdown-menu li { list-style:none; }
   .dropdown-menu a {
