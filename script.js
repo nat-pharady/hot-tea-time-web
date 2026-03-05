@@ -371,4 +371,395 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   });
+
+  // AI Generator Link Handler
+  const aiGenLink = document.getElementById('ai-generator-link');
+  if (aiGenLink) {
+    aiGenLink.addEventListener('click', function(e) {
+      e.preventDefault();
+      openAIGeneratorModal();
+    });
+  }
 });
+
+// AI Generator Modal Functions
+function openAIGeneratorModal() {
+  const modal = document.getElementById('ai-generator-modal');
+  if (modal) {
+    console.log('✓ Modal found, displaying');
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  } else {
+    console.error('✗ AI Generator modal not found in DOM - check id="ai-generator-modal"');
+  }
+}
+
+function closeAIGeneratorModal() {
+  const modal = document.getElementById('ai-generator-modal');
+  if (modal) {
+    console.log('✓ Closing modal');
+    modal.style.display = 'none';
+    document.body.style.overflow = 'auto';
+  }
+}
+
+// Handle unlock button click - TODO: integrate with payment system
+function handleAIGeneratorUnlock() {
+  console.log('🔓 AI Generator unlock button clicked');
+  // TODO: Integrate subscription/payment flow here
+  // For now, this is a placeholder
+}
+
+// Close modal when clicking overlay
+document.addEventListener('DOMContentLoaded', function() {
+  const aiGenModal = document.getElementById('ai-generator-modal');
+  if (aiGenModal) {
+    aiGenModal.addEventListener('click', function(e) {
+      if (e.target === this) {
+        closeAIGeneratorModal();
+      }
+    });
+  }
+});
+
+// ============================================
+// MY LIBRARY FEATURE FUNCTIONS
+// ============================================
+
+// Save story to library
+function addToLibrary() {
+  const currentStory = getCurrentStoryData();
+  if (!currentStory || !currentStory.id) {
+    alert('Could not add story. Please try again.');
+    return;
+  }
+
+  const savedStories = getSavedStories();
+
+  if (savedStories[currentStory.id]) {
+    alert('Story already in your library!');
+    return;
+  }
+
+  savedStories[currentStory.id] = {
+    ...currentStory,
+    dateAdded: Date.now()
+  };
+
+  localStorage.setItem('savedStories', JSON.stringify(savedStories));
+  alert('✓ Added to library!');
+}
+
+// Get currently displayed story data from reading pane
+function getCurrentStoryData() {
+  const titleEl = document.getElementById('story-title');
+  const authorEl = document.getElementById('story-author');
+  const readsEl = document.getElementById('story-reads');
+  const chaptersEl = document.getElementById('story-chapters');
+  const contentEl = document.getElementById('story-content');
+
+  if (!titleEl || !authorEl) return null;
+
+  const title = titleEl.textContent;
+  const author = authorEl.textContent;
+  const reads = readsEl.textContent;
+  const chapters = chaptersEl.textContent;
+  const content = contentEl.innerHTML;
+
+  // Find story ID from stories object
+  const storyId = Object.keys(stories).find(id =>
+    stories[id].title === title
+  );
+
+  return {
+    id: storyId,
+    title,
+    author,
+    reads,
+    chapters,
+    content,
+    excerpt: getExcerpt(content),
+    tags: getStoryTags(storyId),
+    thumbnail: getStoryThumbnail(storyId),
+    dateAdded: Date.now()
+  };
+}
+
+// Get saved stories from localStorage
+function getSavedStories() {
+  return JSON.parse(localStorage.getItem('savedStories') || '{}');
+}
+
+// Remove story from library
+function removeFromLibrary(storyId) {
+  const savedStories = getSavedStories();
+  delete savedStories[storyId];
+  localStorage.setItem('savedStories', JSON.stringify(savedStories));
+  displaySavedStories();
+}
+
+// Display saved stories on my-library.html
+function displaySavedStories() {
+  const savedStories = getSavedStories();
+  const grid = document.getElementById('saved-stories-grid');
+  const emptyState = document.getElementById('empty-state');
+
+  if (!grid || !emptyState) return;
+
+  if (Object.keys(savedStories).length === 0) {
+    grid.style.display = 'none';
+    emptyState.style.display = 'block';
+    return;
+  }
+
+  emptyState.style.display = 'none';
+  grid.style.display = 'grid';
+  grid.innerHTML = '';
+
+  const sortedStories = sortStories(savedStories);
+
+  sortedStories.forEach(story => {
+    const card = createStoryCard(story, true);
+    grid.appendChild(card);
+  });
+}
+
+// Sort stories based on selected option
+function sortStories(stories) {
+  const sortBy = document.getElementById('sort-by')?.value || 'date-desc';
+  const storiesArray = Object.values(stories);
+
+  switch(sortBy) {
+    case 'date-desc':
+      return storiesArray.sort((a, b) => b.dateAdded - a.dateAdded);
+    case 'date-asc':
+      return storiesArray.sort((a, b) => a.dateAdded - b.dateAdded);
+    case 'title-asc':
+      return storiesArray.sort((a, b) => a.title.localeCompare(b.title));
+    case 'title-desc':
+      return storiesArray.sort((a, b) => b.title.localeCompare(a.title));
+    default:
+      return storiesArray;
+  }
+}
+
+// Create story card HTML
+function createStoryCard(story, showRemoveBtn = false) {
+  const card = document.createElement('div');
+  card.className = 'story-card library-card';
+  card.onclick = () => openStoryFromLibrary(story.id);
+
+  const timeAgo = getTimeAgo(story.dateAdded);
+
+  card.innerHTML = `
+    <div class="story-thumbnail">${story.thumbnail}</div>
+    <div class="story-badge">Saved</div>
+    ${showRemoveBtn ? `<button class="remove-btn" onclick="event.stopPropagation(); removeFromLibrary('${story.id}')">×</button>` : ''}
+    <div class="story-tags">
+      ${story.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+    </div>
+    <h3 class="story-title">${story.title}</h3>
+    <p class="story-excerpt">${story.excerpt}</p>
+    <div class="story-meta">
+      <span>${story.author}</span>
+      <span>${story.reads}</span>
+      <span class="date-added">Added ${timeAgo}</span>
+    </div>
+  `;
+
+  return card;
+}
+
+// Open story from library in reading pane
+function openStoryFromLibrary(storyId) {
+  const savedStories = getSavedStories();
+  const story = savedStories[storyId];
+
+  if (!story) return;
+
+  // Populate reading pane with story data
+  document.getElementById('story-title').textContent = story.title;
+  document.getElementById('story-author').textContent = story.author;
+  document.getElementById('story-reads').textContent = story.reads;
+  document.getElementById('story-chapters').textContent = story.chapters;
+  document.getElementById('story-content').innerHTML = story.content;
+
+  // Show reading pane
+  const readingPane = document.getElementById('reading-pane');
+  if (readingPane) {
+    readingPane.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  }
+}
+
+// Helper: Get time ago string
+function getTimeAgo(timestamp) {
+  const seconds = Math.floor((Date.now() - timestamp) / 1000);
+  const intervals = {
+    year: 31536000,
+    month: 2592000,
+    week: 604800,
+    day: 86400,
+    hour: 3600,
+    minute: 60
+  };
+
+  for (const [unit, secondsInUnit] of Object.entries(intervals)) {
+    const interval = Math.floor(seconds / secondsInUnit);
+    if (interval >= 1) {
+      return `${interval} ${unit}${interval !== 1 ? 's' : ''} ago`;
+    }
+  }
+  return 'just now';
+}
+
+// Helper: Extract excerpt from content
+function getExcerpt(content) {
+  const text = content.replace(/<[^>]*>/g, '');
+  return text.substring(0, 120) + '...';
+}
+
+// Helper: Get tags for story
+function getStoryTags(storyId) {
+  if (storyId === 'midnight-confessions') return ['Romance', 'Sweet'];
+  if (storyId === 'garden-of-secrets') return ['Mystery', 'Slow Burn'];
+  return [];
+}
+
+// Helper: Get thumbnail for story
+function getStoryThumbnail(storyId) {
+  if (storyId === 'midnight-confessions') return '☕';
+  if (storyId === 'garden-of-secrets') return '🌹';
+  return '📖';
+}
+
+// Initialize My Library page on load
+if (window.location.pathname.includes('my-library.html')) {
+  document.addEventListener('DOMContentLoaded', function() {
+    displaySavedStories();
+
+    const sortBy = document.getElementById('sort-by');
+    if (sortBy) {
+      sortBy.addEventListener('change', displaySavedStories);
+    }
+  });
+}
+
+// ──────────────────────────────────
+// BLOG POST DATA & FUNCTIONS
+// ──────────────────────────────────
+
+// Blog posts database
+const blogPosts = {
+  'founders-journey': {
+    id: 'founders-journey',
+    category: 'Founder Stories',
+    title: 'Welcome to Hot Tea Time: A Founder\'s Journey',
+    author: 'Hot Tea Time Team',
+    readTime: '5 min read',
+    excerpt: 'The story of how Hot Tea Time came to be, from a simple idea to a thriving community of readers and writers who celebrate the power of storytelling and intimate connection.',
+    content: `<p>It all started with a simple question: <em>What if there was a place where readers and writers could celebrate stories without judgment?</em></p>
+      <p>Hot Tea Time was born from a passion for storytelling—the kind of stories that make your heart race, that explore the complexity of human connection, and that celebrate the power of intimate moments. We wanted to create a space where people could read, write, and connect over the narratives that move them.</p>
+      <p>Our founders believed that everyone deserves a platform where their stories matter. Whether you're a voracious reader looking for your next obsession or a writer wanting to share your craft with an appreciative community, Hot Tea Time is here for you.</p>
+      <p>Today, we're honored to serve thousands of members worldwide. But this journey is just beginning. We're committed to growing our community responsibly, listening to our members, and building features that enhance your storytelling experience.</p>
+      <p>Thank you for being part of the Hot Tea Time family. Together, we're creating something special.</p>`
+  },
+  'meet-the-women': {
+    id: 'meet-the-women',
+    category: 'Team Spotlight',
+    title: 'Meet the Women Behind the Stories',
+    author: 'Hot Tea Time Team',
+    readTime: '4 min read',
+    excerpt: 'Get to know the passionate women who built this community and their mission to create a safe space for storytelling.',
+    content: `<p>Behind every great platform are amazing people. The women who built Hot Tea Time come from diverse backgrounds—publishing, tech, creative writing, and beyond—but we all share one thing: a deep love for storytelling.</p>
+      <p><strong>Our Mission</strong> is to create a judgment-free zone where readers and writers can explore their passions without shame. We believe that good stories matter, and that everyone deserves to have their voice heard.</p>
+      <p>From our editorial team to our developers, every person at Hot Tea Time is committed to making this platform the best it can be. We listen to our community, we iterate based on your feedback, and we constantly strive to improve.</p>
+      <p>We're building this for you. And we're so grateful to be on this journey together.</p>`
+  },
+  'reader-to-writer': {
+    id: 'reader-to-writer',
+    category: 'Community Spotlight',
+    title: 'From Reader to Writer: Sarah\'s Story',
+    author: 'Sarah Mitchell',
+    readTime: '6 min read',
+    excerpt: 'How one devoted reader found her voice and became an author within the Hot Tea Time community.',
+    content: `<p>I never thought of myself as a writer. I was a reader—always had been. I lived through books, especially those intimate stories that explored passion and connection.</p>
+      <p>But somewhere along the way, I started imagining my own stories. What if this character made a different choice? What if that scene unfolded differently? The ideas wouldn't leave me alone.</p>
+      <p>That's when I discovered Hot Tea Time. And everything changed.</p>
+      <p>The community here is unlike anything I've experienced. When I posted my first story—terrified, honestly—the response was overwhelming. Not because everyone loved it, but because people <em>cared</em>. They engaged with my work respectfully. They offered constructive feedback. They cheered me on.</p>
+      <p>Now, six months later, I have readers who ask when my next chapter is coming out. I've made friends who are also writers. I'm working on my first full-length novel.</p>
+      <p>Hot Tea Time didn't just give me a platform. It gave me permission to be a writer. And for that, I'm forever grateful.</p>`
+  },
+  'safe-space': {
+    id: 'safe-space',
+    category: 'Founder Stories',
+    title: 'Building a Safe Space for Storytelling',
+    author: 'Hot Tea Time Team',
+    readTime: '5 min read',
+    excerpt: 'Behind the scenes look at how we\'ve created a judgment-free zone where readers and writers can explore passion, intimacy, and creativity together.',
+    content: `<p>Creating a "safe space" isn't just a buzzword for us—it's foundational to everything we do.</p>
+      <p>When we designed Hot Tea Time, we asked ourselves: What makes people feel comfortable sharing their authentic stories? What protections do writers need? How do we ensure readers can explore content without judgment?</p>
+      <p>The answer came down to community standards, transparent moderation, and a genuine commitment to diversity and inclusion.</p>
+      <p><strong>Our Community Guidelines</strong> are designed to protect everyone. We don't allow harassment, discrimination, or abuse of any kind. But we also protect creative freedom—because stories are meant to explore difficult themes, raw emotions, and complex relationships.</p>
+      <p><strong>Stealth Mode</strong> is one way we protect privacy. Our moderation team is carefully trained to understand context. And we're constantly listening to feedback about how we can do better.</p>
+      <p>Building a safe space is ongoing work. But we're committed to it, every single day.</p>`
+  },
+  'author-spotlight': {
+    id: 'author-spotlight',
+    category: 'Author Feature',
+    title: 'Author Spotlight: Alexandra Blake',
+    author: 'Hot Tea Time Team',
+    readTime: '7 min read',
+    excerpt: 'Interview with one of our most beloved authors about her writing process, inspiration, and building a loyal readership.',
+    content: `<p><em>Alexandra Blake has been writing on Hot Tea Time for over a year and has amassed a devoted following. We sat down to talk about her journey, her process, and what drives her creative vision.</em></p>
+      <p><strong>How did you start writing on Hot Tea Time?</strong></p>
+      <p>"I'd been writing in private for years, sharing stories with close friends. But I never thought about a wider audience. Then a friend suggested Hot Tea Time, and I was hooked immediately by the community vibe."</p>
+      <p><strong>Your readers are incredibly engaged. What's your secret?</strong></p>
+      <p>"I think it's authenticity. I write stories that matter to me—characters I've fallen in love with, relationships I've explored deeply. My readers can feel that investment. They know I'm not just churning out content; I'm creating worlds I genuinely care about."</p>
+      <p><strong>What's been the most rewarding part?</strong></p>
+      <p>"The connections. Readers who tell me my stories helped them through hard times, writers who say I inspired them to start their own work. That's everything."</p>`
+  },
+  'future-vision': {
+    id: 'future-vision',
+    category: 'Founder Stories',
+    title: 'Our Vision for the Future',
+    author: 'Hot Tea Time Team',
+    readTime: '4 min read',
+    excerpt: 'What\'s next for Hot Tea Time? A candid conversation about upcoming features, community growth, and our commitment to creators and readers alike.',
+    content: `<p>We're so grateful for where we are today. But we're just getting started.</p>
+      <p><strong>What's Coming:</strong></p>
+      <ul><li><strong>Enhanced Creator Tools</strong> – Better analytics, more customization options, and tools to help writers grow their audiences</li>
+      <li><strong>Community Features</strong> – Group chats, book clubs, author interviews, and exclusive events for our members</li>
+      <li><strong>Mobile App</strong> – Read and write on the go with a fully-featured mobile experience</li>
+      <li><strong>Creator Support Program</strong> – Ways for successful authors to earn from their work</li></ul>
+      <p><strong>Our Commitment:</strong></p>
+      <p>We promise to always prioritize our community. We'll keep this a safe, welcoming space. We'll listen to your feedback and iterate accordingly. And we'll never lose sight of why we started this in the first place: to celebrate the power of stories.</p>
+      <p>The future of Hot Tea Time is bright. And it's being written by all of you.</p>`
+  }
+};
+
+// Open blog post in reading pane
+function openBlogPost(postId) {
+  const post = blogPosts[postId];
+  if (!post) return;
+
+  // Populate reading pane with blog content
+  document.getElementById('story-title').textContent = post.title;
+  document.getElementById('story-author').textContent = `By ${post.author}`;
+  document.getElementById('story-reads').textContent = post.readTime;
+  document.getElementById('story-chapters').textContent = post.category;
+  document.getElementById('story-content').innerHTML = post.content;
+
+  // Show reading pane
+  const readingPane = document.getElementById('reading-pane');
+  if (readingPane) {
+    readingPane.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  }
+}
+
+// Handle unlock for locked features
+function handleUnlockFeature(featureName) {
+  // TODO: Integrate with payment/subscription system
+  alert(`Unlock ${featureName} - Payment integration coming soon!`);
+}

@@ -12,62 +12,180 @@
 <body class="damask">
 
 <!-- NAV -->
-<nav class="hero-nav" style="position:sticky;top:0;z-index:100;">
-  <a href="index.html" class="hero-nav-title" style="text-decoration:none;color:var(--green);">HOT TEA TIME</a>
+<nav class="hero-nav">
+  <a href="home.html" class="hero-nav-title" style="text-decoration:none;color:var(--green);">HOT TEA TIME</a>
   <ul class="nav-links">
-    <li class="public-nav"><a href="how-it-works.html">How It Works</a></li>
-    <li class="public-nav"><a href="features.html">Features</a></li>
-    <li id="stories-nav"><a href="stories.html">Stories</a></li>
-    <li id="marketplace-nav"><a href="marketplace.html">Marketplace</a></li>
-    <li id="brew-nav"><a href="brew.html">Brew Your Own</a></li>
-    <li class="public-nav"><a href="pricing.html">Pricing</a></li>
-
-    <!-- Logged-in Navigation -->
-    <li class="nav-dropdown logged-in-nav">
+    <li class="nav-dropdown">
       <a href="#"><span>Discover</span> <span class="dropdown-arrow">▾</span></a>
       <ul class="dropdown-menu">
-        <li><a href="trending-stories.html">Trending Stories</a></li>
-        <li><a href="character-library.html">The Character Library</a></li>
+        <li><a href="#trending">Trending Stories</a></li>
+        <li><a href="#character-library">The Character Library</a></li>
       </ul>
     </li>
-    <li class="logged-in-nav ai-generator-nav nav-locked">
-      <a href="#"><span>AI Generator</span> <span>🔒</span></a>
-    </li>
-    <li class="nav-dropdown logged-in-nav">
+    <li><a href="#" id="ai-generator-link" style="display: flex; align-items: center; gap: 4px;">AI Generator <span>🔒</span></a></li>
+    <li class="nav-dropdown">
       <a href="#"><span>Social</span> <span class="dropdown-arrow">▾</span></a>
       <ul class="dropdown-menu">
         <li><a href="smut-in-the-city.html">Smut in the City</a></li>
-        <li><a href="the-tea-room.html">The Tea Room</a></li>
-        <li><a href="private-parlor.html">Private Parlor</a></li>
+        <li><a href="tea-room.html">The Tea Room 🔒</a></li>
+        <li><a href="private-parlor.html">Private Parlor 🔒</a></li>
       </ul>
     </li>
-    <li class="nav-dropdown logged-in-nav">
+    <li class="nav-dropdown">
       <a href="#"><span>Shop</span> <span class="dropdown-arrow">▾</span></a>
       <ul class="dropdown-menu">
-        <li><a href="asset-marketplace.html">The Asset Marketplace</a></li>
-        <li><a href="the-boutique.html">The Boutique</a></li>
-        <li><a href="the-bindery.html">The Bindery</a></li>
+        <li><a href="#asset-marketplace">The Asset Marketplace</a></li>
+        <li><a href="#boutique">The Boutique</a></li>
+        <li><a href="#bindery">The Bindery</a></li>
       </ul>
     </li>
-    <li class="logged-in-nav"><a href="my-library.html">My Library</a></li>
+    <li><a href="my-library.html">My Library</a></li>
   </ul>
-  <button class="stealth-btn logged-in-nav">
-    <span>👁️</span>
-    <span>Stealth Mode</span>
-  </button>
-  <a href="pricing.html" class="nav-cta">Start Sipping Free</a>
+  <div style="display: flex; align-items: center; gap: 16px;">
+    <button class="stealth-btn">
+      <span>👁️</span>
+      <span>Stealth Mode</span>
+    </button>
+    <a href="index.html" class="nav-cta" style="margin: 0;">Logout</a>
+  </div>
 </nav>
 
-<!-- SMUT IN THE CITY -->
-<section id="smut-in-the-city" style="background:var(--cream);">
+<!-- BLOG -->
+<section id="blog" style="background:var(--cream);">
   <div class="section-inner">
     <div class="reveal">
-      <div class="section-label">The Social Forum</div>
-      <h2 class="section-title">Smut in <em>the City</em></h2>
-      <p class="section-body">Join the conversation in our vibrant community forum. Share recommendations, discuss plot twists, and connect with fellow readers who appreciate a good story with a little extra spice.</p>
+      <div class="section-label">Community Voices</div>
+      <h2 class="section-title">Smut in the <em>City</em></h2>
+    </div>
+
+    <!-- Featured Blog Post -->
+    <div class="blog-featured-card" onclick="openBlogPost('founders-journey')">
+      <div class="blog-featured-image">☕</div>
+      <div class="blog-featured-content">
+        <div class="blog-category">Founder Stories</div>
+        <h1 class="blog-featured-title">Welcome to Hot Tea Time: A Founder's Journey</h1>
+        <p class="blog-featured-excerpt">The story of how Hot Tea Time came to be, from a simple idea to a thriving community of readers and writers who celebrate the power of storytelling and intimate connection.</p>
+        <div class="blog-meta">
+          <span class="author">Hot Tea Time Team</span>
+          <span>5 min read</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Blog Grid -->
+    <div class="blog-grid">
+      <div class="blog-card" onclick="openBlogPost('meet-the-women')">
+        <div class="blog-card-image">👥</div>
+        <div class="blog-card-content">
+          <div class="blog-category">Team Spotlight</div>
+          <h3 class="blog-card-title">Meet the Women Behind the Stories</h3>
+          <p class="blog-card-excerpt">Get to know the passionate women who built this community and their mission to create a safe space for storytelling.</p>
+          <div class="blog-meta">
+            <span>Hot Tea Time Team</span>
+            <span>4 min read</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="blog-card" onclick="openBlogPost('reader-to-writer')">
+        <div class="blog-card-image">✨</div>
+        <div class="blog-card-content">
+          <div class="blog-category">Community Spotlight</div>
+          <h3 class="blog-card-title">From Reader to Writer: Sarah's Story</h3>
+          <p class="blog-card-excerpt">How one devoted reader found her voice and became an author within the Hot Tea Time community. An inspiring journey of creativity and connection.</p>
+          <div class="blog-meta">
+            <span>Sarah Mitchell</span>
+            <span>6 min read</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="blog-card" onclick="openBlogPost('safe-space')">
+        <div class="blog-card-image">🏡</div>
+        <div class="blog-card-content">
+          <div class="blog-category">Founder Stories</div>
+          <h3 class="blog-card-title">Building a Safe Space for Storytelling</h3>
+          <p class="blog-card-excerpt">Behind the scenes look at how we've created a judgment-free zone where readers and writers can explore passion, intimacy, and creativity together.</p>
+          <div class="blog-meta">
+            <span>Hot Tea Time Team</span>
+            <span>5 min read</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="blog-card" onclick="openBlogPost('author-spotlight')">
+        <div class="blog-card-image">🎭</div>
+        <div class="blog-card-content">
+          <div class="blog-category">Author Feature</div>
+          <h3 class="blog-card-title">Author Spotlight: Alexandra Blake</h3>
+          <p class="blog-card-excerpt">Interview with one of our most beloved authors about her writing process, inspiration, and what it means to build a loyal readership.</p>
+          <div class="blog-meta">
+            <span>Hot Tea Time Team</span>
+            <span>7 min read</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="blog-card" onclick="openBlogPost('future-vision')">
+        <div class="blog-card-image">🌹</div>
+        <div class="blog-card-content">
+          <div class="blog-category">Founder Stories</div>
+          <h3 class="blog-card-title">Our Vision for the Future</h3>
+          <p class="blog-card-excerpt">What's next for Hot Tea Time? A candid conversation about upcoming features, community growth, and our commitment to creators and readers alike.</p>
+          <div class="blog-meta">
+            <span>Hot Tea Time Team</span>
+            <span>4 min read</span>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
+
+<!-- READING PANE MODAL -->
+<div id="reading-pane" style="display: none;">
+  <div class="reading-pane-overlay"></div>
+  <div class="reading-pane-content">
+    <div class="reading-pane-header">
+      <div>
+        <h1 id="story-title" class="reading-pane-title">Blog Post Title</h1>
+        <div class="reading-pane-meta">
+          <span id="story-author" class="reading-pane-author">By Author Name</span>
+          <span class="reading-pane-divider">•</span>
+          <span id="story-reads" class="reading-pane-reads">0 min read</span>
+          <span class="reading-pane-divider">•</span>
+          <span id="story-chapters" class="reading-pane-chapters">Category</span>
+        </div>
+      </div>
+      <button class="reading-pane-close" onclick="closeReadingPane()">&times;</button>
+    </div>
+    <div class="reading-pane-body" id="story-content">
+      <p>Blog post content will load here...</p>
+    </div>
+    <div class="reading-pane-footer">
+      <button class="reading-pane-btn" onclick="closeReadingPane()">Close</button>
+    </div>
+  </div>
+</div>
+
+<!-- AI GENERATOR MODAL -->
+<div id="ai-generator-modal" class="ai-generator-modal" style="display: none;">
+  <div class="ai-gen-overlay"></div>
+  <div class="ai-gen-content-minimal">
+    <button class="ai-gen-close" onclick="closeAIGeneratorModal()">&times;</button>
+    <div class="ai-gen-teaser">
+      <div class="ai-gen-icon">🔒</div>
+      <h1 class="ai-gen-title">Craft Your Fantasy</h1>
+      <p class="ai-gen-description">
+        Shape characters, weave tension, ignite passion.<br>
+        Your story. Your rules. Your fantasy.
+      </p>
+      <button class="ai-gen-unlock-btn" onclick="handleAIGeneratorUnlock()">
+        Unlock the Inner Circle — $4.99/mo
+      </button>
+    </div>
+  </div>
+</div>
 
 <script src="https://unpkg.com/lucide@latest"></script>
 <script>
