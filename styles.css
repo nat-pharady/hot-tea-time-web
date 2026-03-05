@@ -328,3 +328,264 @@
     .brew-inner{padding:64px 24px;}
     #brew{background-position:right center;}
   }
+
+  /* ── TASTE TEST MODAL ── */
+  .modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(50, 13, 30, 0.95);
+    backdrop-filter: blur(8px);
+    z-index: 10000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+
+  .modal-overlay.active {
+    display: flex;
+  }
+
+  .modal-container {
+    background: #681e2a;
+    border-radius: 24px;
+    max-width: 640px;
+    width: 100%;
+    padding: 48px;
+    position: relative;
+    box-shadow: 0 24px 64px rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(247, 244, 234, 0.1);
+  }
+
+  .modal-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: transparent;
+    border: none;
+    color: var(--green);
+    font-size: 2rem;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background 0.2s, transform 0.2s;
+  }
+
+  .modal-close:hover {
+    background: rgba(247, 244, 234, 0.1);
+    transform: rotate(90deg);
+  }
+
+  .modal-eyebrow {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: 16px;
+    text-align: center;
+  }
+
+  .modal-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 2.8rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--green);
+    text-align: center;
+    margin-bottom: 12px;
+    line-height: 1.1;
+  }
+
+  .modal-title em {
+    font-style: normal;
+    color: var(--orange);
+  }
+
+  .modal-subtitle {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1rem;
+    color: rgba(247, 244, 234, 0.8);
+    text-align: center;
+    margin-bottom: 40px;
+    line-height: 1.6;
+  }
+
+  .modal-body {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .modal-input {
+    background: rgba(247, 244, 234, 0.08);
+    border: 1.5px solid rgba(247, 244, 234, 0.2);
+    border-radius: 12px;
+    padding: 18px 24px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1rem;
+    color: var(--green);
+    width: 100%;
+    transition: border-color 0.2s, background 0.2s;
+  }
+
+  .modal-input::placeholder {
+    color: rgba(247, 244, 234, 0.4);
+  }
+
+  .modal-input:focus {
+    outline: none;
+    border-color: var(--orange);
+    background: rgba(247, 244, 234, 0.12);
+  }
+
+  .modal-btn {
+    background: var(--orange);
+    color: #320d1e;
+    padding: 18px 40px;
+    border-radius: 100px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    transition: background 0.25s, transform 0.2s;
+    align-self: center;
+  }
+
+  .modal-btn:hover {
+    background: var(--orange-d);
+    transform: translateY(-2px);
+  }
+
+  /* Trope Cards */
+  .trope-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+
+  .trope-card {
+    background: rgba(247, 244, 234, 0.05);
+    border: 2px solid rgba(247, 244, 234, 0.15);
+    border-radius: 16px;
+    padding: 32px 20px;
+    cursor: pointer;
+    transition: all 0.25s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .trope-card:hover {
+    background: rgba(247, 244, 234, 0.1);
+    border-color: var(--orange);
+    transform: translateY(-4px);
+  }
+
+  .trope-icon {
+    font-size: 3rem;
+    line-height: 1;
+  }
+
+  .trope-name {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--green);
+    text-align: center;
+    letter-spacing: 0.05em;
+  }
+
+  /* Heat Level Cards */
+  .heat-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+
+  .heat-card {
+    background: rgba(247, 244, 234, 0.05);
+    border: 2px solid rgba(247, 244, 234, 0.15);
+    border-radius: 16px;
+    padding: 32px 20px;
+    cursor: pointer;
+    transition: all 0.25s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .heat-card:hover {
+    background: rgba(247, 244, 234, 0.1);
+    border-color: var(--orange);
+    transform: translateY(-4px);
+  }
+
+  .heat-icon {
+    font-size: 3rem;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+
+  .heat-name {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--green);
+    text-align: center;
+    letter-spacing: 0.05em;
+  }
+
+  .heat-desc {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.75rem;
+    color: rgba(247, 244, 234, 0.6);
+    text-align: center;
+    font-style: italic;
+  }
+
+  /* Profile Icon */
+  .profile-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--orange);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #320d1e;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+
+  .profile-icon:hover {
+    transform: scale(1.1);
+  }
+
+  /* Mobile Responsive */
+  @media (max-width: 768px) {
+    .modal-container {
+      padding: 32px 24px;
+    }
+
+    .modal-title {
+      font-size: 2rem;
+    }
+
+    .trope-grid,
+    .heat-grid {
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+  }
