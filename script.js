@@ -120,11 +120,8 @@
     // Close modal
     closeModal();
 
-    // Update nav button to profile icon
-    updateNavToProfile();
-
-    // TODO: Load third screen (to be implemented later)
-    console.log('Onboarding complete!', userPreferences);
+    // Redirect to home page
+    window.location.href = 'home.html';
   }
 
   function updateNavToProfile() {
@@ -139,13 +136,19 @@
   }
 
   function showLoggedInNav() {
-    const storiesNav = document.getElementById('stories-nav');
+    // Hide public nav items
+    const publicNavItems = document.querySelectorAll('.public-nav');
+    publicNavItems.forEach(item => item.style.display = 'none');
+
+    // Show old logged-in nav items (for backward compatibility)
     const marketplaceNav = document.getElementById('marketplace-nav');
     const brewNav = document.getElementById('brew-nav');
-
-    if (storiesNav) storiesNav.style.display = 'block';
     if (marketplaceNav) marketplaceNav.style.display = 'block';
     if (brewNav) brewNav.style.display = 'block';
+
+    // Show new logged-in nav items
+    const loggedInNavItems = document.querySelectorAll('.logged-in-nav');
+    loggedInNavItems.forEach(item => item.style.display = 'block');
   }
 
   // Logo click handler - logout/reset to public view
@@ -162,13 +165,44 @@
   }
 
   function hideLoggedInNav() {
-    const storiesNav = document.getElementById('stories-nav');
+    // Show public nav items
+    const publicNavItems = document.querySelectorAll('.public-nav');
+    publicNavItems.forEach(item => item.style.display = 'block');
+
+    // Hide old logged-in nav items
     const marketplaceNav = document.getElementById('marketplace-nav');
     const brewNav = document.getElementById('brew-nav');
-
-    if (storiesNav) storiesNav.style.display = 'none';
     if (marketplaceNav) marketplaceNav.style.display = 'none';
     if (brewNav) brewNav.style.display = 'none';
+
+    // Hide new logged-in nav items
+    const loggedInNavItems = document.querySelectorAll('.logged-in-nav');
+    loggedInNavItems.forEach(item => item.style.display = 'none');
+  }
+
+  // ── STEALTH MODE ──
+  let stealthMode = false;
+  const stealthBtn = document.querySelector('.stealth-btn');
+  if (stealthBtn) {
+    stealthBtn.addEventListener('click', () => {
+      stealthMode = !stealthMode;
+      stealthBtn.classList.toggle('active');
+      document.body.classList.toggle('stealth-mode');
+      if (stealthMode) {
+        console.log('Stealth mode activated');
+      } else {
+        console.log('Stealth mode deactivated');
+      }
+    });
+  }
+
+  // ── AI GENERATOR LOCKED ──
+  const aiGeneratorBtn = document.querySelector('.ai-generator-nav');
+  if (aiGeneratorBtn) {
+    aiGeneratorBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      alert('🔒 AI Generator is a premium feature. Upgrade to access unlimited AI-powered content generation!');
+    });
   }
 
   // Make functions globally accessible
