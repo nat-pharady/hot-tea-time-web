@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home — Hot Tea Time</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@800&family=Josefin+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="damask">
+
+<!-- NAV -->
+<nav class="hero-nav">
+  <a href="home.html" class="hero-nav-title" style="text-decoration:none;color:var(--green);">HOT TEA TIME</a>
+  <ul class="nav-links">
+    <!-- Discover Dropdown -->
+    <li class="nav-dropdown">
+      <a href="#"><span>Discover</span> <span class="dropdown-arrow">▾</span></a>
+      <ul class="dropdown-menu">
+        <li><a href="#trending">Trending Stories</a></li>
+        <li><a href="#character-library">The Character Library</a></li>
+      </ul>
+    </li>
+
+    <!-- AI Generator (Direct Button) -->
+    <li><a href="#" style="display: flex; align-items: center; gap: 4px;">AI Generator <span>🔒</span></a></li>
+
+    <!-- Social Dropdown -->
+    <li class="nav-dropdown">
+      <a href="#"><span>Social</span> <span class="dropdown-arrow">▾</span></a>
+      <ul class="dropdown-menu">
+        <li><a href="#smut-in-city">Smut in the City</a></li>
+        <li><a href="#tea-room">The Tea Room</a></li>
+        <li><a href="#private-parlor">Private Parlor</a></li>
+      </ul>
+    </li>
+
+    <!-- Shop Dropdown -->
+    <li class="nav-dropdown">
+      <a href="#"><span>Shop</span> <span class="dropdown-arrow">▾</span></a>
+      <ul class="dropdown-menu">
+        <li><a href="#asset-marketplace">The Asset Marketplace</a></li>
+        <li><a href="#boutique">The Boutique</a></li>
+        <li><a href="#bindery">The Bindery</a></li>
+      </ul>
+    </li>
+
+    <!-- My Library -->
+    <li><a href="#my-library">My Library</a></li>
+  </ul>
+
+  <!-- Right Side: Stealth Mode + Logout -->
+  <div style="display: flex; align-items: center; gap: 16px;">
+    <button class="stealth-btn" style="display: flex; align-items: center; gap: 6px; background: none; border: none; color: var(--text-primary); cursor: pointer; font-family: inherit; font-size: 14px;">
+      <span>👁️</span>
+      <span>Stealth Mode</span>
+    </button>
+    <a href="index.html" class="nav-cta" style="margin: 0;">Logout</a>
+  </div>
+</nav>
+
+<!-- MAIN CONTENT AREA (BLANK FOR NOW) -->
+<section id="main-content" style="min-height: 100vh; padding: 80px 40px; text-align: center;">
+  <div class="section-inner">
+    <h1 class="section-title" style="margin-bottom: 20px;">Welcome to Your Tea Library</h1>
+    <p style="color: var(--text-secondary); font-size: 18px; margin-bottom: 40px;">This section is coming soon. We'll build it out together!</p>
+  </div>
+</section>
+
+<script src="https://unpkg.com/lucide@latest"></script>
+<script src="script.js"></script>
+</body>
+</html>
