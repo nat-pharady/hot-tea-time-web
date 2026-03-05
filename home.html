@@ -61,11 +61,320 @@
   </div>
 </nav>
 
-<!-- MAIN CONTENT AREA (BLANK FOR NOW) -->
-<section id="main-content" style="min-height: 100vh; padding: 80px 40px; text-align: center;">
+<!-- MAIN CONTENT AREA -->
+<section id="main-content" style="padding: 60px 40px; background-color: var(--cream);">
   <div class="section-inner">
-    <h1 class="section-title" style="margin-bottom: 20px;">Welcome to Your Tea Library</h1>
-    <p style="color: var(--text-secondary); font-size: 18px; margin-bottom: 40px;">This section is coming soon. We'll build it out together!</p>
+    <!-- FREE WEEKLY STORIES (ROW 1) -->
+    <div style="margin-bottom: 80px;">
+      <h2 class="section-title" style="text-align: left; margin-bottom: 40px;">Free Weekly Stories</h2>
+      <div class="story-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+
+        <!-- Story Card 1 -->
+        <div class="story-card" style="background: var(--card-bg); border: 1px solid var(--dark-cherry); border-radius: 4px; overflow: hidden; cursor: pointer; transition: transform 0.32s cubic-bezier(.25,.46,.45,.94), box-shadow 0.32s; position: relative;">
+          <div style="background: linear-gradient(135deg, #8B1A2B, #681e2a); height: 280px; border-radius: 0; display: flex; align-items: center; justify-content: center; font-size: 64px;" class="story-thumb">📖</div>
+          <div class="story-lock" style="position: absolute; inset: 0; backdrop-filter: blur(5px); background: rgba(45, 15, 30, 0.15); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.28s;">
+            <span class="lock-badge" style="background: var(--orange); color: #fff; font-family: 'Josefin Sans', sans-serif; font-size: 0.58rem; letter-spacing: 0.12em; text-transform: uppercase; padding: 10px 20px; border-radius: 100px;">✨ Free Story</span>
+          </div>
+          <div class="story-meta" style="padding: 18px 22px 22px;">
+            <div class="story-tags" style="display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 10px;">
+              <span class="tag" style="font-family: 'Josefin Sans', sans-serif; font-size: 0.53rem; letter-spacing: 0.1em; text-transform: uppercase; color: #681e2a; background: var(--orange); padding: 4px 10px; border-radius: 100px; border: 1px solid var(--orange);">Romance</span>
+              <span class="tag" style="font-family: 'Josefin Sans', sans-serif; font-size: 0.53rem; letter-spacing: 0.1em; text-transform: uppercase; color: #681e2a; background: var(--orange); padding: 4px 10px; border-radius: 100px; border: 1px solid var(--orange);">Sweet</span>
+            </div>
+            <h3 class="story-title" style="font-family: 'Playfair Display', serif; font-weight: 800; font-size: 1.12rem; color: #2D0F1E; line-height: 1.28; margin-bottom: 8px;">Midnight Confessions</h3>
+            <p class="story-excerpt" style="font-family: 'Josefin Sans', sans-serif; font-size: 0.98rem; line-height: 1.85; color: #7A6872;">A chance encounter at a midnight café leads to unexpected conversations and even more unexpected chemistry...</p>
+            <div class="story-author" style="display: flex; align-items: center; gap: 10px; margin-top: 14px; padding-top: 14px; border-top: 1px solid rgba(45, 15, 30, 0.12);">
+              <div class="author-avatar" style="width: 30px; height: 30px; border-radius: 50%; background: linear-gradient(135deg, var(--orange), var(--orange-d)); display: flex; align-items: center; justify-content: center; font-size: 0.8rem; flex-shrink: 0;">☕</div>
+              <div style="display: flex; flex-direction: column; gap: 1px;">
+                <span class="author-name" style="font-family: 'Josefin Sans', sans-serif; font-size: 0.6rem; letter-spacing: 0.08em; text-transform: uppercase; color: #2D0F1E;">Sarah Mitchell</span>
+                <span class="author-reads" style="font-family: 'Josefin Sans', sans-serif; font-size: 0.55rem; color: #7A6872;">2.8k reads · 4 chapters</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Story Card 2 -->
+        <div class="story-card" style="background: var(--card-bg); border: 1px solid var(--dark-cherry); border-radius: 4px; overflow: hidden; cursor: pointer; transition: transform 0.32s cubic-bezier(.25,.46,.45,.94), box-shadow 0.32s; position: relative;">
+          <div style="background: linear-gradient(135deg, #5a1924, #681e2a); height: 280px; border-radius: 0; display: flex; align-items: center; justify-content: center; font-size: 64px;" class="story-thumb">🌹</div>
+          <div class="story-lock" style="position: absolute; inset: 0; backdrop-filter: blur(5px); background: rgba(45, 15, 30, 0.15); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.28s;">
+            <span class="lock-badge" style="background: var(--orange); color: #fff; font-family: 'Josefin Sans', sans-serif; font-size: 0.58rem; letter-spacing: 0.12em; text-transform: uppercase; padding: 10px 20px; border-radius: 100px;">✨ Free Story</span>
+          </div>
+          <div class="story-meta" style="padding: 18px 22px 22px;">
+            <div class="story-tags" style="display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 10px;">
+              <span class="tag" style="font-family: 'Josefin Sans', sans-serif; font-size: 0.53rem; letter-spacing: 0.1em; text-transform: uppercase; color: #681e2a; background: var(--orange); padding: 4px 10px; border-radius: 100px; border: 1px solid var(--orange);">Mystery</span>
+              <span class="tag" style="font-family: 'Josefin Sans', sans-serif; font-size: 0.53rem; letter-spacing: 0.1em; text-transform: uppercase; color: #681e2a; background: var(--orange); padding: 4px 10px; border-radius: 100px; border: 1px solid var(--orange);">Slow Burn</span>
+            </div>
+            <h3 class="story-title" style="font-family: 'Playfair Display', serif; font-weight: 800; font-size: 1.12rem; color: #2D0F1E; line-height: 1.28; margin-bottom: 8px;">Garden of Secrets</h3>
+            <p class="story-excerpt" style="font-family: 'Josefin Sans', sans-serif; font-size: 0.98rem; line-height: 1.85; color: #7A6872;">Hidden behind closed garden gates lies a world of passion, mystery, and the kind of love that blooms in shadow...</p>
+            <div class="story-author" style="display: flex; align-items: center; gap: 10px; margin-top: 14px; padding-top: 14px; border-top: 1px solid rgba(45, 15, 30, 0.12);">
+              <div class="author-avatar" style="width: 30px; height: 30px; border-radius: 50%; background: linear-gradient(135deg, var(--orange), var(--orange-d)); display: flex; align-items: center; justify-content: center; font-size: 0.8rem; flex-shrink: 0;">🌿</div>
+              <div style="display: flex; flex-direction: column; gap: 1px;">
+                <span class="author-name" style="font-family: 'Josefin Sans', sans-serif; font-size: 0.6rem; letter-spacing: 0.08em; text-transform: uppercase; color: #2D0F1E;">Emma Sterling</span>
+                <span class="author-reads" style="font-family: 'Josefin Sans', sans-serif; font-size: 0.55rem; color: #7A6872;">3.4k reads · 6 chapters</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- PREMIUM MARKETPLACE STORIES (ROW 2) -->
+    <div style="margin-top: 80px;">
+      <h2 class="section-title" style="text-align: left; margin-bottom: 40px;">Premium Marketplace Stories</h2>
+
+      <!-- Scrollable Carousel -->
+      <div class="premium-carousel" style="display: flex; gap: 24px; overflow-x: auto; padding-bottom: 20px; scroll-behavior: smooth;">
+
+        <!-- Story Card 1 -->
+        <div class="premium-story-card" style="flex: 0 0 280px; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 12px; padding: 16px; cursor: pointer; transition: transform 0.3s, box-shadow 0.3s; position: relative;">
+          <div style="position: absolute; top: 12px; right: 12px; background: var(--orange); color: #320d1e; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600;">🔒 Premium</div>
+          <div style="background: linear-gradient(135deg, #8B1A2B, #681e2a); height: 160px; border-radius: 8px; margin-bottom: 16px; display: flex; align-items: center; justify-content: center; font-size: 48px;">📚</div>
+          <div style="display: flex; gap: 6px; margin-bottom: 12px; flex-wrap: wrap;">
+            <span style="background: rgba(248, 220, 118, 0.2); color: var(--orange); padding: 4px 10px; border-radius: 16px; font-size: 12px;">Romance</span>
+            <span style="background: rgba(248, 220, 118, 0.2); color: var(--orange); padding: 4px 10px; border-radius: 16px; font-size: 12px;">Steamy</span>
+          </div>
+          <h3 style="font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; color: var(--green); margin-bottom: 8px;">The Arrangement</h3>
+          <p style="color: rgba(247, 244, 234, 0.7); font-size: 13px; line-height: 1.5; margin-bottom: 12px;">A forbidden arrangement leads to unexpected passion in the library after hours.</p>
+          <div style="display: flex; align-items: center; gap: 8px; border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 12px;">
+            <div style="font-size: 24px;">✨</div>
+            <div style="flex: 1;">
+              <div style="color: var(--green); font-size: 12px; font-weight: 600;">Alexandra Blake</div>
+              <div style="color: rgba(247, 244, 234, 0.6); font-size: 11px;">3.2k reads</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Story Card 2 -->
+        <div class="premium-story-card" style="flex: 0 0 280px; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 12px; padding: 16px; cursor: pointer; transition: transform 0.3s, box-shadow 0.3s; position: relative;">
+          <div style="position: absolute; top: 12px; right: 12px; background: var(--orange); color: #320d1e; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600;">🔒 Premium</div>
+          <div style="background: linear-gradient(135deg, #5a1924, #681e2a); height: 160px; border-radius: 8px; margin-bottom: 16px; display: flex; align-items: center; justify-content: center; font-size: 48px;">🌃</div>
+          <div style="display: flex; gap: 6px; margin-bottom: 12px; flex-wrap: wrap;">
+            <span style="background: rgba(248, 220, 118, 0.2); color: var(--orange); padding: 4px 10px; border-radius: 16px; font-size: 12px;">Tension</span>
+            <span style="background: rgba(248, 220, 118, 0.2); color: var(--orange); padding: 4px 10px; border-radius: 16px; font-size: 12px;">Dark</span>
+          </div>
+          <h3 style="font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; color: var(--green); margin-bottom: 8px;">Midnight Sins</h3>
+          <p style="color: rgba(247, 244, 234, 0.7); font-size: 13px; line-height: 1.5; margin-bottom: 12px;">When the clock strikes midnight, secrets spill and control unravels between them.</p>
+          <div style="display: flex; align-items: center; gap: 8px; border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 12px;">
+            <div style="font-size: 24px;">🌙</div>
+            <div style="flex: 1;">
+              <div style="color: var(--green); font-size: 12px; font-weight: 600;">Scarlett Kess</div>
+              <div style="color: rgba(247, 244, 234, 0.6); font-size: 11px;">5.8k reads</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Story Card 3 -->
+        <div class="premium-story-card" style="flex: 0 0 280px; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 12px; padding: 16px; cursor: pointer; transition: transform 0.3s, box-shadow 0.3s; position: relative;">
+          <div style="position: absolute; top: 12px; right: 12px; background: var(--orange); color: #320d1e; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600;">🔒 Premium</div>
+          <div style="background: linear-gradient(135deg, #6B2140, #681e2a); height: 160px; border-radius: 8px; margin-bottom: 16px; display: flex; align-items: center; justify-content: center; font-size: 48px;">💎</div>
+          <div style="display: flex; gap: 6px; margin-bottom: 12px; flex-wrap: wrap;">
+            <span style="background: rgba(248, 220, 118, 0.2); color: var(--orange); padding: 4px 10px; border-radius: 16px; font-size: 12px;">Luxury</span>
+            <span style="background: rgba(248, 220, 118, 0.2); color: var(--orange); padding: 4px 10px; border-radius: 16px; font-size: 12px;">Desire</span>
+          </div>
+          <h3 style="font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; color: var(--green); margin-bottom: 8px;">Crown Jewel</h3>
+          <p style="color: rgba(247, 244, 234, 0.7); font-size: 13px; line-height: 1.5; margin-bottom: 12px;">A billionaire's obsession with a woman who should be completely off-limits.</p>
+          <div style="display: flex; align-items: center; gap: 8px; border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 12px;">
+            <div style="font-size: 24px;">👑</div>
+            <div style="flex: 1;">
+              <div style="color: var(--green); font-size: 12px; font-weight: 600;">Raven Cross</div>
+              <div style="color: rgba(247, 244, 234, 0.6); font-size: 11px;">7.1k reads</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Story Card 4 -->
+        <div class="premium-story-card" style="flex: 0 0 280px; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 12px; padding: 16px; cursor: pointer; transition: transform 0.3s, box-shadow 0.3s; position: relative;">
+          <div style="position: absolute; top: 12px; right: 12px; background: var(--orange); color: #320d1e; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600;">🔒 Premium</div>
+          <div style="background: linear-gradient(135deg, #3D1F33, #681e2a); height: 160px; border-radius: 8px; margin-bottom: 16px; display: flex; align-items: center; justify-content: center; font-size: 48px;">🔥</div>
+          <div style="display: flex; gap: 6px; margin-bottom: 12px; flex-wrap: wrap;">
+            <span style="background: rgba(248, 220, 118, 0.2); color: var(--orange); padding: 4px 10px; border-radius: 16px; font-size: 12px;">Spicy</span>
+            <span style="background: rgba(248, 220, 118, 0.2); color: var(--orange); padding: 4px 10px; border-radius: 16px; font-size: 12px;">Explicit</span>
+          </div>
+          <h3 style="font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; color: var(--green); margin-bottom: 8px;">Inferno</h3>
+          <p style="color: rgba(247, 244, 234, 0.7); font-size: 13px; line-height: 1.5; margin-bottom: 12px;">When fire meets gasoline, everything burns. Including her resolve.</p>
+          <div style="display: flex; align-items: center; gap: 8px; border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 12px;">
+            <div style="font-size: 24px;">🌹</div>
+            <div style="flex: 1;">
+              <div style="color: var(--green); font-size: 12px; font-weight: 600;">Jasmine Hart</div>
+              <div style="color: rgba(247, 244, 234, 0.6); font-size: 11px;">6.4k reads</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Story Card 5 -->
+        <div class="premium-story-card" style="flex: 0 0 280px; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 12px; padding: 16px; cursor: pointer; transition: transform 0.3s, box-shadow 0.3s; position: relative;">
+          <div style="position: absolute; top: 12px; right: 12px; background: var(--orange); color: #320d1e; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600;">🔒 Premium</div>
+          <div style="background: linear-gradient(135deg, #8B1A2B, #3D1F33); height: 160px; border-radius: 8px; margin-bottom: 16px; display: flex; align-items: center; justify-content: center; font-size: 48px;">💋</div>
+          <div style="display: flex; gap: 6px; margin-bottom: 12px; flex-wrap: wrap;">
+            <span style="background: rgba(248, 220, 118, 0.2); color: var(--orange); padding: 4px 10px; border-radius: 16px; font-size: 12px;">Forbidden</span>
+            <span style="background: rgba(248, 220, 118, 0.2); color: var(--orange); padding: 4px 10px; border-radius: 16px; font-size: 12px;">Secrets</span>
+          </div>
+          <h3 style="font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; color: var(--green); margin-bottom: 8px;">Velvet Lies</h3>
+          <p style="color: rgba(247, 244, 234, 0.7); font-size: 13px; line-height: 1.5; margin-bottom: 12px;">The truth would destroy everything. So they keep lying, over and over again.</p>
+          <div style="display: flex; align-items: center; gap: 8px; border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 12px;">
+            <div style="font-size: 24px;">🎀</div>
+            <div style="flex: 1;">
+              <div style="color: var(--green); font-size: 12px; font-weight: 600;">Seraphine Rose</div>
+              <div style="color: rgba(247, 244, 234, 0.6); font-size: 11px;">8.2k reads</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Story Card 6 -->
+        <div class="premium-story-card" style="flex: 0 0 280px; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 12px; padding: 16px; cursor: pointer; transition: transform 0.3s, box-shadow 0.3s; position: relative;">
+          <div style="position: absolute; top: 12px; right: 12px; background: var(--orange); color: #320d1e; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600;">🔒 Premium</div>
+          <div style="background: linear-gradient(135deg, #5a1924, #8B1A2B); height: 160px; border-radius: 8px; margin-bottom: 16px; display: flex; align-items: center; justify-content: center; font-size: 48px;">🌃</div>
+          <div style="display: flex; gap: 6px; margin-bottom: 12px; flex-wrap: wrap;">
+            <span style="background: rgba(248, 220, 118, 0.2); color: var(--orange); padding: 4px 10px; border-radius: 16px; font-size: 12px;">Contemporary</span>
+            <span style="background: rgba(248, 220, 118, 0.2); color: var(--orange); padding: 4px 10px; border-radius: 16px; font-size: 12px;">Urban</span>
+          </div>
+          <h3 style="font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; color: var(--green); margin-bottom: 8px;">City Nights</h3>
+          <p style="color: rgba(247, 244, 234, 0.7); font-size: 13px; line-height: 1.5; margin-bottom: 12px;">Two strangers, one rooftop, and the whole city lights beneath them as witnesses.</p>
+          <div style="display: flex; align-items: center; gap: 8px; border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 12px;">
+            <div style="font-size: 24px;">🌆</div>
+            <div style="flex: 1;">
+              <div style="color: var(--green); font-size: 12px; font-weight: 600;">Nova Sterling</div>
+              <div style="color: rgba(247, 244, 234, 0.6); font-size: 11px;">4.9k reads</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Story Card 7 -->
+        <div class="premium-story-card" style="flex: 0 0 280px; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 12px; padding: 16px; cursor: pointer; transition: transform 0.3s, box-shadow 0.3s; position: relative;">
+          <div style="position: absolute; top: 12px; right: 12px; background: var(--orange); color: #320d1e; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600;">🔒 Premium</div>
+          <div style="background: linear-gradient(135deg, #6B2140, #8B1A2B); height: 160px; border-radius: 8px; margin-bottom: 16px; display: flex; align-items: center; justify-content: center; font-size: 48px;">⚡</div>
+          <div style="display: flex; gap: 6px; margin-bottom: 12px; flex-wrap: wrap;">
+            <span style="background: rgba(248, 220, 118, 0.2); color: var(--orange); padding: 4px 10px; border-radius: 16px; font-size: 12px;">Power Play</span>
+            <span style="background: rgba(248, 220, 118, 0.2); color: var(--orange); padding: 4px 10px; border-radius: 16px; font-size: 12px;">Tension</span>
+          </div>
+          <h3 style="font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; color: var(--green); margin-bottom: 8px;">Power and Desire</h3>
+          <p style="color: rgba(247, 244, 234, 0.7); font-size: 13px; line-height: 1.5; margin-bottom: 12px;">In the boardroom, she holds all the power. But in his penthouse, the tables turn.</p>
+          <div style="display: flex; align-items: center; gap: 8px; border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 12px;">
+            <div style="font-size: 24px;">💼</div>
+            <div style="flex: 1;">
+              <div style="color: var(--green); font-size: 12px; font-weight: 600;">Dominique Vale</div>
+              <div style="color: rgba(247, 244, 234, 0.6); font-size: 11px;">9.1k reads</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Story Card 8 -->
+        <div class="premium-story-card" style="flex: 0 0 280px; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 12px; padding: 16px; cursor: pointer; transition: transform 0.3s, box-shadow 0.3s; position: relative;">
+          <div style="position: absolute; top: 12px; right: 12px; background: var(--orange); color: #320d1e; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600;">🔒 Premium</div>
+          <div style="background: linear-gradient(135deg, #3D1F33, #5a1924); height: 160px; border-radius: 8px; margin-bottom: 16px; display: flex; align-items: center; justify-content: center; font-size: 48px;">🎭</div>
+          <div style="display: flex; gap: 6px; margin-bottom: 12px; flex-wrap: wrap;">
+            <span style="background: rgba(248, 220, 118, 0.2); color: var(--orange); padding: 4px 10px; border-radius: 16px; font-size: 12px;">Masquerade</span>
+            <span style="background: rgba(248, 220, 118, 0.2); color: var(--orange); padding: 4px 10px; border-radius: 16px; font-size: 12px;">Hidden</span>
+          </div>
+          <h3 style="font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; color: var(--green); margin-bottom: 8px;">Behind the Mask</h3>
+          <p style="color: rgba(247, 244, 234, 0.7); font-size: 13px; line-height: 1.5; margin-bottom: 12px;">At the masquerade, no one knows who you really are. That's when the truth emerges.</p>
+          <div style="display: flex; align-items: center; gap: 8px; border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 12px;">
+            <div style="font-size: 24px;">✨</div>
+            <div style="flex: 1;">
+              <div style="color: var(--green); font-size: 12px; font-weight: 600;">Isabelle Noir</div>
+              <div style="color: rgba(247, 244, 234, 0.6); font-size: 11px;">7.3k reads</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Story Card 9 -->
+        <div class="premium-story-card" style="flex: 0 0 280px; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 12px; padding: 16px; cursor: pointer; transition: transform 0.3s, box-shadow 0.3s; position: relative;">
+          <div style="position: absolute; top: 12px; right: 12px; background: var(--orange); color: #320d1e; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600;">🔒 Premium</div>
+          <div style="background: linear-gradient(135deg, #681e2a, #6B2140); height: 160px; border-radius: 8px; margin-bottom: 16px; display: flex; align-items: center; justify-content: center; font-size: 48px;">🌙</div>
+          <div style="display: flex; gap: 6px; margin-bottom: 12px; flex-wrap: wrap;">
+            <span style="background: rgba(248, 220, 118, 0.2); color: var(--orange); padding: 4px 10px; border-radius: 16px; font-size: 12px;">Paranormal</span>
+            <span style="background: rgba(248, 220, 118, 0.2); color: var(--orange); padding: 4px 10px; border-radius: 16px; font-size: 12px;">Dark</span>
+          </div>
+          <h3 style="font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; color: var(--green); margin-bottom: 8px;">Moonlit Curse</h3>
+          <p style="color: rgba(247, 244, 234, 0.7); font-size: 13px; line-height: 1.5; margin-bottom: 12px;">Under the full moon, she discovers what he really is. And why he can't leave her.</p>
+          <div style="display: flex; align-items: center; gap: 8px; border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 12px;">
+            <div style="font-size: 24px;">🧛</div>
+            <div style="flex: 1;">
+              <div style="color: var(--green); font-size: 12px; font-weight: 600;">Lilith Kane</div>
+              <div style="color: rgba(247, 244, 234, 0.6); font-size: 11px;">5.6k reads</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Story Card 10 -->
+        <div class="premium-story-card" style="flex: 0 0 280px; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 12px; padding: 16px; cursor: pointer; transition: transform 0.3s, box-shadow 0.3s; position: relative;">
+          <div style="position: absolute; top: 12px; right: 12px; background: var(--orange); color: #320d1e; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600;">🔒 Premium</div>
+          <div style="background: linear-gradient(135deg, #8B1A2B, #6B2140); height: 160px; border-radius: 8px; margin-bottom: 16px; display: flex; align-items: center; justify-content: center; font-size: 48px;">🏰</div>
+          <div style="display: flex; gap: 6px; margin-bottom: 12px; flex-wrap: wrap;">
+            <span style="background: rgba(248, 220, 118, 0.2); color: var(--orange); padding: 4px 10px; border-radius: 16px; font-size: 12px;">Historical</span>
+            <span style="background: rgba(248, 220, 118, 0.2); color: var(--orange); padding: 4px 10px; border-radius: 16px; font-size: 12px;">Epic</span>
+          </div>
+          <h3 style="font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; color: var(--green); margin-bottom: 8px;">Castle of Fire</h3>
+          <p style="color: rgba(247, 244, 234, 0.7); font-size: 13px; line-height: 1.5; margin-bottom: 12px;">She was supposed to be a political pawn. He had other plans entirely.</p>
+          <div style="display: flex; align-items: center; gap: 8px; border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 12px;">
+            <div style="font-size: 24px;">👑</div>
+            <div style="flex: 1;">
+              <div style="color: var(--green); font-size: 12px; font-weight: 600;">Arabella Crown</div>
+              <div style="color: rgba(247, 244, 234, 0.6); font-size: 11px;">10.2k reads</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Story Card 11 -->
+        <div class="premium-story-card" style="flex: 0 0 280px; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 12px; padding: 16px; cursor: pointer; transition: transform 0.3s, box-shadow 0.3s; position: relative;">
+          <div style="position: absolute; top: 12px; right: 12px; background: var(--orange); color: #320d1e; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600;">🔒 Premium</div>
+          <div style="background: linear-gradient(135deg, #5a1924, #3D1F33); height: 160px; border-radius: 8px; margin-bottom: 16px; display: flex; align-items: center; justify-content: center; font-size: 48px;">🗝️</div>
+          <div style="display: flex; gap: 6px; margin-bottom: 12px; flex-wrap: wrap;">
+            <span style="background: rgba(248, 220, 118, 0.2); color: var(--orange); padding: 4px 10px; border-radius: 16px; font-size: 12px;">Mystery</span>
+            <span style="background: rgba(248, 220, 118, 0.2); color: var(--orange); padding: 4px 10px; border-radius: 16px; font-size: 12px;">Locked</span>
+          </div>
+          <h3 style="font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; color: var(--green); margin-bottom: 8px;">Locked Away</h3>
+          <p style="color: rgba(247, 244, 234, 0.7); font-size: 13px; line-height: 1.5; margin-bottom: 12px;">He keeps her in a penthouse with one key, and she's never felt more free.</p>
+          <div style="display: flex; align-items: center; gap: 8px; border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 12px;">
+            <div style="font-size: 24px;">🔐</div>
+            <div style="flex: 1;">
+              <div style="color: var(--green); font-size: 12px; font-weight: 600;">Eloise Winters</div>
+              <div style="color: rgba(247, 244, 234, 0.6); font-size: 11px;">6.8k reads</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Story Card 12 -->
+        <div class="premium-story-card" style="flex: 0 0 280px; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 12px; padding: 16px; cursor: pointer; transition: transform 0.3s, box-shadow 0.3s; position: relative;">
+          <div style="position: absolute; top: 12px; right: 12px; background: var(--orange); color: #320d1e; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600;">🔒 Premium</div>
+          <div style="background: linear-gradient(135deg, #6B2140, #5a1924); height: 160px; border-radius: 8px; margin-bottom: 16px; display: flex; align-items: center; justify-content: center; font-size: 48px;">💐</div>
+          <div style="display: flex; gap: 6px; margin-bottom: 12px; flex-wrap: wrap;">
+            <span style="background: rgba(248, 220, 118, 0.2); color: var(--orange); padding: 4px 10px; border-radius: 16px; font-size: 12px;">Romantic</span>
+            <span style="background: rgba(248, 220, 118, 0.2); color: var(--orange); padding: 4px 10px; border-radius: 16px; font-size: 12px;">Sweet</span>
+          </div>
+          <h3 style="font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; color: var(--green); margin-bottom: 8px;">Petals and Wine</h3>
+          <p style="color: rgba(247, 244, 234, 0.7); font-size: 13px; line-height: 1.5; margin-bottom: 12px;">He courts her like it's an art form. She finally surrenders to his devotion.</p>
+          <div style="display: flex; align-items: center; gap: 8px; border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 12px;">
+            <div style="font-size: 24px;">🥂</div>
+            <div style="flex: 1;">
+              <div style="color: var(--green); font-size: 12px; font-weight: 600;">Maude Sinclair</div>
+              <div style="color: rgba(247, 244, 234, 0.6); font-size: 11px;">5.2k reads</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Story Card 13 -->
+        <div class="premium-story-card" style="flex: 0 0 280px; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 12px; padding: 16px; cursor: pointer; transition: transform 0.3s, box-shadow 0.3s; position: relative;">
+          <div style="position: absolute; top: 12px; right: 12px; background: var(--orange); color: #320d1e; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600;">🔒 Premium</div>
+          <div style="background: linear-gradient(135deg, #8B1A2B, #5a1924); height: 160px; border-radius: 8px; margin-bottom: 16px; display: flex; align-items: center; justify-content: center; font-size: 48px;">🌊</div>
+          <div style="display: flex; gap: 6px; margin-bottom: 12px; flex-wrap: wrap;">
+            <span style="background: rgba(248, 220, 118, 0.2); color: var(--orange); padding: 4px 10px; border-radius: 16px; font-size: 12px;">Getaway</span>
+            <span style="background: rgba(248, 220, 118, 0.2); color: var(--orange); padding: 4px 10px; border-radius: 16px; font-size: 12px;">Passion</span>
+          </div>
+          <h3 style="font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; color: var(--green); margin-bottom: 8px;">Island Paradise</h3>
+          <p style="color: rgba(247, 244, 234, 0.7); font-size: 13px; line-height: 1.5; margin-bottom: 12px;">Stranded on an island with him is either a dream or a dangerous obsession.</p>
+          <div style="display: flex; align-items: center; gap: 8px; border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 12px;">
+            <div style="font-size: 24px;">🏝️</div>
+            <div style="flex: 1;">
+              <div style="color: var(--green); font-size: 12px; font-weight: 600;">Tropical Blue</div>
+              <div style="color: rgba(247, 244, 234, 0.6); font-size: 11px;">7.1k reads</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
   </div>
 </section>
 
