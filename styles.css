@@ -52,6 +52,70 @@
   .nav-cta { background:var(--orange); color:#320d1e !important; padding:10px 22px; border-radius:100px; font-size:0.63rem !important; letter-spacing:0.14em; text-transform:uppercase; text-decoration:none; font-family:'Josefin Sans',sans-serif; transition:background 0.22s,transform 0.18s; display:inline-block; font-weight:700; }
   .nav-cta:hover { background:var(--orange-d); transform:scale(1.03); }
 
+  /* ── DROPDOWN NAV ── */
+  .nav-dropdown { position:relative; }
+  .nav-dropdown > a { display:flex; align-items:center; gap:4px; cursor:pointer; }
+  .dropdown-arrow { font-size:0.5rem; transition:transform 0.22s; }
+  .nav-dropdown:hover .dropdown-arrow { transform:rotate(180deg); }
+
+  .dropdown-menu {
+    position:absolute; top:100%; left:0;
+    background:rgba(50, 13, 30, 0.98);
+    border:1px solid rgba(248, 220, 118, 0.2);
+    border-radius:4px;
+    padding:12px 0;
+    min-width:180px;
+    opacity:0;
+    visibility:hidden;
+    transform:translateY(-10px);
+    transition:opacity 0.22s,transform 0.22s,visibility 0.22s;
+    box-shadow:0 8px 24px rgba(0,0,0,0.4);
+    z-index:1000;
+  }
+  .nav-dropdown:hover .dropdown-menu { opacity:1; visibility:visible; transform:translateY(0); }
+
+  .dropdown-menu li { list-style:none; }
+  .dropdown-menu a {
+    display:block;
+    padding:10px 20px;
+    font-family:'Josefin Sans',sans-serif;
+    font-size:0.6rem;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    color:var(--green);
+    text-decoration:none;
+    transition:background 0.18s,color 0.18s;
+    white-space:nowrap;
+  }
+  .dropdown-menu a:hover { background:rgba(248, 220, 118, 0.1); color:var(--orange); }
+
+  /* ── STEALTH MODE BUTTON ── */
+  .stealth-btn {
+    background:transparent;
+    border:1.5px solid rgba(247, 244, 234, 0.3);
+    color:var(--green);
+    padding:8px 16px;
+    border-radius:100px;
+    font-family:'Josefin Sans',sans-serif;
+    font-size:0.6rem;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    gap:8px;
+    transition:border-color 0.22s,background 0.22s;
+  }
+  .stealth-btn:hover { border-color:var(--orange); background:rgba(248, 220, 118, 0.1); }
+  .stealth-btn.active { border-color:var(--orange); background:rgba(248, 220, 118, 0.15); }
+
+  /* ── AI GENERATOR LOCKED ── */
+  .nav-locked {
+    opacity:0.6;
+    cursor:not-allowed;
+    position:relative;
+  }
+
   /* ── HERO ── */
   #hero {
     min-height:100vh; padding-top:0;
@@ -165,6 +229,7 @@
   .story-meta { padding:18px 22px 22px; }
   .story-tags { display:flex; gap:6px; flex-wrap:wrap; margin-bottom:10px; }
   .tag { font-family:'Josefin Sans',sans-serif; font-size:0.53rem; letter-spacing:0.1em; text-transform:uppercase; color:#681e2a; background:var(--orange); padding:4px 10px; border-radius:100px; border:1px solid var(--orange); }
+  .tag-free { background:#4CAF50; color:#fff; border-color:#4CAF50; font-weight:600; }
   .story-title { font-family:'Playfair Display',serif; font-weight:800; font-size:1.12rem; color:#2D0F1E; line-height:1.28; margin-bottom:8px; }
   .story-card.featured .story-title { font-size:1.52rem; }
   .story-excerpt { font-family:'Josefin Sans',sans-serif; font-size:0.98rem; line-height:1.85; color:#7A6872; }
