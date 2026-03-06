@@ -92,6 +92,26 @@
   </div>
 </div>
 
+<!-- AI GENERATOR MODAL -->
+<div id="ai-generator-modal" class="ai-generator-modal" style="display: none;">
+  <div class="ai-gen-overlay"></div>
+  <div class="ai-gen-content-minimal">
+    <button class="ai-gen-close" onclick="closeAIGeneratorModal()">&times;</button>
+
+    <div class="ai-gen-teaser">
+      <div class="ai-gen-icon">🔒</div>
+      <h1 class="ai-gen-title">Craft Your Fantasy</h1>
+      <p class="ai-gen-description">
+        Shape characters, weave tension, ignite passion.<br>
+        Your story. Your rules. Your fantasy.
+      </p>
+      <button class="ai-gen-unlock-btn" onclick="handleAIGeneratorUnlock()">
+        Unlock the Inner Circle — $4.99/mo
+      </button>
+    </div>
+  </div>
+</div>
+
 <script src="https://unpkg.com/lucide@latest"></script>
 <script>
   if(window.lucide && window.lucide.createIcons) {
