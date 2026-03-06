@@ -885,29 +885,23 @@ function renderCharacterGrid(filter) {
 
     grid.appendChild(card);
 
-    // Smart height calculation: measure the name height and set max-height accordingly
+    // Smart slide-up animation: measure total content and animate on hover
     const nameElement = card.querySelector('.character-card-name');
     const textOverlay = card.querySelector('.character-card-text-overlay');
 
     if (nameElement && textOverlay) {
-      // Get the name height after it's rendered
-      const nameHeight = nameElement.offsetHeight;
-      // Show name centered at bottom: name height + bottom padding
-      const initialMaxHeight = nameHeight + 32;
-      const expandedMaxHeight = 360;
+      // Get the overlay's total height (all content including age, traits, bio)
+      const totalHeight = textOverlay.offsetHeight;
+      // Calculate how much to translate to show all content while keeping name visible
+      const slideDistance = totalHeight - 100; // Leave ~100px visible for name area
 
-      // Set initial max-height (only shows the name)
-      textOverlay.style.maxHeight = initialMaxHeight + 'px';
-      textOverlay.dataset.initialMaxHeight = initialMaxHeight;
-      textOverlay.dataset.expandedMaxHeight = expandedMaxHeight;
-
-      // Add hover behavior to expand/collapse
+      // Add hover behavior to slide up/down
       card.addEventListener('mouseenter', () => {
-        textOverlay.style.maxHeight = expandedMaxHeight + 'px';
+        textOverlay.style.transform = `translateY(-${slideDistance}px)`;
       });
 
       card.addEventListener('mouseleave', () => {
-        textOverlay.style.maxHeight = initialMaxHeight + 'px';
+        textOverlay.style.transform = 'translateY(0)';
       });
     }
   });
