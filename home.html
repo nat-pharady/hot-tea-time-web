@@ -437,6 +437,14 @@
     .then(response => response.text())
     .then(data => {
       document.getElementById('nav-container').innerHTML = data;
+      // Re-attach AI Generator link handler after nav is loaded
+      const aiGenLink = document.getElementById('ai-generator-link');
+      if (aiGenLink) {
+        aiGenLink.addEventListener('click', function(e) {
+          e.preventDefault();
+          openAIGeneratorModal();
+        });
+      }
     })
     .catch(error => console.error('Error loading nav:', error));
 </script>
