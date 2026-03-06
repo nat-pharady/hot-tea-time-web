@@ -1761,15 +1761,16 @@
   bottom: 0;
   left: 0;
   right: 0;
-  padding: 120px 24px 24px 24px;
+  padding: 20px 24px 24px 24px;
   background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.7) 40%, transparent);
   z-index: 2;
-  transform: translateY(120px);
-  transition: transform 0.4s ease-out;
+  max-height: 70px;
+  overflow: hidden;
+  transition: max-height 0.4s ease-out;
 }
 
 .character-card:hover .character-card-text-overlay {
-  transform: translateY(0);
+  max-height: 280px;
 }
 
 .character-card-name {
@@ -2256,7 +2257,8 @@ body.stealth-mode .character-card-text-overlay {
   position: static !important;
   padding: 0 !important;
   background: transparent !important;
-  transform: translateY(0) !important;
+  max-height: none !important;
+  overflow: visible !important;
 }
 body.stealth-mode .character-card-name {
   font-size: 1rem !important;
