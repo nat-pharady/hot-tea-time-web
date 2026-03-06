@@ -38,20 +38,22 @@
   .hero-nav {
     position:fixed; top:0; left:0; right:0; z-index:1000;
     display:flex; align-items:center; justify-content:space-between;
-    padding:16px 48px;
+    padding:12px 48px;
     gap:32px;
     background:transparent;
     border:none;
+    height:52px;
   }
   .nav-logo { display:flex; align-items:center; gap:12px; text-decoration:none; }
   .nav-logo img { width:46px; height:46px; border-radius:50%; object-fit:cover; }
   .nav-logo-text { display:flex; flex-direction:column; gap:1px; }
   .nav-logo-name { font-family:'Playfair Display',serif; font-size:1rem; font-weight:800; color:var(--green); line-height:1; }
   .nav-logo-tag { font-family:'Coco Gothic',sans-serif; font-size:0.5rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--orange); line-height:1; }
-  .nav-links { display:flex; gap:32px; list-style:none; }
-  .nav-links a { font-family:'Coco Gothic',sans-serif; font-size:0.63rem; letter-spacing:0.14em; text-transform:uppercase; color:#fff; text-decoration:none; transition:color 0.22s; text-shadow:0 2px 8px rgba(0,0,0,0.6); }
+  .nav-links { display:flex; gap:32px; list-style:none; align-items:center; height:100%; }
+  .nav-links li { display:flex; align-items:center; height:100%; }
+  .nav-links a { font-family:'Coco Gothic',sans-serif; font-size:0.63rem; letter-spacing:0.14em; text-transform:uppercase; color:#fff; text-decoration:none; transition:color 0.22s; text-shadow:0 2px 8px rgba(0,0,0,0.6); display:flex; align-items:center; height:100%; }
   .nav-links a:hover { color:var(--orange); }
-  .nav-cta { background:var(--orange); color:#320d1e; padding:15px 34px; border-radius:100px; border:none; font-size:0.66rem; letter-spacing:0.14em; text-transform:uppercase; text-decoration:none; font-family:'Coco Gothic',sans-serif; transition:background 0.25s,transform 0.2s,box-shadow 0.25s; display:inline-block; font-weight:700; cursor:button; }
+  .nav-cta { background:var(--orange); color:#320d1e; padding:8px 20px; border-radius:100px; border:none; font-size:0.66rem; letter-spacing:0.14em; text-transform:uppercase; text-decoration:none; font-family:'Coco Gothic',sans-serif; transition:background 0.25s,transform 0.2s,box-shadow 0.25s; display:inline-flex; align-items:center; font-weight:700; cursor:button; height:36px; white-space:nowrap; }
   .nav-cta:hover { background:var(--orange-d); transform:translateY(-2px); box-shadow:0 8px 28px rgba(201,165,92,0.3); }
 
   /* ── DROPDOWN NAV ── */
