@@ -1862,7 +1862,7 @@
 
 .character-modal-name {
   font-family: 'Playfair Display', serif;
-  font-size: 2rem;
+  font-size: 2.4rem;
   font-weight: 900;
   color: var(--green);
   margin-bottom: 4px;
@@ -1871,7 +1871,7 @@
 
 .character-modal-age-title {
   font-family: 'Coco Gothic', sans-serif;
-  font-size: 0.65rem;
+  font-size: 0.8rem;
   color: rgba(247, 244, 234, 0.7);
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -1883,7 +1883,7 @@
 
 .character-modal-section h4 {
   font-family: 'Barlow Condensed', sans-serif;
-  font-size: 0.75rem;
+  font-size: 0.9rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--orange);
@@ -1900,9 +1900,9 @@
 .trait-tag-large {
   background: rgba(248, 220, 118, 0.15);
   color: var(--orange);
-  padding: 5px 10px;
+  padding: 6px 12px;
   border-radius: 20px;
-  font-size: 0.55rem;
+  font-size: 0.68rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   font-weight: 600;
@@ -1910,8 +1910,8 @@
 
 .character-modal-bio {
   font-family: 'Coco Gothic', sans-serif;
-  font-size: 0.75rem;
-  line-height: 1.55;
+  font-size: 0.9rem;
+  line-height: 1.6;
   color: rgba(247, 244, 234, 0.85);
 }
 
@@ -1923,8 +1923,8 @@
 
 .character-interests-list li {
   font-family: 'Coco Gothic', sans-serif;
-  font-size: 0.7rem;
-  line-height: 1.4;
+  font-size: 0.85rem;
+  line-height: 1.5;
   color: rgba(247, 244, 234, 0.8);
   padding-left: 16px;
   position: relative;
@@ -1948,9 +1948,9 @@
   background: rgba(139, 26, 43, 0.3);
   color: var(--green);
   border: 1px solid rgba(248, 220, 118, 0.2);
-  padding: 5px 10px;
+  padding: 6px 12px;
   border-radius: 6px;
-  font-size: 0.55rem;
+  font-size: 0.68rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   font-weight: 600;
