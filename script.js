@@ -865,23 +865,17 @@ function renderCharacterGrid(filter) {
     const bioPreview = character.bio.substring(0, 80) + '...';
 
     card.innerHTML = `
-      <!-- Background + overlay for entire card -->
+      <!-- Background overlay (darkens image) -->
       <div class="character-card-overlay"></div>
 
-      <!-- Name overlay (visible by default) -->
-      <div class="character-card-name-overlay">
+      <!-- Text overlay that slides up on hover -->
+      <div class="character-card-text-overlay">
         <h3 class="character-card-name">${character.name}</h3>
-      </div>
-
-      <!-- Hidden info overlay (visible on hover) -->
-      <div class="character-card-info-overlay">
-        <div class="character-card-hover-info">
-          <p class="character-age-title">${character.age} • ${character.archetype}</p>
-          <div class="character-traits">
-            ${traits}
-          </div>
-          <p class="character-bio-preview">${bioPreview}</p>
+        <p class="character-age-title">${character.age} • ${character.archetype}</p>
+        <div class="character-traits">
+          ${traits}
         </div>
+        <p class="character-bio-preview">${bioPreview}</p>
       </div>
     `;
 
