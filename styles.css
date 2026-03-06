@@ -2149,6 +2149,11 @@ body.stealth-mode .trait-tag { display: none !important; }
 body.stealth-mode .character-traits { display: none !important; }
 body.stealth-mode .character-interests-list { display: none !important; }
 
+/* Hide page headings and section titles */
+body.stealth-mode h1,
+body.stealth-mode h2,
+body.stealth-mode .section-title { display: none !important; }
+
 /* Hide all buttons except stealth toggle */
 body.stealth-mode button:not(.stealth-btn) { display: none !important; }
 body.stealth-mode .btn-primary { display: none !important; }

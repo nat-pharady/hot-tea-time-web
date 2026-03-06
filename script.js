@@ -1022,9 +1022,6 @@ function applyStealthTransformations() {
   // Change tab title
   changeTabTitle(true);
 
-  // Change page headings
-  updatePageHeadings(true);
-
   // Hide nav and show toolbar
   updateNavigation(true);
 }
@@ -1033,9 +1030,6 @@ function applyStealthTransformations() {
 function restoreFromStealth() {
   // Restore tab title
   changeTabTitle(false);
-
-  // Restore page headings
-  updatePageHeadings(false);
 
   // Restore nav
   updateNavigation(false);
@@ -1049,32 +1043,6 @@ function changeTabTitle(enable) {
   } else {
     document.title = originalPageTitle;
   }
-}
-
-// Update page headings and section titles
-function updatePageHeadings(enable) {
-  const headings = document.querySelectorAll('h1, h2, .section-title');
-
-  headings.forEach(heading => {
-    if (enable) {
-      // Store original and replace
-      if (!heading.dataset.originalText) {
-        heading.dataset.originalText = heading.textContent;
-      }
-
-      // Replace with generic corporate text
-      if (heading.classList.contains('section-title')) {
-        heading.textContent = 'Data';
-      } else if (heading.tagName === 'H1') {
-        heading.textContent = 'Report';
-      }
-    } else {
-      // Restore original
-      if (heading.dataset.originalText) {
-        heading.textContent = heading.dataset.originalText;
-      }
-    }
-  });
 }
 
 // Handle navigation bar transformation
