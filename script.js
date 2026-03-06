@@ -787,3 +787,44 @@ function handleAddToCart(productName) {
   alert(`🛒 ${productName}\n\nAdded to cart!\n\nCheckout coming soon!`);
   // TODO: Integrate with shopping cart system
 }
+
+// ── INJECT AI GENERATOR MODAL ON ALL PAGES ──
+function ensureAIGeneratorModal() {
+  // Check if modal already exists
+  if (document.getElementById('ai-generator-modal')) {
+    return; // Modal already exists
+  }
+
+  // Create modal HTML
+  const modalHTML = `
+    <div id="ai-generator-modal" class="ai-generator-modal" style="display: none;">
+      <div class="ai-gen-overlay"></div>
+      <div class="ai-gen-content-minimal">
+        <button class="ai-gen-close" onclick="closeAIGeneratorModal()">&times;</button>
+        <div class="ai-gen-teaser">
+          <div class="ai-gen-icon">🔒</div>
+          <h1 class="ai-gen-title">Craft Your Fantasy</h1>
+          <p class="ai-gen-description">
+            Shape characters, weave tension, ignite passion.<br>
+            Your story. Your rules. Your fantasy.
+          </p>
+          <button class="ai-gen-unlock-btn" onclick="handleAIGeneratorUnlock()">
+            Unlock the Inner Circle — $4.99/mo
+          </button>
+        </div>
+      </div>
+    </div>
+  `;
+
+  // Inject modal at end of body
+  const div = document.createElement('div');
+  div.innerHTML = modalHTML;
+  document.body.appendChild(div.firstElementChild);
+}
+
+// Ensure modal exists when DOM is ready
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', ensureAIGeneratorModal);
+} else {
+  ensureAIGeneratorModal();
+}

@@ -145,11 +145,21 @@
   }
 </script>
 <script>
+  // Ensure AI Generator modal exists before nav loads
+  function ensureModalExists() {
+    if (!document.getElementById('ai-generator-modal')) {
+      const modalHTML = `<div id="ai-generator-modal" class="ai-generator-modal" style="display: none;"><div class="ai-gen-overlay"></div><div class="ai-gen-content-minimal"><button class="ai-gen-close" onclick="closeAIGeneratorModal()">&times;</button><div class="ai-gen-teaser"><div class="ai-gen-icon">🔒</div><h1 class="ai-gen-title">Craft Your Fantasy</h1><p class="ai-gen-description">Shape characters, weave tension, ignite passion.<br>Your story. Your rules. Your fantasy.</p><button class="ai-gen-unlock-btn" onclick="handleAIGeneratorUnlock()">Unlock the Inner Circle — $4.99/mo</button></div></div></div>`;
+      document.body.insertAdjacentHTML('beforeend', modalHTML);
+    }
+  }
+
   // Load nav from nav-logged-in.html
   fetch('./nav-logged-in.html')
     .then(response => response.text())
     .then(data => {
       document.getElementById('nav-container').innerHTML = data;
+      // Ensure modal exists
+      ensureModalExists();
       // Re-attach AI Generator link handler after nav is loaded
       const aiGenLink = document.getElementById('ai-generator-link');
       if (aiGenLink) {
