@@ -1850,10 +1850,11 @@
 }
 
 .character-modal-details {
-  padding: 28px 32px;
+  padding: 28px 28px;
   background: rgba(26, 11, 17, 0.8);
   display: flex;
   flex-direction: column;
+  overflow-y: auto;
 }
 
 .character-modal-header {
@@ -1862,7 +1863,7 @@
 
 .character-modal-name {
   font-family: 'Playfair Display', serif;
-  font-size: 2.4rem;
+  font-size: 2.6rem;
   font-weight: 900;
   color: var(--green);
   margin-bottom: 4px;
@@ -1878,12 +1879,12 @@
 }
 
 .character-modal-section {
-  margin-bottom: 14px;
+  margin-bottom: 12px;
 }
 
 .character-modal-section h4 {
   font-family: 'Barlow Condensed', sans-serif;
-  font-size: 0.9rem;
+  font-size: 1rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--orange);
@@ -1902,7 +1903,7 @@
   color: var(--orange);
   padding: 6px 12px;
   border-radius: 20px;
-  font-size: 0.68rem;
+  font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   font-weight: 600;
@@ -1910,7 +1911,7 @@
 
 .character-modal-bio {
   font-family: 'Coco Gothic', sans-serif;
-  font-size: 0.9rem;
+  font-size: 1.05rem;
   line-height: 1.6;
   color: rgba(247, 244, 234, 0.85);
 }
@@ -1923,7 +1924,7 @@
 
 .character-interests-list li {
   font-family: 'Coco Gothic', sans-serif;
-  font-size: 0.85rem;
+  font-size: 0.95rem;
   line-height: 1.5;
   color: rgba(247, 244, 234, 0.8);
   padding-left: 16px;
@@ -1950,7 +1951,7 @@
   border: 1px solid rgba(248, 220, 118, 0.2);
   padding: 6px 12px;
   border-radius: 6px;
-  font-size: 0.68rem;
+  font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   font-weight: 600;
@@ -1959,7 +1960,7 @@
 .character-modal-actions {
   display: flex;
   gap: 8px;
-  margin-top: 14px;
+  margin-top: 12px;
 }
 
 .character-modal-actions .btn-primary,
