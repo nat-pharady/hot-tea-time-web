@@ -1826,7 +1826,8 @@
   border-radius: 16px;
   max-width: 1400px;
   width: 95%;
-  max-height: 85vh;
+  height: auto;
+  max-height: 95vh;
   backdrop-filter: blur(16px);
   display: grid;
   grid-template-columns: 60% 40%;
@@ -1836,7 +1837,7 @@
 .character-modal-content {
   display: grid;
   grid-template-columns: 60% 40%;
-  height: 85vh;
+  height: auto;
   width: 100%;
 }
 
@@ -1844,75 +1845,76 @@
   position: relative;
   background-size: cover;
   background-position: center;
-  height: 100%;
+  height: auto;
   width: 100%;
-  min-height: 85vh;
+  min-height: 550px;
 }
 
 .character-modal-details {
-  padding: 28px 28px;
+  padding: 18px 20px;
   background: rgba(26, 11, 17, 0.8);
   display: flex;
   flex-direction: column;
-  overflow-y: auto;
+  overflow: visible;
 }
 
 .character-modal-header {
-  margin-bottom: 16px;
+  margin-bottom: 10px;
 }
 
 .character-modal-name {
   font-family: 'Playfair Display', serif;
-  font-size: 2.6rem;
+  font-size: 2rem;
   font-weight: 900;
   color: var(--green);
-  margin-bottom: 4px;
-  line-height: 1.1;
+  margin-bottom: 2px;
+  line-height: 1;
 }
 
 .character-modal-age-title {
   font-family: 'Coco Gothic', sans-serif;
-  font-size: 0.8rem;
+  font-size: 0.65rem;
   color: rgba(247, 244, 234, 0.7);
   text-transform: uppercase;
   letter-spacing: 0.1em;
+  line-height: 1.2;
 }
 
 .character-modal-section {
-  margin-bottom: 12px;
+  margin-bottom: 9px;
 }
 
 .character-modal-section h4 {
   font-family: 'Barlow Condensed', sans-serif;
-  font-size: 1rem;
+  font-size: 0.75rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--orange);
-  margin-bottom: 8px;
+  margin-bottom: 5px;
   font-weight: 800;
 }
 
 .character-traits-large {
   display: flex;
-  gap: 6px;
+  gap: 4px;
   flex-wrap: wrap;
 }
 
 .trait-tag-large {
   background: rgba(248, 220, 118, 0.15);
   color: var(--orange);
-  padding: 6px 12px;
+  padding: 4px 8px;
   border-radius: 20px;
-  font-size: 0.75rem;
+  font-size: 0.6rem;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   font-weight: 600;
 }
 
 .character-modal-bio {
   font-family: 'Coco Gothic', sans-serif;
-  font-size: 1.05rem;
-  line-height: 1.6;
+  font-size: 0.85rem;
+  line-height: 1.4;
   color: rgba(247, 244, 234, 0.85);
 }
 
@@ -1920,14 +1922,17 @@
   list-style: none;
   padding: 0;
   margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
 }
 
 .character-interests-list li {
   font-family: 'Coco Gothic', sans-serif;
-  font-size: 0.95rem;
-  line-height: 1.5;
+  font-size: 0.75rem;
+  line-height: 1.2;
   color: rgba(247, 244, 234, 0.8);
-  padding-left: 16px;
+  padding-left: 12px;
   position: relative;
 }
 
@@ -1936,12 +1941,12 @@
   position: absolute;
   left: 0;
   color: var(--orange);
-  font-size: 0.45rem;
+  font-size: 0.4rem;
 }
 
 .character-tropes {
   display: flex;
-  gap: 8px;
+  gap: 4px;
   flex-wrap: wrap;
 }
 
@@ -1949,25 +1954,25 @@
   background: rgba(139, 26, 43, 0.3);
   color: var(--green);
   border: 1px solid rgba(248, 220, 118, 0.2);
-  padding: 6px 12px;
+  padding: 4px 8px;
   border-radius: 6px;
-  font-size: 0.75rem;
+  font-size: 0.6rem;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   font-weight: 600;
 }
 
 .character-modal-actions {
   display: flex;
-  gap: 8px;
-  margin-top: 12px;
+  gap: 6px;
+  margin-top: 9px;
 }
 
 .character-modal-actions .btn-primary,
 .character-modal-actions .btn-ghost {
   flex: 1;
-  padding: 8px 14px;
-  font-size: 0.65rem;
+  padding: 6px 10px;
+  font-size: 0.55rem;
 }
 
 .modal-nav {
