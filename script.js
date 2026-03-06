@@ -990,8 +990,16 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /* ═════════════════════════════════════════════════════════════════════════════
-   STEALTH MODE - Discreet Reading Interface
+   STEALTH MODE - CORPORATE DISGUISE
+   Transform Hot Tea Time into a plain spreadsheet/document interface
    ═════════════════════════════════════════════════════════════════════════════ */
+
+// Store original title for restoration
+let originalPageTitle = document.title;
+
+// Generic corporate titles for stealth mode
+const stealthTitles = ['Document.pdf', 'Spreadsheet', 'Report.xlsx', 'Data.txt'];
+let currentStealthTitle = 'Document.pdf';
 
 // Initialize stealth mode on page load (check localStorage)
 function initStealthMode() {
@@ -1001,7 +1009,88 @@ function initStealthMode() {
   if (isStealthEnabled) {
     document.body.classList.add('stealth-mode');
     if (stealthBtn) stealthBtn.classList.add('active');
+
+    // Apply stealth transformations
+    applyStealthTransformations();
+
     console.log('✓ Stealth Mode ENABLED (from localStorage)');
+  }
+}
+
+// Apply all stealth transformations
+function applyStealthTransformations() {
+  // Change tab title
+  changeTabTitle(true);
+
+  // Change page headings
+  updatePageHeadings(true);
+
+  // Hide nav and show toolbar
+  updateNavigation(true);
+}
+
+// Restore all transformations
+function restoreFromStealth() {
+  // Restore tab title
+  changeTabTitle(false);
+
+  // Restore page headings
+  updatePageHeadings(false);
+
+  // Restore nav
+  updateNavigation(false);
+}
+
+// Change browser tab title
+function changeTabTitle(enable) {
+  if (enable) {
+    originalPageTitle = document.title;
+    document.title = currentStealthTitle;
+  } else {
+    document.title = originalPageTitle;
+  }
+}
+
+// Update page headings and section titles
+function updatePageHeadings(enable) {
+  const headings = document.querySelectorAll('h1, h2, .section-title');
+
+  headings.forEach(heading => {
+    if (enable) {
+      // Store original and replace
+      if (!heading.dataset.originalText) {
+        heading.dataset.originalText = heading.textContent;
+      }
+
+      // Replace with generic corporate text
+      if (heading.classList.contains('section-title')) {
+        heading.textContent = 'Data';
+      } else if (heading.tagName === 'H1') {
+        heading.textContent = 'Report';
+      }
+    } else {
+      // Restore original
+      if (heading.dataset.originalText) {
+        heading.textContent = heading.dataset.originalText;
+      }
+    }
+  });
+}
+
+// Handle navigation bar transformation
+function updateNavigation(enable) {
+  const navLinks = document.querySelector('.nav-links');
+  const heroNav = document.querySelector('.hero-nav');
+
+  if (enable) {
+    if (navLinks) {
+      navLinks.style.display = 'none';
+      navLinks.dataset.originalDisplay = navLinks.style.display;
+    }
+  } else {
+    if (navLinks) {
+      navLinks.style.display = '';
+    }
   }
 }
 
@@ -1015,10 +1104,18 @@ function toggleStealthMode() {
   if (body.classList.contains('stealth-mode')) {
     localStorage.setItem('stealthModeEnabled', 'true');
     if (btn) btn.classList.add('active');
-    console.log('✓ Stealth Mode ENABLED');
+
+    // Apply transformations
+    applyStealthTransformations();
+
+    console.log('✓ Stealth Mode ENABLED - Corporate Disguise Active');
   } else {
     localStorage.setItem('stealthModeEnabled', 'false');
     if (btn) btn.classList.remove('active');
+
+    // Restore everything
+    restoreFromStealth();
+
     console.log('✓ Stealth Mode DISABLED');
   }
 }

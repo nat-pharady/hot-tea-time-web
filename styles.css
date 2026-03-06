@@ -2099,8 +2099,9 @@
 }
 
 /* ═════════════════════════════════════════════════════════════════════════════
-   STEALTH MODE - DISCREET READING INTERFACE
-   Transform Hot Tea Time into a plain, unbranded document interface
+   STEALTH MODE - CORPORATE DISGUISE
+   Transform Hot Tea Time into a plain spreadsheet/document interface
+   Looks like: Someone reading a work document or spreadsheet
    ═════════════════════════════════════════════════════════════════════════════ */
 
 body.stealth-mode {
@@ -2120,108 +2121,204 @@ body.stealth-mode {
   --crimson:  #CCCCCC !important;           /* light grey */
   --plum:     #EEEEEE !important;           /* very light grey */
   --dark-cherry: #DDDDDD !important;        /* light grey borders */
+  font-family: 'Courier New', monospace !important;
 }
 
-/* Hide all decorative elements */
+/* ──────────────────────────────────────────────────────────────────────────────
+   HIDE ALL DECORATIVE & INTERACTIVE ELEMENTS
+   ────────────────────────────────────────────────────────────────────────────── */
+
+/* Hide decorative patterns */
 body.stealth-mode .damask { display: none !important; }
 body.stealth-mode body::after { display: none !important; }
+body.stealth-mode .section-label { display: none !important; }
 
 /* Hide all images */
 body.stealth-mode img { display: none !important; }
 
-/* Hide logos and branding */
+/* Hide logos and branding completely */
 body.stealth-mode .hero-nav-title { display: none !important; }
 body.stealth-mode .nav-logo { display: none !important; }
 
-/* Plain navigation bar */
-body.stealth-mode .hero-nav {
+/* Hide all badges, tags, icons (except stealth toggle) */
+body.stealth-mode .tag { display: none !important; }
+body.stealth-mode .lock-badge { display: none !important; }
+body.stealth-mode .character-category { display: none !important; }
+body.stealth-mode .trope-tag { display: none !important; }
+body.stealth-mode .trait-tag { display: none !important; }
+body.stealth-mode .character-traits { display: none !important; }
+body.stealth-mode .character-interests-list { display: none !important; }
+
+/* Hide all buttons except stealth toggle */
+body.stealth-mode button:not(.stealth-btn) { display: none !important; }
+body.stealth-mode .btn-primary { display: none !important; }
+body.stealth-mode .btn-ghost { display: none !important; }
+body.stealth-mode a.nav-cta { display: none !important; }
+
+/* Hide decorative elements */
+body.stealth-mode em { font-style: normal !important; }
+body.stealth-mode [style*="linear-gradient"] { background: #F5F5F5 !important; }
+
+/* ──────────────────────────────────────────────────────────────────────────────
+   LAYOUT TRANSFORMATION: CARDS → TEXT LISTS
+   ────────────────────────────────────────────────────────────────────────────── */
+
+/* Convert grid layouts to simple block lists */
+body.stealth-mode .character-grid {
+  display: block !important;
+  padding: 0 !important;
+}
+
+body.stealth-mode .story-grid {
+  display: block !important;
+  gap: 0 !important;
+}
+
+body.stealth-mode .story-card,
+body.stealth-mode .character-card {
+  display: block !important;
   background: #FFFFFF !important;
-  border-bottom: 1px solid #CCCCCC !important;
+  border: 1px solid #DDDDDD !important;
+  border-radius: 0 !important;
+  margin-bottom: 1px !important;
+  padding: 12px 16px !important;
   box-shadow: none !important;
-  text-shadow: none !important;
+  overflow: visible !important;
 }
 
-/* Hide character portraits */
-body.stealth-mode .character-portrait {
+body.stealth-mode .story-card:hover,
+body.stealth-mode .character-card:hover {
+  transform: none !important;
+  background: #F9F9F9 !important;
+}
+
+/* Hide story/character preview sections */
+body.stealth-mode .story-thumb { display: none !important; }
+body.stealth-mode .story-lock { display: none !important; }
+body.stealth-mode .character-portrait { display: none !important; }
+body.stealth-mode .character-info { padding: 0 !important; background: transparent !important; }
+body.stealth-mode .character-bio-preview { display: none !important; }
+
+/* Simplify story/character display */
+body.stealth-mode .story-title,
+body.stealth-mode .character-name {
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+  color: #000000 !important;
+  margin-bottom: 4px !important;
+  font-family: 'Courier New', monospace !important;
+}
+
+body.stealth-mode .story-excerpt,
+body.stealth-mode .character-age-title {
+  font-size: 0.85rem !important;
+  color: #666666 !important;
+  margin: 0 !important;
+  font-family: 'Courier New', monospace !important;
+}
+
+body.stealth-mode .story-author { display: none !important; }
+
+/* ──────────────────────────────────────────────────────────────────────────────
+   NAVIGATION TRANSFORMATION → PLAIN TOOLBAR
+   ────────────────────────────────────────────────────────────────────────────── */
+
+body.stealth-mode .hero-nav {
   background: #F5F5F5 !important;
+  border: none !important;
+  border-bottom: 1px solid #CCCCCC !important;
+  padding: 8px 16px !important;
+  height: auto !important;
+}
+
+body.stealth-mode .nav-links {
   display: none !important;
 }
 
-body.stealth-mode .character-modal-portrait {
+body.stealth-mode .nav-links li {
   display: none !important;
 }
 
-/* Modal layout adjustment - text only */
+body.stealth-mode .stealth-btn {
+  background: transparent !important;
+  border: none !important;
+  color: #000000 !important;
+  text-shadow: none !important;
+  margin: 0 !important;
+  padding: 4px 8px !important;
+}
+
+body.stealth-mode .stealth-btn:hover {
+  background: #EEEEEE !important;
+  color: #000000 !important;
+}
+
+body.stealth-mode .stealth-btn.active {
+  background: #DDDDDD !important;
+  color: #000000 !important;
+}
+
+/* ──────────────────────────────────────────────────────────────────────────────
+   MODAL & CONTENT STYLING
+   ────────────────────────────────────────────────────────────────────────────── */
+
+body.stealth-mode .modal-overlay {
+  background: rgba(220,220,220,0.3) !important;
+}
+
+body.stealth-mode .character-modal-container {
+  background: #FFFFFF !important;
+  border: 1px solid #CCCCCC !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+}
+
 body.stealth-mode .character-modal-content {
   grid-template-columns: 1fr !important;
+  height: auto !important;
 }
 
-/* Plain button styling */
-body.stealth-mode button:not(.stealth-btn) {
-  background: #F5F5F5 !important;
-  border: 1px solid #999999 !important;
+body.stealth-mode .character-modal-portrait { display: none !important; }
+
+body.stealth-mode .character-modal-details {
+  padding: 16px 20px !important;
+  background: #FFFFFF !important;
+}
+
+body.stealth-mode .character-modal-name {
+  font-size: 1.2rem !important;
   color: #000000 !important;
-  box-shadow: none !important;
+  margin-bottom: 8px !important;
+  font-family: 'Courier New', monospace !important;
 }
 
-body.stealth-mode button:not(.stealth-btn):hover {
-  background: #EEEEEE !important;
+body.stealth-mode .character-modal-section h4 {
+  font-size: 0.85rem !important;
+  color: #666666 !important;
+  text-transform: uppercase !important;
+  font-family: 'Courier New', monospace !important;
 }
 
-/* Plain modal overlay */
-body.stealth-mode .modal-overlay {
-  background: rgba(200,200,200,0.5) !important;
+/* ──────────────────────────────────────────────────────────────────────────────
+   REMOVE ALL EFFECTS
+   ────────────────────────────────────────────────────────────────────────────── */
+
+body.stealth-mode section {
+  background-color: #FFFFFF !important;
+  border: none !important;
 }
 
-/* Remove all blur effects */
 body.stealth-mode [style*="backdrop-filter"] {
   backdrop-filter: none !important;
 }
 
-/* Plain marquee */
-body.stealth-mode .marquee {
-  background: #FFFFFF !important;
-  border: 1px solid #CCCCCC !important;
-  color: #000000 !important;
-}
-
-/* Hide ornamental elements */
-body.stealth-mode .section-label { color: #999999 !important; }
-body.stealth-mode h1, body.stealth-mode h2, body.stealth-mode h3 {
-  font-weight: 600 !important;
-}
-
-body.stealth-mode em { font-style: normal !important; }
-
-/* Stealth button active state */
-.stealth-btn.active {
-  color: var(--orange) !important;
-  background: rgba(255,165,0,0.1) !important;
-}
-
-body.stealth-mode .stealth-btn {
-  color: #000000 !important;
-  text-shadow: none !important;
-}
-
-body.stealth-mode .stealth-btn:hover,
-body.stealth-mode .stealth-btn.active {
-  color: #666666 !important;
-  background: #EEEEEE !important;
-}
-
-/* Hide gradient placeholders */
-body.stealth-mode [style*="linear-gradient"] {
-  background: #F5F5F5 !important;
-}
-
-/* Plain section backgrounds */
-body.stealth-mode section {
-  background-color: #FFFFFF !important;
-}
-
-/* Remove all decorative animations */
 body.stealth-mode * {
   animation: none !important;
   transition: none !important;
+  box-shadow: none !important;
+  text-shadow: none !important;
 }
+
+/* Hide marquee */
+body.stealth-mode .marquee { display: none !important; }
