@@ -1824,19 +1824,19 @@
   background: rgba(26, 11, 17, 0.95);
   border: 1px solid rgba(248, 220, 118, 0.2);
   border-radius: 16px;
-  max-width: 1200px;
-  width: 90%;
-  max-height: 90vh;
+  max-width: 1400px;
+  width: 95%;
+  max-height: 85vh;
   backdrop-filter: blur(16px);
   display: grid;
-  grid-template-columns: 40% 60%;
+  grid-template-columns: 35% 65%;
   overflow: hidden;
 }
 
 .character-modal-content {
   display: grid;
-  grid-template-columns: 40% 60%;
-  height: 80vh;
+  grid-template-columns: 35% 65%;
+  height: 85vh;
   width: 100%;
 }
 
@@ -1847,58 +1847,59 @@
 }
 
 .character-modal-details {
-  padding: 48px;
-  overflow-y: auto;
+  padding: 28px 32px;
   background: rgba(26, 11, 17, 0.8);
+  display: flex;
+  flex-direction: column;
 }
 
 .character-modal-header {
-  margin-bottom: 32px;
+  margin-bottom: 16px;
 }
 
 .character-modal-name {
   font-family: 'Playfair Display', serif;
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: 900;
   color: var(--green);
-  margin-bottom: 12px;
+  margin-bottom: 4px;
   line-height: 1.1;
 }
 
 .character-modal-age-title {
   font-family: 'Coco Gothic', sans-serif;
-  font-size: 0.75rem;
+  font-size: 0.65rem;
   color: rgba(247, 244, 234, 0.7);
   text-transform: uppercase;
   letter-spacing: 0.1em;
 }
 
 .character-modal-section {
-  margin-bottom: 32px;
+  margin-bottom: 14px;
 }
 
 .character-modal-section h4 {
   font-family: 'Barlow Condensed', sans-serif;
-  font-size: 0.9rem;
+  font-size: 0.75rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--orange);
-  margin-bottom: 16px;
+  margin-bottom: 8px;
   font-weight: 800;
 }
 
 .character-traits-large {
   display: flex;
-  gap: 12px;
+  gap: 6px;
   flex-wrap: wrap;
 }
 
 .trait-tag-large {
   background: rgba(248, 220, 118, 0.15);
   color: var(--orange);
-  padding: 8px 16px;
+  padding: 5px 10px;
   border-radius: 20px;
-  font-size: 0.65rem;
+  font-size: 0.55rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   font-weight: 600;
@@ -1906,22 +1907,23 @@
 
 .character-modal-bio {
   font-family: 'Coco Gothic', sans-serif;
-  font-size: 0.85rem;
-  line-height: 1.8;
+  font-size: 0.75rem;
+  line-height: 1.55;
   color: rgba(247, 244, 234, 0.85);
 }
 
 .character-interests-list {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
 .character-interests-list li {
   font-family: 'Coco Gothic', sans-serif;
-  font-size: 0.8rem;
-  line-height: 1.8;
+  font-size: 0.7rem;
+  line-height: 1.4;
   color: rgba(247, 244, 234, 0.8);
-  padding-left: 20px;
+  padding-left: 16px;
   position: relative;
 }
 
@@ -1930,12 +1932,12 @@
   position: absolute;
   left: 0;
   color: var(--orange);
-  font-size: 0.6rem;
+  font-size: 0.45rem;
 }
 
 .character-tropes {
   display: flex;
-  gap: 12px;
+  gap: 8px;
   flex-wrap: wrap;
 }
 
@@ -1943,9 +1945,9 @@
   background: rgba(139, 26, 43, 0.3);
   color: var(--green);
   border: 1px solid rgba(248, 220, 118, 0.2);
-  padding: 8px 16px;
+  padding: 5px 10px;
   border-radius: 6px;
-  font-size: 0.65rem;
+  font-size: 0.55rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   font-weight: 600;
@@ -1953,15 +1955,15 @@
 
 .character-modal-actions {
   display: flex;
-  gap: 12px;
-  margin-top: 32px;
+  gap: 8px;
+  margin-top: 14px;
 }
 
 .character-modal-actions .btn-primary,
 .character-modal-actions .btn-ghost {
   flex: 1;
-  padding: 12px 24px;
-  font-size: 0.7rem;
+  padding: 8px 14px;
+  font-size: 0.65rem;
 }
 
 .modal-nav {
