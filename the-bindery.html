@@ -1,4 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Bindery — Hot Tea Time</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@800&family=Coco+Gothic:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="damask">
 
+<!-- NAV -->
+<div id="nav-container"></div>
+
+<!-- THE BINDERY -->
+<section id="the-bindery" style="background: linear-gradient(135deg, #f7f4ea 0%, #ece8dc 100%); padding: 80px 40px; min-height: 100vh;">
+  <div class="section-inner">
+
+    <!-- Header -->
+    <div style="text-align: center; margin-bottom: 80px;">
+      <div class="section-label">Publishing Services</div>
+      <h1 class="section-title" style="color: #2D0F1E; margin-bottom: 16px;">The <em>Bindery</em></h1>
+      <p style="font-family: 'Coco Gothic', sans-serif; font-size: 1.1rem; color: #5a5a5a; max-width: 700px; margin: 0 auto; line-height: 1.6;">Transform your favorite stories into beautiful physical books. Our book binding services let you turn digital narratives into tangible keepsakes, complete with custom covers and premium formatting.</p>
+    </div>
+
+    <!-- PRINT YOUR STORY SECTION -->
+    <div style="margin-bottom: 100px;">
+      <h2 style="font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 700; color: #2D0F1E; text-align: center; margin-bottom: 60px;">Print Your <em>Story</em></h2>
+
+      <div style="display: grid; grid-template-columns: 1fr 1.2fr 1fr; gap: 32px; max-width: 1200px; margin: 0 auto; align-items: center;">
+
+        <!-- Card 1: Softcover -->
+        <div style="background: white; border: 1px solid #d4cfc4; border-radius: 12px; padding: 32px; cursor: pointer; transition: all 0.3s ease; position: relative; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+          <div style="position: absolute; top: 16px; right: 16px; background: #f0e6d2; color: #8B4513; padding: 6px 12px; border-radius: 20px; font-family: 'Coco Gothic', sans-serif; font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600;">Standard</div>
+          <div style="margin-bottom: 24px;">
+            <div style="font-size: 48px; margin-bottom: 12px;">📖</div>
+            <h3 style="font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 700; color: #2D0F1E; margin-bottom: 16px;">Softcover</h3>
+          </div>
+          <ul style="list-style: none; padding: 0; margin-bottom: 24px; gap: 12px; display: flex; flex-direction: column;">
+            <li style="display: flex; align-items: flex-start; gap: 10px; font-family: 'Coco Gothic', sans-serif; font-size: 0.95rem; color: #5a5a5a;">
+              <span style="color: var(--orange); font-weight: 700; flex-shrink: 0;">✓</span>
+              <span>Professional paperback binding</span>
+            </li>
+            <li style="display: flex; align-items: flex-start; gap: 10px; font-family: 'Coco Gothic', sans-serif; font-size: 0.95rem; color: #5a5a5a;">
+              <span style="color: var(--orange); font-weight: 700; flex-shrink: 0;">✓</span>
+              <span>Custom full-color cover design</span>
+            </li>
+            <li style="display: flex; align-items: flex-start; gap: 10px; font-family: 'Coco Gothic', sans-serif; font-size: 0.95rem; color: #5a5a5a;">
+              <span style="color: var(--orange); font-weight: 700; flex-shrink: 0;">✓</span>
+              <span>Print-ready formatting</span>
+            </li>
+            <li style="display: flex; align-items: flex-start; gap: 10px; font-family: 'Coco Gothic', sans-serif; font-size: 0.95rem; color: #5a5a5a;">
+              <span style="color: var(--orange); font-weight: 700; flex-shrink: 0;">✓</span>
+              <span>Free shipping for first order</span>
+            </li>
+          </ul>
+          <div style="margin-bottom: 20px;">
+            <div style="font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 700; color: #2D0F1E; margin-bottom: 4px;">$24.99</div>
+            <div style="font-family: 'Coco Gothic', sans-serif; font-size: 0.85rem; color: #999;">per copy</div>
+          </div>
+          <button onclick="handleCreateBook()" style="width: 100%; background: #f5f5f5; color: #2D0F1E; border: 1px solid #d4cfc4; border-radius: 6px; padding: 12px 16px; font-family: 'Playfair Display', serif; font-size: 0.95rem; font-weight: 700; cursor: pointer; transition: all 0.3s ease;">Create Your Book</button>
+        </div>
+
+        <!-- Card 2: Hardcover (FEATURED - Larger) -->
+        <div style="background: linear-gradient(135deg, #2D0F1E 0%, #3d1a29 100%); border: 2px solid var(--orange); border-radius: 12px; padding: 40px; cursor: pointer; transition: all 0.3s ease; position: relative; overflow: hidden; box-shadow: 0 8px 24px rgba(248, 220, 118, 0.2); transform: scale(1.08);">
+          <div style="position: absolute; top: 16px; right: 16px; background: var(--orange); color: #2D0F1E; padding: 8px 14px; border-radius: 20px; font-family: 'Coco Gothic', sans-serif; font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 700;">🌟 Popular</div>
+          <div style="margin-bottom: 24px;">
+            <div style="font-size: 54px; margin-bottom: 12px;">📕</div>
+            <h3 style="font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; color: var(--green); margin-bottom: 16px;">Hardcover</h3>
+          </div>
+          <ul style="list-style: none; padding: 0; margin-bottom: 28px; gap: 12px; display: flex; flex-direction: column;">
+            <li style="display: flex; align-items: flex-start; gap: 10px; font-family: 'Coco Gothic', sans-serif; font-size: 0.95rem; color: rgba(247, 244, 234, 0.8);">
+              <span style="color: var(--orange); font-weight: 700; flex-shrink: 0;">✓</span>
+              <span>Premium hardcover binding</span>
+            </li>
+            <li style="display: flex; align-items: flex-start; gap: 10px; font-family: 'Coco Gothic', sans-serif; font-size: 0.95rem; color: rgba(247, 244, 234, 0.8);">
+              <span style="color: var(--orange); font-weight: 700; flex-shrink: 0;">✓</span>
+              <span>Embossed custom cover design</span>
+            </li>
+            <li style="display: flex; align-items: flex-start; gap: 10px; font-family: 'Coco Gothic', sans-serif; font-size: 0.95rem; color: rgba(247, 244, 234, 0.8);">
+              <span style="color: var(--orange); font-weight: 700; flex-shrink: 0;">✓</span>
+              <span>Dust jacket included</span>
+            </li>
+            <li style="display: flex; align-items: flex-start; gap: 10px; font-family: 'Coco Gothic', sans-serif; font-size: 0.95rem; color: rgba(247, 244, 234, 0.8);">
+              <span style="color: var(--orange); font-weight: 700; flex-shrink: 0;">✓</span>
+              <span>Premium gift packaging</span>
+            </li>
+          </ul>
+          <div style="margin-bottom: 24px;">
+            <div style="font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 700; color: var(--green); margin-bottom: 4px;">$49.99</div>
+            <div style="font-family: 'Coco Gothic', sans-serif; font-size: 0.85rem; color: rgba(248, 220, 118, 0.6);">per copy</div>
+          </div>
+          <button onclick="handleCreateBook()" style="width: 100%; background: linear-gradient(135deg, var(--orange), #f5c854); color: #2D0F1E; border: none; border-radius: 6px; padding: 14px 16px; font-family: 'Playfair Display', serif; font-size: 0.95rem; font-weight: 700; cursor: pointer; transition: all 0.3s ease;">Create Your Book</button>
+        </div>
+
+        <!-- Card 3: Premium -->
+        <div style="background: white; border: 1px solid #d4cfc4; border-radius: 12px; padding: 32px; cursor: pointer; transition: all 0.3s ease; position: relative; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+          <div style="position: absolute; top: 16px; right: 16px; background: #f0e6d2; color: #8B4513; padding: 6px 12px; border-radius: 20px; font-family: 'Coco Gothic', sans-serif; font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600;">Luxury</div>
+          <div style="margin-bottom: 24px;">
+            <div style="font-size: 48px; margin-bottom: 12px;">🎁</div>
+            <h3 style="font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 700; color: #2D0F1E; margin-bottom: 16px;">Premium Edition</h3>
+          </div>
+          <ul style="list-style: none; padding: 0; margin-bottom: 24px; gap: 12px; display: flex; flex-direction: column;">
+            <li style="display: flex; align-items: flex-start; gap: 10px; font-family: 'Coco Gothic', sans-serif; font-size: 0.95rem; color: #5a5a5a;">
+              <span style="color: var(--orange); font-weight: 700; flex-shrink: 0;">✓</span>
+              <span>Leather-bound hardcover</span>
+            </li>
+            <li style="display: flex; align-items: flex-start; gap: 10px; font-family: 'Coco Gothic', sans-serif; font-size: 0.95rem; color: #5a5a5a;">
+              <span style="color: var(--orange); font-weight: 700; flex-shrink: 0;">✓</span>
+              <span>Personalized name embossing</span>
+            </li>
+            <li style="display: flex; align-items: flex-start; gap: 10px; font-family: 'Coco Gothic', sans-serif; font-size: 0.95rem; color: #5a5a5a;">
+              <span style="color: var(--orange); font-weight: 700; flex-shrink: 0;">✓</span>
+              <span>Gilt-edged pages & ribbons</span>
+            </li>
+            <li style="display: flex; align-items: flex-start; gap: 10px; font-family: 'Coco Gothic', sans-serif; font-size: 0.95rem; color: #5a5a5a;">
+              <span style="color: var(--orange); font-weight: 700; flex-shrink: 0;">✓</span>
+              <span>Luxury box with silk lining</span>
+            </li>
+          </ul>
+          <div style="margin-bottom: 20px;">
+            <div style="font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 700; color: #2D0F1E; margin-bottom: 4px;">$89.99</div>
+            <div style="font-family: 'Coco Gothic', sans-serif; font-size: 0.85rem; color: #999;">per copy</div>
+          </div>
+          <button onclick="handleCreateBook()" style="width: 100%; background: #f5f5f5; color: #2D0F1E; border: 1px solid #d4cfc4; border-radius: 6px; padding: 12px 16px; font-family: 'Playfair Display', serif; font-size: 0.95rem; font-weight: 700; cursor: pointer; transition: all 0.3s ease;">Create Your Book</button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- PUBLISHED COLLECTIONS SECTION -->
+    <div>
+      <h2 style="font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 700; color: #2D0F1E; text-align: center; margin-bottom: 60px;">Published <em>Collections</em></h2>
+
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; max-width: 1200px; margin: 0 auto;">
+
+        <!-- Collection Card 1 -->
+        <div style="background: white; border: 1px solid #d4cfc4; border-radius: 12px; overflow: hidden; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+          <div style="background: linear-gradient(135deg, #8B1A2B, #681e2a); height: 240px; display: flex; align-items: center; justify-content: center; font-size: 72px; transition: transform 0.3s ease;">📚</div>
+          <div style="padding: 24px;">
+            <h3 style="font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 700; color: #2D0F1E; margin-bottom: 8px;">Midnight Confessions</h3>
+            <p style="font-family: 'Coco Gothic', sans-serif; font-size: 0.9rem; color: #5a5a5a; margin-bottom: 12px; line-height: 1.5;">A chance encounter at midnight leads to unexpected conversations and chemistry.</p>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+              <div style="font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 700; color: #2D0F1E;">$19.99</div>
+              <div style="font-family: 'Coco Gothic', sans-serif; font-size: 0.8rem; color: #999;">296 pages</div>
+            </div>
+            <button onclick="handlePurchaseBook('Midnight Confessions')" style="width: 100%; background: #2D0F1E; color: var(--green); border: 1px solid #2D0F1E; border-radius: 6px; padding: 12px 16px; font-family: 'Playfair Display', serif; font-size: 0.95rem; font-weight: 700; cursor: pointer; transition: all 0.3s ease;">Purchase Book</button>
+          </div>
+        </div>
+
+        <!-- Collection Card 2 -->
+        <div style="background: white; border: 1px solid #d4cfc4; border-radius: 12px; overflow: hidden; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+          <div style="background: linear-gradient(135deg, #5a1924, #681e2a); height: 240px; display: flex; align-items: center; justify-content: center; font-size: 72px; transition: transform 0.3s ease;">🌹</div>
+          <div style="padding: 24px;">
+            <h3 style="font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 700; color: #2D0F1E; margin-bottom: 8px;">Garden of Secrets</h3>
+            <p style="font-family: 'Coco Gothic', sans-serif; font-size: 0.9rem; color: #5a5a5a; margin-bottom: 12px; line-height: 1.5;">Hidden behind closed garden gates lies a world of passion and mystery.</p>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+              <div style="font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 700; color: #2D0F1E;">$22.99</div>
+              <div style="font-family: 'Coco Gothic', sans-serif; font-size: 0.8rem; color: #999;">312 pages</div>
+            </div>
+            <button onclick="handlePurchaseBook('Garden of Secrets')" style="width: 100%; background: #2D0F1E; color: var(--green); border: 1px solid #2D0F1E; border-radius: 6px; padding: 12px 16px; font-family: 'Playfair Display', serif; font-size: 0.95rem; font-weight: 700; cursor: pointer; transition: all 0.3s ease;">Purchase Book</button>
+          </div>
+        </div>
+
+        <!-- Collection Card 3 -->
+        <div style="background: white; border: 1px solid #d4cfc4; border-radius: 12px; overflow: hidden; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+          <div style="background: linear-gradient(135deg, #6B2140, #681e2a); height: 240px; display: flex; align-items: center; justify-content: center; font-size: 72px; transition: transform 0.3s ease;">✨</div>
+          <div style="padding: 24px;">
+            <h3 style="font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 700; color: #2D0F1E; margin-bottom: 8px;">The Arrangement</h3>
+            <p style="font-family: 'Coco Gothic', sans-serif; font-size: 0.9rem; color: #5a5a5a; margin-bottom: 12px; line-height: 1.5;">A forbidden arrangement leads to unexpected passion in the library after hours.</p>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+              <div style="font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 700; color: #2D0F1E;">$24.99</div>
+              <div style="font-family: 'Coco Gothic', sans-serif; font-size: 0.8rem; color: #999;">328 pages</div>
+            </div>
+            <button onclick="handlePurchaseBook('The Arrangement')" style="width: 100%; background: #2D0F1E; color: var(--green); border: 1px solid #2D0F1E; border-radius: 6px; padding: 12px 16px; font-family: 'Playfair Display', serif; font-size: 0.95rem; font-weight: 700; cursor: pointer; transition: all 0.3s ease;">Purchase Book</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<script src="https://unpkg.com/lucide@latest"></script>
+<script>
+  if(window.lucide && window.lucide.createIcons) {
+    window.lucide.createIcons();
+  }
+</script>
 <script>
   // Load nav from nav-logged-in.html
   fetch('./nav-logged-in.html')
@@ -16,7 +207,7 @@
     })
     .catch(error => console.error('Error loading nav:', error));
 </script>
-</script>
+
 <script src="script.js"></script>
 </body>
 </html>

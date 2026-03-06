@@ -53,13 +53,24 @@
   .nav-cta:hover { background:var(--orange-d); transform:scale(1.03); }
 
   /* ── DROPDOWN NAV ── */
-  .nav-dropdown { position:relative; padding-bottom:8px; }
+  .nav-dropdown { position:relative; padding-bottom:0; }
   .nav-dropdown > a { display:flex; align-items:center; gap:4px; cursor:pointer; }
   .dropdown-arrow { font-size:0.5rem; transition:transform 0.22s; }
   .nav-dropdown:hover .dropdown-arrow { transform:rotate(180deg); }
 
+  /* Hover area extends down to cover gap between trigger and menu */
+  .nav-dropdown::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: -20px;
+    right: -20px;
+    height: 12px;
+    z-index: 999;
+  }
+
   .dropdown-menu {
-    position:absolute; top:calc(100% - 8px); left:0;
+    position:absolute; top:calc(100% + 4px); left:0;
     background:rgba(50, 13, 30, 0.98);
     border:1px solid rgba(248, 220, 118, 0.2);
     border-radius:4px;
@@ -74,6 +85,7 @@
     pointer-events:none;
   }
   .nav-dropdown:hover .dropdown-menu { opacity:1; visibility:visible; transform:translateY(0); pointer-events:auto; }
+  .nav-dropdown:hover::after { z-index: 999; }
 
   .dropdown-menu li { list-style:none; }
   .dropdown-menu a {
@@ -639,64 +651,6 @@
     transform: scale(1.1);
   }
 
-  /* ── DROPDOWN STYLES ── */
-  .nav-dropdown {
-    position: relative;
-  }
-
-  .nav-dropdown a {
-    display: flex;
-    align-items: center;
-    gap: 4px;
-  }
-
-  .dropdown-arrow {
-    font-size: 0.7em;
-    transition: transform 0.2s;
-  }
-
-  .dropdown-menu {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 8px;
-    list-style: none;
-    padding: 8px 0;
-    min-width: 180px;
-    display: none;
-    flex-direction: column;
-    margin-top: 8px;
-    z-index: 100;
-  }
-
-  .dropdown-menu li {
-    padding: 0;
-  }
-
-  .dropdown-menu a {
-    display: block;
-    padding: 12px 16px;
-    color: var(--charcoal);
-    text-decoration: none;
-    transition: background 0.2s;
-    font-size: 0.63rem;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-  }
-
-  .dropdown-menu a:hover {
-    background: rgba(255, 255, 255, 0.05);
-  }
-
-  .nav-dropdown:hover .dropdown-menu {
-    display: flex;
-  }
-
-  .nav-dropdown:hover .dropdown-arrow {
-    transform: rotate(180deg);
-  }
 
   .stealth-btn {
     background: rgba(255, 255, 255, 0.05);

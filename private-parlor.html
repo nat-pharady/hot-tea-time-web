@@ -1,4 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Private Parlor — Hot Tea Time</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@800&family=Coco+Gothic:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="damask">
 
+<!-- NAV -->
+<div id="nav-container"></div>
+
+<!-- PRIVATE PARLOR FEATURE PAGE -->
+<section id="private-parlor-feature" style="background:var(--cream); padding-top: 80px;">
+  <div class="section-inner">
+    <div class="locked-badge">🔒 Premium Feature</div>
+    <h1 class="locked-title">Private Parlor</h1>
+    <p class="locked-subtitle">Intimate conversations, just between you and your favorite creators</p>
+
+    <!-- Chat Preview -->
+    <div class="chat-preview">
+      <div class="chat-preview-overlay">
+        <div class="chat-message dm">💌 Alexandra Blake: Thank you so much for your support! It means everything</div>
+        <div class="chat-message you">You: I absolutely loved your latest chapter, the character development is incredible</div>
+        <div class="chat-message dm">💌 Alexandra Blake: I'm so glad! Want to know what happens next? 😉</div>
+        <div class="chat-message you">You: YES! I've been dying to know 👀</div>
+      </div>
+    </div>
+
+    <!-- Features List -->
+    <div class="feature-list">
+      <h3>Connect Directly</h3>
+      <ul>
+        <li>💌 Direct messages with your favorite authors and creators</li>
+        <li>👥 Private conversations with other members you connect with</li>
+        <li>📝 Share feedback and get personalized responses</li>
+        <li>💎 Exclusive access to the creators you support</li>
+        <li>🤫 Completely private, secure, and discreet conversations</li>
+      </ul>
+    </div>
+
+    <!-- Unlock CTA -->
+    <button class="unlock-btn" onclick="handleUnlockFeature('private-parlor')">
+      Unlock the Inner Circle — $4.99/mo
+    </button>
+  </div>
+</section>
+
+<!-- AI GENERATOR MODAL -->
+<div id="ai-generator-modal" class="ai-generator-modal" style="display: none;">
+  <div class="ai-gen-overlay"></div>
+  <div class="ai-gen-content-minimal">
+    <button class="ai-gen-close" onclick="closeAIGeneratorModal()">&times;</button>
+    <div class="ai-gen-teaser">
+      <div class="ai-gen-icon">🔒</div>
+      <h1 class="ai-gen-title">Craft Your Fantasy</h1>
+      <p class="ai-gen-description">
+        Shape characters, weave tension, ignite passion.<br>
+        Your story. Your rules. Your fantasy.
+      </p>
+      <button class="ai-gen-unlock-btn" onclick="handleAIGeneratorUnlock()">
+        Unlock the Inner Circle — $4.99/mo
+      </button>
+    </div>
+  </div>
+</div>
+
+<script src="https://unpkg.com/lucide@latest"></script>
+<script>
+  if(window.lucide && window.lucide.createIcons) {
+    window.lucide.createIcons();
+  }
+</script>
 <script>
   // Load nav from nav-logged-in.html
   fetch('./nav-logged-in.html')
@@ -16,7 +92,7 @@
     })
     .catch(error => console.error('Error loading nav:', error));
 </script>
-</script>
+
 <script src="script.js"></script>
 </body>
 </html>
