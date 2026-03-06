@@ -430,14 +430,14 @@ document.addEventListener('DOMContentLoaded', function() {
 function addToLibrary() {
   const currentStory = getCurrentStoryData();
   if (!currentStory || !currentStory.id) {
-    alert('Could not add story. Please try again.');
+    showToast('Could not add story. Please try again.');
     return;
   }
 
   const savedStories = getSavedStories();
 
   if (savedStories[currentStory.id]) {
-    alert('Story already in your library!');
+    showToast('Story already in your library!');
     return;
   }
 
@@ -447,7 +447,7 @@ function addToLibrary() {
   };
 
   localStorage.setItem('savedStories', JSON.stringify(savedStories));
-  alert('✓ Added to library!');
+  showToast('✓ ' + currentStory.title + ' added to your library!');
 }
 
 // Get currently displayed story data from reading pane
@@ -502,18 +502,21 @@ function removeFromLibrary(storyId) {
 function displaySavedStories() {
   const savedStories = getSavedStories();
   const grid = document.getElementById('saved-stories-grid');
-  const emptyState = document.getElementById('empty-state');
+  const emptyState = document.getElementById('stories-empty-state');
+  const libraryControls = document.querySelector('.library-controls');
 
-  if (!grid || !emptyState) return;
+  if (!grid) return;
 
   if (Object.keys(savedStories).length === 0) {
     grid.style.display = 'none';
-    emptyState.style.display = 'block';
+    if (emptyState) emptyState.style.display = 'block';
+    if (libraryControls) libraryControls.style.display = 'none';
     return;
   }
 
-  emptyState.style.display = 'none';
+  if (emptyState) emptyState.style.display = 'none';
   grid.style.display = 'grid';
+  if (libraryControls) libraryControls.style.display = 'block';
   grid.innerHTML = '';
 
   const sortedStories = sortStories(savedStories);
@@ -835,6 +838,37 @@ let currentCharacterIndex = 0;
 let currentFilter = 'all';
 let filteredCharacters = [];
 
+function setupCharacterCardHover(card) {
+  const infoDiv = card.querySelector('.character-info');
+  const nameDiv = card.querySelector('.character-name');
+
+  // Wait for next frame to ensure elements are rendered
+  requestAnimationFrame(() => {
+    // Measure the name height
+    const nameHeight = nameDiv.offsetHeight;
+    const namePadding = 16; // padding around the name
+    const initialMaxHeight = nameHeight + namePadding * 2;
+
+    // Measure the full content height
+    const fullHeight = infoDiv.scrollHeight;
+
+    // Set initial max-height
+    infoDiv.style.maxHeight = initialMaxHeight + 'px';
+    infoDiv.style.overflow = 'hidden';
+
+    // Add hover listeners
+    card.addEventListener('mouseenter', () => {
+      // On hover, expand to show all content (slide up effect)
+      infoDiv.style.maxHeight = fullHeight + 'px';
+    });
+
+    card.addEventListener('mouseleave', () => {
+      // On leave, collapse back to name only
+      infoDiv.style.maxHeight = initialMaxHeight + 'px';
+    });
+  });
+}
+
 function renderCharacterGrid(filter) {
   const grid = document.getElementById('character-grid');
   if (!grid) return;
@@ -855,22 +889,24 @@ function renderCharacterGrid(filter) {
   filteredCharacters.forEach(character => {
     const card = document.createElement('div');
     card.className = 'character-card';
-    card.style.background = character.gradient;
     card.onclick = () => openCharacterModal(character.id);
 
     const traits = character.traits
       .map(trait => `<span class="trait-tag">${trait}</span>`)
       .join('');
 
-    const bioPreview = character.bio.substring(0, 80) + '...';
+    const bioPreview = character.bio.substring(0, 100) + '...';
+
+    // Split character name by spaces for multi-line display
+    const nameParts = character.name.split(' ');
+    const formattedName = nameParts.map(part => `<div class="name-part">${part}</div>`).join('');
 
     card.innerHTML = `
-      <!-- Background overlay (darkens image) -->
-      <div class="character-card-overlay"></div>
-
-      <!-- Text overlay that slides up on hover -->
-      <div class="character-card-text-overlay">
-        <h3 class="character-card-name">${character.name}</h3>
+      <div class="character-portrait" style="background: ${character.gradient};">
+        <span class="character-category">${character.category}</span>
+      </div>
+      <div class="character-info">
+        <div class="character-name">${formattedName}</div>
         <p class="character-age-title">${character.age} • ${character.archetype}</p>
         <div class="character-traits">
           ${traits}
@@ -881,32 +917,8 @@ function renderCharacterGrid(filter) {
 
     grid.appendChild(card);
 
-    // Smart max-height clipping: measure name height and set appropriate max-height
-    const nameElement = card.querySelector('.character-card-name');
-    const textOverlay = card.querySelector('.character-card-text-overlay');
-
-    if (nameElement && textOverlay) {
-      // Measure the name element height
-      const nameHeight = nameElement.offsetHeight;
-      // Small buffer below name to ensure no age text shows
-      const initialMaxHeight = nameHeight + 8;
-      // Measure total overlay height to show all content on hover
-      const expandedMaxHeight = textOverlay.offsetHeight;
-
-      // Set initial state: only show name
-      textOverlay.style.maxHeight = initialMaxHeight + 'px';
-
-      // Add hover behavior
-      card.addEventListener('mouseenter', () => {
-        textOverlay.style.maxHeight = expandedMaxHeight + 'px';
-        textOverlay.style.transform = 'translateY(-20px)'; // Smooth slide up
-      });
-
-      card.addEventListener('mouseleave', () => {
-        textOverlay.style.maxHeight = initialMaxHeight + 'px';
-        textOverlay.style.transform = 'translateY(0)';
-      });
-    }
+    // Setup hover animation for this card
+    setupCharacterCardHover(card);
   });
 }
 
@@ -1003,6 +1015,180 @@ function useCharacterInStory() {
 
     // Open the AI generator modal
     openAIGeneratorModal();
+  }
+}
+
+// Save character to library
+function saveCharacterToLibrary() {
+  if (currentCharacterIndex < 0 || currentCharacterIndex >= filteredCharacters.length) return;
+
+  const character = filteredCharacters[currentCharacterIndex];
+  let savedCharacters = JSON.parse(localStorage.getItem('savedCharacters')) || [];
+
+  // Check if character is already saved
+  if (savedCharacters.find(c => c.id === character.id)) {
+    showToast('This character is already in your library!');
+    return;
+  }
+
+  // Add character to saved list
+  savedCharacters.push(character);
+  localStorage.setItem('savedCharacters', JSON.stringify(savedCharacters));
+
+  console.log('✓ Character saved to library:', character.name);
+  showToast(`${character.name} has been added to your library!`);
+
+  closeCharacterModal();
+}
+
+// Load saved characters from localStorage
+function loadSavedCharacters() {
+  const savedCharacters = JSON.parse(localStorage.getItem('savedCharacters')) || [];
+  return savedCharacters;
+}
+
+// Render saved characters in My Library
+function renderSavedCharacterGrid() {
+  const grid = document.getElementById('saved-characters-grid');
+  const emptyState = document.getElementById('characters-empty-state');
+
+  if (!grid) return;
+
+  const savedCharacters = loadSavedCharacters();
+
+  if (savedCharacters.length === 0) {
+    grid.style.display = 'none';
+    if (emptyState) emptyState.style.display = 'block';
+    return;
+  }
+
+  grid.style.display = 'grid';
+  if (emptyState) emptyState.style.display = 'none';
+  grid.innerHTML = '';
+
+  // Render each saved character as a card
+  savedCharacters.forEach(character => {
+    const card = document.createElement('div');
+    card.className = 'character-card';
+    card.onclick = () => openCharacterModal(character.id);
+
+    const traits = character.traits
+      .map(trait => `<span class="trait-tag">${trait}</span>`)
+      .join('');
+
+    const bioPreview = character.bio.substring(0, 100) + '...';
+
+    // Split character name by spaces for multi-line display
+    const nameParts = character.name.split(' ');
+    const formattedName = nameParts.map(part => `<div class="name-part">${part}</div>`).join('');
+
+    card.innerHTML = `
+      <div class="character-portrait" style="background: ${character.gradient};">
+        <span class="character-category">${character.category}</span>
+      </div>
+      <div class="character-info">
+        <div class="character-name">${formattedName}</div>
+        <p class="character-age-title">${character.age} • ${character.archetype}</p>
+        <div class="character-traits">
+          ${traits}
+        </div>
+        <p class="character-bio-preview">${bioPreview}</p>
+      </div>
+    `;
+
+    grid.appendChild(card);
+    setupCharacterCardHover(card);
+  });
+}
+
+// Setup library tabs
+// Initialize Stories tab - load and display saved stories
+function initializeStoriesTab() {
+  const storiesGrid = document.getElementById('saved-stories-grid');
+  const storiesEmptyState = document.getElementById('stories-empty-state');
+  const libraryControls = document.querySelector('.library-controls');
+
+  if (!storiesGrid) return;
+
+  // Load and display saved stories
+  displaySavedStories();
+
+  // Check if there are any saved stories in the grid now
+  const hasSavedStories = storiesGrid.children.length > 0;
+
+  if (hasSavedStories) {
+    storiesGrid.style.display = 'grid';
+    if (storiesEmptyState) storiesEmptyState.style.display = 'none';
+    if (libraryControls) libraryControls.style.display = 'block';
+  } else {
+    storiesGrid.style.display = 'none';
+    if (storiesEmptyState) storiesEmptyState.style.display = 'block';
+    if (libraryControls) libraryControls.style.display = 'none';
+  }
+}
+
+// Show toast notification
+function showToast(message) {
+  const toast = document.getElementById('toast-notification');
+  const toastMessage = document.getElementById('toast-message');
+
+  if (!toast || !toastMessage) return;
+
+  // Set the message
+  toastMessage.textContent = message;
+
+  // Remove hide class if it exists
+  toast.classList.remove('hide');
+
+  // Show the toast
+  toast.style.display = 'flex';
+
+  // Auto-dismiss after 3 seconds
+  setTimeout(() => {
+    toast.classList.add('hide');
+    setTimeout(() => {
+      toast.style.display = 'none';
+    }, 400); // Wait for animation to finish
+  }, 3000);
+}
+
+function setupLibraryTabs() {
+  const tabBtns = document.querySelectorAll('.library-tab-btn');
+  const tabContents = document.querySelectorAll('.library-tab-content');
+
+  // Initialize stories tab on first load
+  initializeStoriesTab();
+
+  tabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const tabName = btn.dataset.tab;
+
+      // Remove active from all buttons and contents
+      tabBtns.forEach(b => b.classList.remove('active'));
+      tabContents.forEach(c => c.classList.remove('active'));
+
+      // Add active to clicked button and corresponding content
+      btn.classList.add('active');
+      document.getElementById(`${tabName}-tab`).classList.add('active');
+
+      // If switching to stories tab, check for saved stories
+      if (tabName === 'stories') {
+        initializeStoriesTab();
+      }
+
+      // If switching to characters tab, render saved characters
+      if (tabName === 'characters') {
+        renderSavedCharacterGrid();
+      }
+    });
+  });
+
+  // Add event listener for sort dropdown
+  const sortDropdown = document.getElementById('sort-by');
+  if (sortDropdown) {
+    sortDropdown.addEventListener('change', () => {
+      displaySavedStories();
+    });
   }
 }
 

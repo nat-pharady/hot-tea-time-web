@@ -11,6 +11,14 @@
 </head>
 <body class="damask">
 
+<!-- TOAST NOTIFICATION -->
+<div id="toast-notification" class="toast" style="display: none;">
+  <div class="toast-content">
+    <span class="toast-icon">✓</span>
+    <span class="toast-message" id="toast-message"></span>
+  </div>
+</div>
+
 <!-- NAV CONTAINER - Loads from nav-logged-in.html -->
 <div id="nav-container"></div>
 
@@ -22,31 +30,54 @@
       <h2 class="section-title">My <em>Library</em></h2>
     </div>
 
-    <!-- Sort/Filter Controls -->
-    <div class="library-controls">
-      <select id="sort-by">
-        <option value="date-desc">Recently Added</option>
-        <option value="date-asc">Oldest First</option>
-        <option value="title-asc">Title A-Z</option>
-        <option value="title-desc">Title Z-A</option>
-      </select>
+    <!-- Library Tabs -->
+    <div class="library-tabs">
+      <button class="library-tab-btn active" data-tab="stories">Stories</button>
+      <button class="library-tab-btn" data-tab="characters">Characters</button>
     </div>
 
-    <!-- Empty State -->
-    <div id="empty-state" style="display: none;">
-      <p>Your library is empty. Start saving stories from the home page!</p>
-      <a href="home.html">Discover Stories</a>
+    <!-- STORIES TAB -->
+    <div class="library-tab-content active" id="stories-tab">
+      <!-- Sort/Filter Controls -->
+      <div class="library-controls">
+        <select id="sort-by">
+          <option value="date-desc">Recently Added</option>
+          <option value="date-asc">Oldest First</option>
+          <option value="title-asc">Title A-Z</option>
+          <option value="title-desc">Title Z-A</option>
+        </select>
+      </div>
+
+      <!-- Empty State -->
+      <div id="stories-empty-state" class="empty-state" style="display: none;">
+        <p>Your story library is empty. Start saving stories from the home page!</p>
+        <a href="home.html" class="btn-primary">Discover Stories</a>
+      </div>
+
+      <!-- Stories Grid -->
+      <div id="saved-stories-grid" class="story-grid">
+        <!-- Dynamically populated by JavaScript -->
+      </div>
     </div>
 
-    <!-- Stories Grid -->
-    <div id="saved-stories-grid" class="story-grid">
-      <!-- Dynamically populated by JavaScript -->
+    <!-- CHARACTERS TAB -->
+    <div class="library-tab-content" id="characters-tab">
+      <!-- Empty State -->
+      <div id="characters-empty-state" class="empty-state" style="display: none;">
+        <p>Your character library is empty. Start saving characters from the Character Library!</p>
+        <a href="character-library.html" class="btn-primary">Explore Characters</a>
+      </div>
+
+      <!-- Characters Grid -->
+      <div id="saved-characters-grid" class="character-grid">
+        <!-- Dynamically populated by JavaScript -->
+      </div>
     </div>
   </div>
 </section>
 
 <!-- READING PANE MODAL -->
-<div id="reading-pane" style="display: none;">
+<div id="reading-pane" class="reading-pane" style="display: none;">
   <div class="reading-pane-overlay"></div>
   <div class="reading-pane-content">
     <div class="reading-pane-header">
@@ -117,6 +148,13 @@
     window.lucide.createIcons();
   }
 </script>
+<script src="character-data.js"></script>
 <script src="script.js"></script>
+<script>
+  // Initialize My Library page
+  document.addEventListener('DOMContentLoaded', function() {
+    setupLibraryTabs();
+  });
+</script>
 </body>
 </html>

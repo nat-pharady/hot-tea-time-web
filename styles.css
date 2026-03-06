@@ -228,6 +228,64 @@
   .feature-card p { font-family:'Coco Gothic',sans-serif; font-size:0.98rem; line-height:1.9; color:#f7f4ea; }
   .feature-tag { display:inline-block; margin-top:14px; font-family:'Coco Gothic',sans-serif; font-size:0.55rem; letter-spacing:0.12em; text-transform:uppercase; color:#681e2a; background:var(--orange); border:1px solid var(--orange); padding:4px 12px; border-radius:100px; }
 
+  /* ── MY LIBRARY TABS ── */
+  .library-tabs {
+    display: flex;
+    gap: 0;
+    margin-bottom: 48px;
+    border-bottom: 2px solid rgba(248, 220, 118, 0.2);
+  }
+
+  .library-tab-btn {
+    padding: 16px 24px;
+    background: none;
+    border: none;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: rgba(247, 244, 234, 0.6);
+    cursor: pointer;
+    transition: color 0.3s ease, border-bottom-color 0.3s ease;
+    border-bottom: 3px solid transparent;
+    margin-bottom: -2px;
+  }
+
+  .library-tab-btn:hover {
+    color: var(--orange);
+  }
+
+  .library-tab-btn.active {
+    color: var(--orange);
+    border-bottom-color: var(--orange);
+  }
+
+  .library-tab-content {
+    display: none;
+  }
+
+  .library-tab-content.active {
+    display: block;
+  }
+
+  .empty-state {
+    text-align: center;
+    padding: 80px 40px;
+    background: rgba(45, 15, 30, 0.2);
+    border-radius: 12px;
+    margin-bottom: 48px;
+  }
+
+  .empty-state p {
+    font-family: 'Coco Gothic', sans-serif;
+    font-size: 1rem;
+    color: rgba(247, 244, 234, 0.7);
+    margin-bottom: 24px;
+  }
+
+  .empty-state .btn-primary {
+    display: inline-block;
+  }
+
   /* ── STORIES ── */
   #stories { background:var(--parchment); }
   .story-header { display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:44px; }
@@ -410,6 +468,66 @@
     .newsletter-btn{border-radius:0 0 12px 12px;}
     .brew-inner{padding:64px 24px;}
     #brew{background-position:right center;}
+  }
+
+  /* ── TOAST NOTIFICATION ── */
+  .toast {
+    position: fixed;
+    top: 24px;
+    right: 24px;
+    background: linear-gradient(135deg, rgba(76, 175, 80, 0.95), rgba(56, 142, 60, 0.95));
+    border: 1px solid rgba(76, 175, 80, 0.3);
+    border-radius: 12px;
+    padding: 16px 24px;
+    backdrop-filter: blur(8px);
+    z-index: 50000;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    animation: slideInToast 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .toast.hide {
+    animation: slideOutToast 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  }
+
+  .toast-content {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .toast-icon {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #fff;
+  }
+
+  .toast-message {
+    font-family: 'Coco Gothic', sans-serif;
+    font-size: 0.95rem;
+    color: #fff;
+    font-weight: 500;
+  }
+
+  @keyframes slideInToast {
+    from {
+      transform: translateX(400px);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideOutToast {
+    from {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    to {
+      transform: translateX(400px);
+      opacity: 0;
+    }
   }
 
   /* ── TASTE TEST MODAL ── */
@@ -1734,85 +1852,54 @@
   border-radius: 12px;
   overflow: hidden;
   cursor: pointer;
-  transition: transform 0.3s;
-  background-size: cover;
-  background-position: center;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .character-card:hover {
   transform: translateY(-8px);
+  box-shadow: 0 12px 32px rgba(248, 220, 118, 0.2);
 }
 
-/* Background overlay (darkens image) */
-.character-card-overlay {
+.character-portrait {
   position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.3);
-  transition: background 0.3s;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
 }
 
-.character-card:hover .character-card-overlay {
-  background: rgba(0, 0, 0, 0.6);
+.character-category {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(248, 220, 118, 0.2);
+  color: var(--orange);
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.55rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 700;
 }
 
-/* Text overlay that slides up on hover */
-.character-card-text-overlay {
+.character-info {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  padding: 20px 24px 24px 24px;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.4), transparent);
-  z-index: 2;
+  padding: 24px;
+  background: linear-gradient(180deg, rgba(26, 11, 17, 0.2) 0%, rgba(26, 11, 17, 0.8) 100%);
+  backdrop-filter: blur(8px);
+  max-height: 100px;
   overflow: hidden;
-  transition: max-height 0.4s ease-out, transform 0.4s ease-out;
-  transform: translateY(0);
-  /* JavaScript controls max-height dynamically based on name height */
+  transition: max-height 0.4s ease, background 0.4s ease;
 }
 
-.character-card-name {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.6rem;
-  font-weight: 800;
-  color: var(--green);
-  margin: 0 0 12px 0;
-  line-height: 1.2;
-}
-
-.character-card .character-age-title {
-  font-family: 'Coco Gothic', sans-serif;
-  font-size: 0.7rem;
-  color: rgba(247, 244, 234, 0.8);
-  margin: 0 0 12px 0;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-}
-
-.character-card .character-traits {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-  margin-bottom: 12px;
-}
-
-.character-card .character-bio-preview {
-  font-size: 0.85rem;
-  color: rgba(247, 244, 234, 0.8);
-  margin: 0;
-  line-height: 1.4;
-}
-
-/* Old selectors kept for compatibility but hidden */
-.character-portrait {
-  display: none;
-}
-
-.character-info {
-  display: none;
-}
-
-.character-category {
-  display: none;
+.character-card:hover .character-info {
+  background: linear-gradient(180deg, rgba(26, 11, 17, 0.3) 0%, rgba(26, 11, 17, 0.95) 100%);
 }
 
 .character-name {
@@ -1821,6 +1908,14 @@
   font-weight: 800;
   color: var(--green);
   margin-bottom: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.name-part {
+  display: block;
+  line-height: 1.1;
 }
 
 .character-age-title {
@@ -2225,7 +2320,6 @@ body.stealth-mode .story-grid {
 body.stealth-mode .story-card,
 body.stealth-mode .character-card {
   display: block !important;
-  height: auto !important;
   background: #FFFFFF !important;
   border: 1px solid #DDDDDD !important;
   border-radius: 0 !important;
@@ -2247,21 +2341,6 @@ body.stealth-mode .story-lock { display: none !important; }
 body.stealth-mode .character-portrait { display: none !important; }
 body.stealth-mode .character-info { padding: 0 !important; background: transparent !important; }
 body.stealth-mode .character-bio-preview { display: none !important; }
-
-/* Hide character card overlays and show text instead */
-body.stealth-mode .character-card-overlay { display: none !important; }
-body.stealth-mode .character-card-text-overlay {
-  position: static !important;
-  padding: 0 !important;
-  background: transparent !important;
-  max-height: none !important;
-  overflow: visible !important;
-}
-body.stealth-mode .character-card-name {
-  font-size: 1rem !important;
-  color: #000000 !important;
-  margin-bottom: 4px !important;
-}
 
 /* Simplify story/character display */
 body.stealth-mode .story-title,
