@@ -892,8 +892,8 @@ function renderCharacterGrid(filter) {
     if (nameElement && textOverlay) {
       // Get the name height after it's rendered
       const nameHeight = nameElement.offsetHeight;
-      // Overlay has padding: 20px 24px 24px 24px (top + bottom = 44px)
-      const initialMaxHeight = 20 + nameHeight + 24;
+      // Only show the name: top padding + name height (excludes name margin-bottom and age line)
+      const initialMaxHeight = 20 + nameHeight;
       const expandedMaxHeight = 280;
 
       // Set initial max-height (only shows the name)
