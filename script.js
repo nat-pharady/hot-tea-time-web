@@ -959,6 +959,24 @@ function setupFilterButtons() {
   });
 }
 
+// Use character in story - opens AI generator modal with selected character
+function useCharacterInStory() {
+  const currentCharacterId = filteredCharacters[currentCharacterIndex].id;
+  const selectedCharacter = characterLibrary.find(c => c.id === currentCharacterId);
+
+  if (selectedCharacter) {
+    // Store the selected character in a global variable for the AI generator to access
+    window.selectedCharacterForStory = selectedCharacter;
+    console.log('✓ Character selected for story:', selectedCharacter.name);
+
+    // Close the character modal
+    closeCharacterModal();
+
+    // Open the AI generator modal
+    openAIGeneratorModal();
+  }
+}
+
 // Close modal on overlay click
 document.addEventListener('DOMContentLoaded', () => {
   const modal = document.getElementById('character-modal');
