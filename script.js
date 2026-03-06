@@ -884,6 +884,32 @@ function renderCharacterGrid(filter) {
     `;
 
     grid.appendChild(card);
+
+    // Smart height calculation: measure the name height and set max-height accordingly
+    const nameElement = card.querySelector('.character-card-name');
+    const textOverlay = card.querySelector('.character-card-text-overlay');
+
+    if (nameElement && textOverlay) {
+      // Get the name height after it's rendered
+      const nameHeight = nameElement.offsetHeight;
+      // Overlay has padding: 20px 24px 24px 24px (top + bottom = 44px)
+      const initialMaxHeight = 20 + nameHeight + 24;
+      const expandedMaxHeight = 280;
+
+      // Set initial max-height (only shows the name)
+      textOverlay.style.maxHeight = initialMaxHeight + 'px';
+      textOverlay.dataset.initialMaxHeight = initialMaxHeight;
+      textOverlay.dataset.expandedMaxHeight = expandedMaxHeight;
+
+      // Add hover behavior to expand/collapse
+      card.addEventListener('mouseenter', () => {
+        textOverlay.style.maxHeight = expandedMaxHeight + 'px';
+      });
+
+      card.addEventListener('mouseleave', () => {
+        textOverlay.style.maxHeight = initialMaxHeight + 'px';
+      });
+    }
   });
 }
 
