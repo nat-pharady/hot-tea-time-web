@@ -2097,3 +2097,131 @@
     transform: translateY(-4px);
   }
 }
+
+/* ═════════════════════════════════════════════════════════════════════════════
+   STEALTH MODE - DISCREET READING INTERFACE
+   Transform Hot Tea Time into a plain, unbranded document interface
+   ═════════════════════════════════════════════════════════════════════════════ */
+
+body.stealth-mode {
+  /* Override all color variables for plain white/grey/black scheme */
+  --cream:    #FFFFFF !important;           /* white background */
+  --orange:   #666666 !important;           /* neutral grey */
+  --orange-d: #444444 !important;           /* darker grey */
+  --orange-l: #AAAAAA !important;           /* lighter grey */
+  --green:    #000000 !important;           /* black text */
+  --green-l:  #CCCCCC !important;           /* light grey */
+  --charcoal: #000000 !important;           /* black text */
+  --muted:    rgba(0,0,0,0.5) !important;   /* grey overlay */
+  --parchment: #FFFFFF !important;          /* white sections */
+  --blush:    #F5F5F5 !important;           /* off-white */
+  --card-bg:  #FFFFFF !important;           /* white cards */
+  --silver:   #AAAAAA !important;           /* grey borders */
+  --crimson:  #CCCCCC !important;           /* light grey */
+  --plum:     #EEEEEE !important;           /* very light grey */
+  --dark-cherry: #DDDDDD !important;        /* light grey borders */
+}
+
+/* Hide all decorative elements */
+body.stealth-mode .damask { display: none !important; }
+body.stealth-mode body::after { display: none !important; }
+
+/* Hide all images */
+body.stealth-mode img { display: none !important; }
+
+/* Hide logos and branding */
+body.stealth-mode .hero-nav-title { display: none !important; }
+body.stealth-mode .nav-logo { display: none !important; }
+
+/* Plain navigation bar */
+body.stealth-mode .hero-nav {
+  background: #FFFFFF !important;
+  border-bottom: 1px solid #CCCCCC !important;
+  box-shadow: none !important;
+  text-shadow: none !important;
+}
+
+/* Hide character portraits */
+body.stealth-mode .character-portrait {
+  background: #F5F5F5 !important;
+  display: none !important;
+}
+
+body.stealth-mode .character-modal-portrait {
+  display: none !important;
+}
+
+/* Modal layout adjustment - text only */
+body.stealth-mode .character-modal-content {
+  grid-template-columns: 1fr !important;
+}
+
+/* Plain button styling */
+body.stealth-mode button:not(.stealth-btn) {
+  background: #F5F5F5 !important;
+  border: 1px solid #999999 !important;
+  color: #000000 !important;
+  box-shadow: none !important;
+}
+
+body.stealth-mode button:not(.stealth-btn):hover {
+  background: #EEEEEE !important;
+}
+
+/* Plain modal overlay */
+body.stealth-mode .modal-overlay {
+  background: rgba(200,200,200,0.5) !important;
+}
+
+/* Remove all blur effects */
+body.stealth-mode [style*="backdrop-filter"] {
+  backdrop-filter: none !important;
+}
+
+/* Plain marquee */
+body.stealth-mode .marquee {
+  background: #FFFFFF !important;
+  border: 1px solid #CCCCCC !important;
+  color: #000000 !important;
+}
+
+/* Hide ornamental elements */
+body.stealth-mode .section-label { color: #999999 !important; }
+body.stealth-mode h1, body.stealth-mode h2, body.stealth-mode h3 {
+  font-weight: 600 !important;
+}
+
+body.stealth-mode em { font-style: normal !important; }
+
+/* Stealth button active state */
+.stealth-btn.active {
+  color: var(--orange) !important;
+  background: rgba(255,165,0,0.1) !important;
+}
+
+body.stealth-mode .stealth-btn {
+  color: #000000 !important;
+  text-shadow: none !important;
+}
+
+body.stealth-mode .stealth-btn:hover,
+body.stealth-mode .stealth-btn.active {
+  color: #666666 !important;
+  background: #EEEEEE !important;
+}
+
+/* Hide gradient placeholders */
+body.stealth-mode [style*="linear-gradient"] {
+  background: #F5F5F5 !important;
+}
+
+/* Plain section backgrounds */
+body.stealth-mode section {
+  background-color: #FFFFFF !important;
+}
+
+/* Remove all decorative animations */
+body.stealth-mode * {
+  animation: none !important;
+  transition: none !important;
+}

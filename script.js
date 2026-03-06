@@ -988,3 +988,40 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+
+/* ═════════════════════════════════════════════════════════════════════════════
+   STEALTH MODE - Discreet Reading Interface
+   ═════════════════════════════════════════════════════════════════════════════ */
+
+// Initialize stealth mode on page load (check localStorage)
+function initStealthMode() {
+  const isStealthEnabled = localStorage.getItem('stealthModeEnabled') === 'true';
+  const stealthBtn = document.querySelector('.stealth-btn');
+
+  if (isStealthEnabled) {
+    document.body.classList.add('stealth-mode');
+    if (stealthBtn) stealthBtn.classList.add('active');
+    console.log('✓ Stealth Mode ENABLED (from localStorage)');
+  }
+}
+
+// Toggle stealth mode on button click
+function toggleStealthMode() {
+  const body = document.body;
+  const btn = document.querySelector('.stealth-btn');
+
+  body.classList.toggle('stealth-mode');
+
+  if (body.classList.contains('stealth-mode')) {
+    localStorage.setItem('stealthModeEnabled', 'true');
+    if (btn) btn.classList.add('active');
+    console.log('✓ Stealth Mode ENABLED');
+  } else {
+    localStorage.setItem('stealthModeEnabled', 'false');
+    if (btn) btn.classList.remove('active');
+    console.log('✓ Stealth Mode DISABLED');
+  }
+}
+
+// Initialize stealth mode when DOM is ready
+document.addEventListener('DOMContentLoaded', initStealthMode);
