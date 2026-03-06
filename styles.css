@@ -290,8 +290,8 @@
   #stories { background:var(--parchment); }
   .story-header { display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:44px; }
   .story-grid { display:grid; grid-template-columns:1.6fr 1fr 1fr; grid-template-rows:auto auto; gap:20px; }
-  .story-card { background:var(--card-bg); border:1px solid var(--dark-cherry); border-radius:4px; overflow:hidden; cursor:pointer; transition:transform 0.32s cubic-bezier(.25,.46,.45,.94),box-shadow 0.32s; position:relative; }
-  .story-card:hover { transform:translateY(-4px); box-shadow:0 16px 44px rgba(45,15,30,0.14); }
+  .story-card { background:var(--card-bg); border:1px solid var(--dark-cherry); border-radius:4px; overflow:hidden; cursor:pointer; transition:transform 0.32s cubic-bezier(.25,.46,.45,.94),box-shadow 0.32s,border-color 0.32s; position:relative; }
+  .story-card:hover { transform:translateY(-4px); box-shadow:0 16px 44px rgba(45,15,30,0.14), 0 0 20px rgba(255,193,7,0.4); border-color:#FFC107; }
   .story-card.featured { grid-row:span 2; }
 
   .story-thumb { width:100%; object-fit:cover; display:block; }
