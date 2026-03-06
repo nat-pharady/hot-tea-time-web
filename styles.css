@@ -1826,8 +1826,7 @@
   border-radius: 16px;
   max-width: 1400px;
   width: 95%;
-  height: auto;
-  max-height: 95vh;
+  height: 550px;
   backdrop-filter: blur(16px);
   display: grid;
   grid-template-columns: 60% 40%;
@@ -1837,7 +1836,7 @@
 .character-modal-content {
   display: grid;
   grid-template-columns: 60% 40%;
-  height: auto;
+  height: 550px;
   width: 100%;
 }
 
@@ -1845,21 +1844,22 @@
   position: relative;
   background-size: cover;
   background-position: center;
-  height: auto;
+  height: 550px;
   width: 100%;
-  min-height: 550px;
 }
 
 .character-modal-details {
-  padding: 18px 20px;
+  padding: 16px 18px;
   background: rgba(26, 11, 17, 0.8);
   display: flex;
   flex-direction: column;
-  overflow: visible;
+  height: 550px;
+  overflow: hidden;
 }
 
 .character-modal-header {
-  margin-bottom: 10px;
+  margin-bottom: 8px;
+  flex-shrink: 0;
 }
 
 .character-modal-name {
@@ -1881,7 +1881,8 @@
 }
 
 .character-modal-section {
-  margin-bottom: 9px;
+  margin-bottom: 8px;
+  flex-shrink: 0;
 }
 
 .character-modal-section h4 {
@@ -1914,7 +1915,8 @@
 .character-modal-bio {
   font-family: 'Coco Gothic', sans-serif;
   font-size: 0.85rem;
-  line-height: 1.4;
+  line-height: 1.35;
+  word-spacing: -0.05em;
   color: rgba(247, 244, 234, 0.85);
 }
 
@@ -1930,7 +1932,8 @@
 .character-interests-list li {
   font-family: 'Coco Gothic', sans-serif;
   font-size: 0.75rem;
-  line-height: 1.2;
+  line-height: 1.15;
+  word-spacing: -0.05em;
   color: rgba(247, 244, 234, 0.8);
   padding-left: 12px;
   position: relative;
