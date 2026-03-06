@@ -855,25 +855,33 @@ function renderCharacterGrid(filter) {
   filteredCharacters.forEach(character => {
     const card = document.createElement('div');
     card.className = 'character-card';
+    card.style.background = character.gradient;
     card.onclick = () => openCharacterModal(character.id);
 
     const traits = character.traits
       .map(trait => `<span class="trait-tag">${trait}</span>`)
       .join('');
 
-    const bioPreview = character.bio.substring(0, 100) + '...';
+    const bioPreview = character.bio.substring(0, 80) + '...';
 
     card.innerHTML = `
-      <div class="character-portrait" style="background: ${character.gradient};">
-        <span class="character-category">${character.category}</span>
+      <!-- Background + overlay for entire card -->
+      <div class="character-card-overlay"></div>
+
+      <!-- Name overlay (visible by default) -->
+      <div class="character-card-name-overlay">
+        <h3 class="character-card-name">${character.name}</h3>
       </div>
-      <div class="character-info">
-        <h3 class="character-name">${character.name}</h3>
-        <p class="character-age-title">${character.age} • ${character.archetype}</p>
-        <div class="character-traits">
-          ${traits}
+
+      <!-- Hidden info overlay (visible on hover) -->
+      <div class="character-card-info-overlay">
+        <div class="character-card-hover-info">
+          <p class="character-age-title">${character.age} • ${character.archetype}</p>
+          <div class="character-traits">
+            ${traits}
+          </div>
+          <p class="character-bio-preview">${bioPreview}</p>
         </div>
-        <p class="character-bio-preview">${bioPreview}</p>
       </div>
     `;
 
