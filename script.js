@@ -893,7 +893,7 @@ function renderCharacterGrid(filter) {
       // Get the name height after it's rendered
       const nameHeight = nameElement.offsetHeight;
       // Show name with breathing room below: top padding + name height + bottom space
-      const initialMaxHeight = 20 + nameHeight + 18;
+      const initialMaxHeight = 20 + nameHeight + 32;
       const expandedMaxHeight = 280;
 
       // Set initial max-height (only shows the name)
