@@ -1782,6 +1782,10 @@
   line-height: 1.2;
 }
 
+.character-card-name .name-part {
+  display: block;
+}
+
 .character-card .character-age-title {
   font-family: 'Coco Gothic', sans-serif;
   font-size: 0.7rem;

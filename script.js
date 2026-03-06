@@ -864,13 +864,17 @@ function renderCharacterGrid(filter) {
 
     const bioPreview = character.bio.substring(0, 80) + '...';
 
+    // Split name by space and format as multi-line
+    const nameParts = character.name.split(' ');
+    const formattedName = nameParts.map(part => `<div class="name-part">${part}</div>`).join('');
+
     card.innerHTML = `
       <!-- Background overlay (darkens image) -->
       <div class="character-card-overlay"></div>
 
       <!-- Text overlay that slides up on hover -->
       <div class="character-card-text-overlay">
-        <h3 class="character-card-name">${character.name}</h3>
+        <h3 class="character-card-name">${formattedName}</h3>
         <p class="character-age-title">${character.age} • ${character.archetype}</p>
         <div class="character-traits">
           ${traits}
