@@ -1,0 +1,227 @@
+HOT TEA TIME CLUB — WEBSITE CONTENT
+=====================================
+
+
+NAVIGATION
+----------
+- Hot Tea Time Club
+- I Likee My Tea Hot
+- How It Works
+- Features
+- Stories
+- Membership
+- MarketplacAe
+- Join the Club
+
+
+HERO
+----
+Eyebrow: Exclusive Stories. Exceptional Taste.
+
+Headline: The Tea Has Never Been This Hot.
+
+Subheadline: Premium fiction for those who like their stories steeped to perfection. Romance, tension, and all the delicious details — served in the finest cups.
+
+Buttons: Start Sipping Free | Browse the Menu
+
+Stats:
+- 42k+ Readers Served
+- 1,200+ Stories Steeped
+- 380+ Stories Shared
+
+
+MARQUEE (Scrolling Ticker)
+--------------------------
+- Steamy Serials
+- Slow Burns & Quick Sips
+- Forbidden Chapters
+- The Spiciest Reads in Society
+- Pour Yourself a Story
+- Served Hot, Never Tepid
+- All the Gossip Worth Knowing
+
+
+HOW IT WORKS
+------------
+Label: The Ritual
+Headline: How One Indulges
+Intro: Three effortless steps stand between you and the finest reading experience you've ever had the pleasure of not admitting to your book club.
+
+Step I — Take the Taste Test
+Answer a few delightfully pointed questions about your preferences. We'll calibrate your palate and tailor everything accordingly. No judgement. Only good taste.
+
+Step II — Settle Into Your Chair
+Discover stories, jump into live adventures, and lose track of time entirely. New chapters drop daily — always warm, never stale.
+
+Step III — Pour Your Own
+Write your own stories, keep them private or share them with the community. If others love what you brew, list it in the Marketplace and earn Hearts.
+
+
+FEATURES
+--------
+Label: What's in the Cup
+Headline: Features Worth Spilling
+Intro: This is not a chatbot. It is a fully immersive story platform — and it comes with a few rather clever tricks up its sleeve.
+
+The Stealth Toggle [Incognito Mode]
+One tap transforms your lush, beautiful reading experience into a convincingly boring Microsoft Excel spreadsheet. Nosy colleagues will see nothing but pivot tables. Your secret is perfectly safe.
+
+Join an Adventure [Multiplayer]
+Spot an open public story that catches your eye? Spend a few Hearts and jump into the next chapter alongside other readers. Collaborative storytelling has never been quite this compelling.
+
+The Ink — Visualise Your Scene [1 Heart per image]
+At any moment in a story, spend a single Heart to conjure an AI-generated image of exactly what's unfolding. Scenes rendered in seconds. Imagination, illustrated.
+
+The Taste Test [Personalised Discovery]
+Our onboarding quiz asks exactly the right questions to learn what you like. From cosy fluff to something considerably more adventurous — we calibrate your feed so everything feels personal from the very first sip.
+
+
+STORIES
+-------
+Label: On the Menu Today
+Headline: Fresh Pours & Slow Burns
+Link: Browse All Stories
+
+Featured Story:
+  Title: The Duke's Afternoon Arrangement
+  Tags: Romance, Serial, Slow Burn
+  Excerpt: Lady Elara had always prided herself on her restraint. Then came the Duke of Ashford, and his rather unconventional proposal — one that would require very little restraint indeed.
+  Author: Vivienne Blackthorn
+  Stats: 24.3k reads · 18 chapters
+  Access: Members Only
+
+Story 2:
+  Title: A Garden for Two
+  Tags: Tension, Rivals
+  Excerpt: The estate garden was always his. Until she arrived and planted something entirely different.
+  Author: Celeste Ashby
+  Stats: 11.7k reads · 9 chapters
+  Access: Members Only
+
+Story 3:
+  Title: After the Candles Go Out
+  Tags: Late Night, Forbidden
+  Excerpt: Midnight confessions in a house that keeps far too many secrets.
+  Author: Margaux Delacroix
+  Stats: 8.9k reads · 5 chapters
+  Access: Members Only
+
+Story 4:
+  Title: Lord Wickham's Cherry Problem
+  Tags: Comedy, Regency
+  Excerpt: He had a type. She was decidedly not it. He married her anyway. Now what?
+  Author: Poppy St. Clair
+  Stats: 19.1k reads · 14 chapters
+  Access: Members Only
+
+
+MARKETPLACE
+-----------
+Label: The Marketplace
+Headline: Your Stories. Your Rules.
+Intro: Write a story you're proud of? Keep it entirely to yourself, or list it in the Marketplace for others to discover. When readers spend Hearts on your work, you earn too.
+
+Bullet Points:
+- Write any story — solo or collaborative. Share it when you're ready, or never. It's entirely your call.
+- List your scenarios, characters, or full stories in the Marketplace for other members to purchase with Hearts.
+- Every time your work finds an audience, your Heart balance grows. Spend them on more of what you love.
+
+Button: Start Writing
+
+Sample Marketplace Listings:
+- The Governess's Dilemma — @viviennewrites · Romance — 8 Hearts
+- Midnight in the Orangery — @celesteafterdark · Mystery — 5 Hearts
+- The Colonel's Letters — @margauxroses · Drama — 12 Hearts
+- Three Cherries, No Waiting — @poppyspillstea · Comedy — 6 Hearts
+
+
+BREW YOUR OWN (Coming Soon)
+----------------------------
+Badge: Coming Soon
+Label: Phase Two
+Headline: Brew Your Own Scandal
+Intro: Send a personalised story to anyone in the world. Every Scandal Story gets its own custom link — a little gift that arrives wrapped in delicious mischief.
+
+Feature List:
+- Write a story tailored specifically for someone you know — or someone you'd like to.
+- Each story gets a unique personal subdomain, delivered as a link.
+- Recipients open it to find a beautifully presented story written just for them.
+- Anonymous sending available. Plausible deniability included at no extra charge.
+
+Demo URL: mandy.spillthetea.news
+Preview Title: "A Story Just for You, Mandy."
+Preview Text: Someone thought of you. They wrote something down. You probably should open it.
+Fine Print: Be the first to know when Brew Your Own launches.
+Button: Notify Me
+
+
+PRICING / MEMBERSHIP
+--------------------
+Label: Membership
+Headline: How Hot Do You Like It?
+Intro: One simple subscription. One very well-stocked cup. Plus a little currency for when you want something extra.
+
+Plan: Hot — The Inner Circle
+Tagline: For the serious sipper
+Price: $4.99 / month
+Includes 25 Hearts every month
+
+Features:
+- Unlimited text story access
+- 25 monthly Hearts for premium features
+- Incognito Mode — one tap to spreadsheet view
+- The Taste Test — fully personalised discovery
+- Join an Adventure — multiplayer storytelling
+- The Ink — AI image generation (1 Heart per image)
+- Access the Marketplace — buy & sell stories
+- Write & share your own stories with the community
+
+Button: Pour Me In — $4.99/mo
+
+Heart Top-Up Packs:
+- 60 Hearts — $5.00
+- 140 Hearts — $10.00 (Best Value)
+
+What can Hearts do?
+- Visualise any scene with AI — The Ink (1 Heart)
+- Jump into a live public story — Join an Adventure
+- Buy stories & scenarios in the Marketplace
+- AI video & GIF generation — coming in Phase 2 (5 Hearts)
+
+
+NEWSLETTER (Footer)
+-------------------
+Title: The Weekly Spill
+Description: New stories, platform updates, and the occasional scandalous recommendation — delivered every Thursday like clockwork, and just as irresistible.
+Placeholder: your@email.com
+Button: Subscribe
+Fine Print: No spam. Unsubscribe anytime. Your secrets are safe with us.
+
+
+FOOTER
+------
+Brand: Hot Tea Time Club
+Website: hotteatime.com
+Tagline: Premium fiction for sophisticated palates. Read boldly. Sip slowly. Spill everything.
+
+Explore:
+- Browse Stories
+- New Releases
+- The Marketplace
+- Join an Adventure
+
+Create:
+- Write a Story
+- Share with Community
+- List in Marketplace
+- Brew Your Own
+
+Company:
+- About Us
+- Membership
+- Press
+- Privacy Policy
+- Terms of Service
+
+Legal: © 2025 Hot Tea Time Club. All rights reserved.
+Links: Privacy | Terms | Cookies
