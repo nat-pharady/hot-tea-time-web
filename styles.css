@@ -1761,17 +1761,13 @@
   bottom: 0;
   left: 0;
   right: 0;
-  padding: 24px 24px 32px 24px;
+  padding: 20px 24px 24px 24px;
   background: linear-gradient(to top, rgba(0, 0, 0, 0.4), transparent);
   z-index: 2;
   overflow: hidden;
-  transition: transform 0.4s ease-out;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
+  transition: max-height 0.4s ease-out, transform 0.4s ease-out;
   transform: translateY(0);
-  /* JavaScript controls transform on hover */
+  /* JavaScript controls max-height dynamically based on name height */
 }
 
 .character-card-name {
@@ -1781,10 +1777,6 @@
   color: var(--green);
   margin: 0 0 12px 0;
   line-height: 1.2;
-}
-
-.character-card-name .name-part {
-  display: block;
 }
 
 .character-card .character-age-title {

@@ -864,17 +864,13 @@ function renderCharacterGrid(filter) {
 
     const bioPreview = character.bio.substring(0, 80) + '...';
 
-    // Split name by space and format as multi-line
-    const nameParts = character.name.split(' ');
-    const formattedName = nameParts.map(part => `<div class="name-part">${part}</div>`).join('');
-
     card.innerHTML = `
       <!-- Background overlay (darkens image) -->
       <div class="character-card-overlay"></div>
 
       <!-- Text overlay that slides up on hover -->
       <div class="character-card-text-overlay">
-        <h3 class="character-card-name">${formattedName}</h3>
+        <h3 class="character-card-name">${character.name}</h3>
         <p class="character-age-title">${character.age} • ${character.archetype}</p>
         <div class="character-traits">
           ${traits}
@@ -885,22 +881,29 @@ function renderCharacterGrid(filter) {
 
     grid.appendChild(card);
 
-    // Smart slide-up animation: measure total content and animate on hover
+    // Smart max-height clipping: measure name height and set appropriate max-height
     const nameElement = card.querySelector('.character-card-name');
     const textOverlay = card.querySelector('.character-card-text-overlay');
 
     if (nameElement && textOverlay) {
-      // Get the overlay's total height (all content including age, traits, bio)
-      const totalHeight = textOverlay.offsetHeight;
-      // Calculate how much to translate to show all content while keeping name visible
-      const slideDistance = totalHeight - 100; // Leave ~100px visible for name area
+      // Measure the name element height
+      const nameHeight = nameElement.offsetHeight;
+      // Small buffer below name to ensure no age text shows
+      const initialMaxHeight = nameHeight + 8;
+      // Measure total overlay height to show all content on hover
+      const expandedMaxHeight = textOverlay.offsetHeight;
 
-      // Add hover behavior to slide up/down
+      // Set initial state: only show name
+      textOverlay.style.maxHeight = initialMaxHeight + 'px';
+
+      // Add hover behavior
       card.addEventListener('mouseenter', () => {
-        textOverlay.style.transform = `translateY(-${slideDistance}px)`;
+        textOverlay.style.maxHeight = expandedMaxHeight + 'px';
+        textOverlay.style.transform = 'translateY(-20px)'; // Smooth slide up
       });
 
       card.addEventListener('mouseleave', () => {
+        textOverlay.style.maxHeight = initialMaxHeight + 'px';
         textOverlay.style.transform = 'translateY(0)';
       });
     }
