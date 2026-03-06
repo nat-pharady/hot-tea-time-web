@@ -22,8 +22,75 @@
       <h2 class="section-title">The Character <em>Library</em></h2>
       <p class="section-body">Browse a curated collection of unforgettable characters. From brooding dukes to rebellious rogues, find your next literary obsession in our ever-growing character database.</p>
     </div>
+
+    <!-- Filter Buttons -->
+    <div class="character-filters">
+      <button class="filter-btn active" data-filter="all">All Characters</button>
+      <button class="filter-btn" data-filter="fantasy">Fantasy</button>
+      <button class="filter-btn" data-filter="historical">Historical</button>
+      <button class="filter-btn" data-filter="contemporary">Contemporary</button>
+    </div>
+
+    <!-- Character Grid -->
+    <div class="character-grid" id="character-grid">
+      <!-- Cards will be dynamically generated -->
+    </div>
   </div>
 </section>
+
+<!-- CHARACTER DETAIL MODAL -->
+<div id="character-modal" class="modal-overlay" style="display: none;">
+  <div class="character-modal-container">
+    <button class="modal-close" onclick="closeCharacterModal()">&times;</button>
+
+    <div class="character-modal-content">
+      <!-- Left: Large portrait -->
+      <div class="character-modal-portrait" id="modal-portrait"></div>
+
+      <!-- Right: Full profile -->
+      <div class="character-modal-details">
+        <div class="character-modal-header">
+          <h2 class="character-modal-name" id="modal-name"></h2>
+          <p class="character-modal-age-title" id="modal-age-title"></p>
+        </div>
+
+        <!-- Personality Traits -->
+        <div class="character-modal-section">
+          <h4>Personality</h4>
+          <div class="character-traits-large" id="modal-traits"></div>
+        </div>
+
+        <!-- Full Bio -->
+        <div class="character-modal-section">
+          <h4>About</h4>
+          <p class="character-modal-bio" id="modal-bio"></p>
+        </div>
+
+        <!-- Interests -->
+        <div class="character-modal-section">
+          <h4>Interests</h4>
+          <ul class="character-interests-list" id="modal-interests"></ul>
+        </div>
+
+        <!-- Story Tropes -->
+        <div class="character-modal-section">
+          <h4>Perfect For These Tropes</h4>
+          <div class="character-tropes" id="modal-tropes"></div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="character-modal-actions">
+          <button class="btn-primary">Use in Story</button>
+          <button class="btn-ghost">Save to Library</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation arrows -->
+    <button class="modal-nav modal-prev" onclick="previousCharacter()">‹</button>
+    <button class="modal-nav modal-next" onclick="nextCharacter()">›</button>
+  </div>
+</div>
 
 <script src="https://unpkg.com/lucide@latest"></script>
 <script>
@@ -31,6 +98,7 @@
     window.lucide.createIcons();
   }
 </script>
+<script src="character-data.js"></script>
 <script>
   // Load nav from nav-logged-in.html
   fetch('./nav-logged-in.html')
@@ -47,6 +115,12 @@
       }
     })
     .catch(error => console.error('Error loading nav:', error));
+
+  // Initialize character grid on page load
+  document.addEventListener('DOMContentLoaded', function() {
+    renderCharacterGrid('all');
+    setupFilterButtons();
+  });
 </script>
 
 <script src="script.js"></script>

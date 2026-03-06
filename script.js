@@ -828,3 +828,145 @@ if (document.readyState === 'loading') {
 } else {
   ensureAIGeneratorModal();
 }
+
+/* ── CHARACTER LIBRARY FUNCTIONS ── */
+
+let currentCharacterIndex = 0;
+let currentFilter = 'all';
+let filteredCharacters = [];
+
+function renderCharacterGrid(filter) {
+  const grid = document.getElementById('character-grid');
+  if (!grid) return;
+
+  // Filter characters
+  if (filter === 'all') {
+    filteredCharacters = characterLibrary;
+  } else {
+    filteredCharacters = characterLibrary.filter(char => char.category === filter);
+  }
+
+  currentFilter = filter;
+
+  // Clear grid
+  grid.innerHTML = '';
+
+  // Render cards
+  filteredCharacters.forEach(character => {
+    const card = document.createElement('div');
+    card.className = 'character-card';
+    card.onclick = () => openCharacterModal(character.id);
+
+    const traits = character.traits
+      .map(trait => `<span class="trait-tag">${trait}</span>`)
+      .join('');
+
+    const bioPreview = character.bio.substring(0, 100) + '...';
+
+    card.innerHTML = `
+      <div class="character-portrait" style="background: ${character.gradient};">
+        <span class="character-category">${character.category}</span>
+      </div>
+      <div class="character-info">
+        <h3 class="character-name">${character.name}</h3>
+        <p class="character-age-title">${character.age} • ${character.archetype}</p>
+        <div class="character-traits">
+          ${traits}
+        </div>
+        <p class="character-bio-preview">${bioPreview}</p>
+      </div>
+    `;
+
+    grid.appendChild(card);
+  });
+}
+
+function openCharacterModal(characterId) {
+  const character = characterLibrary.find(c => c.id === characterId);
+  if (!character) return;
+
+  const modal = document.getElementById('character-modal');
+  if (!modal) return;
+
+  currentCharacterIndex = filteredCharacters.findIndex(c => c.id === characterId);
+
+  // Populate modal with character data
+  const portrait = document.getElementById('modal-portrait');
+  const name = document.getElementById('modal-name');
+  const ageTitle = document.getElementById('modal-age-title');
+  const traits = document.getElementById('modal-traits');
+  const bio = document.getElementById('modal-bio');
+  const interests = document.getElementById('modal-interests');
+  const tropes = document.getElementById('modal-tropes');
+
+  portrait.style.background = character.gradient;
+
+  name.textContent = character.name;
+  ageTitle.textContent = `${character.age} • ${character.archetype}`;
+
+  traits.innerHTML = character.traits
+    .map(trait => `<span class="trait-tag-large">${trait}</span>`)
+    .join('');
+
+  bio.textContent = character.bio;
+
+  interests.innerHTML = character.interests
+    .map(interest => `<li>${interest}</li>`)
+    .join('');
+
+  tropes.innerHTML = character.tropes
+    .map(trope => `<span class="trope-tag">${trope}</span>`)
+    .join('');
+
+  // Show modal with animation
+  modal.style.display = 'flex';
+  modal.style.alignItems = 'center';
+  modal.style.justifyContent = 'center';
+  setTimeout(() => modal.style.opacity = '1', 10);
+}
+
+function closeCharacterModal() {
+  const modal = document.getElementById('character-modal');
+  if (!modal) return;
+
+  modal.style.opacity = '0';
+  setTimeout(() => {
+    modal.style.display = 'none';
+  }, 300);
+}
+
+function nextCharacter() {
+  currentCharacterIndex = (currentCharacterIndex + 1) % filteredCharacters.length;
+  openCharacterModal(filteredCharacters[currentCharacterIndex].id);
+}
+
+function previousCharacter() {
+  currentCharacterIndex = (currentCharacterIndex - 1 + filteredCharacters.length) % filteredCharacters.length;
+  openCharacterModal(filteredCharacters[currentCharacterIndex].id);
+}
+
+function setupFilterButtons() {
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      // Remove active class from all buttons
+      filterBtns.forEach(b => b.classList.remove('active'));
+      // Add active class to clicked button
+      btn.classList.add('active');
+      // Render grid with new filter
+      renderCharacterGrid(btn.dataset.filter);
+    });
+  });
+}
+
+// Close modal on overlay click
+document.addEventListener('DOMContentLoaded', () => {
+  const modal = document.getElementById('character-modal');
+  if (modal) {
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        closeCharacterModal();
+      }
+    });
+  }
+});
