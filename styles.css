@@ -1829,13 +1829,13 @@
   max-height: 85vh;
   backdrop-filter: blur(16px);
   display: grid;
-  grid-template-columns: 35% 65%;
+  grid-template-columns: 50% 50%;
   overflow: hidden;
 }
 
 .character-modal-content {
   display: grid;
-  grid-template-columns: 35% 65%;
+  grid-template-columns: 50% 50%;
   height: 85vh;
   width: 100%;
 }
