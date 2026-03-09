@@ -51,13 +51,13 @@
         let stories;
 
         if (isLoggedIn) {
-          // Show personalized stories for logged-in users
-          stories = window.getPersonalizedStories();
-          console.log('Showing personalized stories:', stories);
+          // Show premium stories for logged-in users
+          stories = window.getAllStories().filter(s => !s.isFree);
+          console.log('Showing premium stories:', stories);
         } else {
-          // Show all stories for non-logged-in users
-          stories = window.getAllStories();
-          console.log('Showing all stories (user not logged in):', stories);
+          // Show premium stories for non-logged-in users
+          stories = window.getAllStories().filter(s => !s.isFree);
+          console.log('Showing premium stories (user not logged in):', stories);
         }
 
         // Render stories to the grid
