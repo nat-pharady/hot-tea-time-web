@@ -235,10 +235,265 @@ window.storiesDatabase = [
 
 <p>Instead, they became something far more dangerous: lovers who would burn the world to ashes before they let it separate them.</p>`
   },
+  {
+    id: 8,
+    title: "Burning Need",
+    author: "Scarlett Monroe",
+    avatar: "🔥",
+    excerpt: "He was darkness embodied. She craved the heat of his touch. Together, they were a wildfire no one could contain.",
+    image: "images/story-featured.jpg",
+    reads: "3.9k",
+    chapters: 6,
+    tropes: ['enemies-to-lovers', 'dark-morally-grey'],
+    heatLevel: 'hot',
+    featured: false,
+    isFree: true,
+    content: `<p>From the moment Marcus stepped into the boardroom, she felt the pull—dangerous, electric, impossible to ignore.</p><p>He was everything wrong for her. Everything dark. Yet when he looked at her with those cold eyes that seemed to see straight through her, she wanted to surrender completely.</p><p>"You shouldn't want this," he growled, pressing her against the glass windows high above the city.</p><p>"I don't care what I should want," she whispered. "I want you."</p><p>Their kiss was violent and consuming, a dangerous dance between light and shadow. She knew loving him would destroy her. She didn't care anymore.</p>`
+  },
+  {
+    id: 9,
+    title: "Snow Bound",
+    author: "Winter Chase",
+    avatar: "❄️",
+    excerpt: "Trapped in a remote cabin during a blizzard, they had nowhere to run from each other—and nowhere to hide from their true feelings.",
+    image: "images/story-featured.jpg",
+    reads: "4.1k",
+    chapters: 5,
+    tropes: ['forced-proximity', 'regency-nobility'],
+    heatLevel: 'warm',
+    featured: false,
+    isFree: true,
+    content: `<p>Lady Margaret never expected to find herself stranded with the one man she'd spent three seasons avoiding.</p><p>Lord Edmund was all rigid propriety and cutting remarks. Yet here, in this isolated manor with nothing but the blizzard outside, she saw something different in him—a longing that matched her own.</p><p>"Why do you always run from me?" he asked, his voice soft in the firelight.</p><p>"Because you terrify me," she admitted. "Not your title or your fortune. You terrify me because I might actually care about you."</p><p>He took her hand then, and everything changed.</p>`
+  },
+  {
+    id: 10,
+    title: "Cage of Fire",
+    author: "Blake Hale",
+    avatar: "🔒",
+    excerpt: "Forced to work together in close quarters, their tension reaches a breaking point—and the only way out is through each other.",
+    image: "images/story-featured.jpg",
+    reads: "4.3k",
+    chapters: 7,
+    tropes: ['forced-proximity', 'dark-morally-grey'],
+    heatLevel: 'hot',
+    featured: false,
+    isFree: true,
+    content: `<p>The private yacht was supposed to be their escape. Instead, it became their prison.</p><p>Isolated at sea with the man who made her blood burn, every moment was agony and ecstasy combined. He was ruthless, unapologetic, and utterly addictive.</p><p>"Fight me or surrender," he commanded, pulling her close. "But don't pretend you don't want this."</p><p>She couldn't pretend anymore. When he touched her, nothing else mattered—not morality, not consequences, nothing but the flames consuming them both.</p>`
+  },
+  {
+    id: 11,
+    title: "Velvet Darkness",
+    author: "Midnight Vale",
+    avatar: "🖤",
+    excerpt: "She was innocent. He was sin. The moment their worlds collided, they both knew they were doomed.",
+    image: "images/story-featured.jpg",
+    reads: "3.7k",
+    chapters: 5,
+    tropes: ['dark-morally-grey', 'enemies-to-lovers'],
+    heatLevel: 'warm',
+    featured: false,
+    isFree: true,
+    content: `<p>Julian had built an empire on ruthlessness. Then he met Isabella—a woman pure enough to make him believe redemption might be possible.</p><p>He tried to push her away. She refused to go.</p><p>"I know what you are," she said, touching his face. "And I love you anyway."</p><p>Those words undid him completely. For the first time in his dark life, he wanted to be better. Not because he deserved it, but because she believed he could be.</p>`
+  },
+  {
+    id: 12,
+    title: "Phantom's Claim",
+    author: "Lily Nocturne",
+    avatar: "👻",
+    excerpt: "He haunted her dreams before she ever saw him. When their worlds finally collide, the attraction is instant and overwhelming.",
+    image: "images/story-featured.jpg",
+    reads: "3.5k",
+    chapters: 6,
+    tropes: ['gothic-paranormal', 'enemies-to-lovers'],
+    heatLevel: 'warm',
+    featured: false,
+    isFree: true,
+    content: `<p>For months, Eleanor felt his presence in the old manor—a ghost that wasn't quite a ghost, watching her with ancient longing.</p><p>Then one moonlit night, he materialized before her. A man trapped between worlds, beautiful and tragic and utterly impossible.</p><p>"I've been waiting for you," he whispered, his fingers barely touching her cheek. "For a hundred years, I've been waiting."</p><p>She should have been terrified. Instead, she felt the rightness of it—as if their souls had always recognized each other.</p>`
+  },
+  {
+    id: 13,
+    title: "Spectral Heat",
+    author: "Raven Summers",
+    avatar: "🌙",
+    excerpt: "A ghost with dangerous intensity. A woman who sees him for who he truly is. A connection that transcends death itself.",
+    image: "images/story-featured.jpg",
+    reads: "3.8k",
+    chapters: 6,
+    tropes: ['gothic-paranormal', 'enemies-to-lovers'],
+    heatLevel: 'hot',
+    featured: false,
+    isFree: true,
+    content: `<p>Marcus had been dead for two centuries, yet he'd never felt more alive than when she walked through his manor walls.</p><p>She could see him, touch him—feel him in ways no one else ever could. And he wanted to consume her, to bind her to him eternally.</p><p>"Stay with me," he demanded, his phantom form solidifying against her skin. "Forever."</p><p>"Yes," she breathed, surrendering to the darkness and the desire that burned between them.</p>`
+  },
+  {
+    id: 14,
+    title: "Haunted Desire",
+    author: "Sienna Cross",
+    avatar: "👻",
+    excerpt: "Trapped in a haunted manor with a mysterious stranger, she discovers that the greatest danger isn't the ghosts—it's him.",
+    image: "images/story-featured.jpg",
+    reads: "4.0k",
+    chapters: 6,
+    tropes: ['gothic-paranormal', 'forced-proximity'],
+    heatLevel: 'steamy',
+    featured: false,
+    isFree: true,
+    content: `<p>When the roads became impassable, Marcus offered her shelter in his isolated manor. She didn't know he was neither ghost nor fully human—something caught between worlds.</p><p>But as the storm raged outside and the supernatural forces within the walls grew stronger, she realized the real danger was her own desire for him.</p><p>"What are you?" she whispered as he moved through shadow toward her.</p><p>"Yours," he answered, "if you'll have me."</p>`
+  },
+  {
+    id: 15,
+    title: "Forbidden Night",
+    author: "Victoria Blake",
+    avatar: "🌙",
+    excerpt: "In the shadows of haunted walls, their forbidden connection blooms. Love that defies reason. Love that changes everything.",
+    image: "images/story-featured.jpg",
+    reads: "3.6k",
+    chapters: 5,
+    tropes: ['gothic-paranormal', 'forbidden-love'],
+    heatLevel: 'warm',
+    featured: false,
+    isFree: true,
+    content: `<p>The manor had always been forbidden. So had Adrian.</p><p>Yet every night, she found herself drawn to him in the darkness, seeking solace in a love that could never be acknowledged.</p><p>"This is madness," she whispered against his chest, even as her arms tightened around him.</p><p>"Yes," he agreed, pressing a kiss to her hair. "Beautiful, perfect madness."</p>`
+  },
+  {
+    id: 16,
+    title: "Tangled Royalty",
+    author: "Poppy St. Clair",
+    avatar: "👑",
+    excerpt: "A noble facade hides a dangerous secret. A steamy affair that threatens to tear the kingdom apart.",
+    image: "images/story-featured.jpg",
+    reads: "4.2k",
+    chapters: 7,
+    tropes: ['regency-nobility', 'dark-morally-grey'],
+    heatLevel: 'steamy',
+    featured: false,
+    isFree: true,
+    content: `<p>The Duke was everything a nobleman should be—charming, powerful, utterly corrupt. And she was the one woman strong enough to match him.</p><p>Their affair was a dangerous game of power and passion, neither willing to surrender control.</p><p>"You complete me," he whispered, though they both knew it was a lie. Completion implied goodness. There was nothing good about what they were.</p><p>But the passion burned like wildfire, consuming everything in its path.</p>`
+  },
+  {
+    id: 17,
+    title: "Royal Ruin",
+    author: "Blake Hale",
+    avatar: "🎭",
+    excerpt: "A prince. A commoner. A forbidden love that could topple an empire.",
+    image: "images/story-featured.jpg",
+    reads: "3.9k",
+    chapters: 6,
+    tropes: ['regency-nobility', 'dark-morally-grey'],
+    heatLevel: 'hot',
+    featured: false,
+    isFree: true,
+    content: `<p>Prince Adrian was taught from birth that duty came before desire. But when he saw her, every royal principle burned away.</p><p>She was beneath his station and entirely wrong for him—and he wanted to burn the kingdom down just to keep her.</p><p>"Ruin me," she commanded as he pressed her against the palace wall. "Completely."</p><p>He happily obliged.</p>`
+  },
+  {
+    id: 18,
+    title: "Forbidden Royalty",
+    author: "Iris Nightshade",
+    avatar: "❤️",
+    excerpt: "She was forbidden by birth. He was forbidden by duty. Together, they were impossible—and absolutely inevitable.",
+    image: "images/story-featured.jpg",
+    reads: "4.1k",
+    chapters: 7,
+    tropes: ['regency-nobility', 'forbidden-love'],
+    heatLevel: 'hot',
+    featured: false,
+    isFree: true,
+    content: `<p>Lord Edmund had always done his duty. Until she walked into his life and made him want to throw everything away.</p><p>Their love was forbidden, impossible, utterly dangerous. It would destroy them both if anyone found out.</p><p>But in the darkness, with her body against his, he didn't care about consequences.</p><p>"I love you," he breathed, and meant it with every sinful, traitorous beat of his heart.</p>`
+  },
+  {
+    id: 19,
+    title: "Forbidden Flame",
+    author: "Scarlett Monroe",
+    avatar: "🔥",
+    excerpt: "She was his sworn enemy. He consumed her anyway. Enemies shouldn't feel this good.",
+    image: "images/story-featured.jpg",
+    reads: "3.4k",
+    chapters: 5,
+    tropes: ['enemies-to-lovers', 'forbidden-love'],
+    heatLevel: 'steamy',
+    featured: false,
+    isFree: true,
+    content: `<p>They were enemies by circumstance, rivals by necessity. Yet every time he looked at her, he forgot why they were supposed to hate each other.</p><p>"This is madness," she whispered as his hands found their way under her dress.</p><p>"Yes," he agreed, pressing his mouth to her neck. "Beautiful, forbidden madness."</p><p>She arched into him, surrendering to the fire between them.</p>`
+  },
+  {
+    id: 20,
+    title: "Winter's Cage",
+    author: "Sienna Cross",
+    avatar: "❄️",
+    excerpt: "Snowed in together at a remote estate. Forced to face the chemistry they've been denying.",
+    image: "images/story-featured.jpg",
+    reads: "3.6k",
+    chapters: 5,
+    tropes: ['forced-proximity', 'regency-nobility'],
+    heatLevel: 'warm',
+    featured: false,
+    isFree: true,
+    content: `<p>Lord Thomas hadn't expected to be stranded with Lady Catherine—the one woman who made him question his carefully controlled life.</p><p>Three days of proximity in a snowbound manor changed everything between them.</p><p>"I've always wanted to do this," he said, finally closing the distance between them.</p><p>When he kissed her, the warmth of it melted away all their carefully constructed walls.</p>`
+  },
+  {
+    id: 21,
+    title: "Inferno Rising",
+    author: "Blake Hale",
+    avatar: "🔥",
+    excerpt: "Trapped together in a dangerous situation. The heat between them matches the danger surrounding them.",
+    image: "images/story-featured.jpg",
+    reads: "3.8k",
+    chapters: 6,
+    tropes: ['forced-proximity', 'dark-morally-grey'],
+    heatLevel: 'hot',
+    featured: false,
+    isFree: true,
+    content: `<p>They were on opposite sides of the law, trapped together in a basement by forces beyond their control.</p><p>Hours of proximity ignited something primal between them. He was everything dangerous. She couldn't get enough.</p><p>"When we get out of this," he growled, pinning her against the wall, "I'm going to make you scream."</p><p>She didn't doubt it for a second.</p>`
+  },
+  {
+    id: 22,
+    title: "Shadowed Redemption",
+    author: "Midnight Vale",
+    avatar: "🖤",
+    excerpt: "A criminal with a conscience. A good girl gone bad. Two people with nothing to lose but each other.",
+    image: "images/story-featured.jpg",
+    reads: "3.5k",
+    chapters: 5,
+    tropes: ['dark-morally-grey', 'enemies-to-lovers'],
+    heatLevel: 'warm',
+    featured: false,
+    isFree: true,
+    content: `<p>She came from money and light. He came from shadows and crime. They should never have met.</p><p>But when she stumbled into his world, seeking refuge from her own painful past, he couldn't push her away.</p><p>"Stay," he whispered, and for the first time in his dangerous life, he meant it.</p><p>She chose him despite everything. Despite the darkness. Despite knowing better.</p>`
+  },
+  {
+    id: 23,
+    title: "Tangled Secrets",
+    author: "Victoria Blake",
+    avatar: "💋",
+    excerpt: "In the shadows of high society, their steamy affair blooms. A love that could destroy them both.",
+    image: "images/story-featured.jpg",
+    reads: "3.7k",
+    chapters: 6,
+    tropes: ['dark-morally-grey', 'regency-nobility'],
+    heatLevel: 'steamy',
+    featured: false,
+    isFree: true,
+    content: `<p>The Duke had a reputation for darkness. The Duchess knew exactly what he was—and wanted him anyway.</p><p>Their marriage was a scandal waiting to happen. Behind closed doors, it was pure sin.</p><p>"People would destroy us if they knew," she breathed as he claimed her in the shadows of the grand hall.</p><p>"Let them try," he growled, lost in her completely.</p>`
+  },
+  {
+    id: 24,
+    title: "Noble Transgression",
+    author: "Poppy St. Clair",
+    avatar: "👑",
+    excerpt: "A lord. A governess. A forbidden love that defies every rule of society.",
+    image: "images/story-featured.jpg",
+    reads: "3.9k",
+    chapters: 7,
+    tropes: ['regency-nobility', 'forbidden-love'],
+    heatLevel: 'steamy',
+    featured: false,
+    isFree: true,
+    content: `<p>Lord Adrian had no business wanting his governess. Every rule of propriety forbade it.</p><p>Yet every night, he found himself drawn to her quarters, seeking solace in her arms.</p><p>"This is impossible," she whispered against his chest, even as her arms tightened around him.</p><p>"Yes," he agreed, "but I'd burn the world down to keep you."</p>`
+  },
 
   // PREMIUM PREVIEW STORIES (showing as cards but locked)
   {
-    id: 8,
+    id: 25,
     title: "The Duke's Afternoon Arrangement",
     author: "Vivienne Blackthorn",
     avatar: "👑",
@@ -253,7 +508,7 @@ window.storiesDatabase = [
     content: null
   },
   {
-    id: 9,
+    id: 26,
     title: "A Garden for Two",
     author: "Celeste Ashby",
     avatar: "🌿",
@@ -268,7 +523,7 @@ window.storiesDatabase = [
     content: null
   },
   {
-    id: 10,
+    id: 27,
     title: "After the Candles Go Out",
     author: "Margaux Delacroix",
     avatar: "🕯️",
@@ -283,7 +538,7 @@ window.storiesDatabase = [
     content: null
   },
   {
-    id: 11,
+    id: 28,
     title: "Lord Wickham's Cherry Problem",
     author: "Poppy St. Clair",
     avatar: "🍒",
@@ -298,7 +553,7 @@ window.storiesDatabase = [
     content: null
   },
   {
-    id: 12,
+    id: 29,
     title: "Whispered Confessions",
     author: "Iris Nightshade",
     avatar: "🎭",
@@ -337,76 +592,22 @@ window.getRecommendedFreeStory = function() {
 
   console.log('getRecommendedFreeStory - User preferences:', { trope: userTrope, heat: userHeat });
 
-  // ═══ EXACT MATCHES (Best recommendations) ═══
+  // ═══ DYNAMIC MATCHING ═══
+  // Find all free stories that have BOTH the selected trope AND heat level
+  const matching = window.storiesDatabase.filter(story => {
+    return story.isFree &&
+           story.tropes &&
+           story.tropes.includes(userTrope) &&
+           story.heatLevel === userHeat;
+  });
 
-  // enemies-to-lovers + warm → Midnight Confessions (ID 1)
-  if (userTrope === 'enemies-to-lovers' && userHeat === 'warm') {
-    console.log('✓ Matched: Midnight Confessions');
-    return [window.storiesDatabase[0]];
+  if (matching.length > 0) {
+    console.log(`✓ Found ${matching.length} matching stories for ${userTrope} + ${userHeat}:`, matching.map(s => s.title));
+    return matching;
   }
 
-  // enemies-to-lovers + steamy → Trapped Together (ID 4)
-  if (userTrope === 'enemies-to-lovers' && userHeat === 'steamy') {
-    console.log('✓ Matched: Trapped Together');
-    return [window.storiesDatabase[3]];
-  }
-
-  // forced-proximity + warm → Midnight Confessions (ID 1)
-  if (userTrope === 'forced-proximity' && userHeat === 'warm') {
-    console.log('✓ Matched: Midnight Confessions');
-    return [window.storiesDatabase[0]];
-  }
-
-  // forced-proximity + steamy → Trapped Together (ID 4)
-  if (userTrope === 'forced-proximity' && userHeat === 'steamy') {
-    console.log('✓ Matched: Trapped Together');
-    return [window.storiesDatabase[3]];
-  }
-
-  // forbidden-love + warm → Sins of the Crown (ID 3)
-  if (userTrope === 'forbidden-love' && userHeat === 'warm') {
-    console.log('✓ Matched: Sins of the Crown');
-    return [window.storiesDatabase[2]];
-  }
-
-  // forbidden-love + steamy → Garden of Secrets (ID 2)
-  if (userTrope === 'forbidden-love' && userHeat === 'steamy') {
-    console.log('✓ Matched: Garden of Secrets');
-    return [window.storiesDatabase[1]];
-  }
-
-  // forbidden-love + hot → Darkness Consumed (ID 5)
-  if (userTrope === 'forbidden-love' && userHeat === 'hot') {
-    console.log('✓ Matched: Darkness Consumed');
-    return [window.storiesDatabase[4]];
-  }
-
-  // gothic-paranormal + steamy → The Haunting (ID 6)
-  if (userTrope === 'gothic-paranormal' && userHeat === 'steamy') {
-    console.log('✓ Matched: The Haunting');
-    return [window.storiesDatabase[5]];
-  }
-
-  // gothic-paranormal + hot → Blood and Thorns (ID 7)
-  if (userTrope === 'gothic-paranormal' && userHeat === 'hot') {
-    console.log('✓ Matched: Blood and Thorns');
-    return [window.storiesDatabase[6]];
-  }
-
-  // dark-morally-grey + hot → Darkness Consumed OR Blood and Thorns
-  if (userTrope === 'dark-morally-grey' && userHeat === 'hot') {
-    console.log('✓ Matched: Darkness Consumed');
-    return [window.storiesDatabase[4]];
-  }
-
-  // regency-nobility + warm → Sins of the Crown (ID 3)
-  if (userTrope === 'regency-nobility' && userHeat === 'warm') {
-    console.log('✓ Matched: Sins of the Crown');
-    return [window.storiesDatabase[2]];
-  }
-
-  // ═══ FALLBACK (Show relevant stories) ═══
-  console.log('ℹ️ No exact match, showing multiple recommendations');
+  // Fallback: if no exact match, return all free stories
+  console.log(`ℹ️ No exact match for ${userTrope} + ${userHeat}, showing all free stories as fallback`);
   return window.storiesDatabase.filter(s => s.isFree);
 };
 
@@ -723,7 +924,7 @@ window.renderStories = function(stories, containerId) {
     `;
 
     return `
-      <div class="story-card ${featuredClass} reveal ${delayClass}">
+      <div class="story-card ${featuredClass} reveal visible ${delayClass}">
         ${imageElement}
         ${lockBadge}
         <div class="story-meta">
