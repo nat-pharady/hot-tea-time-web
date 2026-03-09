@@ -37,6 +37,17 @@ window.addEventListener('scroll', () => {
 });
 
 // ── QUIZ MODAL ──
+// Global function to open quiz with return page tracking
+window.openQuizModal = function(e) {
+  if (e) e.preventDefault();
+  const quizModal = document.getElementById('tasteTestModal');
+  if (quizModal) {
+    quizModal.style.display = 'flex';
+    // Store the current page as return destination
+    window.quizReturnPage = window.location.pathname + window.location.search;
+  }
+};
+
 document.addEventListener('DOMContentLoaded', function() {
   const quizModal = document.getElementById('tasteTestModal');
   const startSippingBtn = document.querySelector('.nav-cta');
@@ -48,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function() {
   if (startSippingBtn) {
     startSippingBtn.addEventListener('click', function(e) {
       e.preventDefault();
-      quizModal.style.display = 'flex';
+      window.openQuizModal();
     });
   }
 
@@ -56,21 +67,33 @@ document.addEventListener('DOMContentLoaded', function() {
   const urlParams = new URLSearchParams(window.location.search);
   if (urlParams.has('openQuiz')) {
     quizModal.style.display = 'flex';
+    // Store the return page if provided
+    const returnTo = urlParams.get('returnTo');
+    window.quizReturnPage = returnTo || null;
     // Clean up URL to remove the parameter
     window.history.replaceState({}, document.title, window.location.pathname);
+  }
+
+  // Function to close quiz and return to previous page if applicable
+  function closeQuizAndReturn() {
+    quizModal.style.display = 'none';
+    // If there's a return page, redirect to it
+    if (window.quizReturnPage) {
+      window.location.href = window.quizReturnPage;
+    }
   }
 
   // Close quiz when X button is clicked
   if (closeBtn) {
     closeBtn.addEventListener('click', function() {
-      quizModal.style.display = 'none';
+      closeQuizAndReturn();
     });
   }
 
   // Close quiz when clicking outside the modal content
   quizModal.addEventListener('click', function(e) {
     if (e.target === quizModal) {
-      quizModal.style.display = 'none';
+      closeQuizAndReturn();
     }
   });
 
