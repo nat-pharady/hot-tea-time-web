@@ -133,10 +133,10 @@ window.storiesDatabase = [
   },
   {
     id: 4,
-    title: "Trapped Together",
+    title: "Office Hours",
     author: "Sienna Cross",
-    avatar: "🔒",
-    excerpt: "Snowed in at an isolated cabin, they had nowhere to run from each other—and nowhere to hide from the truth that had always existed between them.",
+    avatar: "💼",
+    excerpt: "Share an office with your enemy? Forced to work late nights in close quarters, their professional facade crumbles under the weight of undeniable attraction.",
     image: "images/story-4.jpg",
     reads: "3.8k",
     chapters: 4,
@@ -144,19 +144,21 @@ window.storiesDatabase = [
     heatLevel: 'steamy',
     featured: false,
     isFree: true,
-    content: `<p>The cabin door slammed behind them as the blizzard raged outside, blocking any escape. Garrett and Elena stood on opposite sides of the room, trapped together by circumstance and weather.</p>
+    content: `<p>The new office restructuring was a disaster. Elena and Garrett—rivals for years, each convinced the other had sabotaged their career—were now forced to share the corner office. Together.</p>
 
-<p>"This is a nightmare," Elena muttered, rubbing her arms.</p>
+<p>"This is insane," Elena said, setting her things on the desk that would now be theirs to split. "I requested a transfer."</p>
 
-<p>"It doesn't have to be," Garrett said quietly, and she heard something dangerous in his voice—something that made her pulse race.</p>
+<p>"So did I," Garrett admitted, leaning against the window. "They denied both of us."</p>
 
-<p>They had spent years avoiding each other, years of cutting remarks and barely concealed tension. But now, with nowhere else to go and the night stretching endlessly before them, the carefully built walls between them began to crumble.</p>
+<p>Days turned into weeks. Late nights in the office became their routine. Somewhere between heated arguments about project strategy and fingers accidentally brushing as they reached for the same files, something shifted.</p>
 
-<p>When he reached for her hand, she should have pulled away. Instead, she found herself stepping closer, drawn to him like a moth to flame.</p>
+<p>The tension they'd carried for years transformed into something electric. One night, working late on a presentation, he cornered her against the desk.</p>
 
-<p>"Garrett..." she whispered, but he silenced her with a kiss that tasted of years of longing and forbidden desire.</p>
+<p>"Tell me you don't feel this," he demanded, his hand finding her jaw.</p>
 
-<p>The cabin grew warm despite the frozen world outside.</p>`
+<p>"I can't," she breathed, pulling him closer.</p>
+
+<p>The office that had felt like a prison became their secret sanctuary.</p>`
   },
   {
     id: 5,
