@@ -105,19 +105,7 @@
 <!-- QUIZ MODAL CONTAINER -->
 <div id="quiz-modal-container"></div>
 
-<script>
-  // Load shared quiz modal
-  fetch('./quiz-modal.html')
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById('quiz-modal-container').innerHTML = data;
-      // Attach event listeners after modal is loaded
-      if (window.setupQuizModalListeners) {
-        window.setupQuizModalListeners();
-      }
-    })
-    .catch(error => console.error('Error loading quiz modal:', error));
-</script>
+<script src="quiz-setup.js"></script>
 
 <script src="https://unpkg.com/lucide@latest"></script>
 <script>
