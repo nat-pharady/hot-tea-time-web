@@ -23,8 +23,11 @@ revealEls.forEach(el => observer.observe(el));
 
 document.querySelectorAll('a[href^="#"]').forEach(link => {
   link.addEventListener('click', e => {
-    const t = document.querySelector(link.getAttribute('href'));
-    if(t) { e.preventDefault(); t.scrollIntoView({ behavior:'smooth', block:'start' }); }
+    const href = link.getAttribute('href');
+    if(href && href !== '#') {
+      const t = document.querySelector(href);
+      if(t) { e.preventDefault(); t.scrollIntoView({ behavior:'smooth', block:'start' }); }
+    }
   });
 });
 
