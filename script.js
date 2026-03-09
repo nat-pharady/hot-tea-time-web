@@ -119,7 +119,7 @@ window.storiesDatabase = [
     heatLevel: 'warm',
     featured: false,
     isFree: true,
-    content: `<p>The ballroom glittered with a thousand candles, each one reflecting off silk gowns and jeweled tiaras. Margaret stood in the shadows where she belonged, invisible to the glittering world of nobility that danced just beyond her reach.</p>
+    content: `<p>The ballroom glittered with a thousand candles, each one reflecting off silk gowns and jeweled tiaras. Arabella stood in the shadows where she belonged, invisible to the glittering world of nobility that danced just beyond her reach.</p>
 
 <p>Then she felt it—the weight of someone's gaze. She looked up to find the Duke of Ashford watching her from across the room, his dark eyes intense and unwavering. When their eyes met, time seemed to stop.</p>
 
@@ -144,17 +144,17 @@ window.storiesDatabase = [
     heatLevel: 'steamy',
     featured: false,
     isFree: true,
-    content: `<p>The cabin door slammed behind them as the blizzard raged outside, blocking any escape. Marcus and Elena stood on opposite sides of the room, trapped together by circumstance and weather.</p>
+    content: `<p>The cabin door slammed behind them as the blizzard raged outside, blocking any escape. Garrett and Elena stood on opposite sides of the room, trapped together by circumstance and weather.</p>
 
 <p>"This is a nightmare," Elena muttered, rubbing her arms.</p>
 
-<p>"It doesn't have to be," Marcus said quietly, and she heard something dangerous in his voice—something that made her pulse race.</p>
+<p>"It doesn't have to be," Garrett said quietly, and she heard something dangerous in his voice—something that made her pulse race.</p>
 
 <p>They had spent years avoiding each other, years of cutting remarks and barely concealed tension. But now, with nowhere else to go and the night stretching endlessly before them, the carefully built walls between them began to crumble.</p>
 
 <p>When he reached for her hand, she should have pulled away. Instead, she found herself stepping closer, drawn to him like a moth to flame.</p>
 
-<p>"Marcus..." she whispered, but he silenced her with a kiss that tasted of years of longing and forbidden desire.</p>
+<p>"Garrett..." she whispered, but he silenced her with a kiss that tasted of years of longing and forbidden desire.</p>
 
 <p>The cabin grew warm despite the frozen world outside.</p>`
   },
@@ -194,7 +194,7 @@ window.storiesDatabase = [
     heatLevel: 'steamy',
     featured: false,
     isFree: true,
-    content: `<p>The manor had been empty for forty years. Eleanor bought it for its potential, ignoring the whispered warnings from locals about curses and ghosts and things that walked the halls at midnight.</p>
+    content: `<p>The manor had been empty for forty years. Violet bought it for its potential, ignoring the whispered warnings from locals about curses and ghosts and things that walked the halls at midnight.</p>
 
 <p>She first saw him on the grand staircase—a man in 1920s clothing, translucent and glowing faintly in the moonlight. When their eyes met, he became solid, real, dangerous.</p>
 
@@ -258,7 +258,7 @@ window.storiesDatabase = [
     heatLevel: 'warm',
     featured: false,
     isFree: true,
-    content: `<p>Lady Margaret never expected to find herself stranded with the one man she'd spent three seasons avoiding.</p><p>Lord Edmund was all rigid propriety and cutting remarks. Yet here, in this isolated manor with nothing but the blizzard outside, she saw something different in him—a longing that matched her own.</p><p>"Why do you always run from me?" he asked, his voice soft in the firelight.</p><p>"Because you terrify me," she admitted. "Not your title or your fortune. You terrify me because I might actually care about you."</p><p>He took her hand then, and everything changed.</p>`
+    content: `<p>Lady Margaret never expected to find herself stranded with the one man she'd spent three seasons avoiding.</p><p>Lord Theodore was all rigid propriety and cutting remarks. Yet here, in this isolated manor with nothing but the blizzard outside, she saw something different in him—a longing that matched her own.</p><p>"Why do you always run from me?" he asked, his voice soft in the firelight.</p><p>"Because you terrify me," she admitted. "Not your title or your fortune. You terrify me because I might actually care about you."</p><p>He took her hand then, and everything changed.</p>`
   },
   {
     id: 10,
@@ -300,7 +300,7 @@ window.storiesDatabase = [
     heatLevel: 'warm',
     featured: false,
     isFree: true,
-    content: `<p>For months, Eleanor felt his presence in the old manor—a ghost that wasn't quite a ghost, watching her with ancient longing.</p><p>Then one moonlit night, he materialized before her. A man trapped between worlds, beautiful and tragic and utterly impossible.</p><p>"I've been waiting for you," he whispered, his fingers barely touching her cheek. "For a hundred years, I've been waiting."</p><p>She should have been terrified. Instead, she felt the rightness of it—as if their souls had always recognized each other.</p>`
+    content: `<p>For months, Isadora felt his presence in the old manor—a ghost that wasn't quite a ghost, watching her with ancient longing.</p><p>Then one moonlit night, he materialized before her. A man trapped between worlds, beautiful and tragic and utterly impossible.</p><p>"I've been waiting for you," he whispered, his fingers barely touching her cheek. "For a hundred years, I've been waiting."</p><p>She should have been terrified. Instead, she felt the rightness of it—as if their souls had always recognized each other.</p>`
   },
   {
     id: 13,
@@ -328,7 +328,7 @@ window.storiesDatabase = [
     heatLevel: 'steamy',
     featured: false,
     isFree: true,
-    content: `<p>When the roads became impassable, Marcus offered her shelter in his isolated manor. She didn't know he was neither ghost nor fully human—something caught between worlds.</p><p>But as the storm raged outside and the supernatural forces within the walls grew stronger, she realized the real danger was her own desire for him.</p><p>"What are you?" she whispered as he moved through shadow toward her.</p><p>"Yours," he answered, "if you'll have me."</p>`
+    content: `<p>When the roads became impassable, Dorian offered her shelter in his isolated manor. She didn't know he was neither ghost nor fully human—something caught between worlds.</p><p>But as the storm raged outside and the supernatural forces within the walls grew stronger, she realized the real danger was her own desire for him.</p><p>"What are you?" she whispered as he moved through shadow toward her.</p><p>"Yours," he answered, "if you'll have me."</p>`
   },
   {
     id: 15,
@@ -384,7 +384,7 @@ window.storiesDatabase = [
     heatLevel: 'hot',
     featured: false,
     isFree: true,
-    content: `<p>Lord Edmund had always done his duty. Until she walked into his life and made him want to throw everything away.</p><p>Their love was forbidden, impossible, utterly dangerous. It would destroy them both if anyone found out.</p><p>But in the darkness, with her body against his, he didn't care about consequences.</p><p>"I love you," he breathed, and meant it with every sinful, traitorous beat of his heart.</p>`
+    content: `<p>Lord Nicholas had always done his duty. Until she walked into his life and made him want to throw everything away.</p><p>Their love was forbidden, impossible, utterly dangerous. It would destroy them both if anyone found out.</p><p>But in the darkness, with her body against his, he didn't care about consequences.</p><p>"I love you," he breathed, and meant it with every sinful, traitorous beat of his heart.</p>`
   },
   {
     id: 19,
@@ -468,7 +468,7 @@ window.storiesDatabase = [
     heatLevel: 'steamy',
     featured: false,
     isFree: true,
-    content: `<p>Lord Adrian had no business wanting his governess. Every rule of propriety forbade it.</p><p>Yet every night, he found himself drawn to her quarters, seeking solace in her arms.</p><p>"This is impossible," she whispered against his chest, even as her arms tightened around him.</p><p>"Yes," he agreed, "but I'd burn the world down to keep you."</p>`
+    content: `<p>Lord Oliver had no business wanting his governess. Every rule of propriety forbade it.</p><p>Yet every night, he found himself drawn to her quarters, seeking solace in her arms.</p><p>"This is impossible," she whispered against his chest, even as her arms tightened around him.</p><p>"Yes," he agreed, "but I'd burn the world down to keep you."</p>`
   },
 
   // PREMIUM PREVIEW STORIES (showing as cards but locked)
