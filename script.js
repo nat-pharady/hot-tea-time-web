@@ -243,6 +243,74 @@ document.addEventListener('DOMContentLoaded', function() {
   };
 });
 
+// ── SETUP QUIZ MODAL EVENT LISTENERS ──
+// This function attaches event listeners to quiz modal buttons after HTML is loaded
+window.setupQuizModalListeners = function() {
+  const quizModal = document.getElementById('tasteTestModal');
+  if (!quizModal) {
+    console.warn('Quiz modal not found for event listener setup');
+    return;
+  }
+
+  // Close button
+  const closeBtn = quizModal.querySelector('.modal-close');
+  if (closeBtn) {
+    closeBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      quizModal.style.display = 'none';
+      // If there's a return page, redirect to it
+      if (window.quizReturnPage) {
+        window.location.href = window.quizReturnPage;
+      }
+    });
+  }
+
+  // Close when clicking outside modal
+  quizModal.addEventListener('click', function(e) {
+    if (e.target === quizModal) {
+      quizModal.style.display = 'none';
+      if (window.quizReturnPage) {
+        window.location.href = window.quizReturnPage;
+      }
+    }
+  });
+
+  // Next Step buttons (Continue button)
+  quizModal.querySelectorAll('[data-action="nextStep"]').forEach(btn => {
+    btn.addEventListener('click', function(e) {
+      e.preventDefault();
+      const stepNumber = this.getAttribute('data-step');
+      if (stepNumber) {
+        window.nextStep(parseInt(stepNumber));
+      }
+    });
+  });
+
+  // Trope selection buttons
+  quizModal.querySelectorAll('[data-action="selectTrope"]').forEach(btn => {
+    btn.addEventListener('click', function(e) {
+      e.preventDefault();
+      const trope = this.getAttribute('data-trope');
+      if (trope) {
+        window.selectTrope(trope);
+      }
+    });
+  });
+
+  // Heat level / Complete onboarding buttons
+  quizModal.querySelectorAll('[data-action="completeOnboarding"]').forEach(btn => {
+    btn.addEventListener('click', function(e) {
+      e.preventDefault();
+      const heatLevel = this.getAttribute('data-heat');
+      if (heatLevel) {
+        window.completeOnboarding(heatLevel);
+      }
+    });
+  });
+
+  console.log('✓ Quiz modal event listeners attached');
+};
+
 // ── PERSONALIZED STORIES ──
 // Get stories filtered by user preferences
 window.getPersonalizedStories = function() {

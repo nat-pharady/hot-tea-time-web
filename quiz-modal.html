@@ -1,7 +1,7 @@
 <!-- TASTE TEST MODAL -->
 <div id="tasteTestModal" class="modal-overlay">
   <div class="modal-container">
-    <button class="modal-close">&times;</button>
+    <button class="modal-close" data-action="closeModal">&times;</button>
 
     <!-- Step 1: Name & Email -->
     <div class="modal-step" data-step="1">
@@ -13,7 +13,7 @@
       <div class="modal-body">
         <input type="text" id="userName" class="modal-input" placeholder="What should we call you?" style="margin-bottom: 16px;" />
         <input type="email" id="userEmail" class="modal-input" placeholder="your@email.com" />
-        <button class="modal-btn" onclick="nextStep(2)">Continue</button>
+        <button class="modal-btn" data-action="nextStep" data-step="2">Continue</button>
       </div>
     </div>
 
@@ -26,27 +26,27 @@
       </div>
       <div class="modal-body">
         <div class="trope-grid">
-          <button class="trope-card" onclick="selectTrope('enemies-to-lovers')">
+          <button class="trope-card" data-action="selectTrope" data-trope="enemies-to-lovers">
             <div class="trope-icon">⚔️</div>
             <div class="trope-name">Enemies to Lovers</div>
           </button>
-          <button class="trope-card" onclick="selectTrope('forced-proximity')">
+          <button class="trope-card" data-action="selectTrope" data-trope="forced-proximity">
             <div class="trope-icon">🔒</div>
             <div class="trope-name">Forced Proximity</div>
           </button>
-          <button class="trope-card" onclick="selectTrope('dark-morally-grey')">
+          <button class="trope-card" data-action="selectTrope" data-trope="dark-morally-grey">
             <div class="trope-icon">🖤</div>
             <div class="trope-name">Dark & Morally Grey</div>
           </button>
-          <button class="trope-card" onclick="selectTrope('forbidden-love')">
+          <button class="trope-card" data-action="selectTrope" data-trope="forbidden-love">
             <div class="trope-icon">💔</div>
             <div class="trope-name">Forbidden Love</div>
           </button>
-          <button class="trope-card" onclick="selectTrope('regency-nobility')">
+          <button class="trope-card" data-action="selectTrope" data-trope="regency-nobility">
             <div class="trope-icon">👑</div>
             <div class="trope-name">Regency & Nobility</div>
           </button>
-          <button class="trope-card" onclick="selectTrope('gothic-paranormal')">
+          <button class="trope-card" data-action="selectTrope" data-trope="gothic-paranormal">
             <div class="trope-icon">🧛</div>
             <div class="trope-name">Gothic & Paranormal</div>
           </button>
@@ -63,17 +63,17 @@
       </div>
       <div class="modal-body">
         <div class="heat-grid">
-          <button class="heat-card" onclick="completeOnboarding('warm')">
+          <button class="heat-card" data-action="completeOnboarding" data-heat="warm">
             <div class="heat-icon">☕</div>
             <div class="heat-name">Warm</div>
             <div class="heat-desc">Cozy & sweet</div>
           </button>
-          <button class="heat-card" onclick="completeOnboarding('steamy')">
+          <button class="heat-card" data-action="completeOnboarding" data-heat="steamy">
             <div class="heat-icon">🔥</div>
             <div class="heat-name">Steamy</div>
             <div class="heat-desc">A little daring</div>
           </button>
-          <button class="heat-card" onclick="completeOnboarding('hot')">
+          <button class="heat-card" data-action="completeOnboarding" data-heat="hot">
             <div class="heat-icon">🌶️</div>
             <div class="heat-name">Hot</div>
             <div class="heat-desc">Turn up the heat</div>
