@@ -250,31 +250,31 @@ window.storiesDatabase = [
   },
   {
     id: 9,
-    title: "Snow Bound",
+    title: "Shared Bed at Group Vacation",
     author: "Winter Chase",
-    avatar: "❄️",
-    excerpt: "Trapped in a remote cabin during a blizzard, they had nowhere to run from each other—and nowhere to hide from their true feelings.", image: "images/story-9.jpg",
+    avatar: "🏖️",
+    excerpt: "A group vacation turns complicated when the resort double-books the rooms. As the only two single guests, they're forced to share a bed—and suddenly proximity becomes dangerous.", image: "images/story-9.jpg",
     reads: "4.1k",
     chapters: 5,
-    tropes: ['forced-proximity', 'regency-nobility'],
+    tropes: ['forced-proximity', 'enemies-to-lovers'],
     heatLevel: 'warm',
     featured: false,
     isFree: true,
-    content: `<p>Lady Margaret never expected to find herself stranded with the one man she'd spent three seasons avoiding.</p><p>Lord Theodore was all rigid propriety and cutting remarks. Yet here, in this isolated manor with nothing but the blizzard outside, she saw something different in him—a longing that matched her own.</p><p>"Why do you always run from me?" he asked, his voice soft in the firelight.</p><p>"Because you terrify me," she admitted. "Not your title or your fortune. You terrify me because I might actually care about you."</p><p>He took her hand then, and everything changed.</p>`
+    content: `<p>The resort was a nightmare. Margaret had come to escape her boring life, not to share a room—let alone a bed—with Theodore, the one man who drove her absolutely insane.</p><p>"This is ridiculous," she muttered, staring at the single king bed that was supposed to be two queens.</p><p>"I agree," Theodore said, pulling off his shirt without ceremony. "But we're adults. We can share a bed for one night."</p><p>One night turned into three. And somewhere between the forced proximity and the midnight conversations, Margaret realized that maybe she'd been running from him for all the wrong reasons.</p><p>By the time they had to leave, sharing a bed felt like the only place she wanted to be.</p>`
   },
   {
     id: 10,
-    title: "Cage of Fire",
+    title: "Roommates",
     author: "Blake Hale",
-    avatar: "🔒",
-    excerpt: "Forced to work together in close quarters, their tension reaches a breaking point—and the only way out is through each other.", image: "images/story-10.jpg",
+    avatar: "🏠",
+    excerpt: "Forced to become roommates to make rent, they have to navigate shared spaces, late-night encounters, and the tension that builds with every passing day.", image: "images/story-10.jpg",
     reads: "4.3k",
     chapters: 7,
-    tropes: ['forced-proximity', 'dark-morally-grey'],
+    tropes: ['forced-proximity', 'enemies-to-lovers'],
     heatLevel: 'hot',
     featured: false,
     isFree: true,
-    content: `<p>The private yacht was supposed to be their escape. Instead, it became their prison.</p><p>Isolated at sea with the man who made her blood burn, every moment was agony and ecstasy combined. He was ruthless, unapologetic, and utterly addictive.</p><p>"Fight me or surrender," he commanded, pulling her close. "But don't pretend you don't want this."</p><p>She couldn't pretend anymore. When he touched her, nothing else mattered—not morality, not consequences, nothing but the flames consuming them both.</p>`
+    content: `<p>The apartment was tiny, the rent was astronomical, and they were strangers who'd met on a roommate-finder app. Neither expected this to work.</p><p>But as weeks turned into months, sharing a kitchen, a bathroom, and a paper-thin wall between their bedrooms became intimate in ways neither anticipated.</p><p>One night, she heard him on the other side of the wall. One night, he couldn't stay away any longer.</p><p>"This is a bad idea," she whispered as he pushed into her room, but her hands were already pulling him closer.</p><p>Living together had never been so complicated. Or so irresistible.</p>`
   },
   {
     id: 11,
@@ -404,31 +404,31 @@ window.storiesDatabase = [
   },
   {
     id: 20,
-    title: "Winter's Cage",
+    title: "Sparring Partners",
     author: "Sienna Cross",
-    avatar: "❄️",
-    excerpt: "Snowed in together at a remote estate. Forced to face the chemistry they've been denying.", image: "images/story-20.jpg",
+    avatar: "💪",
+    excerpt: "Paired together in a competitive fitness class, their rivalry becomes something far more heated than either expected.", image: "images/story-20.jpg",
     reads: "3.6k",
     chapters: 5,
-    tropes: ['forced-proximity', 'regency-nobility'],
+    tropes: ['forced-proximity', 'enemies-to-lovers'],
     heatLevel: 'warm',
     featured: false,
     isFree: true,
-    content: `<p>Lord Thomas hadn't expected to be stranded with Lady Catherine—the one woman who made him question his carefully controlled life.</p><p>Three days of proximity in a snowbound manor changed everything between them.</p><p>"I've always wanted to do this," he said, finally closing the distance between them.</p><p>When he kissed her, the warmth of it melted away all their carefully constructed walls.</p>`
+    content: `<p>The fitness class was supposed to be simple. Partner up, compete, go home. But Thomas and Catherine were assigned to each other—the two most competitive people in the gym.</p><p>Day after day, their bodies moved in sync during circuits and sparring. Every touch was electric. Every moment of proximity made them forget why they'd ever considered themselves rivals.</p><p>After class one night, he cornered her in the locker room.</p><p>"I'm tired of pretending I don't want you," he said, breathing hard from exertion and desire.</p><p>She pulled him close. "Then stop pretending."</p>`
   },
   {
     id: 21,
-    title: "Inferno Rising",
+    title: "Forced Mentorship",
     author: "Blake Hale",
-    avatar: "🔥",
-    excerpt: "Trapped together in a dangerous situation. The heat between them matches the danger surrounding them.", image: "images/story-21.jpg",
+    avatar: "📚",
+    excerpt: "Assigned as mentor and mentee in a professional development program, they must work closely together despite their obvious attraction.", image: "images/story-21.jpg",
     reads: "3.8k",
     chapters: 6,
-    tropes: ['forced-proximity', 'dark-morally-grey'],
+    tropes: ['forced-proximity', 'power-dynamic'],
     heatLevel: 'hot',
     featured: false,
     isFree: true,
-    content: `<p>They were on opposite sides of the law, trapped together in a basement by forces beyond their control.</p><p>Hours of proximity ignited something primal between them. He was everything dangerous. She couldn't get enough.</p><p>"When we get out of this," he growled, pinning her against the wall, "I'm going to make you scream."</p><p>She didn't doubt it for a second.</p>`
+    content: `<p>The mentorship program was supposed to help her career. She didn't expect to be paired with him—the brilliant, ruthless executive who made her pulse race just by entering a room.</p><p>Weekly meetings became the highlight of her week. After-hours strategy sessions stretched into late nights. His office door was always closed, but never locked.</p><p>"This is unprofessional," she said, even as his fingers found their way to her hair.</p><p>"I know," he replied, pulling her closer. "I don't care anymore."</p><p>Professional boundaries shattered the moment he touched her.</p>`
   },
   {
     id: 22,
@@ -446,7 +446,7 @@ window.storiesDatabase = [
   },
   {
     id: 23,
-    title: "Tangled Secrets",
+    title: "Veiled Affair",
     author: "Victoria Blake",
     avatar: "💋",
     excerpt: "In the shadows of high society, their steamy affair blooms. A love that could destroy them both.", image: "images/story-23.jpg",
