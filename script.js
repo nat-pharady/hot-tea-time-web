@@ -80,12 +80,14 @@ document.addEventListener('DOMContentLoaded', function() {
   };
 
   window.completeOnboarding = function(heatLevel) {
-    // Capture email from step 1
+    // Capture name and email from step 1
+    const nameInput = document.getElementById('userName');
     const emailInput = document.getElementById('userEmail');
+    const name = nameInput ? nameInput.value.trim() : '';
     const email = emailInput ? emailInput.value : '';
 
-    // Extract display name from email
-    const displayName = email ? email.split('@')[0] : 'Tea Lover';
+    // Use provided name or fall back to email-derived name
+    const displayName = name || (email ? email.split('@')[0] : 'Tea Lover');
 
     // Determine avatar based on heat level
     const avatarMap = { 'warm': '☕', 'steamy': '🫖', 'hot': '🌶️' };
@@ -1402,54 +1404,8 @@ function updateProfileStats() {
   profile.stats.charactersCollected = savedCharacters.length;
 
   localStorage.setItem('userProfile', JSON.stringify(profile));
-  refreshProfileDropdown();
 }
 
-// Populate profile dropdown with user data
-function populateProfileDropdown() {
-  const profile = getUserProfile();
-  if (!profile) return;
-
-  // Update avatar
-  const avatarEl = document.querySelector('.profile-avatar');
-  if (avatarEl) avatarEl.textContent = profile.avatar;
-
-  // Update display name
-  const nameEl = document.querySelector('.profile-name');
-  if (nameEl) nameEl.textContent = profile.displayName;
-
-  // Update tier
-  const tierEl = document.querySelector('.profile-tier');
-  if (tierEl) {
-    const tierText = profile.membershipTier === 'inner-circle'
-      ? 'Inner Circle Member'
-      : 'Free Member';
-    tierEl.textContent = tierText;
-    if (profile.membershipTier === 'inner-circle') {
-      tierEl.classList.add('premium');
-    }
-  }
-
-  // Update stats
-  const statValues = document.querySelectorAll('.profile-stats .stat-value');
-  if (statValues.length >= 2) {
-    statValues[0].textContent = profile.stats.storiesSaved;
-    statValues[1].textContent = profile.stats.charactersCollected;
-  }
-}
-
-// Refresh profile dropdown
-function refreshProfileDropdown() {
-  requestAnimationFrame(() => populateProfileDropdown());
-}
-
-// Initialize profile on page load
-document.addEventListener('DOMContentLoaded', function() {
-  setTimeout(() => {
-    const profile = getUserProfile();
-    if (profile) populateProfileDropdown();
-  }, 100);
-});
 
 // Placeholder modals for future features
 function openProfileSettings(event) {

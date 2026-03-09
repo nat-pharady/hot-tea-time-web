@@ -80,14 +80,15 @@
   <div class="modal-container">
     <button class="modal-close">&times;</button>
 
-    <!-- Step 1: Email -->
+    <!-- Step 1: Name & Email -->
     <div class="modal-step" data-step="1">
       <div class="modal-header">
         <div class="modal-eyebrow">The Taste Test</div>
         <h2 class="modal-title">Let's Find Your <em>Perfect Pour</em></h2>
-        <p class="modal-subtitle">First, we'll need somewhere to send your recommendations.</p>
+        <p class="modal-subtitle">First, let's get to know you.</p>
       </div>
       <div class="modal-body">
+        <input type="text" id="userName" class="modal-input" placeholder="What should we call you?" style="margin-bottom: 16px;" />
         <input type="email" id="userEmail" class="modal-input" placeholder="your@email.com" />
         <button class="modal-btn" onclick="nextStep(2)">Continue</button>
       </div>
