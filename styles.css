@@ -761,10 +761,10 @@
   /* ── TOAST NOTIFICATION ── */
   .toast {
     position: fixed;
-    top: 24px;
+    bottom: 24px;
     right: 24px;
-    background: linear-gradient(135deg, rgba(76, 175, 80, 0.95), rgba(56, 142, 60, 0.95));
-    border: 1px solid rgba(76, 175, 80, 0.3);
+    background: linear-gradient(135deg, rgba(90, 25, 36, 0.95), rgba(74, 21, 32, 0.95));
+    border: 1px solid rgba(248, 220, 118, 0.3);
     border-radius: 12px;
     padding: 16px 24px;
     backdrop-filter: blur(8px);
@@ -786,34 +786,34 @@
   .toast-icon {
     font-size: 1.2rem;
     font-weight: 700;
-    color: #fff;
+    color: #f8dc76;
   }
 
   .toast-message {
     font-family: 'Coco Gothic', sans-serif;
     font-size: 0.95rem;
-    color: #fff;
+    color: #f7f4ea;
     font-weight: 500;
   }
 
   @keyframes slideInToast {
     from {
-      transform: translateX(400px);
+      transform: translateY(400px);
       opacity: 0;
     }
     to {
-      transform: translateX(0);
+      transform: translateY(0);
       opacity: 1;
     }
   }
 
   @keyframes slideOutToast {
     from {
-      transform: translateX(0);
+      transform: translateY(0);
       opacity: 1;
     }
     to {
-      transform: translateX(400px);
+      transform: translateY(400px);
       opacity: 0;
     }
   }

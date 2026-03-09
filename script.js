@@ -42,13 +42,23 @@ document.addEventListener('DOMContentLoaded', function() {
   const startSippingBtn = document.querySelector('.nav-cta');
   const closeBtn = document.querySelector('.modal-close');
 
-  if (!quizModal || !startSippingBtn) return;
+  if (!quizModal) return;
 
   // Open quiz when "Start Sipping Free" is clicked
-  startSippingBtn.addEventListener('click', function(e) {
-    e.preventDefault();
+  if (startSippingBtn) {
+    startSippingBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      quizModal.style.display = 'flex';
+    });
+  }
+
+  // Check if URL has ?openQuiz parameter and open modal if so
+  const urlParams = new URLSearchParams(window.location.search);
+  if (urlParams.has('openQuiz')) {
     quizModal.style.display = 'flex';
-  });
+    // Clean up URL to remove the parameter
+    window.history.replaceState({}, document.title, window.location.pathname);
+  }
 
   // Close quiz when X button is clicked
   if (closeBtn) {
@@ -491,7 +501,7 @@ function addToLibrary() {
   // Update profile stats
   updateProfileStats();
 
-  showToast('✓ ' + currentStory.title + ' added to your library!');
+  showToast(currentStory.title + ' added to your library!');
 }
 
 // Get currently displayed story data from reading pane
