@@ -1099,7 +1099,7 @@ function loadSavedCharacters() {
 }
 
 // Remove character from library
-function removeCharacterFromLibrary(characterId) {
+window.removeCharacterFromLibrary = function(characterId) {
   const savedCharacters = loadSavedCharacters();
   const updatedCharacters = savedCharacters.filter(char => char.id !== characterId);
   localStorage.setItem('savedCharacters', JSON.stringify(updatedCharacters));
@@ -1112,7 +1112,7 @@ function removeCharacterFromLibrary(characterId) {
 
   // Show toast notification
   showToast('Character removed from library');
-}
+};
 
 // Render saved characters in My Library
 function renderSavedCharacterGrid() {
