@@ -39,72 +39,149 @@ window.addEventListener('scroll', () => {
   navLinks.forEach(link => { link.style.color = link.getAttribute('href') === '#' + current ? 'var(--orange)' : ''; });
 });
 
-// ── STORIES DATABASE ──
+// ── STORIES DATABASE (UNIFIED) ──
+// Single source of truth for all stories, free and premium
+// Each story has metadata for filtering by quiz preferences
 window.storiesDatabase = [
+  // FREE STORIES
   {
     id: 1,
+    title: "Midnight Confessions",
+    author: "Sarah Mitchell",
+    avatar: "☕",
+    excerpt: "The café at midnight held a certain magic. Not the kind you'd find in fairy tales, but something more real—something that lived in the spaces between whispered conversations and the gentle clink of porcelain cups.",
+    image: "images/story-1.jpg",
+    reads: "2.8k",
+    chapters: 4,
+    tropes: ['enemies-to-lovers', 'forced-proximity'],
+    heatLevel: 'warm',
+    featured: false,
+    isFree: true,
+    content: `<p>The café at midnight held a certain magic. Not the kind you'd find in fairy tales, but something more real—something that lived in the spaces between whispered conversations and the gentle clink of porcelain cups.</p>
+
+<p>She had come here a thousand times, always at the same table, always ordering the same chamomile tea. The ritual had become as much a part of her as breathing. Until he walked in.</p>
+
+<p>He didn't look like he belonged in a place like this. His leather jacket was too worn, his expression too guarded, his presence too commanding for the soft amber lighting and classical music that drifted through the speakers. Yet somehow, he fit perfectly.</p>
+
+<p>"Is this seat taken?" His voice was rough velvet, the kind that made you want to lean in closer just to hear him better.</p>
+
+<p>She should have said yes. Should have told him the seat was reserved, that she preferred her solitude, that there were three other empty tables. But the way he looked at her—like she was the most interesting thing he'd ever seen—made her do something unexpected.</p>
+
+<p>"No," she whispered. "Please."</p>
+
+<p>That night, they talked until the café closed. About books they'd read, cities they'd visited, dreams they'd abandoned, fears they'd never named. By the time he walked her to the door, she knew she'd never drink tea alone again.</p>
+
+<p>"Same time tomorrow?" he asked, his hand barely brushing hers.</p>
+
+<p>She didn't answer with words. She simply smiled, and in that moment, he understood everything he needed to know.</p>
+
+<p>The café at midnight had found its magic at last. And this time, it was shared.</p>`
+  },
+  {
+    id: 2,
+    title: "Garden of Secrets",
+    author: "Emma Sterling",
+    avatar: "🌹",
+    excerpt: "The garden had been her sanctuary for as long as she could remember. Hidden behind wrought-iron gates and climbing ivy, it was a place where the world couldn't find her—where she could be anyone, anything she wanted.",
+    image: "images/story-2.jpg",
+    reads: "3.4k",
+    chapters: 6,
+    tropes: ['forbidden-love', 'gothic-paranormal'],
+    heatLevel: 'steamy',
+    featured: false,
+    isFree: true,
+    content: `<p>The garden had been her sanctuary for as long as she could remember. Hidden behind wrought-iron gates and climbing ivy, it was a place where the world couldn't find her—where she could be anyone, anything she wanted.</p>
+
+<p>Roses bloomed in impossible colors. Jasmine climbed the stone walls, filling the air with its intoxicating sweetness. She'd spent entire summers here, reading, dreaming, waiting for something she couldn't name.</p>
+
+<p>And then he appeared one twilight evening, slipping through a gap in the gate as if the garden itself had summoned him.</p>
+
+<p>"I didn't know anyone else knew about this place," she said, her heart suddenly racing in a way that had nothing to do with trespassing.</p>
+
+<p>He smiled, and it was dangerous—the kind of smile that promised secrets and consequences and everything she'd been waiting for.</p>
+
+<p>"Maybe I was looking for you," he said simply.</p>
+
+<p>In that moment, beneath the star-laden sky and surrounded by the whispers of the garden, she understood that some places are more than just locations. Some places are destinations of the soul.</p>
+
+<p>And some secrets, once shared, could never be untold.</p>`
+  },
+
+  // PREMIUM PREVIEW STORIES (showing as cards but locked)
+  {
+    id: 3,
     title: "The Duke's Afternoon Arrangement",
     author: "Vivienne Blackthorn",
-    avatar: "🌹",
+    avatar: "👑",
     excerpt: "Lady Elara had always prided herself on her restraint. Then came the Duke of Ashford, and his rather unconventional proposal — one that would require very little restraint indeed.",
     image: "images/story-featured.jpg",
     reads: "24.3k",
     chapters: 18,
     tropes: ['enemies-to-lovers', 'regency-nobility'],
     heatLevel: 'steamy',
-    featured: true
+    featured: true,
+    isFree: false,
+    content: null
   },
   {
-    id: 2,
+    id: 4,
     title: "A Garden for Two",
     author: "Celeste Ashby",
     avatar: "🌿",
     excerpt: "The estate garden was always his. Until she arrived and planted something entirely different.",
-    image: "images/story-2.jpg",
+    image: "images/story-3.jpg",
     reads: "11.7k",
     chapters: 9,
     tropes: ['forced-proximity', 'regency-nobility'],
     heatLevel: 'warm',
-    featured: false
+    featured: false,
+    isFree: false,
+    content: null
   },
   {
-    id: 3,
+    id: 5,
     title: "After the Candles Go Out",
     author: "Margaux Delacroix",
     avatar: "🕯️",
     excerpt: "Midnight confessions in a house that keeps far too many secrets.",
-    image: "images/story-3.jpg",
+    image: "images/story-4.jpg",
     reads: "8.9k",
     chapters: 5,
     tropes: ['forbidden-love', 'gothic-paranormal'],
     heatLevel: 'steamy',
-    featured: false
+    featured: false,
+    isFree: false,
+    content: null
   },
   {
-    id: 4,
+    id: 6,
     title: "Lord Wickham's Cherry Problem",
     author: "Poppy St. Clair",
     avatar: "🍒",
     excerpt: "He had a type. She was decidedly not it. He married her anyway. Now what?",
-    image: "images/story-4.jpg",
+    image: "images/story-5.jpg",
     reads: "19.1k",
     chapters: 14,
     tropes: ['regency-nobility', 'enemies-to-lovers'],
     heatLevel: 'warm',
-    featured: false
+    featured: false,
+    isFree: false,
+    content: null
   },
   {
-    id: 5,
+    id: 7,
     title: "Whispered Confessions",
     author: "Iris Nightshade",
     avatar: "🎭",
     excerpt: "Some secrets are meant to be kept. Others beg to be spilled in the dark of night.",
-    image: "images/story-5.jpg",
+    image: "images/story-6.jpg",
     reads: "16.4k",
     chapters: 12,
     tropes: ['dark-morally-grey', 'gothic-paranormal'],
     heatLevel: 'steamy',
-    featured: false
+    featured: false,
+    isFree: false,
+    content: null
   }
 ];
 
@@ -414,63 +491,18 @@ function formatTropeName(tropeName) {
 }
 
 // ── READING PANE ──
-const stories = {
-  'midnight-confessions': {
-    title: 'Midnight Confessions',
-    author: 'Sarah Mitchell',
-    reads: '2.8k reads',
-    chapters: '4 chapters',
-    content: `<p>The café at midnight held a certain magic. Not the kind you'd find in fairy tales, but something more real—something that lived in the spaces between whispered conversations and the gentle clink of porcelain cups.</p>
-
-<p>She had come here a thousand times, always at the same table, always ordering the same chamomile tea. The ritual had become as much a part of her as breathing. Until he walked in.</p>
-
-<p>He didn't look like he belonged in a place like this. His leather jacket was too worn, his expression too guarded, his presence too commanding for the soft amber lighting and classical music that drifted through the speakers. Yet somehow, he fit perfectly.</p>
-
-<p>"Is this seat taken?" His voice was rough velvet, the kind that made you want to lean in closer just to hear him better.</p>
-
-<p>She should have said yes. Should have told him the seat was reserved, that she preferred her solitude, that there were three other empty tables. But the way he looked at her—like she was the most interesting thing he'd ever seen—made her do something unexpected.</p>
-
-<p>"No," she whispered. "Please."</p>
-
-<p>That night, they talked until the café closed. About books they'd read, cities they'd visited, dreams they'd abandoned, fears they'd never named. By the time he walked her to the door, she knew she'd never drink tea alone again.</p>
-
-<p>"Same time tomorrow?" he asked, his hand barely brushing hers.</p>
-
-<p>She didn't answer with words. She simply smiled, and in that moment, he understood everything he needed to know.</p>
-
-<p>The café at midnight had found its magic at last. And this time, it was shared.</p>`
-  },
-  'garden-of-secrets': {
-    title: 'Garden of Secrets',
-    author: 'Emma Sterling',
-    reads: '3.4k reads',
-    chapters: '6 chapters',
-    content: `<p>The garden had been her sanctuary for as long as she could remember. Hidden behind wrought-iron gates and climbing ivy, it was a place where the world couldn't find her—where she could be anyone, anything she wanted.</p>
-
-<p>Roses bloomed in impossible colors. Jasmine climbed the stone walls, filling the air with its intoxicating sweetness. She'd spent entire summers here, reading, dreaming, waiting for something she couldn't name.</p>
-
-<p>And then he appeared one twilight evening, slipping through a gap in the gate as if the garden itself had summoned him.</p>
-
-<p>"I didn't know anyone else knew about this place," she said, her heart suddenly racing in a way that had nothing to do with trespassing.</p>
-
-<p>He smiled, and it was dangerous—the kind of smile that promised secrets and consequences and everything she'd been waiting for.</p>
-
-<p>"Maybe I was looking for you," he said simply.</p>
-
-<p>In that moment, beneath the star-laden sky and surrounded by the whispers of the garden, she understood that some places are more than just locations. Some places are destinations of the soul.</p>
-
-<p>And some secrets, once shared, could never be untold.</p>`
-  }
-};
-
 function openReadingPane(storyId) {
-  const story = stories[storyId];
-  if (!story) return;
+  // Find story in unified database by ID
+  const story = window.storiesDatabase.find(s => s.id === parseInt(storyId));
+  if (!story || !story.isFree) {
+    console.warn('Story not found or not available:', storyId);
+    return;
+  }
 
   document.getElementById('story-title').textContent = story.title;
   document.getElementById('story-author').textContent = `By ${story.author}`;
-  document.getElementById('story-reads').textContent = story.reads;
-  document.getElementById('story-chapters').textContent = story.chapters;
+  document.getElementById('story-reads').textContent = story.reads + ' reads';
+  document.getElementById('story-chapters').textContent = story.chapters + ' chapters';
   document.getElementById('story-content').innerHTML = story.content;
 
   document.getElementById('reading-pane').style.display = 'flex';
@@ -499,18 +531,19 @@ document.addEventListener('DOMContentLoaded', function() {
   const storyCards = document.querySelectorAll('.story-card');
   console.log('Found story cards:', storyCards.length);
 
-  storyCards.forEach((card, index) => {
-    card.style.cursor = 'pointer';
-    const storyIds = ['midnight-confessions', 'garden-of-secrets'];
-    console.log(`Attaching listener to card ${index}:`, card);
+  // Get free stories from unified database
+  const freeStories = window.storiesDatabase.filter(s => s.isFree);
 
-    card.addEventListener('click', function(e) {
-      console.log(`Card ${index} clicked!`);
-      if (storyIds[index]) {
-        console.log(`Opening story: ${storyIds[index]}`);
-        openReadingPane(storyIds[index]);
-      }
-    });
+  storyCards.forEach((card, index) => {
+    if (freeStories[index]) {
+      card.style.cursor = 'pointer';
+      const storyId = freeStories[index].id;
+
+      card.addEventListener('click', function() {
+        console.log(`Story card clicked: ${storyId}`);
+        openReadingPane(storyId);
+      });
+    }
   });
 });
 
