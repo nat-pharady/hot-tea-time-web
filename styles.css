@@ -579,14 +579,14 @@
   .story-header { display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:44px; }
   .story-grid { display:grid; grid-template-columns:1.6fr 1fr 1fr; grid-template-rows:auto auto; gap:20px; }
 
-  /* Premium Story Grid - Featured hero + cascading cards */
-  .premium-story-grid { display:grid; grid-template-columns:1.8fr 1fr 1fr; gap:24px; }
-  .premium-story-grid .story-card:nth-child(1) { grid-column:span 1; grid-row:span 2; }
+  /* Premium Story Grid - Featured hero + stacked cards */
+  .premium-story-grid { display:grid; grid-template-columns:1.6fr 1fr; gap:24px; }
+  .premium-story-grid .story-card:nth-child(1) { grid-column:span 1; grid-row:span 4; }
   .premium-story-grid .story-card:nth-child(2) { grid-column:span 1; grid-row:span 1; }
   .premium-story-grid .story-card:nth-child(3) { grid-column:span 1; grid-row:span 1; }
   .premium-story-grid .story-card:nth-child(4) { grid-column:span 1; grid-row:span 1; }
   .premium-story-grid .story-card:nth-child(5) { grid-column:span 1; grid-row:span 1; }
-  .premium-story-grid .story-card.featured { grid-row:span 2; }
+  .premium-story-grid .story-card.featured { grid-row:span 4; }
 
   .story-card { background:var(--card-bg); border:none; border-radius:4px; overflow:hidden; cursor:pointer; transition:transform 0.32s cubic-bezier(.25,.46,.45,.94),box-shadow 0.32s; position:relative; }
   .story-card:hover { transform:translateY(-4px); box-shadow:0 16px 44px rgba(45,15,30,0.14), 0 0 20px rgba(255,193,7,0.4); }
