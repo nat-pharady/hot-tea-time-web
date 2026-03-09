@@ -254,17 +254,17 @@
 
   /* Color-coded stat cards */
   .profile-stat-card:nth-child(1) {
-    background: linear-gradient(135deg, rgba(139, 26, 43, 0.15), rgba(139, 26, 43, 0.08));
+    background: linear-gradient(135deg, rgba(139, 26, 43, 0.35), rgba(139, 26, 43, 0.25));
     border: 2px solid #8B1A2B;
   }
 
   .profile-stat-card:nth-child(2) {
-    background: linear-gradient(135deg, rgba(61, 31, 51, 0.15), rgba(61, 31, 51, 0.08));
+    background: linear-gradient(135deg, rgba(61, 31, 51, 0.35), rgba(61, 31, 51, 0.25));
     border: 2px solid #3D1F33;
   }
 
   .profile-stat-card:nth-child(3) {
-    background: linear-gradient(135deg, rgba(248, 220, 118, 0.15), rgba(248, 220, 118, 0.08));
+    background: linear-gradient(135deg, rgba(248, 220, 118, 0.28), rgba(248, 220, 118, 0.18));
     border: 2px solid #f8dc76;
   }
 
@@ -291,7 +291,7 @@
     font-size: 0.65rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: #8B1A2B;
+    color: #2D0F1E;
   }
 
   /* Profile Sections */
