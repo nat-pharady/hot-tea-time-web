@@ -181,13 +181,16 @@ function goToStep(stepNumber) {
 
 // ── Complete Quiz ──
 function completeQuiz(heatLevel) {
-  console.log('Completing quiz with heat level:', heatLevel);
+  console.log('=== QUIZ COMPLETION ===');
+  console.log('Heat level selected:', heatLevel);
 
   // Get form values
   const nameInput = document.getElementById('userName');
   const emailInput = document.getElementById('userEmail');
   const name = nameInput ? nameInput.value.trim() : '';
   const email = emailInput ? emailInput.value : '';
+
+  console.log('Form inputs - Name:', name, 'Email:', email);
 
   // Validate
   if (!name || !email) {
@@ -202,13 +205,17 @@ function completeQuiz(heatLevel) {
     'hot': '🌶️'
   };
 
+  // Get selected trope from step 2
+  const selectedTrope = window.selectedTrope || 'not-specified';
+  console.log('Selected trope from step 2:', selectedTrope);
+
   // Create profile
   const userProfile = {
     email: email,
     displayName: name,
     memberSince: Date.now(),
     preferences: {
-      favoriteTopology: window.selectedTrope || 'not-specified',
+      favoriteTopology: selectedTrope,
       heatLevel: heatLevel
     },
     avatar: avatarMap[heatLevel] || '🫖',
@@ -226,7 +233,14 @@ function completeQuiz(heatLevel) {
   localStorage.setItem('userProfile', JSON.stringify(userProfile));
   localStorage.setItem('isLoggedIn', 'true');
 
+  // Verify it was saved
+  const savedProfile = localStorage.getItem('userProfile');
+  const savedLoggedIn = localStorage.getItem('isLoggedIn');
+  console.log('✓ Saved to localStorage - isLoggedIn:', savedLoggedIn);
+  console.log('✓ Saved profile:', JSON.parse(savedProfile));
+
   // Redirect to home
+  console.log('Redirecting to home.html...');
   window.location.href = 'home.html';
 }
 

@@ -106,10 +106,139 @@ window.storiesDatabase = [
 
 <p>And some secrets, once shared, could never be untold.</p>`
   },
+  {
+    id: 3,
+    title: "Sins of the Crown",
+    author: "Victoria Blake",
+    avatar: "👑",
+    excerpt: "She was never meant to catch his eye. A lady-in-waiting with no title, no wealth, no future—until the Duke walked into the ballroom and changed everything with a single glance.",
+    image: "images/story-featured.jpg",
+    reads: "4.2k",
+    chapters: 5,
+    tropes: ['regency-nobility', 'forbidden-love'],
+    heatLevel: 'warm',
+    featured: false,
+    isFree: true,
+    content: `<p>The ballroom glittered with a thousand candles, each one reflecting off silk gowns and jeweled tiaras. Margaret stood in the shadows where she belonged, invisible to the glittering world of nobility that danced just beyond her reach.</p>
+
+<p>Then she felt it—the weight of someone's gaze. She looked up to find the Duke of Ashford watching her from across the room, his dark eyes intense and unwavering. When their eyes met, time seemed to stop.</p>
+
+<p>He had everything: wealth, title, power. She had nothing but her pride and her wit. Yet when he crossed the ballroom toward her, she knew that everything was about to change.</p>
+
+<p>"May I have this dance?" he asked, extending his hand as if she were a duchess and not a mere lady-in-waiting.</p>
+
+<p>She shouldn't take it. Court gossip alone would ruin her. But as his hand found the small of her back and he pulled her into the dance, she realized she had already lost her heart to a man she could never have.</p>
+
+<p>Some sins, she thought, were worth the price of damnation.</p>`
+  },
+  {
+    id: 4,
+    title: "Trapped Together",
+    author: "Sienna Cross",
+    avatar: "🔒",
+    excerpt: "Snowed in at an isolated cabin, they had nowhere to run from each other—and nowhere to hide from the truth that had always existed between them.",
+    image: "images/story-3.jpg",
+    reads: "3.8k",
+    chapters: 4,
+    tropes: ['forced-proximity', 'enemies-to-lovers'],
+    heatLevel: 'steamy',
+    featured: false,
+    isFree: true,
+    content: `<p>The cabin door slammed behind them as the blizzard raged outside, blocking any escape. Marcus and Elena stood on opposite sides of the room, trapped together by circumstance and weather.</p>
+
+<p>"This is a nightmare," Elena muttered, rubbing her arms.</p>
+
+<p>"It doesn't have to be," Marcus said quietly, and she heard something dangerous in his voice—something that made her pulse race.</p>
+
+<p>They had spent years avoiding each other, years of cutting remarks and barely concealed tension. But now, with nowhere else to go and the night stretching endlessly before them, the carefully built walls between them began to crumble.</p>
+
+<p>When he reached for her hand, she should have pulled away. Instead, she found herself stepping closer, drawn to him like a moth to flame.</p>
+
+<p>"Marcus..." she whispered, but he silenced her with a kiss that tasted of years of longing and forbidden desire.</p>
+
+<p>The cabin grew warm despite the frozen world outside.</p>`
+  },
+  {
+    id: 5,
+    title: "Darkness Consumed",
+    author: "Raven Summers",
+    avatar: "🖤",
+    excerpt: "He was dark, dangerous, and absolutely wrong for her. She loved him anyway—and that was her greatest sin.",
+    image: "images/story-4.jpg",
+    reads: "5.1k",
+    chapters: 7,
+    tropes: ['dark-morally-grey', 'forbidden-love'],
+    heatLevel: 'hot',
+    featured: false,
+    isFree: true,
+    content: `<p>Everyone warned her about him. They said he was dangerous, that he trafficked in shadows and sin, that loving him would destroy her. She listened to every warning and ignored them all.</p>
+
+<p>Adrian was a man of untamed power and dark secrets. He dealt in things most people couldn't fathom, moved through worlds that polite society pretended didn't exist. And when he looked at her with those cold, predatory eyes, she saw the beast everyone else saw—and loved it.</p>
+
+<p>"I'm no good for you," he said, his hands gripping her waist as she straddled him. "I'll ruin you."</p>
+
+<p>"Then ruin me," she whispered against his lips.</p>
+
+<p>She knew what she was doing. She knew the price of loving a man like him was selling a piece of her soul. But as he moved inside her, as his hands claimed every inch of her, she realized she'd already signed away her redemption long ago.</p>
+
+<p>Some women wanted a prince. She wanted a king of darkness, and she would have him, consequences be damned.</p>`
+  },
+  {
+    id: 6,
+    title: "The Haunting",
+    author: "Lily Nocturne",
+    avatar: "👻",
+    excerpt: "The manor was said to be haunted. She didn't believe in ghosts until she saw him—a man from another time, fading between worlds, and dangerously, impossibly beautiful.",
+    image: "images/story-5.jpg",
+    reads: "4.6k",
+    chapters: 6,
+    tropes: ['gothic-paranormal', 'forbidden-love'],
+    heatLevel: 'steamy',
+    featured: false,
+    isFree: true,
+    content: `<p>The manor had been empty for forty years. Eleanor bought it for its potential, ignoring the whispered warnings from locals about curses and ghosts and things that walked the halls at midnight.</p>
+
+<p>She first saw him on the grand staircase—a man in 1920s clothing, translucent and glowing faintly in the moonlight. When their eyes met, he became solid, real, dangerous.</p>
+
+<p>"You can see me," he said, wonder and anguish mingling in his voice.</p>
+
+<p>"You're real," she whispered.</p>
+
+<p>"Not anymore. I've been trapped here for seventy years, unable to move on, unable to be seen by the living. Until you." He reached for her face, and his touch was cold but electric. "Please don't send me away."</p>
+
+<p>She should have been terrified. Instead, she found herself reaching back, pulling him closer, kissing a ghost and tasting death and longing and something impossible that made her feel more alive than ever before.</p>
+
+<p>Loving him was mad. But madness had never felt so right.</p>`
+  },
+  {
+    id: 7,
+    title: "Blood and Thorns",
+    author: "Midnight Vale",
+    avatar: "🧛",
+    excerpt: "He was a monster—undead, powerful, and bound by ancient curses. She was the hunter sent to destroy him. Fate had other plans.",
+    image: "images/story-6.jpg",
+    reads: "4.9k",
+    chapters: 8,
+    tropes: ['gothic-paranormal', 'dark-morally-grey'],
+    heatLevel: 'hot',
+    featured: false,
+    isFree: true,
+    content: `<p>The vampire didn't expect the hunter to be a woman. He also didn't expect her to be the most captivating creature he'd seen in three centuries.</p>
+
+<p>Cassandra came prepared with crosses and holy water, armed with centuries of knowledge about how to kill his kind. But when their eyes met across the darkened ballroom, both of them knew the stakes had changed.</p>
+
+<p>"I should kill you," she said, her hand on the silver dagger at her hip.</p>
+
+<p>"You could try," he replied, moving toward her with predatory grace. "But we both know you won't."</p>
+
+<p>When he bit her neck, it wasn't an attack—it was an invitation. When she pulled him closer instead of pushing him away, it was a surrender. They were supposed to be enemies, locked in an ancient dance of hunter and hunted.</p>
+
+<p>Instead, they became something far more dangerous: lovers who would burn the world to ashes before they let it separate them.</p>`
+  },
 
   // PREMIUM PREVIEW STORIES (showing as cards but locked)
   {
-    id: 3,
+    id: 8,
     title: "The Duke's Afternoon Arrangement",
     author: "Vivienne Blackthorn",
     avatar: "👑",
@@ -124,7 +253,7 @@ window.storiesDatabase = [
     content: null
   },
   {
-    id: 4,
+    id: 9,
     title: "A Garden for Two",
     author: "Celeste Ashby",
     avatar: "🌿",
@@ -139,7 +268,7 @@ window.storiesDatabase = [
     content: null
   },
   {
-    id: 5,
+    id: 10,
     title: "After the Candles Go Out",
     author: "Margaux Delacroix",
     avatar: "🕯️",
@@ -154,7 +283,7 @@ window.storiesDatabase = [
     content: null
   },
   {
-    id: 6,
+    id: 11,
     title: "Lord Wickham's Cherry Problem",
     author: "Poppy St. Clair",
     avatar: "🍒",
@@ -169,7 +298,7 @@ window.storiesDatabase = [
     content: null
   },
   {
-    id: 7,
+    id: 12,
     title: "Whispered Confessions",
     author: "Iris Nightshade",
     avatar: "🎭",
@@ -184,6 +313,102 @@ window.storiesDatabase = [
     content: null
   }
 ];
+
+// ── FREE STORY RECOMMENDATION ──
+// Simple if/then logic: Based on user's quiz selections, return matching free story
+// Story 1: Midnight Confessions (enemies-to-lovers, forced-proximity, warm)
+// ── FREE STORY RECOMMENDATION (7 TOTAL) ──
+// Story 1: Midnight Confessions (enemies-to-lovers, forced-proximity, warm)
+// Story 2: Garden of Secrets (forbidden-love, gothic-paranormal, steamy)
+// Story 3: Sins of the Crown (regency-nobility, forbidden-love, warm)
+// Story 4: Trapped Together (forced-proximity, enemies-to-lovers, steamy)
+// Story 5: Darkness Consumed (dark-morally-grey, forbidden-love, hot)
+// Story 6: The Haunting (gothic-paranormal, forbidden-love, steamy)
+// Story 7: Blood and Thorns (gothic-paranormal, dark-morally-grey, hot)
+window.getRecommendedFreeStory = function() {
+  const profile = getUserProfile();
+  if (!profile || !profile.preferences) {
+    // No profile yet - return all free stories
+    return window.storiesDatabase.filter(s => s.isFree);
+  }
+
+  const userTrope = profile.preferences.favoriteTopology;
+  const userHeat = profile.preferences.heatLevel;
+
+  console.log('getRecommendedFreeStory - User preferences:', { trope: userTrope, heat: userHeat });
+
+  // ═══ EXACT MATCHES (Best recommendations) ═══
+
+  // enemies-to-lovers + warm → Midnight Confessions (ID 1)
+  if (userTrope === 'enemies-to-lovers' && userHeat === 'warm') {
+    console.log('✓ Matched: Midnight Confessions');
+    return [window.storiesDatabase[0]];
+  }
+
+  // enemies-to-lovers + steamy → Trapped Together (ID 4)
+  if (userTrope === 'enemies-to-lovers' && userHeat === 'steamy') {
+    console.log('✓ Matched: Trapped Together');
+    return [window.storiesDatabase[3]];
+  }
+
+  // forced-proximity + warm → Midnight Confessions (ID 1)
+  if (userTrope === 'forced-proximity' && userHeat === 'warm') {
+    console.log('✓ Matched: Midnight Confessions');
+    return [window.storiesDatabase[0]];
+  }
+
+  // forced-proximity + steamy → Trapped Together (ID 4)
+  if (userTrope === 'forced-proximity' && userHeat === 'steamy') {
+    console.log('✓ Matched: Trapped Together');
+    return [window.storiesDatabase[3]];
+  }
+
+  // forbidden-love + warm → Sins of the Crown (ID 3)
+  if (userTrope === 'forbidden-love' && userHeat === 'warm') {
+    console.log('✓ Matched: Sins of the Crown');
+    return [window.storiesDatabase[2]];
+  }
+
+  // forbidden-love + steamy → Garden of Secrets (ID 2)
+  if (userTrope === 'forbidden-love' && userHeat === 'steamy') {
+    console.log('✓ Matched: Garden of Secrets');
+    return [window.storiesDatabase[1]];
+  }
+
+  // forbidden-love + hot → Darkness Consumed (ID 5)
+  if (userTrope === 'forbidden-love' && userHeat === 'hot') {
+    console.log('✓ Matched: Darkness Consumed');
+    return [window.storiesDatabase[4]];
+  }
+
+  // gothic-paranormal + steamy → The Haunting (ID 6)
+  if (userTrope === 'gothic-paranormal' && userHeat === 'steamy') {
+    console.log('✓ Matched: The Haunting');
+    return [window.storiesDatabase[5]];
+  }
+
+  // gothic-paranormal + hot → Blood and Thorns (ID 7)
+  if (userTrope === 'gothic-paranormal' && userHeat === 'hot') {
+    console.log('✓ Matched: Blood and Thorns');
+    return [window.storiesDatabase[6]];
+  }
+
+  // dark-morally-grey + hot → Darkness Consumed OR Blood and Thorns
+  if (userTrope === 'dark-morally-grey' && userHeat === 'hot') {
+    console.log('✓ Matched: Darkness Consumed');
+    return [window.storiesDatabase[4]];
+  }
+
+  // regency-nobility + warm → Sins of the Crown (ID 3)
+  if (userTrope === 'regency-nobility' && userHeat === 'warm') {
+    console.log('✓ Matched: Sins of the Crown');
+    return [window.storiesDatabase[2]];
+  }
+
+  // ═══ FALLBACK (Show relevant stories) ═══
+  console.log('ℹ️ No exact match, showing multiple recommendations');
+  return window.storiesDatabase.filter(s => s.isFree);
+};
 
 // ── QUIZ MODAL ──
 // Global function to open quiz with return page tracking
@@ -231,11 +456,16 @@ window.selectTrope = function(trope) {
 };
 
 window.completeOnboarding = function(heatLevel) {
+  console.log('=== QUIZ COMPLETION ===');
+  console.log('Heat level selected:', heatLevel);
+
   // Capture name and email from step 1
   const nameInput = document.getElementById('userName');
   const emailInput = document.getElementById('userEmail');
   const name = nameInput ? nameInput.value.trim() : '';
   const email = emailInput ? emailInput.value : '';
+
+  console.log('Form inputs - Name:', name, 'Email:', email);
 
   // Use provided name or fall back to email-derived name
   const displayName = name || (email ? email.split('@')[0] : 'Tea Lover');
@@ -246,6 +476,7 @@ window.completeOnboarding = function(heatLevel) {
 
   // Get selected trope from step 2
   const selectedTrope = window.selectedTrope || 'not-specified';
+  console.log('Selected trope from step 2:', selectedTrope);
 
   // Create user profile object
   const userProfile = {
@@ -265,13 +496,20 @@ window.completeOnboarding = function(heatLevel) {
     }
   };
 
+  console.log('✓ User profile created:', userProfile);
+
   // Save to localStorage
   localStorage.setItem('userProfile', JSON.stringify(userProfile));
   localStorage.setItem('isLoggedIn', 'true');
 
-  console.log('✓ User profile created:', userProfile);
+  // Verify it was saved
+  const savedProfile = localStorage.getItem('userProfile');
+  const savedLoggedIn = localStorage.getItem('isLoggedIn');
+  console.log('✓ Saved to localStorage - isLoggedIn:', savedLoggedIn);
+  console.log('✓ Saved profile:', JSON.parse(savedProfile));
 
   // Redirect to logged-in home
+  console.log('Redirecting to home.html...');
   window.location.href = 'home.html';
 };
 
@@ -415,24 +653,36 @@ window.setupQuizModalListeners = function() {
 // Get stories filtered by user preferences
 window.getPersonalizedStories = function() {
   const profile = getUserProfile();
+  console.log('getPersonalizedStories called. Profile:', profile);
+
   if (!profile || !profile.preferences) {
     // Return all stories if no preferences
+    console.warn('No profile or preferences found, returning all stories');
     return window.storiesDatabase || [];
   }
 
   const userTrope = profile.preferences.favoriteTopology;
   const userHeat = profile.preferences.heatLevel;
+  console.log('User preferences - Trope:', userTrope, 'Heat:', userHeat);
 
   // Filter stories: must match user's trope AND heat level
   const filtered = window.storiesDatabase.filter(story => {
     const tropeMatch = !userTrope || story.tropes.includes(userTrope);
     const heatMatch = story.heatLevel === userHeat;
-    return tropeMatch && heatMatch;
+    const matches = tropeMatch && heatMatch;
+    console.log(`Story "${story.title}" - tropeMatch: ${tropeMatch}, heatMatch: ${heatMatch}, result: ${matches}`);
+    return matches;
   });
+
+  console.log('Filtered stories (exact match):', filtered.length, 'stories');
+  filtered.forEach(s => console.log(`  - ${s.title} (${s.heatLevel})`));
 
   // If no exact matches, return stories with matching heat level (broader match)
   if (filtered.length === 0) {
-    return window.storiesDatabase.filter(story => story.heatLevel === userHeat);
+    console.log('No exact matches, falling back to heat level only');
+    const heatOnly = window.storiesDatabase.filter(story => story.heatLevel === userHeat);
+    console.log('Heat-level-only stories:', heatOnly.length, 'stories');
+    return heatOnly;
   }
 
   return filtered;
@@ -448,13 +698,34 @@ window.renderStories = function(stories, containerId) {
   const container = document.getElementById(containerId);
   if (!container) return;
 
+  console.log('renderStories called with', stories.length, 'stories for container:', containerId);
+  stories.forEach(s => {
+    console.log(`  - ${s.title} (free: ${s.isFree}, heat: ${s.heatLevel}, tropes: ${s.tropes.join(', ')})`);
+  });
+
   container.innerHTML = stories.map((story, index) => {
     const delayClass = index === 0 ? '' : `reveal-delay-${index}`;
     const featuredClass = story.featured ? 'featured' : '';
+    // Only show lock badge for non-free stories
+    const lockBadge = story.isFree ? '' : '<div class="story-lock"><span class="lock-badge">🔒 Members Only</span></div>';
+
+    // Use gradient placeholder if image fails to load
+    const imageElement = `
+      <img
+        src="${story.image}"
+        alt="${story.title}"
+        class="story-thumb"
+        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+      >
+      <div class="story-thumb" style="display:none; background: linear-gradient(135deg, #8B1A2B, #681e2a); height: 280px; align-items: center; justify-content: center; font-size: 64px;">
+        ${story.avatar}
+      </div>
+    `;
+
     return `
       <div class="story-card ${featuredClass} reveal ${delayClass}">
-        <img src="${story.image}" alt="${story.title}" class="story-thumb">
-        <div class="story-lock"><span class="lock-badge">🔒 Members Only</span></div>
+        ${imageElement}
+        ${lockBadge}
         <div class="story-meta">
           <div class="story-tags">${story.tropes.map(t => `<span class="tag">${formatTropeName(t)}</span>`).join('')}</div>
           <h3 class="story-title">${story.title}</h3>
