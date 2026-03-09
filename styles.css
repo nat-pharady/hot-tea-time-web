@@ -2173,6 +2173,38 @@
   font-weight: 700;
 }
 
+.character-delete-btn {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(248, 220, 118, 0.2);
+  border: 1px solid rgba(248, 220, 118, 0.5);
+  color: var(--orange);
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: all 0.3s ease;
+  padding: 0;
+  line-height: 1;
+}
+
+.character-card:hover .character-delete-btn {
+  opacity: 1;
+  background: rgba(248, 220, 118, 0.3);
+}
+
+.character-delete-btn:hover {
+  background: rgba(248, 220, 118, 0.4);
+  border-color: var(--orange);
+  transform: scale(1.1);
+}
+
 .character-info {
   position: absolute;
   bottom: 0;

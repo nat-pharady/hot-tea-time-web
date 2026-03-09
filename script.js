@@ -1098,6 +1098,22 @@ function loadSavedCharacters() {
   return savedCharacters;
 }
 
+// Remove character from library
+function removeCharacterFromLibrary(characterId) {
+  const savedCharacters = loadSavedCharacters();
+  const updatedCharacters = savedCharacters.filter(char => char.id !== characterId);
+  localStorage.setItem('savedCharacters', JSON.stringify(updatedCharacters));
+
+  // Update profile stats
+  updateProfileStats();
+
+  // Re-render the grid
+  renderSavedCharacterGrid();
+
+  // Show toast notification
+  showToast('Character removed from library');
+}
+
 // Render saved characters in My Library
 function renderSavedCharacterGrid() {
   const grid = document.getElementById('saved-characters-grid');
@@ -1136,6 +1152,7 @@ function renderSavedCharacterGrid() {
     card.innerHTML = `
       <div class="character-portrait" style="background: ${character.gradient};">
         <span class="character-category">${character.category}</span>
+        <button class="character-delete-btn" onclick="event.stopPropagation(); removeCharacterFromLibrary('${character.id}')" title="Remove from library">×</button>
       </div>
       <div class="character-info">
         <div class="character-name">${formattedName}</div>
