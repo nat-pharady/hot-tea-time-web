@@ -583,8 +583,8 @@ window.storiesDatabase = [
 window.getRecommendedFreeStory = function() {
   const profile = getUserProfile();
   if (!profile || !profile.preferences) {
-    // No profile yet - return all free stories
-    return window.storiesDatabase.filter(s => s.isFree);
+    // No profile yet - return first 2 free stories
+    return window.storiesDatabase.filter(s => s.isFree).slice(0, 2);
   }
 
   const userTrope = profile.preferences.favoriteTopology;
@@ -603,12 +603,12 @@ window.getRecommendedFreeStory = function() {
 
   if (matching.length > 0) {
     console.log(`✓ Found ${matching.length} matching stories for ${userTrope} + ${userHeat}:`, matching.map(s => s.title));
-    return matching;
+    return matching.slice(0, 2); // Limit to 2 stories
   }
 
-  // Fallback: if no exact match, return all free stories
-  console.log(`ℹ️ No exact match for ${userTrope} + ${userHeat}, showing all free stories as fallback`);
-  return window.storiesDatabase.filter(s => s.isFree);
+  // Fallback: if no exact match, return first 2 free stories
+  console.log(`ℹ️ No exact match for ${userTrope} + ${userHeat}, showing first 2 free stories as fallback`);
+  return window.storiesDatabase.filter(s => s.isFree).slice(0, 2);
 };
 
 // ── QUIZ MODAL ──
