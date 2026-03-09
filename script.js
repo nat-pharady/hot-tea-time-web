@@ -252,11 +252,15 @@ window.setupQuizModalListeners = function() {
     return;
   }
 
+  console.log('✓ Quiz modal found, setting up listeners...');
+
   // Close button
   const closeBtn = quizModal.querySelector('.modal-close');
+  console.log('Close button found:', !!closeBtn);
   if (closeBtn) {
     closeBtn.addEventListener('click', function(e) {
       e.preventDefault();
+      console.log('Close button clicked');
       quizModal.style.display = 'none';
       // If there's a return page, redirect to it
       if (window.quizReturnPage) {
@@ -276,21 +280,31 @@ window.setupQuizModalListeners = function() {
   });
 
   // Next Step buttons (Continue button)
-  quizModal.querySelectorAll('[data-action="nextStep"]').forEach(btn => {
+  const nextStepBtns = quizModal.querySelectorAll('[data-action="nextStep"]');
+  console.log('Found nextStep buttons:', nextStepBtns.length);
+  nextStepBtns.forEach((btn, index) => {
+    console.log(`NextStep button ${index}:`, btn, 'data-step:', btn.getAttribute('data-step'));
     btn.addEventListener('click', function(e) {
       e.preventDefault();
+      console.log('NextStep button clicked, data-step:', this.getAttribute('data-step'));
       const stepNumber = this.getAttribute('data-step');
       if (stepNumber) {
+        console.log('Calling nextStep with:', parseInt(stepNumber));
         window.nextStep(parseInt(stepNumber));
+      } else {
+        console.warn('No step number found on button');
       }
     });
   });
 
   // Trope selection buttons
-  quizModal.querySelectorAll('[data-action="selectTrope"]').forEach(btn => {
+  const tropeBtns = quizModal.querySelectorAll('[data-action="selectTrope"]');
+  console.log('Found selectTrope buttons:', tropeBtns.length);
+  tropeBtns.forEach(btn => {
     btn.addEventListener('click', function(e) {
       e.preventDefault();
       const trope = this.getAttribute('data-trope');
+      console.log('Trope button clicked:', trope);
       if (trope) {
         window.selectTrope(trope);
       }
@@ -298,10 +312,13 @@ window.setupQuizModalListeners = function() {
   });
 
   // Heat level / Complete onboarding buttons
-  quizModal.querySelectorAll('[data-action="completeOnboarding"]').forEach(btn => {
+  const heatBtns = quizModal.querySelectorAll('[data-action="completeOnboarding"]');
+  console.log('Found completeOnboarding buttons:', heatBtns.length);
+  heatBtns.forEach(btn => {
     btn.addEventListener('click', function(e) {
       e.preventDefault();
       const heatLevel = this.getAttribute('data-heat');
+      console.log('Heat button clicked:', heatLevel);
       if (heatLevel) {
         window.completeOnboarding(heatLevel);
       }
