@@ -358,7 +358,7 @@ window.storiesDatabase = [
     heatLevel: 'steamy',
     featured: false,
     isFree: true,
-    content: `<p>The Duke was everything a nobleman should be—charming, powerful, utterly corrupt. And she was the one woman strong enough to match him.</p><p>Their affair was a dangerous game of power and passion, neither willing to surrender control.</p><p>"You complete me," he whispered, though they both knew it was a lie. Completion implied goodness. There was nothing good about what they were.</p><p>But the passion burned like wildfire, consuming everything in its path.</p>`
+    content: `<p>Victor, Duke of Ashford, was everything a nobleman should be—charming, powerful, utterly corrupt. And she was the one woman strong enough to match him.</p><p>Their affair was a dangerous game of power and passion, neither willing to surrender control.</p><p>"You complete me," Victor whispered, though they both knew it was a lie. Completion implied goodness. There was nothing good about what they were.</p><p>But the passion burned like wildfire, consuming everything in its path.</p>`
   },
   {
     id: 17,
@@ -456,7 +456,7 @@ window.storiesDatabase = [
     heatLevel: 'steamy',
     featured: false,
     isFree: true,
-    content: `<p>The Duke had a reputation for darkness. The Duchess knew exactly what he was—and wanted him anyway.</p><p>Their marriage was a scandal waiting to happen. Behind closed doors, it was pure sin.</p><p>"People would destroy us if they knew," she breathed as he claimed her in the shadows of the grand hall.</p><p>"Let them try," he growled, lost in her completely.</p>`
+    content: `<p>Lucian, Duke of Blackwood, had a reputation for darkness. His wife, Evangeline, knew exactly what he was—and wanted him anyway.</p><p>Their marriage was a scandal waiting to happen. Behind closed doors, it was pure sin.</p><p>"People would destroy us if they knew," Evangeline breathed as Lucian claimed her in the shadows of the grand hall.</p><p>"Let them try," he growled, lost in her completely.</p>`
   },
   {
     id: 24,
