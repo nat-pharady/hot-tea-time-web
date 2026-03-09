@@ -2465,3 +2465,136 @@ body.stealth-mode * {
 
 /* Hide marquee */
 body.stealth-mode .marquee { display: none !important; }
+
+/* ──────────────────────────────────────────────────────────────────────────────
+   LOCKED MODAL STYLES
+   ────────────────────────────────────────────────────────────────────────────── */
+
+.locked-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.locked-modal-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+}
+
+.locked-modal-content {
+  position: relative;
+  background: var(--parchment);
+  border: 1px solid rgba(201, 165, 92, 0.3);
+  border-radius: 16px;
+  padding: 48px 40px;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  animation: modalSlideIn 0.3s ease-out;
+}
+
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.locked-modal-inner {
+  text-align: center;
+}
+
+.locked-modal-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: transparent;
+  color: var(--green);
+  font-size: 28px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s, transform 0.2s;
+  padding: 0;
+  line-height: 1;
+}
+
+.locked-modal-close:hover {
+  color: var(--orange);
+  transform: scale(1.1);
+}
+
+.locked-modal-btn {
+  background: linear-gradient(135deg, var(--orange), #D4860C);
+  color: #320d1e;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 8px;
+  font-family: 'Coco Gothic', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+  width: 100%;
+  margin-top: 24px;
+}
+
+.locked-modal-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(248, 220, 118, 0.3);
+  background: linear-gradient(135deg, #D4860C, #FF9500);
+}
+
+.locked-modal-btn:active {
+  transform: translateY(0);
+}
+
+/* Stealth mode locked modal styles */
+body.stealth-mode .locked-modal-overlay {
+  background: rgba(200, 200, 200, 0.5);
+  backdrop-filter: none;
+}
+
+body.stealth-mode .locked-modal-content {
+  background: #FFFFFF;
+  border: 1px solid #CCCCCC;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+body.stealth-mode .locked-modal-close {
+  color: #000000;
+}
+
+body.stealth-mode .locked-modal-close:hover {
+  color: #666666;
+}
+
+body.stealth-mode .locked-modal-btn {
+  background: #F5F5F5;
+  color: #000000;
+  border: 1px solid #999999;
+}
+
+body.stealth-mode .locked-modal-btn:hover {
+  background: #EEEEEE;
+  box-shadow: none;
+}
