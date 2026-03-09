@@ -88,10 +88,10 @@
 
       <!-- Logout Section -->
       <div class="profile-section" style="border-top: 1px solid rgba(160, 120, 87, 0.2); padding-top: 32px; margin-top: 32px;">
-        <a href="index.html" class="profile-logout-btn">
+        <button class="profile-logout-btn" onclick="handleLogout()">
           <span class="link-icon">🚪</span>
           <span>Logout</span>
-        </a>
+        </button>
       </div>
     </div>
 
@@ -144,8 +144,11 @@
     // Populate preferences
     const tropeMap = {
       'enemies-to-lovers': 'Enemies to Lovers ⚔️',
-      'mafia': 'Mafia 🌹',
-      'office': 'Office Romance 💼',
+      'forced-proximity': 'Forced Proximity 🔒',
+      'dark-morally-grey': 'Dark & Morally Grey 🖤',
+      'forbidden-love': 'Forbidden Love 💔',
+      'regency-nobility': 'Regency & Nobility 👑',
+      'gothic-paranormal': 'Gothic & Paranormal 🧛',
       'not-specified': 'Not specified'
     };
     document.getElementById('prefTrope').textContent = tropeMap[profile.preferences.favoriteTopology] || profile.preferences.favoriteTopology;
@@ -156,6 +159,13 @@
       'hot': 'Hot 🌶️'
     };
     document.getElementById('prefHeatLevel').textContent = heatMap[profile.preferences.heatLevel] || profile.preferences.heatLevel;
+  }
+
+  // Handle logout
+  function handleLogout() {
+    localStorage.removeItem('userProfile');
+    localStorage.removeItem('isLoggedIn');
+    window.location.href = 'index.html';
   }
 
   // Load profile when page is ready
