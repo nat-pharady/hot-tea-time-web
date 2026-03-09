@@ -85,79 +85,18 @@
   </div>
 </section>
 
-<!-- TASTE TEST MODAL -->
-<div id="tasteTestModal" class="modal-overlay">
-  <div class="modal-container">
-    <button class="modal-close">&times;</button>
+<!-- QUIZ MODAL CONTAINER -->
+<div id="quiz-modal-container"></div>
 
-    <!-- Step 1: Name & Email -->
-    <div class="modal-step" data-step="1">
-      <div class="modal-header">
-        <div class="modal-eyebrow">The Taste Test</div>
-        <h2 class="modal-title">Let's Find Your <em>Perfect Pour</em></h2>
-        <p class="modal-subtitle">First, let's get to know you.</p>
-      </div>
-      <div class="modal-body">
-        <input type="text" id="userName" class="modal-input" placeholder="What should we call you?" style="margin-bottom: 16px;" />
-        <input type="email" id="userEmail" class="modal-input" placeholder="your@email.com" />
-        <button class="modal-btn" onclick="nextStep(2)">Continue</button>
-      </div>
-    </div>
-
-    <!-- Step 2: Trope -->
-    <div class="modal-step" data-step="2" style="display:none;">
-      <div class="modal-header">
-        <div class="modal-eyebrow">Step 2 of 3</div>
-        <h2 class="modal-title">Choose Your <em>Trope</em></h2>
-        <p class="modal-subtitle">What makes your heart race?</p>
-      </div>
-      <div class="modal-body">
-        <div class="trope-grid">
-          <button class="trope-card" onclick="selectTrope('enemies-to-lovers')">
-            <div class="trope-icon">⚔️</div>
-            <div class="trope-name">Enemies to Lovers</div>
-          </button>
-          <button class="trope-card" onclick="selectTrope('mafia')">
-            <div class="trope-icon">🌹</div>
-            <div class="trope-name">Mafia</div>
-          </button>
-          <button class="trope-card" onclick="selectTrope('office')">
-            <div class="trope-icon">💼</div>
-            <div class="trope-name">Office</div>
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <!-- Step 3: Heat Level -->
-    <div class="modal-step" data-step="3" style="display:none;">
-      <div class="modal-header">
-        <div class="modal-eyebrow">Final Step</div>
-        <h2 class="modal-title">Select Your <em>Heat Level</em></h2>
-        <p class="modal-subtitle">How spicy do you like it?</p>
-      </div>
-      <div class="modal-body">
-        <div class="heat-grid">
-          <button class="heat-card" onclick="completeOnboarding('warm')">
-            <div class="heat-icon">☕</div>
-            <div class="heat-name">Warm</div>
-            <div class="heat-desc">Cozy & sweet</div>
-          </button>
-          <button class="heat-card" onclick="completeOnboarding('steamy')">
-            <div class="heat-icon">🔥</div>
-            <div class="heat-name">Steamy</div>
-            <div class="heat-desc">A little daring</div>
-          </button>
-          <button class="heat-card" onclick="completeOnboarding('hot')">
-            <div class="heat-icon">🌶️</div>
-            <div class="heat-name">Hot</div>
-            <div class="heat-desc">Turn up the heat</div>
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+<script>
+  // Load shared quiz modal
+  fetch('./quiz-modal.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('quiz-modal-container').innerHTML = data;
+    })
+    .catch(error => console.error('Error loading quiz modal:', error));
+</script>
 
 <script src="https://unpkg.com/lucide@latest"></script>
 <script>
