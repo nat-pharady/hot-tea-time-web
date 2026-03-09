@@ -127,6 +127,196 @@
   .stealth-btn:hover { color:var(--orange); }
   .stealth-btn.active { color:var(--orange); }
 
+  /* ══════════════════════════════════════════════════════════════════════════════
+     PROFILE DROPDOWN
+     ══════════════════════════════════════════════════════════════════════════════ */
+
+  .profile-dropdown {
+    position: relative;
+  }
+
+  .profile-trigger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(160, 120, 87, 0.15);
+    border: 1px solid var(--green);
+    transition: all 0.22s;
+    cursor: pointer;
+  }
+
+  .profile-trigger:hover {
+    background: rgba(160, 120, 87, 0.25);
+    border-color: var(--orange);
+    transform: scale(1.05);
+  }
+
+  .profile-icon {
+    font-size: 1.2rem;
+  }
+
+  /* Profile Menu - Wider and more detailed */
+  .profile-menu {
+    min-width: 260px;
+    top: calc(100% + 8px);
+    right: 0;
+    left: auto;
+    padding: 0;
+    background: rgba(26, 11, 17, 0.92);
+    border: 1px solid rgba(160, 120, 87, 0.3);
+    backdrop-filter: blur(12px);
+  }
+
+  /* Profile Header */
+  .profile-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px;
+    border-bottom: 1px solid rgba(160, 120, 87, 0.2);
+  }
+
+  .profile-avatar {
+    font-size: 2rem;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(160, 120, 87, 0.2);
+    border-radius: 50%;
+  }
+
+  .profile-info {
+    flex: 1;
+  }
+
+  .profile-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--cream);
+    margin-bottom: 4px;
+  }
+
+  .profile-tier {
+    font-family: 'Coco Gothic', sans-serif;
+    font-size: 0.5rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--green);
+  }
+
+  .profile-tier.premium {
+    color: var(--orange);
+  }
+
+  /* Quick Stats */
+  .profile-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    padding: 12px 16px;
+    border-bottom: 1px solid rgba(160, 120, 87, 0.2);
+  }
+
+  .stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .stat-value {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--orange);
+  }
+
+  .stat-label {
+    font-family: 'Coco Gothic', sans-serif;
+    font-size: 0.45rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--green);
+  }
+
+  /* Menu Items */
+  .profile-menu-items {
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(160, 120, 87, 0.2);
+  }
+
+  .profile-menu-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 16px;
+    color: var(--green);
+    text-decoration: none;
+    font-family: 'Coco Gothic', sans-serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition: all 0.18s;
+  }
+
+  .profile-menu-link:hover {
+    background: rgba(160, 120, 87, 0.15);
+    color: var(--orange);
+  }
+
+  .menu-icon {
+    font-size: 0.9rem;
+    width: 20px;
+    text-align: center;
+  }
+
+  /* Logout Section */
+  .profile-logout {
+    padding: 8px 0;
+  }
+
+  .logout-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 16px;
+    color: rgba(160, 120, 87, 0.7);
+    text-decoration: none;
+    font-family: 'Coco Gothic', sans-serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition: all 0.18s;
+  }
+
+  .logout-link:hover {
+    background: rgba(160, 120, 87, 0.1);
+    color: var(--orange);
+  }
+
+  /* Stealth mode overrides */
+  body.stealth-mode .profile-trigger {
+    background: #F5F5F5;
+    border-color: #999999;
+  }
+
+  body.stealth-mode .profile-menu {
+    background: #FFFFFF;
+    border-color: #CCCCCC;
+  }
+
+  body.stealth-mode .profile-header,
+  body.stealth-mode .profile-stats,
+  body.stealth-mode .profile-menu-items {
+    border-color: #EEEEEE;
+  }
+
   /* ── AI GENERATOR LOCKED ── */
   .nav-locked {
     opacity:0.6;

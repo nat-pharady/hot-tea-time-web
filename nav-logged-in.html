@@ -38,12 +38,64 @@
     <li><a href="my-library.html">My Library</a></li>
   </ul>
 
-  <!-- Right Side: Stealth Mode + Logout -->
+  <!-- Right Side: Stealth Mode + Profile -->
   <div style="display: flex; align-items: center; gap: 16px;">
     <button class="stealth-btn" onclick="toggleStealthMode()" title="Toggle discreet reading mode">
       <span>👁️</span>
       <span>Stealth Mode</span>
     </button>
-    <a href="index.html" class="nav-cta" style="margin: 0;">Logout</a>
+
+    <!-- Profile Dropdown -->
+    <div class="nav-dropdown profile-dropdown">
+      <a href="#" class="profile-trigger">
+        <span class="profile-icon">👤</span>
+      </a>
+      <div class="dropdown-menu profile-menu">
+        <!-- User Info Section -->
+        <div class="profile-header">
+          <div class="profile-avatar">🫖</div>
+          <div class="profile-info">
+            <div class="profile-name">Tea Lover</div>
+            <div class="profile-tier">Free Member</div>
+          </div>
+        </div>
+
+        <!-- Quick Stats -->
+        <div class="profile-stats">
+          <div class="stat-item">
+            <span class="stat-value">0</span>
+            <span class="stat-label">Stories</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-value">0</span>
+            <span class="stat-label">Characters</span>
+          </div>
+        </div>
+
+        <!-- Menu Items -->
+        <div class="profile-menu-items">
+          <a href="my-library.html" class="profile-menu-link">
+            <span class="menu-icon">📚</span>
+            <span>My Library</span>
+          </a>
+          <a href="#" class="profile-menu-link" onclick="openProfileSettings(event)">
+            <span class="menu-icon">⚙️</span>
+            <span>Profile Settings</span>
+          </a>
+          <a href="#" class="profile-menu-link" onclick="openPreferences(event)">
+            <span class="menu-icon">☕</span>
+            <span>Preferences</span>
+          </a>
+        </div>
+
+        <!-- Logout at Bottom -->
+        <div class="profile-logout">
+          <a href="index.html" class="logout-link">
+            <span class="menu-icon">🚪</span>
+            <span>Logout</span>
+          </a>
+        </div>
+      </div>
+    </div>
   </div>
 </nav>

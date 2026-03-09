@@ -75,12 +75,50 @@ document.addEventListener('DOMContentLoaded', function() {
   };
 
   window.selectTrope = function(trope) {
+    window.selectedTrope = trope;
     window.nextStep(3);
   };
 
   window.completeOnboarding = function(heatLevel) {
-    console.log('Quiz completed with heat level:', heatLevel);
-    // Redirect to home page
+    // Capture email from step 1
+    const emailInput = document.getElementById('userEmail');
+    const email = emailInput ? emailInput.value : '';
+
+    // Extract display name from email
+    const displayName = email ? email.split('@')[0] : 'Tea Lover';
+
+    // Determine avatar based on heat level
+    const avatarMap = { 'warm': '☕', 'steamy': '🫖', 'hot': '🌶️' };
+    const avatar = avatarMap[heatLevel] || '🫖';
+
+    // Get selected trope from step 2
+    const selectedTrope = window.selectedTrope || 'not-specified';
+
+    // Create user profile object
+    const userProfile = {
+      email: email,
+      displayName: displayName,
+      memberSince: Date.now(),
+      preferences: {
+        favoriteTopology: selectedTrope,
+        heatLevel: heatLevel
+      },
+      avatar: avatar,
+      membershipTier: 'free',
+      stats: {
+        storiesSaved: 0,
+        charactersCollected: 0,
+        readingStreak: 0
+      }
+    };
+
+    // Save to localStorage
+    localStorage.setItem('userProfile', JSON.stringify(userProfile));
+    localStorage.setItem('isLoggedIn', 'true');
+
+    console.log('✓ User profile created:', userProfile);
+
+    // Redirect to logged-in home
     window.location.href = 'home.html';
   };
 });
@@ -447,6 +485,10 @@ function addToLibrary() {
   };
 
   localStorage.setItem('savedStories', JSON.stringify(savedStories));
+
+  // Update profile stats
+  updateProfileStats();
+
   showToast('✓ ' + currentStory.title + ' added to your library!');
 }
 
@@ -495,6 +537,10 @@ function removeFromLibrary(storyId) {
   const savedStories = getSavedStories();
   delete savedStories[storyId];
   localStorage.setItem('savedStories', JSON.stringify(savedStories));
+
+  // Update profile stats
+  updateProfileStats();
+
   displaySavedStories();
 }
 
@@ -1035,6 +1081,9 @@ function saveCharacterToLibrary() {
   savedCharacters.push(character);
   localStorage.setItem('savedCharacters', JSON.stringify(savedCharacters));
 
+  // Update profile stats
+  updateProfileStats();
+
   console.log('✓ Character saved to library:', character.name);
   showToast(`${character.name} has been added to your library!`);
 
@@ -1305,3 +1354,112 @@ function toggleStealthMode() {
 
 // Initialize stealth mode when DOM is ready
 document.addEventListener('DOMContentLoaded', initStealthMode);
+
+/* ═══════════════════════════════════════════════════════════════════
+   USER PROFILE SYSTEM
+   ═══════════════════════════════════════════════════════════════════ */
+
+// Get user profile from localStorage
+function getUserProfile() {
+  const profileJSON = localStorage.getItem('userProfile');
+
+  // Handle existing users without profiles (migration)
+  if (!profileJSON) {
+    const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+    if (isLoggedIn) {
+      // Create minimal profile for existing user
+      const migrationProfile = {
+        email: 'user@hotteatime.com',
+        displayName: 'Tea Enthusiast',
+        memberSince: Date.now(),
+        preferences: { favoriteTopology: 'not-specified', heatLevel: 'steamy' },
+        avatar: '🫖',
+        membershipTier: 'free',
+        stats: {
+          storiesSaved: Object.keys(getSavedStories()).length,
+          charactersCollected: loadSavedCharacters().length,
+          readingStreak: 0
+        }
+      };
+      localStorage.setItem('userProfile', JSON.stringify(migrationProfile));
+      return migrationProfile;
+    }
+    return null;
+  }
+
+  return JSON.parse(profileJSON);
+}
+
+// Update profile stats (called when saving stories/characters)
+function updateProfileStats() {
+  const profile = getUserProfile();
+  if (!profile) return;
+
+  const savedStories = getSavedStories();
+  const savedCharacters = loadSavedCharacters();
+
+  profile.stats.storiesSaved = Object.keys(savedStories).length;
+  profile.stats.charactersCollected = savedCharacters.length;
+
+  localStorage.setItem('userProfile', JSON.stringify(profile));
+  refreshProfileDropdown();
+}
+
+// Populate profile dropdown with user data
+function populateProfileDropdown() {
+  const profile = getUserProfile();
+  if (!profile) return;
+
+  // Update avatar
+  const avatarEl = document.querySelector('.profile-avatar');
+  if (avatarEl) avatarEl.textContent = profile.avatar;
+
+  // Update display name
+  const nameEl = document.querySelector('.profile-name');
+  if (nameEl) nameEl.textContent = profile.displayName;
+
+  // Update tier
+  const tierEl = document.querySelector('.profile-tier');
+  if (tierEl) {
+    const tierText = profile.membershipTier === 'inner-circle'
+      ? 'Inner Circle Member'
+      : 'Free Member';
+    tierEl.textContent = tierText;
+    if (profile.membershipTier === 'inner-circle') {
+      tierEl.classList.add('premium');
+    }
+  }
+
+  // Update stats
+  const statValues = document.querySelectorAll('.profile-stats .stat-value');
+  if (statValues.length >= 2) {
+    statValues[0].textContent = profile.stats.storiesSaved;
+    statValues[1].textContent = profile.stats.charactersCollected;
+  }
+}
+
+// Refresh profile dropdown
+function refreshProfileDropdown() {
+  requestAnimationFrame(() => populateProfileDropdown());
+}
+
+// Initialize profile on page load
+document.addEventListener('DOMContentLoaded', function() {
+  setTimeout(() => {
+    const profile = getUserProfile();
+    if (profile) populateProfileDropdown();
+  }, 100);
+});
+
+// Placeholder modals for future features
+function openProfileSettings(event) {
+  event.preventDefault();
+  alert('Profile Settings\n\nCustomize your Hot Tea Time experience.\n\nFeature coming soon!');
+}
+
+function openPreferences(event) {
+  event.preventDefault();
+  const profile = getUserProfile();
+  if (!profile) return;
+  alert(`Preferences\n\nTrope: ${profile.preferences.favoriteTopology}\nHeat Level: ${profile.preferences.heatLevel}\n\nEditor coming soon!`);
+}
