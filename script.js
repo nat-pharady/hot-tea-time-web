@@ -120,6 +120,84 @@ window.openQuizModal = function(e) {
   }
 };
 
+// ── QUIZ FUNCTIONS (GLOBAL SCOPE) ──
+// These must be defined at global scope, not inside DOMContentLoaded,
+// because they're called when setupQuizModalListeners runs (which fires before DOMContentLoaded)
+
+window.nextStep = function(stepNumber) {
+  console.log('nextStep called with stepNumber:', stepNumber);
+  const modal = document.getElementById('tasteTestModal');
+  console.log('Modal found:', !!modal);
+  if (!modal) {
+    console.warn('Quiz modal not found');
+    return;
+  }
+  const steps = modal.querySelectorAll('.modal-step');
+  console.log('Found', steps.length, 'steps');
+  steps.forEach(step => {
+    console.log('Hiding step:', step.getAttribute('data-step'));
+    step.style.display = 'none';
+  });
+  const targetStep = modal.querySelector(`[data-step="${stepNumber}"]`);
+  console.log('Target step found:', !!targetStep, 'for step', stepNumber);
+  if (targetStep) {
+    console.log('Showing step', stepNumber);
+    targetStep.style.display = 'block';
+  } else {
+    console.warn('Target step not found for data-step=' + stepNumber);
+  }
+};
+
+window.selectTrope = function(trope) {
+  window.selectedTrope = trope;
+  window.nextStep(3);
+};
+
+window.completeOnboarding = function(heatLevel) {
+  // Capture name and email from step 1
+  const nameInput = document.getElementById('userName');
+  const emailInput = document.getElementById('userEmail');
+  const name = nameInput ? nameInput.value.trim() : '';
+  const email = emailInput ? emailInput.value : '';
+
+  // Use provided name or fall back to email-derived name
+  const displayName = name || (email ? email.split('@')[0] : 'Tea Lover');
+
+  // Determine avatar based on heat level
+  const avatarMap = { 'warm': '☕', 'steamy': '🫖', 'hot': '🌶️' };
+  const avatar = avatarMap[heatLevel] || '🫖';
+
+  // Get selected trope from step 2
+  const selectedTrope = window.selectedTrope || 'not-specified';
+
+  // Create user profile object
+  const userProfile = {
+    email: email,
+    displayName: displayName,
+    memberSince: Date.now(),
+    preferences: {
+      favoriteTopology: selectedTrope,
+      heatLevel: heatLevel
+    },
+    avatar: avatar,
+    membershipTier: 'free',
+    stats: {
+      storiesSaved: 0,
+      charactersCollected: 0,
+      readingStreak: 0
+    }
+  };
+
+  // Save to localStorage
+  localStorage.setItem('userProfile', JSON.stringify(userProfile));
+  localStorage.setItem('isLoggedIn', 'true');
+
+  console.log('✓ User profile created:', userProfile);
+
+  // Redirect to logged-in home
+  window.location.href = 'home.html';
+};
+
 document.addEventListener('DOMContentLoaded', function() {
   const quizModal = document.getElementById('tasteTestModal');
   const startSippingBtn = document.querySelector('.nav-cta');
@@ -169,81 +247,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 
-  // Make these functions globally available for inline onclick handlers
-  // Query the modal fresh each time to handle async loading
-  window.nextStep = function(stepNumber) {
-    console.log('nextStep called with stepNumber:', stepNumber);
-    const modal = document.getElementById('tasteTestModal');
-    console.log('Modal found:', !!modal);
-    if (!modal) {
-      console.warn('Quiz modal not found');
-      return;
-    }
-    const steps = modal.querySelectorAll('.modal-step');
-    console.log('Found', steps.length, 'steps');
-    steps.forEach(step => {
-      console.log('Hiding step:', step.getAttribute('data-step'));
-      step.style.display = 'none';
-    });
-    const targetStep = modal.querySelector(`[data-step="${stepNumber}"]`);
-    console.log('Target step found:', !!targetStep, 'for step', stepNumber);
-    if (targetStep) {
-      console.log('Showing step', stepNumber);
-      targetStep.style.display = 'block';
-    } else {
-      console.warn('Target step not found for data-step=' + stepNumber);
-    }
-  };
-
-  window.selectTrope = function(trope) {
-    window.selectedTrope = trope;
-    window.nextStep(3);
-  };
-
-  window.completeOnboarding = function(heatLevel) {
-    // Capture name and email from step 1
-    const nameInput = document.getElementById('userName');
-    const emailInput = document.getElementById('userEmail');
-    const name = nameInput ? nameInput.value.trim() : '';
-    const email = emailInput ? emailInput.value : '';
-
-    // Use provided name or fall back to email-derived name
-    const displayName = name || (email ? email.split('@')[0] : 'Tea Lover');
-
-    // Determine avatar based on heat level
-    const avatarMap = { 'warm': '☕', 'steamy': '🫖', 'hot': '🌶️' };
-    const avatar = avatarMap[heatLevel] || '🫖';
-
-    // Get selected trope from step 2
-    const selectedTrope = window.selectedTrope || 'not-specified';
-
-    // Create user profile object
-    const userProfile = {
-      email: email,
-      displayName: displayName,
-      memberSince: Date.now(),
-      preferences: {
-        favoriteTopology: selectedTrope,
-        heatLevel: heatLevel
-      },
-      avatar: avatar,
-      membershipTier: 'free',
-      stats: {
-        storiesSaved: 0,
-        charactersCollected: 0,
-        readingStreak: 0
-      }
-    };
-
-    // Save to localStorage
-    localStorage.setItem('userProfile', JSON.stringify(userProfile));
-    localStorage.setItem('isLoggedIn', 'true');
-
-    console.log('✓ User profile created:', userProfile);
-
-    // Redirect to logged-in home
-    window.location.href = 'home.html';
-  };
 });
 
 // ── SETUP QUIZ MODAL EVENT LISTENERS ──
