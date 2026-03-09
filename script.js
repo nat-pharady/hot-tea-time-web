@@ -1285,10 +1285,9 @@ function getCurrentStoryData() {
   const chapters = chaptersEl.textContent;
   const content = contentEl.innerHTML;
 
-  // Find story ID from stories object
-  const storyId = Object.keys(stories).find(id =>
-    stories[id].title === title
-  );
+  // Find story ID from storiesDatabase array
+  const foundStory = window.storiesDatabase.find(s => s.title === title);
+  const storyId = foundStory ? foundStory.id : null;
 
   return {
     id: storyId,
@@ -1447,16 +1446,17 @@ function getExcerpt(content) {
 
 // Helper: Get tags for story
 function getStoryTags(storyId) {
-  if (storyId === 'midnight-confessions') return ['Romance', 'Sweet'];
-  if (storyId === 'garden-of-secrets') return ['Mystery', 'Slow Burn'];
+  const story = window.storiesDatabase.find(s => s.id === parseInt(storyId));
+  if (story && story.tropes) {
+    return story.tropes.map(t => t.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' '));
+  }
   return [];
 }
 
 // Helper: Get thumbnail for story
 function getStoryThumbnail(storyId) {
-  if (storyId === 'midnight-confessions') return '☕';
-  if (storyId === 'garden-of-secrets') return '🌹';
-  return '📖';
+  const story = window.storiesDatabase.find(s => s.id === parseInt(storyId));
+  return (story && story.image) ? story.image : 'images/story-featured.jpg';
 }
 
 // Initialize My Library page on load
