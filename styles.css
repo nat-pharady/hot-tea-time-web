@@ -201,14 +201,14 @@
     font-family: 'Playfair Display', serif;
     font-size: 2rem;
     font-weight: 800;
-    color: var(--green);
+    color: #5a1924;
     margin-bottom: 8px;
   }
 
   .profile-email {
     font-family: 'Coco Gothic', sans-serif;
     font-size: 0.9rem;
-    color: var(--muted);
+    color: #8B1A2B;
     margin-bottom: 12px;
   }
 
@@ -216,21 +216,21 @@
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background: rgba(160, 120, 87, 0.15);
-    border: 1px solid rgba(160, 120, 87, 0.3);
+    background: #E8C8D0;
+    border: 1px solid #D8A8B8;
     padding: 8px 16px;
     border-radius: 20px;
     font-family: 'Coco Gothic', sans-serif;
     font-size: 0.7rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: var(--green);
+    color: #5a1924;
   }
 
   .profile-membership-badge.premium {
-    background: rgba(248, 220, 118, 0.2);
-    border-color: var(--orange);
-    color: var(--orange);
+    background: #f8dc76;
+    border-color: #E8CC55;
+    color: #5a1924;
   }
 
   .badge-icon {
@@ -277,7 +277,7 @@
     font-size: 0.65rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: var(--green);
+    color: #8B1A2B;
   }
 
   /* Profile Sections */
@@ -289,7 +289,7 @@
     font-family: 'Playfair Display', serif;
     font-size: 1.3rem;
     font-weight: 700;
-    color: var(--green);
+    color: #5a1924;
     margin-bottom: 20px;
   }
 
@@ -311,14 +311,14 @@
     font-size: 0.75rem;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: var(--muted);
+    color: #8B1A2B;
   }
 
   .preference-value {
     font-family: 'Playfair Display', serif;
     font-size: 1rem;
     font-weight: 600;
-    color: var(--green);
+    color: #5a1924;
   }
 
   /* Quick Links */
@@ -338,7 +338,7 @@
     border: 1px solid rgba(160, 120, 87, 0.2);
     border-radius: 8px;
     text-decoration: none;
-    color: var(--green);
+    color: #5a1924;
     font-family: 'Coco Gothic', sans-serif;
     font-size: 0.7rem;
     letter-spacing: 0.1em;
@@ -348,8 +348,8 @@
 
   .profile-link-btn:hover {
     background: rgba(160, 120, 87, 0.2);
-    border-color: var(--orange);
-    color: var(--orange);
+    border-color: #f8dc76;
+    color: #5a1924;
     transform: translateY(-2px);
   }
 
@@ -367,7 +367,7 @@
     border: 1px solid rgba(160, 120, 87, 0.15);
     border-radius: 8px;
     text-decoration: none;
-    color: rgba(160, 120, 87, 0.7);
+    color: #8B1A2B;
     font-family: 'Coco Gothic', sans-serif;
     font-size: 0.7rem;
     letter-spacing: 0.1em;
@@ -377,7 +377,7 @@
 
   .profile-logout-btn:hover {
     background: rgba(160, 120, 87, 0.1);
-    color: var(--orange);
+    color: #5a1924;
   }
 
   /* Responsive */
