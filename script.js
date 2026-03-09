@@ -36,6 +36,75 @@ window.addEventListener('scroll', () => {
   navLinks.forEach(link => { link.style.color = link.getAttribute('href') === '#' + current ? 'var(--orange)' : ''; });
 });
 
+// ── STORIES DATABASE ──
+window.storiesDatabase = [
+  {
+    id: 1,
+    title: "The Duke's Afternoon Arrangement",
+    author: "Vivienne Blackthorn",
+    avatar: "🌹",
+    excerpt: "Lady Elara had always prided herself on her restraint. Then came the Duke of Ashford, and his rather unconventional proposal — one that would require very little restraint indeed.",
+    image: "images/story-featured.jpg",
+    reads: "24.3k",
+    chapters: 18,
+    tropes: ['enemies-to-lovers', 'regency-nobility'],
+    heatLevel: 'steamy',
+    featured: true
+  },
+  {
+    id: 2,
+    title: "A Garden for Two",
+    author: "Celeste Ashby",
+    avatar: "🌿",
+    excerpt: "The estate garden was always his. Until she arrived and planted something entirely different.",
+    image: "images/story-2.jpg",
+    reads: "11.7k",
+    chapters: 9,
+    tropes: ['forced-proximity', 'regency-nobility'],
+    heatLevel: 'warm',
+    featured: false
+  },
+  {
+    id: 3,
+    title: "After the Candles Go Out",
+    author: "Margaux Delacroix",
+    avatar: "🕯️",
+    excerpt: "Midnight confessions in a house that keeps far too many secrets.",
+    image: "images/story-3.jpg",
+    reads: "8.9k",
+    chapters: 5,
+    tropes: ['forbidden-love', 'gothic-paranormal'],
+    heatLevel: 'steamy',
+    featured: false
+  },
+  {
+    id: 4,
+    title: "Lord Wickham's Cherry Problem",
+    author: "Poppy St. Clair",
+    avatar: "🍒",
+    excerpt: "He had a type. She was decidedly not it. He married her anyway. Now what?",
+    image: "images/story-4.jpg",
+    reads: "19.1k",
+    chapters: 14,
+    tropes: ['regency-nobility', 'enemies-to-lovers'],
+    heatLevel: 'warm',
+    featured: false
+  },
+  {
+    id: 5,
+    title: "Whispered Confessions",
+    author: "Iris Nightshade",
+    avatar: "🎭",
+    excerpt: "Some secrets are meant to be kept. Others beg to be spilled in the dark of night.",
+    image: "images/story-5.jpg",
+    reads: "16.4k",
+    chapters: 12,
+    tropes: ['dark-morally-grey', 'gothic-paranormal'],
+    heatLevel: 'steamy',
+    featured: false
+  }
+];
+
 // ── QUIZ MODAL ──
 // Global function to open quiz with return page tracking
 window.openQuizModal = function(e) {
@@ -157,6 +226,85 @@ document.addEventListener('DOMContentLoaded', function() {
     window.location.href = 'home.html';
   };
 });
+
+// ── PERSONALIZED STORIES ──
+// Get stories filtered by user preferences
+window.getPersonalizedStories = function() {
+  const profile = getUserProfile();
+  if (!profile || !profile.preferences) {
+    // Return all stories if no preferences
+    return window.storiesDatabase || [];
+  }
+
+  const userTrope = profile.preferences.favoriteTopology;
+  const userHeat = profile.preferences.heatLevel;
+
+  // Filter stories: must match user's trope AND heat level
+  const filtered = window.storiesDatabase.filter(story => {
+    const tropeMatch = !userTrope || story.tropes.includes(userTrope);
+    const heatMatch = story.heatLevel === userHeat;
+    return tropeMatch && heatMatch;
+  });
+
+  // If no exact matches, return stories with matching heat level (broader match)
+  if (filtered.length === 0) {
+    return window.storiesDatabase.filter(story => story.heatLevel === userHeat);
+  }
+
+  return filtered;
+};
+
+// Get all stories (for admin/browse all)
+window.getAllStories = function() {
+  return window.storiesDatabase || [];
+};
+
+// Render stories to DOM
+window.renderStories = function(stories, containerId) {
+  const container = document.getElementById(containerId);
+  if (!container) return;
+
+  container.innerHTML = stories.map((story, index) => {
+    const delayClass = index === 0 ? '' : `reveal-delay-${index}`;
+    const featuredClass = story.featured ? 'featured' : '';
+    return `
+      <div class="story-card ${featuredClass} reveal ${delayClass}">
+        <img src="${story.image}" alt="${story.title}" class="story-thumb">
+        <div class="story-lock"><span class="lock-badge">🔒 Members Only</span></div>
+        <div class="story-meta">
+          <div class="story-tags">${story.tropes.map(t => `<span class="tag">${formatTropeName(t)}</span>`).join('')}</div>
+          <h3 class="story-title">${story.title}</h3>
+          <p class="story-excerpt">${story.excerpt}</p>
+          <div class="story-author">
+            <div class="author-avatar">${story.avatar}</div>
+            <div style="display:flex;flex-direction:column;gap:1px;">
+              <span class="author-name">${story.author}</span>
+              <span class="author-reads">${story.reads} reads · ${story.chapters} chapters</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+  }).join('');
+
+  // Re-initialize Lucide icons if needed
+  if (window.lucide && window.lucide.createIcons) {
+    window.lucide.createIcons();
+  }
+};
+
+// Format trope name for display
+function formatTropeName(tropeName) {
+  const tropeMap = {
+    'enemies-to-lovers': 'Enemies to Lovers',
+    'forced-proximity': 'Forced Proximity',
+    'dark-morally-grey': 'Dark & Morally Grey',
+    'forbidden-love': 'Forbidden Love',
+    'regency-nobility': 'Regency & Nobility',
+    'gothic-paranormal': 'Gothic & Paranormal'
+  };
+  return tropeMap[tropeName] || tropeName;
+}
 
 // ── READING PANE ──
 const stories = {
