@@ -1152,7 +1152,7 @@ function renderSavedCharacterGrid() {
     card.innerHTML = `
       <div class="character-portrait" style="background: ${character.gradient};">
         <span class="character-category">${character.category}</span>
-        <button class="character-delete-btn" onclick="event.stopPropagation(); removeCharacterFromLibrary('${character.id}')" title="Remove from library">×</button>
+        <button class="character-delete-btn" onclick="event.stopPropagation(); removeCharacterFromLibrary(${character.id})" title="Remove from library">×</button>
       </div>
       <div class="character-info">
         <div class="character-name">${formattedName}</div>
