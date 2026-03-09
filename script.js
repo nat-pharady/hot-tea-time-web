@@ -244,7 +244,7 @@ window.storiesDatabase = [
     heatLevel: 'hot',
     featured: false,
     isFree: true,
-    content: `<p>From the moment Marcus stepped into the boardroom, she felt the pull—dangerous, electric, impossible to ignore.</p><p>He was everything wrong for her. Everything dark. Yet when he looked at her with those cold eyes that seemed to see straight through her, she wanted to surrender completely.</p><p>"You shouldn't want this," he growled, pressing her against the glass windows high above the city.</p><p>"I don't care what I should want," she whispered. "I want you."</p><p>Their kiss was violent and consuming, a dangerous dance between light and shadow. She knew loving him would destroy her. She didn't care anymore.</p>`
+    content: `<p>From the moment Rafael stepped into the boardroom, she felt the pull—dangerous, electric, impossible to ignore.</p><p>He was everything wrong for her. Everything dark. Yet when he looked at her with those cold eyes that seemed to see straight through her, she wanted to surrender completely.</p><p>"You shouldn't want this," he growled, pressing her against the glass windows high above the city.</p><p>"I don't care what I should want," she whispered. "I want you."</p><p>Their kiss was violent and consuming, a dangerous dance between light and shadow. She knew loving him would destroy her. She didn't care anymore.</p>`
   },
   {
     id: 9,
@@ -314,7 +314,7 @@ window.storiesDatabase = [
     heatLevel: 'hot',
     featured: false,
     isFree: true,
-    content: `<p>Marcus had been dead for two centuries, yet he'd never felt more alive than when she walked through his manor walls.</p><p>She could see him, touch him—feel him in ways no one else ever could. And he wanted to consume her, to bind her to him eternally.</p><p>"Stay with me," he demanded, his phantom form solidifying against her skin. "Forever."</p><p>"Yes," she breathed, surrendering to the darkness and the desire that burned between them.</p>`
+    content: `<p>Sebastian had been dead for two centuries, yet he'd never felt more alive than when she walked through his manor walls.</p><p>She could see him, touch him—feel him in ways no one else ever could. And he wanted to consume her, to bind her to him eternally.</p><p>"Stay with me," he demanded, his phantom form solidifying against her skin. "Forever."</p><p>"Yes," she breathed, surrendering to the darkness and the desire that burned between them.</p>`
   },
   {
     id: 14,
@@ -342,7 +342,7 @@ window.storiesDatabase = [
     heatLevel: 'warm',
     featured: false,
     isFree: true,
-    content: `<p>The manor had always been forbidden. So had Adrian.</p><p>Yet every night, she found herself drawn to him in the darkness, seeking solace in a love that could never be acknowledged.</p><p>"This is madness," she whispered against his chest, even as her arms tightened around him.</p><p>"Yes," he agreed, pressing a kiss to her hair. "Beautiful, perfect madness."</p>`
+    content: `<p>The manor had always been forbidden. So had Silas.</p><p>Yet every night, she found herself drawn to him in the darkness, seeking solace in a love that could never be acknowledged.</p><p>"This is madness," she whispered against his chest, even as her arms tightened around him.</p><p>"Yes," he agreed, pressing a kiss to her hair. "Beautiful, perfect madness."</p>`
   },
   {
     id: 16,
@@ -370,7 +370,7 @@ window.storiesDatabase = [
     heatLevel: 'hot',
     featured: false,
     isFree: true,
-    content: `<p>Prince Adrian was taught from birth that duty came before desire. But when he saw her, every royal principle burned away.</p><p>She was beneath his station and entirely wrong for him—and he wanted to burn the kingdom down just to keep her.</p><p>"Ruin me," she commanded as he pressed her against the palace wall. "Completely."</p><p>He happily obliged.</p>`
+    content: `<p>Prince Dominic was taught from birth that duty came before desire. But when he saw her, every royal principle burned away.</p><p>She was beneath his station and entirely wrong for him—and he wanted to burn the kingdom down just to keep her.</p><p>"Ruin me," she commanded as he pressed her against the palace wall. "Completely."</p><p>He happily obliged.</p>`
   },
   {
     id: 18,
