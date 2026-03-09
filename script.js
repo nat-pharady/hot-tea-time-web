@@ -169,16 +169,26 @@ document.addEventListener('DOMContentLoaded', function() {
   // Make these functions globally available for inline onclick handlers
   // Query the modal fresh each time to handle async loading
   window.nextStep = function(stepNumber) {
+    console.log('nextStep called with stepNumber:', stepNumber);
     const modal = document.getElementById('tasteTestModal');
+    console.log('Modal found:', !!modal);
     if (!modal) {
       console.warn('Quiz modal not found');
       return;
     }
     const steps = modal.querySelectorAll('.modal-step');
-    steps.forEach(step => step.style.display = 'none');
+    console.log('Found', steps.length, 'steps');
+    steps.forEach(step => {
+      console.log('Hiding step:', step.getAttribute('data-step'));
+      step.style.display = 'none';
+    });
     const targetStep = modal.querySelector(`[data-step="${stepNumber}"]`);
+    console.log('Target step found:', !!targetStep, 'for step', stepNumber);
     if (targetStep) {
+      console.log('Showing step', stepNumber);
       targetStep.style.display = 'block';
+    } else {
+      console.warn('Target step not found for data-step=' + stepNumber);
     }
   };
 
