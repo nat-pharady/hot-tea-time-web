@@ -480,7 +480,7 @@ window.storiesDatabase = [
     author: "Vivienne Blackthorn",
     avatar: "👑",
     excerpt: "Lady Elara had always prided herself on her restraint. Then came the Duke of Ashford, and his rather unconventional proposal — one that would require very little restraint indeed.",
-    image: "images/premium-story-featured.jpg",
+    image: "images/stories/story-25.jpg",
     reads: "24.3k",
     chapters: 18,
     tropes: ['enemies-to-lovers', 'regency-nobility'],
@@ -495,7 +495,7 @@ window.storiesDatabase = [
     author: "Celeste Ashby",
     avatar: "🌿",
     excerpt: "The estate garden was always his. Until she arrived and planted something entirely different.",
-    image: "images/premium-story-3.jpg",
+    image: "images/stories/story-26.jpg",
     reads: "11.7k",
     chapters: 9,
     tropes: ['forced-proximity', 'regency-nobility'],
@@ -510,7 +510,7 @@ window.storiesDatabase = [
     author: "Margaux Delacroix",
     avatar: "🕯️",
     excerpt: "Midnight confessions in a house that keeps far too many secrets.",
-    image: "images/premium-story-4.jpg",
+    image: "images/stories/story-27.jpg",
     reads: "8.9k",
     chapters: 5,
     tropes: ['forbidden-love', 'gothic-paranormal'],
@@ -525,7 +525,7 @@ window.storiesDatabase = [
     author: "Poppy St. Clair",
     avatar: "🍒",
     excerpt: "He had a type. She was decidedly not it. He married her anyway. Now what?",
-    image: "images/premium-story-5.jpg",
+    image: "images/stories/story-28.jpg",
     reads: "19.1k",
     chapters: 14,
     tropes: ['regency-nobility', 'enemies-to-lovers'],
@@ -540,7 +540,7 @@ window.storiesDatabase = [
     author: "Iris Nightshade",
     avatar: "🎭",
     excerpt: "Some secrets are meant to be kept. Others beg to be spilled in the dark of night.",
-    image: "images/premium-story-6.jpg",
+    image: "images/stories/story-29.jpg",
     reads: "16.4k",
     chapters: 12,
     tropes: ['dark-morally-grey', 'gothic-paranormal'],
@@ -893,9 +893,12 @@ window.renderStories = function(stories, containerId) {
     const lockBadge = story.isFree ? '' : '<div class="story-lock"><span class="lock-badge">🔒 Members Only</span></div>';
 
     // Use gradient placeholder if image fails to load
+    // Add cache-busting query parameter to force fresh images
+    const cacheBuster = new Date().getTime();
+    const imageUrl = `${story.image}?v=${cacheBuster}`;
     const imageElement = `
       <img
-        src="${story.image}"
+        src="${imageUrl}"
         alt="${story.title}"
         class="story-thumb"
         onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
@@ -1724,8 +1727,14 @@ function renderCharacterGrid(filter) {
     const nameParts = character.name.split(' ');
     const formattedName = nameParts.map(part => `<div class="name-part">${part}</div>`).join('');
 
+    // Use image if available, otherwise use gradient
+    const cacheBuster = new Date().getTime();
+    const portraitStyle = character.image
+      ? `background-image: url('${character.image}?v=${cacheBuster}'); background-size: cover; background-position: center;`
+      : `background: ${character.gradient};`;
+
     card.innerHTML = `
-      <div class="character-portrait" style="background: ${character.gradient};">
+      <div class="character-portrait" style="${portraitStyle}">
         <span class="character-category">${character.category}</span>
       </div>
       <div class="character-info">
@@ -1763,7 +1772,15 @@ function openCharacterModal(characterId) {
   const interests = document.getElementById('modal-interests');
   const tropes = document.getElementById('modal-tropes');
 
-  portrait.style.background = character.gradient;
+  // Use image if available, otherwise use gradient
+  if (character.image) {
+    const cacheBuster = new Date().getTime();
+    portrait.style.backgroundImage = `url('${character.image}?v=${cacheBuster}')`;
+    portrait.style.backgroundSize = 'cover';
+    portrait.style.backgroundPosition = character.backgroundPosition || 'center';
+  } else {
+    portrait.style.background = character.gradient;
+  }
 
   name.textContent = character.name;
   ageTitle.textContent = `${character.age} • ${character.archetype}`;
