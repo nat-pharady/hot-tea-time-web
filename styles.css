@@ -711,30 +711,30 @@
   .price-row { display:flex; align-items:baseline; gap:6px; margin-bottom:6px; }
   .price-amt-main { font-family:'Playfair Display',serif; font-weight:900; font-size:4rem; color:#320d1e; line-height:1; }
   .price-period-main { font-family:'Coco Gothic',sans-serif; font-size:0.8rem; color:#7A6872; }
-  .price-hearts { font-family:'Coco Gothic',sans-serif; font-size:0.8rem; color:#2D0F1E; margin-bottom:32px; }
-  .price-hearts strong { color:#320d1e; }
+  .price-cherries { font-family:'Coco Gothic',sans-serif; font-size:0.8rem; color:#2D0F1E; margin-bottom:32px; }
+  .price-cherries strong { color:#320d1e; }
   .plan-features { list-style:none; margin-bottom:32px; }
   .plan-features li { font-family:'Coco Gothic',sans-serif; font-size:0.96rem; line-height:1.7; color:#2D0F1E; padding:8px 0; border-bottom:1px solid rgba(45,15,30,0.1); display:flex; align-items:flex-start; gap:8px; }
   .plan-features li::before { content:'✦'; color:#320d1e; font-size:0.48rem; flex-shrink:0; margin-top:4px; }
   .plan-cta { display:block; width:100%; padding:15px 0; border-radius:100px; font-family:'Coco Gothic',sans-serif; font-size:0.65rem; letter-spacing:0.14em; text-transform:uppercase; text-decoration:none; text-align:center; cursor:pointer; transition:all 0.22s; background:var(--orange); border:none; color:#fff; font-weight:700; }
   .plan-cta:hover { background:var(--orange-d); transform:translateY(-2px); box-shadow:0 8px 24px rgba(201,165,92,0.28); }
   .pricing-side { display:flex; flex-direction:column; gap:20px; }
-  .hearts-card { background:var(--card-bg); border:none; border-radius:4px; padding:32px 28px; }
-  .hearts-title { font-family:'Playfair Display',serif; font-weight:800; font-size:1.2rem; color:#2D0F1E; margin-bottom:4px; }
-  .hearts-sub { font-family:'Coco Gothic',sans-serif; font-size:0.94rem; color:#7A6872; margin-bottom:22px; line-height:1.7; }
-  .hearts-packs { display:flex; flex-direction:column; gap:10px; }
-  .heart-pack { display:flex; align-items:center; justify-content:space-between; background:rgba(45,15,30,0.04); border:1px solid rgba(201,165,92,0.18); border-radius:4px; padding:12px 16px; transition:border-color 0.22s,background 0.22s; }
+  .cherries-card { background:var(--card-bg); border:none; border-radius:4px; padding:32px 28px; }
+  .cherries-title { font-family:'Playfair Display',serif; font-weight:800; font-size:1.2rem; color:#2D0F1E; margin-bottom:4px; }
+  .cherries-sub { font-family:'Coco Gothic',sans-serif; font-size:0.94rem; color:#7A6872; margin-bottom:22px; line-height:1.7; }
+  .cherries-packs { display:flex; flex-direction:column; gap:10px; }
+  .cherry-pack{ display:flex; align-items:center; justify-content:space-between; background:rgba(45,15,30,0.04); border:1px solid rgba(201,165,92,0.18); border-radius:4px; padding:12px 16px; transition:border-color 0.22s,background 0.22s; }
   .heart-pack:hover { border-color:var(--orange); background:rgba(201,165,92,0.1); }
-  .heart-pack-left { display:flex; flex-direction:column; gap:2px; }
-  .heart-pack-amount { font-family:'Playfair Display',serif; font-weight:800; font-size:1rem; color:#320d1e; }
-  .heart-pack-desc { font-family:'Coco Gothic',sans-serif; font-size:0.55rem; color:var(--muted); letter-spacing:0.08em; }
-  .heart-pack-price { font-family:'Coco Gothic',sans-serif; font-size:0.7rem; font-weight:700; color:#2D0F1E; }
-  .heart-pack-badge { font-family:'Coco Gothic',sans-serif; font-size:0.5rem; letter-spacing:0.1em; text-transform:uppercase; background:var(--green); color:#320d1e; padding:3px 8px; border-radius:100px; }
-  .what-hearts-card { background:var(--green); border-radius:4px; padding:28px; }
-  .what-hearts-title { font-family:'Playfair Display',serif; font-style:italic; font-weight:800; font-size:1.1rem; color:var(--cream); margin-bottom:16px; }
-  .hearts-use-list { list-style:none; display:flex; flex-direction:column; gap:10px; }
-  .hearts-use-list li { font-family:'Coco Gothic',sans-serif; font-size:0.94rem; line-height:1.65; color:#681e2a; display:flex; align-items:flex-start; gap:10px; }
-  .hearts-use-list li::before { content:'❤️'; font-size:0.7rem; flex-shrink:0; }
+  .cherry-pack-left { display:flex; flex-direction:column; gap:2px; }
+  .cherry-pack-amount { font-family:'Playfair Display',serif; font-weight:800; font-size:1rem; color:#320d1e; }
+  .cherry-pack-desc { font-family:'Coco Gothic',sans-serif; font-size:0.55rem; color:var(--muted); letter-spacing:0.08em; }
+  .cherry-pack-price { font-family:'Coco Gothic',sans-serif; font-size:0.7rem; font-weight:700; color:#2D0F1E; }
+  .cherry-pack-badge { font-family:'Coco Gothic',sans-serif; font-size:0.5rem; letter-spacing:0.1em; text-transform:uppercase; background:var(--green); color:#320d1e; padding:3px 8px; border-radius:100px; }
+  .what-cherries-card { background:var(--green); border-radius:4px; padding:28px; }
+  .what-cherries-title { font-family:'Playfair Display',serif; font-style:italic; font-weight:800; font-size:1.1rem; color:var(--cream); margin-bottom:16px; }
+  .cherries-use-list { list-style:none; display:flex; flex-direction:column; gap:10px; }
+  .cherries-use-list li { font-family:'Coco Gothic',sans-serif; font-size:0.94rem; line-height:1.65; color:#681e2a; display:flex; align-items:flex-start; gap:10px; }
+  .cherries-use-list li::before { content:'❤️'; font-size:0.7rem; flex-shrink:0; }
 
   /* ── FOOTER ── */
   footer { background:var(--charcoal); }
