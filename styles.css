@@ -736,6 +736,9 @@
   .cherries-use-list li { font-family:'Coco Gothic',sans-serif; font-size:0.94rem; line-height:1.65; color:#681e2a; display:flex; align-items:flex-start; gap:10px; }
   .cherries-use-list li::before { content:'❤️'; font-size:0.7rem; flex-shrink:0; }
 
+  /* ── CHERRY ICON ── */
+  .cherry-icon { display:inline-block; height:1em; width:1em; object-fit:contain; vertical-align:-0.125em; margin:0 2px; }
+
   /* ── FOOTER ── */
   footer { background:var(--charcoal); }
   .footer-newsletter { background:linear-gradient(135deg,var(--orange-d),var(--orange)); padding:72px 48px; text-align:center; position:relative; overflow:hidden; }
