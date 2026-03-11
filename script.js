@@ -48,7 +48,7 @@ window.storiesDatabase = [
     id: 1,
     title: "Midnight Confessions",
     author: "Sarah Mitchell",
-    avatar: "☕",
+    avatar: "",
     excerpt: "The café at midnight held a certain magic. Not the kind you'd find in fairy tales, but something more real—something that lived in the spaces between whispered conversations and the gentle clink of porcelain cups.",
     image: "images/story-1.jpg",
     reads: "2.8k",
@@ -81,7 +81,7 @@ window.storiesDatabase = [
     id: 2,
     title: "Garden of Secrets",
     author: "Emma Sterling",
-    avatar: "🌹",
+    avatar: "",
     excerpt: "The garden had been her sanctuary for as long as she could remember. Hidden behind wrought-iron gates and climbing ivy, it was a place where the world couldn't find her—where she could be anyone, anything she wanted.",
     image: "images/story-2.jpg",
     reads: "3.4k",
@@ -110,7 +110,7 @@ window.storiesDatabase = [
     id: 3,
     title: "Sins of the Crown",
     author: "Victoria Blake",
-    avatar: "👑",
+    avatar: "",
     excerpt: "She was never meant to catch his eye. A lady-in-waiting with no title, no wealth, no future—until the Duke walked into the ballroom and changed everything with a single glance.",
     image: "images/story-3.jpg",
     reads: "4.2k",
@@ -135,7 +135,7 @@ window.storiesDatabase = [
     id: 4,
     title: "Office Hours",
     author: "Sienna Cross",
-    avatar: "💼",
+    avatar: "",
     excerpt: "Share an office with your enemy? Forced to work late nights in close quarters, their professional facade crumbles under the weight of undeniable attraction.",
     image: "images/story-4.jpg",
     reads: "3.8k",
@@ -164,7 +164,7 @@ window.storiesDatabase = [
     id: 5,
     title: "Darkness Consumed",
     author: "Raven Summers",
-    avatar: "🖤",
+    avatar: "",
     excerpt: "He was dark, dangerous, and absolutely wrong for her. She loved him anyway—and that was her greatest sin.", image: "images/story-5.jpg",
     reads: "5.1k",
     chapters: 7,
@@ -188,7 +188,7 @@ window.storiesDatabase = [
     id: 6,
     title: "The Haunting",
     author: "Lily Nocturne",
-    avatar: "👻",
+    avatar: "",
     excerpt: "The manor was said to be haunted. She didn't believe in ghosts until she saw him—a man from another time, fading between worlds, and dangerously, impossibly beautiful.", image: "images/story-6.jpg",
     reads: "4.6k",
     chapters: 6,
@@ -886,16 +886,20 @@ window.renderStories = function(stories, containerId) {
     console.log(`  - ${s.title} (free: ${s.isFree}, heat: ${s.heatLevel}, tropes: ${s.tropes.join(', ')})`);
   });
 
+  // Color palette for story cards (solid colors, no emojis)
+  const storyColors = ['#8B1A2B', '#6B2140', '#5a1924', '#3D1F33', '#681e2a', '#2D0F1E'];
+
   container.innerHTML = stories.map((story, index) => {
     const delayClass = index === 0 ? '' : `reveal-delay-${index}`;
     const featuredClass = story.featured ? 'featured' : '';
     // Only show lock badge for non-free stories
     const lockBadge = story.isFree ? '' : '<div class="story-lock"><span class="lock-badge">🔒 Members Only</span></div>';
 
-    // Use gradient placeholder if image fails to load
+    // Use solid color placeholder if image fails to load
     // Add cache-busting query parameter to force fresh images
     const cacheBuster = new Date().getTime();
     const imageUrl = `${story.image}?v=${cacheBuster}`;
+    const backgroundColor = storyColors[index % storyColors.length];
     const imageElement = `
       <img
         src="${imageUrl}"
@@ -903,9 +907,7 @@ window.renderStories = function(stories, containerId) {
         class="story-thumb"
         onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
       >
-      <div class="story-thumb" style="display:none; background: linear-gradient(135deg, #8B1A2B, #681e2a); height: 280px; align-items: center; justify-content: center; font-size: 64px;">
-        ${story.avatar}
-      </div>
+      <div class="story-thumb" style="display:none; background: ${backgroundColor}; height: 280px; align-items: center; justify-content: center; font-size: 64px;"></div>
     `;
 
     return `
