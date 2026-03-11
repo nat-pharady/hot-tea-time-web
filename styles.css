@@ -705,7 +705,7 @@
   }
   .pricing-layout { display:grid; grid-template-columns:1fr 1fr; gap:28px; align-items:start; }
   .pricing-main-card { background:var(--card-bg); border:1.5px solid var(--orange); border-radius:4px; padding:44px 40px; position:relative; }
-  .pricing-main-card .plan-badge { position:absolute; top:-13px; left:36px; background:var(--orange); color:#fff; font-family:'Coco Gothic',sans-serif; font-size:0.55rem; letter-spacing:0.14em; text-transform:uppercase; padding:5px 16px; border-radius:100px; font-weight:700; }
+  .pricing-main-card .plan-badge { position:absolute; top:-13px; left:36px; background:var(--orange); color:#320d1e; font-family:'Coco Gothic',sans-serif; font-size:0.55rem; letter-spacing:0.14em; text-transform:uppercase; padding:5px 16px; border-radius:100px; font-weight:700; }
   .pricing-main-name { font-family:'Playfair Display',serif; font-style:italic; font-weight:900; font-size:2rem; color:#2D0F1E; margin-bottom:4px; }
   .pricing-main-tag { font-family:'Coco Gothic',sans-serif; font-size:0.78rem; color:#7A6872; margin-bottom:28px; }
   .price-row { display:flex; align-items:baseline; gap:6px; margin-bottom:6px; }
