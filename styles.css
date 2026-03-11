@@ -737,7 +737,7 @@
   .cherries-use-list li::before { content:'❤️'; font-size:0.7rem; flex-shrink:0; }
 
   /* ── CHERRY ICON ── */
-  .cherry-icon { display:inline-block; height:1.8em; width:1.8em; object-fit:contain; vertical-align:-0.2em; margin:0; line-height:1; }
+  .cherry-icon { display:inline-block; height:2.4em; width:2.4em; object-fit:contain; vertical-align:-0.35em; margin:0; line-height:1; }
 
   /* ── FOOTER ── */
   footer { background:var(--charcoal); }
