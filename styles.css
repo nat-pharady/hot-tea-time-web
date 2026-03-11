@@ -729,7 +729,7 @@
   .heart-pack-amount { font-family:'Playfair Display',serif; font-weight:800; font-size:1rem; color:#320d1e; }
   .heart-pack-desc { font-family:'Coco Gothic',sans-serif; font-size:0.55rem; color:var(--muted); letter-spacing:0.08em; }
   .heart-pack-price { font-family:'Coco Gothic',sans-serif; font-size:0.7rem; font-weight:700; color:#2D0F1E; }
-  .heart-pack-badge { font-family:'Coco Gothic',sans-serif; font-size:0.5rem; letter-spacing:0.1em; text-transform:uppercase; background:var(--green); color:#fff; padding:3px 8px; border-radius:100px; }
+  .heart-pack-badge { font-family:'Coco Gothic',sans-serif; font-size:0.5rem; letter-spacing:0.1em; text-transform:uppercase; background:var(--green); color:#320d1e; padding:3px 8px; border-radius:100px; }
   .what-hearts-card { background:var(--green); border-radius:4px; padding:28px; }
   .what-hearts-title { font-family:'Playfair Display',serif; font-style:italic; font-weight:800; font-size:1.1rem; color:var(--cream); margin-bottom:16px; }
   .hearts-use-list { list-style:none; display:flex; flex-direction:column; gap:10px; }
