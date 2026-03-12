@@ -264,8 +264,8 @@
   }
 
   .profile-stat-card:nth-child(3) {
-    background: linear-gradient(135deg, rgba(248, 220, 118, 0.28), rgba(248, 220, 118, 0.18));
-    border: 2px solid #f8dc76;
+    background: linear-gradient(135deg, rgba(104, 30, 42, 0.35), rgba(104, 30, 42, 0.25));
+    border: 2px solid #681e2a;
   }
 
   .profile-stat-card:hover {

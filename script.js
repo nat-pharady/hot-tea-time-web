@@ -886,8 +886,29 @@ window.renderStories = function(stories, containerId) {
     console.log(`  - ${s.title} (free: ${s.isFree}, heat: ${s.heatLevel}, tropes: ${s.tropes.join(', ')})`);
   });
 
-  // Color palette for story cards (solid colors, no emojis)
-  const storyColors = ['#8B1A2B', '#6B2140', '#5a1924', '#3D1F33', '#681e2a', '#2D0F1E'];
+  // Color palette for story cards - Hot Tea Time brand colors with good visual variety
+  // Arranged to avoid similar colors appearing adjacent to each other
+  const storyColors = [
+    '#8B1A2B',  // Dark red
+    '#3D1F33',  // Dark purple
+    '#C9A55C',  // Gold
+    '#681e2a',  // Medium-dark red
+    '#A85563',  // Rose/mauve
+    '#2D0F1E',  // Very dark purple
+    '#6B2140',  // Dark purple-red
+    '#5a1924',  // Darker red
+    '#8B1A2B',  // Dark red (second cycle)
+    '#3D1F33',  // Dark purple
+    '#C9A55C',  // Gold
+    '#681e2a',  // Medium-dark red
+    '#A85563',  // Rose/mauve
+    '#2D0F1E',  // Very dark purple
+    '#6B2140',  // Dark purple-red
+    '#5a1924'   // Darker red
+  ];
+
+  // Avatar colors palette - Hot Tea Time brand colors
+  const avatarColors = ['#8B1A2B', '#6B2140', '#5a1924', '#3D1F33', '#681e2a', '#2D0F1E', '#A85563', '#C9A55C'];
 
   container.innerHTML = stories.map((story, index) => {
     const delayClass = index === 0 ? '' : `reveal-delay-${index}`;
@@ -910,6 +931,9 @@ window.renderStories = function(stories, containerId) {
       <div class="story-thumb" style="display:none; background: ${backgroundColor}; height: 280px; align-items: center; justify-content: center; font-size: 64px;"></div>
     `;
 
+    // Blank colored circle for author avatar instead of emoji
+    const avatarColor = avatarColors[index % avatarColors.length];
+
     return `
       <div class="story-card ${featuredClass} reveal visible ${delayClass}">
         ${imageElement}
@@ -919,7 +943,7 @@ window.renderStories = function(stories, containerId) {
           <h3 class="story-title">${story.title}</h3>
           <p class="story-excerpt">${story.excerpt}</p>
           <div class="story-author">
-            <div class="author-avatar">${story.avatar}</div>
+            <div class="author-avatar" style="background: ${avatarColor};"></div>
             <div style="display:flex;flex-direction:column;gap:1px;">
               <span class="author-name">${story.author}</span>
               <span class="author-reads">${story.reads} reads · ${story.chapters} chapters</span>
