@@ -75,7 +75,7 @@ const QUIZ_HTML = `
             <div class="heat-desc">Cozy & sweet</div>
           </button>
           <button class="heat-card" data-heat="steamy" type="button">
-            <img src="images/author-icons/candle.png" alt="steamy" class="heat-icon" style="width: 72px; height: 72px; object-fit: contain; margin-bottom: -12px;">
+            <img src="images/author-icons/candle.png" alt="steamy" class="heat-icon" style="width: 72px; height: 72px; object-fit: contain; margin-bottom: -12px; transform: translateY(-8px);">
             <div class="heat-name">Steamy</div>
             <div class="heat-desc">A little daring</div>
           </button>
