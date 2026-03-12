@@ -70,17 +70,17 @@ const QUIZ_HTML = `
       <div class="modal-body">
         <div class="heat-grid">
           <button class="heat-card" data-heat="warm" type="button">
-            <img src="images/author-icons/mouth.png" alt="warm" class="heat-icon" style="width: 48px; height: 48px; object-fit: contain;">
+            <img src="images/author-icons/mouth.png" alt="warm" class="heat-icon" style="width: 72px; height: 72px; object-fit: contain; margin-bottom: -12px;">
             <div class="heat-name">Warm</div>
             <div class="heat-desc">Cozy & sweet</div>
           </button>
           <button class="heat-card" data-heat="steamy" type="button">
-            <img src="images/author-icons/candle.png" alt="steamy" class="heat-icon" style="width: 48px; height: 48px; object-fit: contain;">
+            <img src="images/author-icons/candle.png" alt="steamy" class="heat-icon" style="width: 72px; height: 72px; object-fit: contain; margin-bottom: -12px;">
             <div class="heat-name">Steamy</div>
             <div class="heat-desc">A little daring</div>
           </button>
           <button class="heat-card" data-heat="hot" type="button">
-            <img src="images/author-icons/chili.png" alt="hot" class="heat-icon" style="width: 48px; height: 48px; object-fit: contain;">
+            <img src="images/author-icons/chili.png" alt="hot" class="heat-icon" style="width: 72px; height: 72px; object-fit: contain; margin-bottom: -12px;">
             <div class="heat-name">Hot</div>
             <div class="heat-desc">Turn up the heat</div>
           </button>
