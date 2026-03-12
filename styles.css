@@ -1023,13 +1023,15 @@
     background: rgba(247, 244, 234, 0.05);
     border: 2px solid rgba(247, 244, 234, 0.15);
     border-radius: 16px;
-    padding: 32px 20px;
+    padding: 48px 20px;
     cursor: pointer;
     transition: all 0.25s;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     gap: 12px;
+    min-height: 140px;
   }
 
   .trope-card:hover {
@@ -1045,11 +1047,12 @@
 
   .trope-name {
     font-family: 'Coco Gothic', sans-serif;
-    font-size: 0.85rem;
+    font-size: 1.15rem;
     font-weight: 600;
     color: var(--green);
     text-align: center;
     letter-spacing: 0.05em;
+    line-height: 1.4;
   }
 
   /* Heat Level Cards */
