@@ -1084,6 +1084,10 @@
     margin-bottom: 4px;
   }
 
+  .heat-icon[src] {
+    display: block;
+  }
+
   .heat-name {
     font-family: 'Coco Gothic', sans-serif;
     font-size: 1.1rem;
