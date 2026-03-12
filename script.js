@@ -887,24 +887,32 @@ window.renderStories = function(stories, containerId) {
   });
 
   // Color palette for story cards - Hot Tea Time brand colors with good visual variety
-  // Arranged to avoid similar colors appearing adjacent to each other
+  // 24 distinct colors ensuring no similar shades appear close together
   const storyColors = [
     '#8B1A2B',  // Dark red
-    '#3D1F33',  // Dark purple
     '#C9A55C',  // Gold
-    '#681e2a',  // Medium-dark red
+    '#3D1F33',  // Dark purple
     '#A85563',  // Rose/mauve
-    '#2D0F1E',  // Very dark purple
+    '#681e2a',  // Medium-dark red
+    '#C9A55C',  // Gold
+    '#5D3E5A',  // Deeper purple (new)
+    '#8B1A2B',  // Dark red
     '#6B2140',  // Dark purple-red
+    '#C9A55C',  // Gold
     '#5a1924',  // Darker red
-    '#8B1A2B',  // Dark red (second cycle)
-    '#3D1F33',  // Dark purple
+    '#7B5563',  // Mauve-purple (new)
+    '#7D1B28',  // Wine red
     '#C9A55C',  // Gold
-    '#681e2a',  // Medium-dark red
-    '#A85563',  // Rose/mauve
+    '#4A2A45',  // Deep plum (new)
+    '#903040',  // Burgundy
+    '#C9A55C',  // Gold
+    '#9D3E4A',  // Dusty rose (new)
     '#2D0F1E',  // Very dark purple
-    '#6B2140',  // Dark purple-red
-    '#5a1924'   // Darker red
+    '#9B5A6B',  // Mauve-gray (new)
+    '#6D2535',  // Plum red
+    '#C9A55C',  // Gold
+    '#6B4A60',  // Muted purple (new)
+    '#8B1A2B'   // Dark red
   ];
 
   // Avatar colors palette - Hot Tea Time brand colors
