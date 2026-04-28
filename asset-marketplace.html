@@ -20,7 +20,7 @@
 
     <!-- Premium Badge -->
     <div style="display: flex; align-items: center; justify-content: center; margin-bottom: 24px;">
-      <span style="background: rgba(248, 220, 118, 0.15); color: var(--orange); font-family: 'Coco Gothic', sans-serif; font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; padding: 10px 20px; border-radius: 100px; border: 1px solid rgba(248, 220, 118, 0.3); display: flex; align-items: center; gap: 8px;">🔒 Premium Feature</span>
+      <span style="background: rgba(248, 220, 118, 0.15); color: var(--orange); font-family: 'Coco Gothic', sans-serif; font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; padding: 10px 20px; border-radius: 100px; border: 1px solid rgba(248, 220, 118, 0.3); display: flex; align-items: center; gap: 8px;"><img src="images/emojis/cake.png" alt="Premium" style="width:12px; height:12px; display:inline-block; vertical-align:middle;"> Premium Feature</span>
     </div>
 
     <!-- Header -->
@@ -148,7 +148,7 @@
   // Ensure AI Generator modal exists before nav loads
   function ensureModalExists() {
     if (!document.getElementById('ai-generator-modal')) {
-      const modalHTML = `<div id="ai-generator-modal" class="ai-generator-modal" style="display: none;"><div class="ai-gen-overlay"></div><div class="ai-gen-content-minimal"><button class="ai-gen-close" onclick="closeAIGeneratorModal()">&times;</button><div class="ai-gen-teaser"><div class="ai-gen-icon">🔒</div><h1 class="ai-gen-title">Craft Your Fantasy</h1><p class="ai-gen-description">Shape characters, weave tension, ignite passion.<br>Your story. Your rules. Your fantasy.</p><button class="ai-gen-unlock-btn" onclick="handleAIGeneratorUnlock()">Unlock the Inner Circle — $4.99/mo</button></div></div></div>`;
+      const modalHTML = `<div id="ai-generator-modal" class="ai-generator-modal" style="display: none;"><div class="ai-gen-overlay"></div><div class="ai-gen-content-minimal"><button class="ai-gen-close" onclick="closeAIGeneratorModal()">&times;</button><div class="ai-gen-teaser"><div class="ai-gen-icon"><img src="images/emojis/cake.png" alt="Premium" style="width:48px; height:48px; display:inline-block;"></div><h1 class="ai-gen-title">Craft Your Fantasy</h1><p class="ai-gen-description">Shape characters, weave tension, ignite passion.<br>Your story. Your rules. Your fantasy.</p><button class="ai-gen-unlock-btn" onclick="handleAIGeneratorUnlock()">Unlock the Inner Circle — $4.99/mo</button></div></div></div>`;
       document.body.insertAdjacentHTML('beforeend', modalHTML);
     }
   }
