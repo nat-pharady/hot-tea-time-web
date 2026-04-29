@@ -597,9 +597,9 @@ window.getRecommendedFreeStory = function() {
 // Global function to open quiz with return page tracking
 window.openQuizModal = function(e) {
   if (e) e.preventDefault();
-  const quizModal = document.getElementById('tasteTestModal');
+  const quizModal = document.getElementById('htt-quiz-modal');
   if (quizModal) {
-    quizModal.style.display = 'flex';
+    quizModal.classList.add('active');
     // Store the current page as return destination
     window.quizReturnPage = window.location.pathname + window.location.search;
   }

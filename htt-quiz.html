@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Hot Tea Time — The Taste Test</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,600&family=Inter:wght@400;500;600;700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bd:#4a1420;--bm:#681e2a;--bl:#8a2435;--gold:#f8dc76;--gd:#d4b34a;--cream:#f7f4ea;--ink:#1a0510}
+html,body{overflow-x:hidden}
+body{font-family:'Inter',sans-serif;background:var(--bm);color:var(--cream);min-height:100vh}
+
+/* BG */
+.bg{position:fixed;inset:0;z-index:0}
+.bg-split{position:absolute;inset:0;background:linear-gradient(90deg,var(--bd) 50%,var(--bl) 50%)}
+.bw{position:absolute;inset:0;opacity:0;transition:opacity 1.4s;pointer-events:none}
+.bw.on{opacity:1}
+.wi{background:radial-gradient(ellipse at 50% 45%,rgba(248,220,118,.12),transparent 55%)}
+.w0{background:radial-gradient(ellipse at 50% 50%,rgba(248,220,118,.08),transparent 60%)}
+.w1{background:radial-gradient(ellipse at 30% 40%,rgba(138,36,53,.5),transparent 55%)}
+.w2{background:radial-gradient(ellipse at 70% 60%,rgba(74,20,32,.6),transparent 60%)}
+.w3{background:radial-gradient(ellipse at 50% 30%,rgba(248,220,118,.06),transparent 50%)}
+.w4{background:radial-gradient(ellipse at 80% 20%,rgba(248,220,118,.05),transparent 60%)}
+.w5{background:radial-gradient(ellipse at 50% 100%,rgba(248,220,118,.08),transparent 55%)}
+.w6{background:radial-gradient(ellipse at 20% 20%,rgba(248,220,118,.07),transparent 55%)}
+.wt{background:radial-gradient(ellipse at 50% 50%,rgba(248,220,118,.15),transparent 60%)}
+.pts{position:fixed;inset:0;z-index:1;pointer-events:none;overflow:hidden}
+.p{position:absolute;border-radius:50%;animation:fp linear infinite;opacity:0}
+@keyframes fp{0%{transform:translateY(100vh);opacity:0}15%{opacity:.6}90%{opacity:.3}100%{transform:translateY(-5vh);opacity:0}}
+.vig{position:fixed;inset:0;z-index:2;pointer-events:none;background:radial-gradient(ellipse at 50% 50%,transparent 50%,rgba(26,5,16,.55) 100%)}
+
+/* NAV */
+.tnav{position:fixed;top:0;left:0;right:0;z-index:30;display:flex;justify-content:space-between;align-items:center;padding:1.25rem 2rem;pointer-events:none}
+.brand{font-weight:700;font-size:.9rem;letter-spacing:3.5px;color:var(--cream);text-transform:uppercase}
+.ntag{font-size:.65rem;letter-spacing:2.5px;color:rgba(247,244,234,.5);text-transform:uppercase}
+
+/* AGE GATE */
+#ageGate{position:fixed;inset:0;z-index:100;background:rgba(10,2,8,.95);backdrop-filter:blur(20px);display:flex;align-items:center;justify-content:center;padding:2rem}
+.age-box{background:rgba(26,5,16,.9);border:1px solid rgba(248,220,118,.3);border-radius:20px;padding:2.5rem 2rem;max-width:440px;width:100%;text-align:center}
+.age-icon{font-size:2.5rem;margin-bottom:1rem}
+.age-title{font-family:'Playfair Display',serif;font-size:1.6rem;font-style:italic;color:var(--cream);margin-bottom:.5rem}
+.age-sub{font-size:.82rem;color:rgba(247,244,234,.6);line-height:1.65;margin-bottom:1.75rem}
+.age-form{display:flex;flex-direction:column;gap:.85rem;text-align:left}
+.age-label{font-size:.72rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(248,220,118,.8);margin-bottom:.3rem;display:block}
+.age-input{width:100%;background:rgba(26,5,16,.5);border:1px solid rgba(247,244,234,.2);border-radius:10px;padding:.7rem 1rem;color:var(--cream);font-family:'Inter',sans-serif;font-size:.9rem;outline:none;transition:border .25s;color-scheme:dark}
+.age-input:focus{border-color:var(--gold)}
+.age-check{display:flex;align-items:flex-start;gap:.65rem}
+.age-check input[type=checkbox]{margin-top:3px;accent-color:var(--gold);width:16px;height:16px;flex-shrink:0;cursor:pointer}
+.age-check span{font-size:.78rem;color:rgba(247,244,234,.7);line-height:1.55}
+.age-check a{color:var(--gold);text-decoration:none}
+.age-btn{background:var(--gold);border:none;border-radius:50px;padding:1rem;color:var(--ink);font-weight:700;font-size:.82rem;letter-spacing:2px;text-transform:uppercase;cursor:pointer;transition:all .3s;font-family:'Inter',sans-serif;width:100%;margin-top:.25rem}
+.age-btn:hover:not(:disabled){background:var(--gd)}
+.age-btn:disabled{opacity:.4;cursor:not-allowed}
+.age-err{font-size:.78rem;color:#f09595;background:rgba(255,100,100,.1);border-radius:8px;padding:.5rem .75rem;display:none;text-align:center}
+.age-foot{font-size:.68rem;color:rgba(247,244,234,.35);text-align:center;line-height:1.55;margin-top:.25rem}
+
+/* QUIZ */
+#quizSection{position:relative;z-index:10;min-height:100vh;display:none;align-items:center;justify-content:center;padding:6rem 1.5rem 7rem}
+#quizSection.show{display:flex}
+.stage{width:100%;max-width:820px}
+.prail{position:fixed;bottom:1.75rem;left:50%;transform:translateX(-50%);z-index:25;display:none;gap:8px;padding:.6rem 1.1rem;background:rgba(26,5,16,.6);border-radius:40px;backdrop-filter:blur(14px);border:1px solid rgba(247,244,234,.12)}
+.prail.show{display:flex}
+.dot{width:7px;height:7px;border-radius:50%;background:rgba(247,244,234,.2);transition:all .5s}
+.dot.active{background:var(--gold);box-shadow:0 0 10px rgba(248,220,118,.7);transform:scale(1.35)}
+.dot.done{background:rgba(248,220,118,.5)}
+.qw{text-align:center;animation:ri .85s cubic-bezier(.22,.61,.36,1) forwards}
+@keyframes ri{from{opacity:0;transform:translateY(35px)}to{opacity:1;transform:translateY(0)}}
+.qw.leaving{animation:ro .5s ease forwards}
+@keyframes ro{to{opacity:0;transform:translateY(-30px) scale(.97)}}
+.ql{font-size:.7rem;font-weight:600;letter-spacing:4px;text-transform:uppercase;color:rgba(248,220,118,.85);margin-bottom:1.4rem}
+.qt{font-family:'Playfair Display',serif;font-size:clamp(1.5rem,4vw,2.2rem);line-height:1.25;color:var(--cream);margin-bottom:.6rem;font-style:italic;max-width:680px;margin-left:auto;margin-right:auto}
+.qh{font-size:.8rem;color:rgba(247,244,234,.7);margin-bottom:2.5rem;font-style:italic}
+.qsp{margin-bottom:2.5rem}
+.opts{display:grid;gap:.6rem;max-width:560px;margin:0 auto}
+.opts.tc{grid-template-columns:1fr 1fr;max-width:700px}
+.opt{background:rgba(26,5,16,.35);backdrop-filter:blur(16px);border:1px solid rgba(247,244,234,.18);border-radius:12px;padding:.9rem 1.1rem;cursor:pointer;transition:background .25s,border-color .25s,transform .25s,color .25s;font-size:.93rem;color:var(--cream);font-weight:500;text-align:left;display:flex;align-items:flex-start;gap:.75rem;line-height:1.4;width:100%}
+.opt:hover{background:rgba(26,5,16,.6);border-color:rgba(248,220,118,.5);transform:translateY(-2px)}
+.opt.sel{background:var(--gold);border-color:var(--gold);color:var(--ink)}
+.opt.sel .osub{color:rgba(26,5,16,.65)}
+.oic{min-width:20px;font-size:1.05rem;margin-top:1px}
+.osub{font-size:.74rem;font-weight:400;opacity:.72;display:block;margin-top:2px;font-style:italic;color:rgba(247,244,234,.8)}
+.qnav{display:flex;justify-content:space-between;align-items:center;margin-top:2rem;max-width:560px;margin-left:auto;margin-right:auto;gap:1rem}
+.nb{background:rgba(26,5,16,.4);backdrop-filter:blur(10px);border:1px solid rgba(247,244,234,.25);border-radius:40px;padding:.65rem 1.5rem;color:var(--cream);font-weight:500;font-size:.8rem;letter-spacing:1px;cursor:pointer;transition:all .3s;text-transform:uppercase;font-family:'Inter',sans-serif}
+.nb:hover{background:rgba(26,5,16,.65);border-color:rgba(248,220,118,.5)}
+.nb.pri{background:var(--gold);border-color:var(--gold);color:var(--ink);font-weight:600}
+.nb.pri:hover{background:var(--gd)}
+.nb:disabled{opacity:.3;cursor:not-allowed}
+.qcnt{font-size:.7rem;color:rgba(248,220,118,.6);letter-spacing:3px}
+
+/* INTRO */
+.intro{text-align:center;animation:ri 1.1s cubic-bezier(.22,.61,.36,1) forwards;max-width:600px;margin:0 auto}
+.iey{font-size:.7rem;font-weight:600;letter-spacing:5px;text-transform:uppercase;color:var(--gold);margin-bottom:1.4rem}
+.ititle{font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(2.2rem,6vw,3.8rem);line-height:1.05;color:var(--cream);margin-bottom:1.2rem;text-transform:uppercase}
+.ititle .ac{color:var(--gold);font-style:italic;font-weight:400;text-transform:none}
+.intro p{color:rgba(247,244,234,.82);line-height:1.7;margin-bottom:2rem;font-size:.98rem;max-width:460px;margin-left:auto;margin-right:auto}
+.gbtn{background:var(--gold);border:none;border-radius:50px;padding:1rem 2.75rem;color:var(--ink);font-size:.8rem;font-weight:700;letter-spacing:2.5px;cursor:pointer;transition:all .35s;text-transform:uppercase;font-family:'Inter',sans-serif}
+.gbtn:hover{background:var(--gd);transform:scale(1.03)}
+.flash{position:fixed;inset:0;z-index:50;background:radial-gradient(ellipse at center,rgba(248,220,118,.7),rgba(138,36,53,.6) 45%,rgba(26,5,16,.95) 100%);opacity:0;pointer-events:none;animation:fla 1.1s ease-out forwards}
+@keyframes fla{0%{opacity:0}35%{opacity:.85}100%{opacity:0}}
+
+/* TRANSITION */
+#transSection{display:none;position:relative;z-index:10;min-height:100vh;align-items:center;justify-content:center;flex-direction:column;text-align:center;padding:6rem 1.5rem}
+#transSection.show{display:flex}
+.tey{font-size:.7rem;font-weight:600;letter-spacing:5px;text-transform:uppercase;color:var(--gold);margin-bottom:1.2rem;animation:fu .8s ease forwards}
+.ttitle{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,5vw,2.8rem);color:var(--cream);font-style:italic;margin-bottom:.8rem;animation:fu .8s .15s ease both;line-height:1.2}
+.ttitle .ac{color:var(--gold)}
+.tsub{font-size:.95rem;color:rgba(247,244,234,.72);margin-bottom:2rem;animation:fu .8s .3s ease both;max-width:500px}
+@keyframes fu{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.pchips{display:flex;flex-wrap:wrap;gap:.45rem;justify-content:center;margin-bottom:1.75rem;animation:fu .8s .45s ease both;max-width:620px}
+.chip{background:rgba(26,5,16,.5);border:1px solid rgba(248,220,118,.35);border-radius:30px;padding:.35rem .9rem;font-size:.76rem;color:var(--gold);font-weight:500}
+.trial-banner{background:rgba(248,220,118,.1);border:1px solid rgba(248,220,118,.35);border-radius:12px;padding:.9rem 1.25rem;margin-bottom:1.5rem;animation:fu .8s .6s ease both;font-size:.82rem;color:var(--cream);line-height:1.6;max-width:480px}
+.trial-banner strong{color:var(--gold)}
+.to-builder-btn{background:var(--gold);border:none;border-radius:50px;padding:1rem 2.75rem;color:var(--ink);font-size:.8rem;font-weight:700;letter-spacing:2.5px;cursor:pointer;transition:all .35s;text-transform:uppercase;font-family:'Inter',sans-serif;animation:fu .8s .75s ease both}
+.to-builder-btn:hover{background:var(--gd);transform:scale(1.03)}
+
+@media(max-width:600px){
+  .tnav{padding:1rem 1.25rem}.ntag{display:none}
+  .opts.tc{grid-template-columns:1fr}
+  .prail{bottom:1rem}
+}
+</style>
+</head>
+<body>
+
+<div class="bg">
+  <div class="bg-split"></div>
+  <div class="bw wi on" id="bg-intro"></div>
+  <div class="bw w0" id="bg-0"></div><div class="bw w1" id="bg-1"></div>
+  <div class="bw w2" id="bg-2"></div><div class="bw w3" id="bg-3"></div>
+  <div class="bw w4" id="bg-4"></div><div class="bw w5" id="bg-5"></div>
+  <div class="bw w6" id="bg-6"></div><div class="bw wt" id="bg-transition"></div>
+</div>
+<div class="pts" id="pts"></div>
+<div class="vig"></div>
+<div class="tnav"><div class="brand">Hot Tea Time</div><div class="ntag">The Taste Test</div></div>
+
+<!-- AGE GATE -->
+<div id="ageGate">
+  <div class="age-box">
+    <div class="age-icon">🍒</div>
+    <div class="age-title">Before you sip…</div>
+    <div class="age-sub">Hot Tea Time contains adult content including explicit AI-generated fiction. You must be 18 or older to enter.</div>
+    <div class="age-form">
+      <div>
+        <label class="age-label">Your date of birth</label>
+        <input type="date" class="age-input" id="dobInput"/>
+      </div>
+      <div class="age-check">
+        <input type="checkbox" id="ageConsent"/>
+        <span>I confirm I am 18 or older and agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>, including the nature of adult content on this platform.</span>
+      </div>
+      <div class="age-check">
+        <input type="checkbox" id="explicitConsent"/>
+        <span>I understand this platform includes sexually explicit AI-generated fiction and I am choosing to access it voluntarily.</span>
+      </div>
+      <div class="age-err" id="ageErr">You must be 18 or older to access Hot Tea Time.</div>
+      <button class="age-btn" id="ageBtn" disabled>Enter Hot Tea Time</button>
+      <div class="age-foot">Your date of birth is stored securely and used solely for age verification. We do not share it with third parties.</div>
+    </div>
+  </div>
+</div>
+
+<!-- QUIZ -->
+<div id="quizSection"><div class="stage" id="qapp"></div></div>
+<div class="prail" id="prail"></div>
+
+<!-- TRANSITION / PROFILE REVEAL -->
+<div id="transSection">
+  <div class="tey">Your Palate Profile</div>
+  <div class="ttitle">Your taste has been <span class="ac">steeped</span>.</div>
+  <div class="tsub">We know exactly how you like it.</div>
+  <div class="pchips" id="profileChips"></div>
+  <div class="trial-banner">✦ <strong>7-day Premium trial unlocked.</strong> Full access to every heat level, all story lengths, the Codex, and Choose Your Own Adventure. No card required today.</div>
+  <button class="to-builder-btn" id="toBuilderBtn">Open Your Story Builder →</button>
+</div>
+
+<script>
+const QS=[
+  {id:"gender",label:"About You",text:"How do you identify?",hint:null,multi:false,opts:[{i:"♀",t:"Female"},{i:"♂",t:"Male"},{i:"✦",t:"Non-binary"}]},
+  {id:"attract",label:"Your Desire",text:"Who do you want to fall for?",hint:null,multi:false,opts:[{i:"♀",t:"A woman"},{i:"♂",t:"A man"},{i:"✦",t:"Non-binary"},{i:"♾",t:"Open to anything"}]},
+  {id:"pov",label:"Perspective",text:"How do you want to live the story?",hint:null,multi:false,opts:[{i:"👁",t:"First person — I am the protagonist",s:"You are inside the story"},{i:"📖",t:"Third person — I watch it unfold",s:"Protagonist is she/he/they"}]},
+  {id:"setting",label:"Your World",text:"Where does your story take place?",hint:"Choose as many as you like",multi:true,opts:[{i:"🧛",t:"Vampire Courts",s:"gothic castles & eternal night"},{i:"🧚",t:"Faerie Realm",s:"ancient magic & wild enchantment"},{i:"🏰",t:"Regency England",s:"ballrooms & candlelit estates"},{i:"⚔",t:"Dark Fantasy Kingdom",s:"war, power & forbidden magic"},{i:"🏔",t:"Highland Scotland",s:"misty moors & ancient clans"},{i:"🏙",t:"Modern City",s:"boardrooms, nightclubs, penthouses"},{i:"🌊",t:"Small Coastal Town",s:"secrets & slow burn"}]},
+  {id:"trope",label:"Your Craving",text:"Which tropes make your heart race?",hint:"Choose all that call to you",multi:true,opts:[{i:"⚔",t:"Enemies to Lovers"},{i:"🚫",t:"Forbidden Romance"},{i:"🎭",t:"Fake Dating"},{i:"🔒",t:"Forced Proximity"},{i:"🔄",t:"Second Chance"},{i:"⭐",t:"Fated Mates"},{i:"🛡",t:"Dark Protector"},{i:"🩹",t:"Wounded Hero"}]},
+  {id:"taste",label:"Your Taste",text:"Which archetypes speak to your desires?",hint:"Choose all that resonate",multi:true,opts:[{i:"🌸",t:"The Bloom",s:"soft romance, emotional safety"},{i:"♾",t:"The Eternal",s:"obsessive, soul-deep loyalty"},{i:"🌹",t:"The Thorn",s:"surrender, yielding control"},{i:"👑",t:"The Root",s:"dominant, predatory authority"},{i:"💫",t:"The Dream",s:"intellectual, psychological pull"},{i:"✨",t:"The Muse",s:"playful wit, sharp banter"}]},
+  {id:"temp",label:"Temperature",text:"How hot do you take your tea?",hint:"Select one or more",multi:true,opts:[{i:"🧊",t:"Iced",s:"emotional tension only"},{i:"❄️",t:"Warm",s:"tender touches"},{i:"🍵",t:"Steeping",s:"heavy chemistry"},{i:"♨️",t:"Boiling",s:"intense passion"},{i:"🔥",t:"Scorching",s:"visceral, raw"}]}
+];
+
+// Age gate logic
+(function(){
+  var today=new Date(),maxD=new Date(today.getFullYear()-18,today.getMonth(),today.getDate());
+  document.getElementById("dobInput").max=maxD.toISOString().split("T")[0];
+  function check(){
+    var ok=document.getElementById("ageConsent").checked&&document.getElementById("explicitConsent").checked&&document.getElementById("dobInput").value;
+    document.getElementById("ageBtn").disabled=!ok;
+  }
+  // Listen to both 'change' and 'input' so typed dates also enable the button
+  ["dobInput","ageConsent","explicitConsent"].forEach(function(id){
+    var el=document.getElementById(id);
+    el.addEventListener("change",check);
+    el.addEventListener("input",check);
+  });
+  document.getElementById("ageBtn").addEventListener("click",function(){
+    var dobStr=document.getElementById("dobInput").value;
+    if(!dobStr){return;}
+    // Parse manually to avoid UTC timezone shift on negative offsets
+    var parts=dobStr.split("-");
+    var dobY=parseInt(parts[0],10),dobM=parseInt(parts[1],10)-1,dobD=parseInt(parts[2],10);
+    var now=new Date();
+    var age=now.getFullYear()-dobY;
+    var mDiff=now.getMonth()-dobM;
+    if(mDiff<0||(mDiff===0&&now.getDate()<dobD))age--;
+    if(age<18){document.getElementById("ageErr").style.display="block";return;}
+    document.getElementById("ageErr").style.display="none";
+    document.getElementById("ageGate").style.display="none";
+    document.getElementById("quizSection").classList.add("show");
+    showIntro();
+  });
+})();
+
+// Quiz state
+var cur=-1,answers={},selections=[],transitioning=false;
+
+function setBg(k){document.querySelectorAll(".bw").forEach(function(l){l.classList.remove("on");});var t=document.getElementById("bg-"+k);if(t)t.classList.add("on");}
+function updProg(){var r=document.getElementById("prail");if(cur<0||cur>=QS.length){r.classList.remove("show");return;}r.classList.add("show");r.innerHTML=QS.map(function(_,i){return'<div class="dot '+(i<cur?'done':i===cur?'active':'')+'"></div>';}).join('');}
+function render(html){document.getElementById("qapp").innerHTML=html;}
+
+// Update only the Next button — used during in-place toggling
+function updateNextBtn(){
+  var nb=document.getElementById('nb2');
+  if(nb)nb.disabled=selections.length===0;
+}
+
+function showIntro(){
+  cur=-1;setBg("intro");document.getElementById("prail").classList.remove("show");
+  render('<div class="intro"><div class="iey">The Taste Test</div><h1 class="ititle">How do you <span class="ac">take</span> your tea?</h1><p>Seven questions. At the end we\'ll know exactly how you like your stories steeped — and unlock your 7-day Premium trial to match.</p><button class="gbtn" id="sBtn">Begin the Taste Test</button></div>');
+  document.getElementById("sBtn").addEventListener("click",startQuiz);
+}
+
+function showQ(){
+  var q=QS[cur],isM=q.multi,tc=q.opts.length>=4;
+  var oh=q.opts.map(function(o,i){
+    return'<button class="opt'+(selections.indexOf(o.t)>-1?' sel':'')+'" data-i="'+i+'"><span class="oic">'+o.i+'</span><span>'+o.t+(o.s?'<span class="osub">'+o.s+'</span>':'')+'</span></button>';
+  }).join('');
+  render('<div class="qw" id="qw"><div class="ql">'+q.label+'</div><div class="qt">'+q.text+'</div>'+(q.hint?'<div class="qh">'+q.hint+'</div>':'<div class="qsp"></div>')+'<div class="opts'+(tc?' tc':'')+'" id="ob">'+oh+'</div><div class="qnav"><button class="nb" id="bb"'+(cur===0?' disabled':'')+'>← Back</button><span class="qcnt">'+(cur+1)+' / '+QS.length+'</span><button class="nb pri" id="nb2"'+(selections.length===0?' disabled':'')+'>'+(cur===QS.length-1?'Steep Profile →':'Next →')+'</button></div></div>');
+  document.querySelectorAll("#ob .opt").forEach(function(btn){
+    btn.addEventListener("click",function(){
+      var o=QS[cur].opts[parseInt(this.dataset.i)];
+      if(isM){
+        // Toggle in place — no full re-render, no animation flicker, no bg reset
+        var ix=selections.indexOf(o.t);
+        if(ix>-1){selections.splice(ix,1);this.classList.remove('sel');}
+        else{selections.push(o.t);this.classList.add('sel');}
+        updateNextBtn();
+      }else{
+        // Single-select: clear other selections in place, mark this one, auto-advance
+        selections=[o.t];
+        var self=this;
+        document.querySelectorAll('#ob .opt').forEach(function(b){b.classList.remove('sel');});
+        self.classList.add('sel');
+        updateNextBtn();
+        setTimeout(goNext,380);
+      }
+    });
+  });
+  document.getElementById("bb").addEventListener("click",goBack);
+  document.getElementById("nb2").addEventListener("click",goNext);
+  setBg(cur);updProg();
+}
+
+function doTrans(cb){
+  if(transitioning)return;transitioning=true;
+  var w=document.getElementById("qw");if(w)w.classList.add("leaving");
+  var f=document.createElement("div");f.className="flash";document.body.appendChild(f);
+  setTimeout(function(){f.remove();},1100);
+  setTimeout(function(){cb();transitioning=false;},500);
+}
+function goNext(){if(!selections.length||transitioning)return;answers[QS[cur].id]=selections.slice();doTrans(function(){cur++;selections=[];if(cur>=QS.length)showTrans();else showQ();});}
+function goBack(){if(cur===0||transitioning)return;doTrans(function(){cur--;selections=(answers[QS[cur].id]||[]).slice();showQ();});}
+function startQuiz(){cur=0;answers={};selections=[];doTrans(showQ);}
+
+function showTrans(){
+  setBg("transition");
+  document.getElementById("prail").classList.remove("show");
+  document.getElementById("quizSection").classList.remove("show");
+  document.getElementById("transSection").classList.add("show");
+  var all=[].concat(answers.setting||[],answers.trope||[],answers.taste||[],answers.temp||[]);
+  document.getElementById("profileChips").innerHTML=all.map(function(t){return'<span class="chip">'+t+'</span>';}).join('');
+  // Save profile to localStorage so story builder can read it (silently fails in sandboxed previews)
+  try{localStorage.setItem("htt_profile",JSON.stringify(answers));}catch(e){}
+}
+
+// "Open Story Builder" button — in production this navigates to /builder
+document.getElementById("toBuilderBtn").addEventListener("click",function(){
+  try{localStorage.setItem("htt_profile",JSON.stringify(answers));localStorage.setItem("htt_trial_active","true");}catch(e){}
+  alert("✦ Profile saved! In production this navigates to the Story Builder. Paste your profile into the builder artifact to continue.");
+});
+
+// Particles
+function makeParticles(){
+  var c=document.getElementById("pts");
+  for(var i=0;i<30;i++){
+    var d=document.createElement("div");d.className="p";
+    var sz=Math.random()*3.5+1.5,isG=Math.random()>.5;
+    var col=isG?"rgba(248,220,118,"+(0.3+Math.random()*0.4)+")":"rgba(247,244,234,"+(0.15+Math.random()*0.2)+")";
+    d.style.cssText="width:"+sz+"px;height:"+sz+"px;left:"+(Math.random()*100)+"%;background:"+col+";box-shadow:0 0 "+(sz*2)+"px "+col+";animation-duration:"+(9+Math.random()*14)+"s;animation-delay:"+(Math.random()*12)+"s";
+    c.appendChild(d);
+  }
+}
+makeParticles();
+</script>
+</body>
+</html>

@@ -77,8 +77,70 @@
   <div class="hero-right"></div>
 </section>
 
-<!-- QUIZ MODAL CONTAINER -->
-<div id="quiz-modal-container"></div>
+<!-- HTT QUIZ MODAL BACKGROUND & PARTICLES -->
+<div id="htt-quiz-bg" class="htt-quiz-bg" style="display:none;">
+  <div class="htt-quiz-bg-split"></div>
+  <div class="htt-quiz-bw htt-quiz-wi on" id="bg-intro"></div>
+  <div class="htt-quiz-bw htt-quiz-w0" id="bg-0"></div>
+  <div class="htt-quiz-bw htt-quiz-w1" id="bg-1"></div>
+  <div class="htt-quiz-bw htt-quiz-w2" id="bg-2"></div>
+  <div class="htt-quiz-bw htt-quiz-w3" id="bg-3"></div>
+  <div class="htt-quiz-bw htt-quiz-w4" id="bg-4"></div>
+  <div class="htt-quiz-bw htt-quiz-w5" id="bg-5"></div>
+  <div class="htt-quiz-bw htt-quiz-w6" id="bg-6"></div>
+  <div class="htt-quiz-bw htt-quiz-wt" id="bg-transition"></div>
+</div>
+<div class="htt-quiz-pts" id="pts"></div>
+<div class="htt-quiz-vig"></div>
+<div class="htt-quiz-tnav" id="htt-quiz-nav" style="display:none;">
+  <div class="htt-quiz-brand">Hot Tea Time</div>
+  <div class="htt-quiz-ntag">The Taste Test</div>
+</div>
+
+<!-- HTT QUIZ AGE GATE -->
+<div id="htt-quiz-ageGate" style="display:none;">
+  <div class="htt-quiz-age-box">
+    <div class="htt-quiz-age-icon">🍒</div>
+    <div class="htt-quiz-age-title">Before you sip…</div>
+    <div class="htt-quiz-age-sub">Hot Tea Time contains adult content including explicit AI-generated fiction. You must be 18 or older to enter.</div>
+    <div class="htt-quiz-age-form">
+      <div>
+        <label class="htt-quiz-age-label">Your date of birth</label>
+        <input type="date" class="htt-quiz-age-input" id="htt-quiz-dobInput"/>
+      </div>
+      <div class="htt-quiz-age-check">
+        <input type="checkbox" id="htt-quiz-ageConsent"/>
+        <span>I confirm I am 18 or older and agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>, including the nature of adult content on this platform.</span>
+      </div>
+      <div class="htt-quiz-age-check">
+        <input type="checkbox" id="htt-quiz-explicitConsent"/>
+        <span>I understand this platform includes sexually explicit AI-generated fiction and I am choosing to access it voluntarily.</span>
+      </div>
+      <div class="htt-quiz-age-err" id="htt-quiz-ageErr">You must be 18 or older to access Hot Tea Time.</div>
+      <button class="htt-quiz-age-btn" id="htt-quiz-ageBtn" disabled>Enter Hot Tea Time</button>
+      <div class="htt-quiz-age-foot">Your date of birth is stored securely and used solely for age verification. We do not share it with third parties.</div>
+    </div>
+  </div>
+</div>
+
+<!-- HTT QUIZ SECTION -->
+<div id="htt-quiz-section">
+  <div class="htt-quiz-stage" id="qapp"></div>
+  <div class="htt-quiz-prail" id="prail"></div>
+</div>
+
+<!-- HTT QUIZ TRANSITION / PROFILE REVEAL -->
+<div id="htt-quiz-transSection">
+  <div class="htt-quiz-tey">Your Palate Profile</div>
+  <div class="htt-quiz-ttitle">Your taste has been <span class="ac">steeped</span>.</div>
+  <div class="htt-quiz-tsub">We know exactly how you like it.</div>
+  <div class="htt-quiz-pchips" id="profileChips"></div>
+  <div class="htt-quiz-trial-banner">✦ <strong>7-day Premium trial unlocked.</strong> Full access to every heat level, all story lengths, the Codex, and Choose Your Own Adventure. No card required today.</div>
+  <button class="htt-quiz-to-builder-btn" id="toBuilderBtn">Open Your Story Builder →</button>
+</div>
+
+<!-- Close Button for Quiz Modal -->
+<button class="htt-quiz-close-btn" id="htt-quiz-close" style="display:none;"></button>
 
 <script src="quiz-setup.js"></script>
 
