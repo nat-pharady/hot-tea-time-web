@@ -247,6 +247,15 @@ function htt_showTrans() {
 
 // "Open Story Builder" button
 document.addEventListener("DOMContentLoaded", function() {
+  // Attach click listener to Start Sipping Free button
+  const startBtn = document.getElementById("start-sipping-btn");
+  if (startBtn) {
+    startBtn.addEventListener("click", function(event) {
+      event.preventDefault();
+      openQuizModal(event);
+    });
+  }
+  
   var toBuilderBtn = document.getElementById("toBuilderBtn");
   if (toBuilderBtn) {
     toBuilderBtn.addEventListener("click", function() {
